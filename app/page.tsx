@@ -3,16 +3,23 @@
 import { useMemo, useState } from "react";
 import {
   AlertTriangle,
-  ArrowDown,
   ArrowUpRight,
   BarChart3,
   BookOpenCheck,
+  CheckCircle2,
+  ChevronRight,
   Database,
+  FileSearch,
   Gauge,
+  GitBranch,
   Info,
+  Layers3,
+  Network,
   Search,
   ShieldCheck,
   Sparkles,
+  Target,
+  TestTube2,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -63,6 +70,106 @@ type Prediction = {
 
 const predictions = forecastData.predictions as Prediction[];
 const meta = forecastData.meta;
+
+const pipelineSteps = [
+  {
+    id: "collect",
+    code: "01",
+    title: "收集证据",
+    short: "官网与历史结果",
+    plain: "先把每所学校过去发生过什么收齐：复试线、拟录取成绩、招生人数、考试科目和官方公告。每个数字都要能追溯到来源。",
+    technical: "抓取并标准化院校—年份面板；为官网、官方二次来源和第三方来源分别赋证据等级，不把网页文本直接当成可训练数值。",
+    input: "招生目录、复试名单、拟录取名单、学院公告",
+    output: "带年份、口径和来源链接的原始记录",
+    guardrail: "只使用报名开始前已经公开的信息",
+  },
+  {
+    id: "audit",
+    code: "02",
+    title: "统一口径",
+    short: "排除混入样本",
+    plain: "把专项计划、非全日制、调剂生等不属于目标人群的记录排除，并标出互相矛盾或缺少来源的数据。",
+    technical: "定义正常统考全日制025200样本；执行复试线、最低分、复录比和专项计划一致性规则，并把证据质量转换为训练权重。",
+    input: "原始记录与招生口径",
+    output: "可训练标签、缺失标记和人工复核队列",
+    guardrail: "宁可降权或留空，也不把不确定值伪装成真值",
+  },
+  {
+    id: "features",
+    code: "03",
+    title: "构造信号",
+    short: "把分数变成可比量",
+    plain: "不同年份国家线不同，直接比较总分会失真。因此先看学校分数高出国家线多少，再加入冷热反转、招生变化和竞校热度。",
+    technical: "以国家线以上边际分为核心状态量，生成严格滞后的历史中位数、惊讶度、同层竞校压力、名额与缺失机制特征。",
+    input: "清洗后的历年成绩与当时可见信息",
+    output: "不会偷看未来的模型特征",
+    guardrail: "所有动态字段至少滞后一年",
+  },
+  {
+    id: "models",
+    code: "04",
+    title: "候选模型",
+    short: "简单模型也参赛",
+    plain: "让稳健历史锚点、分层贝叶斯和提升树一起参加比赛，而不是默认更复杂的模型一定更准。",
+    technical: "比较稳健边际分锚点、上一年锚点、部分池化动态回归与梯度提升分位数；复杂模型同时提供尾部形状与变量解释。",
+    input: "同一套无泄漏特征",
+    output: "多个候选点预测和概率分布",
+    guardrail: "复杂度必须通过样本外回测赢得权重",
+  },
+  {
+    id: "backtest",
+    code: "05",
+    title: "逐年回测",
+    short: "模拟真实报名时点",
+    plain: "假装自己回到2024、2025、2026年报名之前，只用更早的数据预测，再和后来真实结果比较。",
+    technical: "采用 expanding-window rolling origin；同时评估加权MAE、低估三倍损失、分位覆盖率和区间宽度。",
+    input: "候选模型的历史外推结果",
+    output: "谁真正更准、谁只是在拟合历史",
+    guardrail: "模型选择和校准都只能使用当时以前的残差",
+  },
+  {
+    id: "scenarios",
+    code: "06",
+    title: "事件与校准",
+    short: "传播未知风险",
+    plain: "换考纲可能让人退潮，也可能吸引人涌入，所以不拍脑袋给一个固定加分，而是保留三种情景并扩大不确定区间。",
+    technical: "将官方事件映射为退潮/中性/涌入离散混合；再用滚动残差校准P80/P90/P95上界，并为未闭环事件加入厚尾噪声。",
+    input: "基础预测、官方事件和历史残差",
+    output: "经过校准的完整分数分布",
+    guardrail: "未发现公告不等于确认没有事件",
+  },
+  {
+    id: "decision",
+    code: "07",
+    title: "个人决策",
+    short: "把分布翻译成冲稳保",
+    plain: "最后才把你的估分放进学校的预测分布，计算达到目标所需分数的把握度，并按统一阈值给出冲、观察、稳、保。",
+    technical: "对分位锚点分段插值形成个人通过概率；稳≥90%、保≥95%，同时展示数据可信度与主要不确定性来源。",
+    input: "你的悲观估分与学校概率分布",
+    output: "P50/P80/P90/P95、把握度和风险标签",
+    guardrail: "这是学校间风险比较，不是个人录取保证",
+  },
+] as const;
+
+const accuracyRoadmap = [
+  { priority: "P0", title: "考生级精确P10", impact: "最高", status: "待补数", why: "当前最大误差来自目标标签本身。拿到普通统考逐人成绩后，可直接计算P10并彻底替换代理值。" },
+  { priority: "P0", title: "报名时可见的统考名额", impact: "最高", status: "待补数", why: "区分总计划、推免和普通统考名额，避免用最终录取人数造成信息泄漏。" },
+  { priority: "已完成", title: "历史边际分稳健锚点", impact: "已验证", status: "v0.2", why: "用历年高出国家线的中位数抵抗单年爆冷爆热；滚动回测MAE由18.58降至17.12。" },
+  { priority: "P1", title: "事件相似案例库", impact: "高", status: "设计中", why: "把历次换考纲、扩缩招和学制变化变成可学习样本，让三情景权重由历史相似事件决定。" },
+  { priority: "P1", title: "竞校迁移网络", impact: "中高", status: "设计中", why: "按地域、层次、考试科目和分数带建立替代关系，估计某校变化会把考生推向哪些学校。" },
+  { priority: "P1", title: "滚动保序校准", impact: "中高", status: "待实验", why: "在时间切分下做分组共形分位校准，使90%稳妥线更接近真实90%覆盖率且不过度保守。" },
+  { priority: "P2", title: "样本外动态集成", impact: "中", status: "待实验", why: "只有当复杂模型在某类学校持续胜出时，才用分层stacking分配局部权重，而不是全局固定加权。" },
+];
+
+const pipelineIcons = {
+  collect: FileSearch,
+  audit: Database,
+  features: Layers3,
+  models: GitBranch,
+  backtest: TestTube2,
+  scenarios: Network,
+  decision: Target,
+} as const;
 
 function probabilityAtScore(item: Prediction, score: number) {
   const anchors = [
@@ -145,6 +252,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [tier, setTier] = useState("all");
   const [sortBy, setSortBy] = useState("q90");
+  const [pipelineStepId, setPipelineStepId] = useState<(typeof pipelineSteps)[number]["id"]>("collect");
   const defaultSchool = predictions.find((item) => item.school === "华东师范大学")?.school ?? predictions[0].school;
   const [selectedSchool, setSelectedSchool] = useState(defaultSchool);
 
@@ -165,6 +273,16 @@ export default function Home() {
   const selectedProbability = probabilityAtScore(selected, score);
   const selectedRisk = riskLabel(selectedProbability);
   const backtest = meta.backtest;
+  const activePipelineStep = pipelineSteps.find((step) => step.id === pipelineStepId) ?? pipelineSteps[0];
+  const liveExample = (() => {
+    if (pipelineStepId === "collect") return `${selected.school}：已形成 ${selected.historyCount} 个历史目标标签，最新复试线 ${selected.latestCutoff ?? "待核验"} 分。`;
+    if (pipelineStepId === "audit") return `${selected.school} 当前数据可信度 ${selected.confidenceScore}/100；异常记录会降权并进入人工复核队列。`;
+    if (pipelineStepId === "features") return `最近一年冷热惊讶度 ${signed(selected.lagSurpriseZ)}σ，同层竞校压力 ${signed(selected.peerPressure)}σ。`;
+    if (pipelineStepId === "models") return `本校点预测采用“${selected.selectedModel}”，复杂模型只负责分布形状与解释。`;
+    if (pipelineStepId === "backtest") return `v0.2 主流程滚动MAE ${backtest.mae} 分；稳健锚点 ${backtest.robust_margin_anchor_mae} 分，上一年锚点 ${backtest.last_year_baseline_mae} 分。`;
+    if (pipelineStepId === "scenarios") return `${selected.events.length ? `${selected.events.length}条官方事件进入三情景` : "未检索到官方事件，已加入未知事件厚尾"}；90%残差加成 ${meta.calibrationOffsets.q90} 分。`;
+    return `你的估分 ${score} 分，对 ${selected.school} 的当前把握约 ${Math.round(selectedProbability * 100)}%，标签为“${selectedRisk.label}”。`;
+  })();
 
   return (
     <main className="app-shell">
@@ -172,10 +290,10 @@ export default function Home() {
         <div className="brand-mark"><BarChart3 size={18} /></div>
         <div className="brand-copy">
           <strong>应用统计择校风险实验室</strong>
-          <span>025200 · 全日制 · 985/211 首版</span>
+          <span>025200 · 全日制 · 985/211 · 公开研究</span>
         </div>
         <div className="topbar-meta">
-          <Badge className="live-badge">2027 预测</Badge>
+          <Badge className="live-badge">2027 预测 · v0.2</Badge>
           <span>信息截点 {meta.asOf}</span>
         </div>
       </header>
@@ -198,7 +316,7 @@ export default function Home() {
           <TabsTrigger value="map">择校地图</TabsTrigger>
           <TabsTrigger value="backtest">回测与可信度</TabsTrigger>
           <TabsTrigger value="audit">数据审计</TabsTrigger>
-          <TabsTrigger value="method">模型方法</TabsTrigger>
+          <TabsTrigger value="method">全流程与优化</TabsTrigger>
         </TabsList>
 
         <TabsContent value="map" className="tab-panel">
@@ -278,19 +396,19 @@ export default function Home() {
 
         <TabsContent value="backtest" className="tab-panel">
           <section className="wide-panel panel">
-            <div className="panel-head"><div><span className="eyebrow">ROLLING ORIGIN · 2024—2026</span><h2>复杂模型没有战胜简单基准，所以让回测决定权重</h2></div><BookOpenCheck size={28} /></div>
+            <div className="panel-head"><div><span className="eyebrow">ROLLING ORIGIN · 2024—2026</span><h2>稳健历史锚点胜出，复杂模型继续负责尾部与解释</h2></div><BookOpenCheck size={28} /></div>
             <div className="metric-row">
-              <Metric label="主模型 MAE" value={`${backtest.mae} 分`} note={`${backtest.rows} 条逐年外推`} />
-              <Metric label="上一年基准 MAE" value={`${backtest.last_year_baseline_mae} 分`} note="当前点预测锚点" />
+              <Metric label="v0.2 主流程 MAE" value={`${backtest.mae} 分`} note={`${backtest.rows} 条逐年外推`} />
+              <Metric label="稳健锚点 MAE" value={`${backtest.robust_margin_anchor_mae} 分`} note="历年边际分中位数" />
+              <Metric label="上一年锚点 MAE" value={`${backtest.last_year_baseline_mae} 分`} note="v0.1 点预测中心" />
               <Metric label="复杂候选 MAE" value={`${backtest.complex_candidate_mae} 分`} note="未取得领先" />
-              <Metric label="低估率" value={`${Math.round(backtest.underprediction_rate * 100)}%`} note="低估代价按 3×" />
             </div>
             <div className="evidence-grid">
               <div className="method-card"><span>01</span><h3>严格时间切分</h3><p>预测某一年时只使用此前年份的数据；动态特征全部滞后，避免把当年结果偷渡进输入。</p></div>
-              <div className="method-card"><span>02</span><h3>点预测服从证据</h3><p>上一年 Q10 代理经国家线平移后的误差更小，因此点预测权重为 1；复杂模型保留在尾部与解释层。</p></div>
+              <div className="method-card"><span>02</span><h3>单年异常先降噪</h3><p>用历年“高出国家线多少分”的中位数抵抗单年爆冷爆热；其回测MAE比上一年锚点低 {Math.max(0, backtest.last_year_baseline_mae - backtest.robust_margin_anchor_mae).toFixed(2)} 分。</p></div>
               <div className="method-card"><span>03</span><h3>保守上界再校准</h3><p>用滚动残差的 80/90/95 分位校准上界；本版 90% 残差加成约 {meta.calibrationOffsets.q90} 分。</p></div>
             </div>
-            <div className="warning-line"><AlertTriangle size={16} /> 当前 P10 多为代理标签，回测评估的是“代理目标可预测性”，不是最终录取概率的临床式校准。</div>
+            <div className="warning-line"><AlertTriangle size={16} /> 当前低估率为 {Math.round(backtest.underprediction_rate * 100)}%。P10 多为代理标签，因此回测评估的是“代理目标可预测性”，不是最终录取概率的临床式校准。</div>
           </section>
         </TabsContent>
 
@@ -310,20 +428,64 @@ export default function Home() {
 
         <TabsContent value="method" className="tab-panel">
           <section className="wide-panel panel">
-            <div className="panel-head"><div><span className="eyebrow">MODEL CARD</span><h2>基本面、事件冲击、市场反转、竞校溢出</h2></div><BarChart3 size={28} /></div>
-            <div className="flow-grid">
-              <div><span>输入层</span><strong>国家线 · 历史线 · 招生人数 · 热冷异常 · 竞校</strong><p>所有报名时点不可见字段均滞后或移除。</p></div>
-              <ArrowDown className="flow-arrow" />
-              <div><span>结构层</span><strong>分层贝叶斯动态模型 + 梯度提升分位数</strong><p>院校层级部分池化，树模型捕捉非线性。</p></div>
-              <ArrowDown className="flow-arrow" />
-              <div><span>决策层</span><strong>回测择优锚点 + 三情景事件 + 保守校准</strong><p>输出 P50/P80/P90/P95 和冲稳保标签。</p></div>
+            <div className="panel-head"><div><span className="eyebrow">FROM EVIDENCE TO DECISION</span><h2>一条“稳/保”结论究竟是怎么来的</h2></div><BarChart3 size={28} /></div>
+
+            <div className="pipeline-group-labels" aria-hidden="true">
+              <span className="evidence-layer"><FileSearch size={14} />证据层 · 收集与清洗</span>
+              <span className="inference-layer"><GitBranch size={14} />推断层 · 建模与验证</span>
+              <span className="decision-layer"><ShieldCheck size={14} />决策层</span>
             </div>
-            <div className="formula-card"><code>所需分数 = 国家线 + 院校层级 + 动态基本面 + 市场反转 + 竞校溢出 + 事件冲击 + ε</code><p>事件冲击不是拍成单点，而是“退潮 / 中性 / 涌入”离散分布；尚未发现公告的学校额外加入未知事件厚尾噪声。</p></div>
+            <div className="pipeline-graph" role="list" aria-label="从数据到择校决策的七步图形流程">
+              {pipelineSteps.map((step, index) => {
+                const StepIcon = pipelineIcons[step.id];
+                const active = step.id === pipelineStepId;
+                return (
+                  <div className="graph-step-wrap" role="listitem" key={step.id}>
+                    <button type="button" className="graph-step" data-active={active} aria-pressed={active} aria-label={`${step.title}：${step.plain}`} onClick={() => setPipelineStepId(step.id)}>
+                      <span className="graph-orb"><StepIcon size={24} aria-hidden="true" /><i>{step.code}</i></span>
+                      <strong>{step.title}</strong>
+                      <small>{step.short}</small>
+                    </button>
+                    {index < pipelineSteps.length - 1 && <ChevronRight className="graph-connector" size={19} aria-hidden="true" />}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="pipeline-feedback"><span className="feedback-path" aria-hidden="true" /><TestTube2 size={17} aria-hidden="true" /><div><strong>回测不达标，就返回数据或特征层</strong><span>复杂度不是上线理由；只有报名时点的样本外表现能让模型进入下一环。</span></div></div>
+
+            <div className="pipeline-explainer" aria-live="polite">
+              <div className="explain-heading">
+                <div><span className="eyebrow">{activePipelineStep.code} · 当前环节</span><h3>{activePipelineStep.title}</h3></div>
+                <span className="technical-badge">技术说明</span>
+              </div>
+              <p className="explain-copy">{activePipelineStep.technical}</p>
+              <div className="pipeline-facts">
+                <div><span>进入这一环</span><strong>{activePipelineStep.input}</strong></div>
+                <div><span>离开这一环</span><strong>{activePipelineStep.output}</strong></div>
+                <div><span>防错闸门</span><strong>{activePipelineStep.guardrail}</strong></div>
+              </div>
+              <div className="live-example"><CheckCircle2 size={17} aria-hidden="true" /><div><span>用当前选中院校走一遍</span><strong>{liveExample}</strong></div></div>
+            </div>
+
+            <div className="formula-card"><code>所需分数 = 预测国家线 + 历史边际分稳健锚点 + 分布形状 + 事件情景 + 未知风险</code><p>v0.2 的关键变化是用历年边际分中位数抵抗单年异常；分层贝叶斯与提升树仍负责不确定性、尾部和解释。</p></div>
+
+            <div className="roadmap-head"><div><span className="eyebrow">ACCURACY ROADMAP</span><h3>提高精度，先修数据，再增加复杂度</h3></div><p>“影响”是预期优先级，不是未经验证的分数承诺。每项优化都必须重新通过逐年滚动回测。</p></div>
+            <div className="roadmap-grid">
+              {accuracyRoadmap.map((item) => (
+                <article className="roadmap-item" key={item.title}>
+                  <div><span className="roadmap-priority">{item.priority}</span><span className="roadmap-impact">影响：{item.impact}</span></div>
+                  <h4>{item.title}</h4>
+                  <p>{item.why}</p>
+                  <small>{item.status}</small>
+                </article>
+              ))}
+            </div>
+            <div className="research-links"><span>方法依据</span><a href="https://papers.neurips.cc/paper_files/paper/2019/file/5103c3584b063c431bd1268e9b5e76fb-Paper.pdf" target="_blank" rel="noreferrer">共形分位回归</a><a href="https://arxiv.org/abs/1704.02030" target="_blank" rel="noreferrer">预测分布 stacking</a><a href="https://kaybrodersen.github.io/publications/Brodersen_2015_AOAS.pdf" target="_blank" rel="noreferrer">事件的结构时序建模</a><a href="https://otext.robjhyndman.com/publications/mint/" target="_blank" rel="noreferrer">分组预测协调</a></div>
           </section>
         </TabsContent>
       </Tabs>
 
-      <footer><span>研究原型 v1 · 仅用于风险比较，不构成录取保证</span><span>目标：正常统考录取初试成绩 P10（第一版为透明代理）</span></footer>
+      <footer><span>公开研究原型 v0.2 · 仅用于风险比较，不构成录取保证</span><span>目标：正常统考录取初试成绩 P10（当前多数为透明代理）</span></footer>
     </main>
   );
 }

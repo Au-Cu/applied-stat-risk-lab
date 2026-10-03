@@ -408,17 +408,23 @@ def rolling_backtest(trainable, national_lines):
                 if pd.isna(row["lag1_q10"])
                 else float(row["lag1_q10"] + line_dist["mean"] - national_lines[int(test_year) - 1][zone])
             )
-            # Rolling validation consistently preferred the transparent last-year
-            # anchor.  Keep the richer models for distributional shape and
-            # explanations, but do not let them move the point estimate unless
-            # the anchor is unavailable.
-            if baseline is None:
+            robust_baseline = (
+                None
+                if pd.isna(row["trailing_margin_median"])
+                else float(line_dist["mean"] + row["trailing_margin_median"])
+            )
+            # The fixed, leakage-free median of all prior national-line margins
+            # is more robust to a single hot/cold year than the last-year anchor.
+            # Keep the richer models for distributional shape and explanation;
+            # only use them as the point center when no transparent anchor exists.
+            point_anchor = robust_baseline if robust_baseline is not None else baseline
+            if point_anchor is None:
                 raw_samples = complex_samples
                 selected_model = "hierarchical_ensemble_fallback"
             else:
                 complex_center = float(np.quantile(complex_samples, 0.50))
-                raw_samples = baseline + 0.35 * (complex_samples - complex_center)
-                selected_model = "last_year_anchor"
+                raw_samples = point_anchor + 0.35 * (complex_samples - complex_center)
+                selected_model = "robust_margin_anchor" if robust_baseline is not None else "last_year_anchor"
             actual = float(row["q10_value"])
             record = {
                 "school": row["school"],
@@ -432,6 +438,7 @@ def rolling_backtest(trainable, national_lines):
                 "selected_model": selected_model,
                 "weight": round(float(row["model_weight"]), 3),
                 "baseline": None if baseline is None else round(baseline, 2),
+                "robust_baseline": None if robust_baseline is None else round(robust_baseline, 2),
             }
             predictions.append(record)
     return predictions
@@ -467,6 +474,18 @@ def backtest_metrics(predictions):
         baseline_weight = np.array([row["weight"] for row in baseline_rows], dtype=float)
         metrics["last_year_baseline_mae"] = round(
             float(np.average(np.abs(baseline_actual - baseline_pred), weights=baseline_weight)), 2
+        )
+    robust_rows = [row for row in predictions if row["robust_baseline"] is not None]
+    if robust_rows:
+        robust_actual = np.array([row["actual"] for row in robust_rows], dtype=float)
+        robust_pred = np.array([row["robust_baseline"] for row in robust_rows], dtype=float)
+        robust_weight = np.array([row["weight"] for row in robust_rows], dtype=float)
+        metrics["robust_margin_anchor_mae"] = round(
+            float(np.average(np.abs(robust_actual - robust_pred), weights=robust_weight)), 2
+        )
+        robust_errors = robust_actual - robust_pred
+        metrics["robust_margin_anchor_asymmetric_loss_3x"] = round(
+            float(np.average(np.where(robust_errors > 0, 3.0 * robust_errors, -robust_errors), weights=robust_weight)), 2
         )
     return metrics
 
@@ -564,13 +583,20 @@ def main():
         events = events_by_school.get(school, [])
         event_draws, expected_event = event_samples(events, 9000)
         unknown_event_noise = np.zeros(9000) if events else RNG.standard_t(6, size=9000) * 2.5
+        robust_margin_anchor = row["trailing_margin_median"]
         latest_anchor = row["latest_q10_proxy"]
-        if latest_anchor is not None and not pd.isna(latest_anchor):
+        if robust_margin_anchor is not None and not pd.isna(robust_margin_anchor):
+            anchor_center = national["mean"] + float(robust_margin_anchor)
+            margin_shape = 0.35 * (margin_samples[idx] - np.quantile(margin_samples[idx], 0.50))
+            national_shape = national["samples"] - national["mean"]
+            raw = anchor_center + margin_shape + national_shape + event_draws + unknown_event_noise
+            selected_model = "历史边际分中位数锚定（滚动回测胜出）"
+        elif latest_anchor is not None and not pd.isna(latest_anchor):
             anchor_center = float(latest_anchor) + national["mean"] - national_lines[2026][zone]
             margin_shape = 0.35 * (margin_samples[idx] - np.quantile(margin_samples[idx], 0.50))
             national_shape = national["samples"] - national["mean"]
             raw = anchor_center + margin_shape + national_shape + event_draws + unknown_event_noise
-            selected_model = "上一年锚定（滚动回测胜出）"
+            selected_model = "上一年锚定（稳健锚点缺失时回退）"
         else:
             raw = margin_samples[idx] + national["samples"] + event_draws + unknown_event_noise
             selected_model = "分层贝叶斯与提升树集成（锚点缺失）"
@@ -650,15 +676,15 @@ def main():
             "scope": "传统985/211院校中开设全日制025200应用统计的学校",
             "schoolCount": len(predictions),
             "trainingRows": len(trainable),
-            "target": "正常统考录取初试成绩10%分位数；当前第一版多数为透明代理值",
+            "target": "正常统考录取初试成绩10%分位数；当前数据多数为透明代理值",
             "steadyThreshold": 0.90,
             "backtest": metrics,
             "calibrationOffsets": offsets,
             "modelSelection": {
-                "pointForecast": "逐年滚动回测选择上一年Q10代理锚点；无锚点时回退到分层贝叶斯+梯度提升集成。",
+                "pointForecast": "逐年滚动回测选择历史国家线以上边际分中位数作为稳健锚点；历史不足时依次回退上一年锚点与复杂集成。",
                 "uncertaintyAndExplanation": "分层贝叶斯动态模型、梯度提升分位数模型、国家线与事件情景共同生成分布。",
-                "pointWeights": {"lastYearAnchor": 1.0, "bayesian": 0.0, "gradientBoosting": 0.0},
-                "reason": "复杂候选模型的滚动MAE未优于透明基准，因此第一版不以复杂度换取表面精度。",
+                "pointWeights": {"robustMarginAnchor": 1.0, "lastYearFallback": 1.0, "bayesian": 0.0, "gradientBoosting": 0.0},
+                "reason": "稳健边际分锚点在滚动回测中优于上一年锚点和复杂候选模型，因此不以复杂度换取表面精度。",
             },
             "nationalLineForecast": {
                 zone: {key: value for key, value in national_line_distribution(national_lines, 2027, zone, size=12000).items() if key != "samples"}

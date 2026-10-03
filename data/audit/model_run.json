@@ -9,21 +9,23 @@
       2025,
       2026
     ],
-    "mae": 18.9,
-    "median_absolute_error": 15.92,
-    "asymmetric_loss_3x": 35.17,
-    "underprediction_rate": 0.457,
+    "mae": 17.67,
+    "median_absolute_error": 15.62,
+    "asymmetric_loss_3x": 33.98,
+    "underprediction_rate": 0.488,
     "complex_candidate_mae": 20.35,
-    "q80_coverage": 0.683,
-    "q90_coverage": 0.744,
-    "q95_coverage": 0.788,
-    "last_year_baseline_mae": 18.58
+    "q80_coverage": 0.672,
+    "q90_coverage": 0.742,
+    "q95_coverage": 0.766,
+    "last_year_baseline_mae": 18.58,
+    "robust_margin_anchor_mae": 17.12,
+    "robust_margin_anchor_asymmetric_loss_3x": 32.97
   },
   "calibration_offsets": {
-    "q50": -2.26,
-    "q80": 17.5,
-    "q90": 26.03,
-    "q95": 37.72
+    "q50": -0.06,
+    "q80": 17.24,
+    "q90": 26.02,
+    "q95": 31.78
   },
   "official_event_schools": [
     "东南大学",

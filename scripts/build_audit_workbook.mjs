@@ -187,24 +187,25 @@ summary.getRange("E7:E9").format.numberFormat = "#,##0";
 summary.getRange("D7:D9").format.font = { name: fontName, size: 9, color: COLORS.red };
 
 summary.getRange("A15:B15").values = [["滚动回测（2024—2026）", "结果"]];
-summary.getRange("A16:A21").values = [["回测样本"], ["主预测加权MAE"], ["上一年锚点加权MAE"], ["复杂候选模型加权MAE"], ["低估率"], ["90%原始区间覆盖率"]];
-summary.getRange("B16:B21").formulas = [
+summary.getRange("A16:A22").values = [["回测样本"], ["主预测加权MAE"], ["稳健边际分锚点MAE"], ["上一年锚点加权MAE"], ["复杂候选模型加权MAE"], ["低估率"], ["90%原始区间覆盖率"]];
+summary.getRange("B16:B22").formulas = [
   ["=COUNTA('回测明细'!$A$2:$A$227)"],
-  ["=SUMPRODUCT('回测明细'!$L$2:$L$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
-  ["=SUMPRODUCT('回测明细'!$O$2:$O$227,'回测明细'!$J$2:$J$227)/SUMIFS('回测明细'!$J$2:$J$227,'回测明细'!$K$2:$K$227,\"<>\")"],
-  ["=SUMPRODUCT('回测明细'!$P$2:$P$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
   ["=SUMPRODUCT('回测明细'!$M$2:$M$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
+  ["=SUMPRODUCT('回测明细'!$Q$2:$Q$227,'回测明细'!$J$2:$J$227)/SUMIFS('回测明细'!$J$2:$J$227,'回测明细'!$L$2:$L$227,\"<>\")"],
+  ["=SUMPRODUCT('回测明细'!$P$2:$P$227,'回测明细'!$J$2:$J$227)/SUMIFS('回测明细'!$J$2:$J$227,'回测明细'!$K$2:$K$227,\"<>\")"],
+  ["=SUMPRODUCT('回测明细'!$R$2:$R$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
   ["=SUMPRODUCT('回测明细'!$N$2:$N$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
+  ["=SUMPRODUCT('回测明细'!$O$2:$O$227,'回测明细'!$J$2:$J$227)/SUM('回测明细'!$J$2:$J$227)"],
 ];
 styleHeader(summary.getRange("A15:B15"));
-styleBody(summary.getRange("A16:B21"));
-summary.getRange("A16:A21").format.fill = COLORS.light;
-summary.getRange("B17:B19").format.numberFormat = "0.00";
-summary.getRange("B20:B21").format.numberFormat = "0.0%";
+styleBody(summary.getRange("A16:B22"));
+summary.getRange("A16:A22").format.fill = COLORS.light;
+summary.getRange("B17:B20").format.numberFormat = "0.00";
+summary.getRange("B21:B22").format.numberFormat = "0.0%";
 
 summary.getRange("D15:F15").values = [["模型选择", "权重", "说明"]];
 summary.getRange("D16:F18").values = [
-  ["上一年P10锚点", 1, "滚动回测胜出；作为点预测中心"],
+  ["历史边际分中位数锚点", 1, "滚动回测胜出；优先作为点预测中心"],
   ["分层贝叶斯", 0, "用于分布形状、院校部分池化和变量解释"],
   ["梯度提升分位数", 0, "用于非线性尾部与不确定性辅助"],
 ];
@@ -345,33 +346,35 @@ eventSheet.getRange(`O1:O${6 + reservedEvents.length}`).format.columnWidth = 24;
 eventSheet.getRange(`P1:P${6 + reservedEvents.length}`).format.columnWidth = 45;
 
 // Backtest detail and auditable calculations
-const backtestHeaders = [...backtest[0], "absolute_error", "underpredicted", "q90_covered", "baseline_abs_error", "complex_abs_error", "asymmetric_loss_3x"];
+const backtestHeaders = [...backtest[0], "absolute_error", "underpredicted", "q90_covered", "baseline_abs_error", "robust_baseline_abs_error", "complex_abs_error", "asymmetric_loss_3x"];
 backtestSheet.getRangeByIndexes(0, 0, 1, backtestHeaders.length).values = [backtestHeaders];
 backtestSheet.getRangeByIndexes(1, 0, backtest.length - 1, backtest[0].length).values = backtest.slice(1);
 const lastBacktestRow = backtest.length;
-backtestSheet.getRange("L2").formulas = [["=ABS(C2-D2)"]];
-backtestSheet.getRange(`L2:L${lastBacktestRow}`).fillDown();
-backtestSheet.getRange("M2").formulas = [["=IF(C2>D2,1,0)"]];
+backtestSheet.getRange("M2").formulas = [["=ABS(C2-D2)"]];
 backtestSheet.getRange(`M2:M${lastBacktestRow}`).fillDown();
-backtestSheet.getRange("N2").formulas = [["=IF(C2<=F2,1,0)"]];
+backtestSheet.getRange("N2").formulas = [["=IF(C2>D2,1,0)"]];
 backtestSheet.getRange(`N2:N${lastBacktestRow}`).fillDown();
-backtestSheet.getRange("O2").formulas = [["=IF(K2=\"\",\"\",ABS(C2-K2))"]];
+backtestSheet.getRange("O2").formulas = [["=IF(C2<=F2,1,0)"]];
 backtestSheet.getRange(`O2:O${lastBacktestRow}`).fillDown();
-backtestSheet.getRange("P2").formulas = [["=ABS(C2-H2)"]];
+backtestSheet.getRange("P2").formulas = [["=IF(K2=\"\",\"\",ABS(C2-K2))"]];
 backtestSheet.getRange(`P2:P${lastBacktestRow}`).fillDown();
-backtestSheet.getRange("Q2").formulas = [["=IF(C2>D2,3*(C2-D2),D2-C2)"]];
+backtestSheet.getRange("Q2").formulas = [["=IF(L2=\"\",\"\",ABS(C2-L2))"]];
 backtestSheet.getRange(`Q2:Q${lastBacktestRow}`).fillDown();
-styleHeader(backtestSheet.getRange("A1:Q1"), COLORS.navy2);
-styleBody(backtestSheet.getRange(`A2:Q${lastBacktestRow}`));
-addTable(backtestSheet, `A1:Q${lastBacktestRow}`, "BacktestTable", "TableStyleMedium2");
+backtestSheet.getRange("R2").formulas = [["=ABS(C2-H2)"]];
+backtestSheet.getRange(`R2:R${lastBacktestRow}`).fillDown();
+backtestSheet.getRange("S2").formulas = [["=IF(C2>D2,3*(C2-D2),D2-C2)"]];
+backtestSheet.getRange(`S2:S${lastBacktestRow}`).fillDown();
+styleHeader(backtestSheet.getRange("A1:S1"), COLORS.navy2);
+styleBody(backtestSheet.getRange(`A2:S${lastBacktestRow}`));
+addTable(backtestSheet, `A1:S${lastBacktestRow}`, "BacktestTable", "TableStyleMedium2");
 backtestSheet.freezePanes.freezeRows(1);
 backtestSheet.freezePanes.freezeColumns(2);
-backtestSheet.getRange(`C2:Q${lastBacktestRow}`).format.numberFormat = "0.00";
-backtestSheet.getRange(`M2:N${lastBacktestRow}`).format.numberFormat = "0";
-backtestSheet.getRange(`L2:L${lastBacktestRow}`).conditionalFormats.add("colorScale", { colors: ["#DCFCE7", "#FEF3C7", "#FEE2E2"], thresholds: ["min", { type: "percentile", value: 50 }, "max"] });
+backtestSheet.getRange(`C2:S${lastBacktestRow}`).format.numberFormat = "0.00";
+backtestSheet.getRange(`N2:O${lastBacktestRow}`).format.numberFormat = "0";
+backtestSheet.getRange(`M2:M${lastBacktestRow}`).conditionalFormats.add("colorScale", { colors: ["#DCFCE7", "#FEF3C7", "#FEE2E2"], thresholds: ["min", { type: "percentile", value: 50 }, "max"] });
 backtestSheet.getRange(`A1:A${lastBacktestRow}`).format.columnWidth = 18;
 backtestSheet.getRange(`B1:B${lastBacktestRow}`).format.columnWidth = 9;
-backtestSheet.getRange(`C1:Q${lastBacktestRow}`).format.columnWidth = 14;
+backtestSheet.getRange(`C1:S${lastBacktestRow}`).format.columnWidth = 14;
 backtestSheet.getRange(`I1:I${lastBacktestRow}`).format.columnWidth = 28;
 
 // Field dictionary
@@ -408,7 +411,7 @@ const dictionaryRows = [
   ["预测", "q80", "80%上界", "数值", "总分", "输出", "按模型有80%概率覆盖真实P10的上界", "需结合校准表现"],
   ["预测", "q90", "90%稳妥线", "数值", "总分", "输出", "按约定的稳标准使用的保守上界", "尾部仍受未知事件影响"],
   ["预测", "q95", "95%保守线", "数值", "总分", "输出", "更保守的预测上界", "不等于录取保证"],
-  ["回测", "selected_model", "选中点预测模型", "分类", "anchor/fallback", "输出", "滚动回测优先选择上一年锚点，无锚点时回退复杂模型", "按时间切分决定"],
+  ["回测", "selected_model", "选中点预测模型", "分类", "anchor/fallback", "输出", "滚动回测优先选择历史边际分中位数锚点，无锚点时依次回退上一年或复杂模型", "按时间切分决定"],
   ["回测", "weight", "样本权重", "数值", "0—1", "输出", "目标代理与来源可靠性权重", "不可解释为样本概率"],
 ];
 dictionarySheet.getRangeByIndexes(5, 0, 1, dictionaryHeaders.length).values = [dictionaryHeaders];
@@ -484,7 +487,7 @@ const previews = [
   ["复核队列", "A1:G25"],
   ["年度数据模板", "A1:Q24"],
   ["事件模板", "A1:P18"],
-  ["回测明细", "A1:Q22"],
+  ["回测明细", "A1:S22"],
   ["字段字典", `A1:H${Math.min(38, 6 + dictionaryRows.length)}`],
   ["来源台账", "A1:H20"],
   ["院校年度数据", "A1:Q22"],
