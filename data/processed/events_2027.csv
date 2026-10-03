@@ -1,0 +1,6 @@
+school,forecast_year,event_type,event_name,published_date,evidence_level,severity,withdrawal_adjustment,neutral_adjustment,crowd_adjustment,withdrawal_weight,neutral_weight,crowd_weight,source_url,review_status,notes
+吉林大学,2027,major_subject_change,432统计学改为统计与数据科学基础,2026-04-29,官方学院,major,-14,-2,13,0.30,0.42,0.28,https://math.jlu.edu.cn/info/1080/16897.htm,已机器核验待人工复核,新增数据科学基础且更换参考书；新旧成绩不可直接比较
+华东师范大学,2027,syllabus_change,432范围不变但考试内容与参考教材调整,2026-07-21,官方学院,moderate,-6,0,7,0.25,0.50,0.25,https://stat.ecnu.edu.cn/c2/dd/c9708a770781/page.htm,已机器核验待人工复核,方向不确定；以三情景传播不确定性
+东南大学,2027,books_and_reexam_change,初试参考书更新且复试科目调整,2026-06-25,官方学院,minor,-4,0,5,0.20,0.58,0.22,https://stat.seu.edu.cn/2026/0625/c60842a573899/page.htm,已机器核验待人工复核,初试科目保持不变
+北京工业大学,2027,syllabus_change,432统计学考试大纲内容调整,2026-07-21,官方研招,moderate,-7,0,8,0.25,0.47,0.28,https://yanzhao.bjut.edu.cn/info/1025/18129.htm,已机器核验待人工复核,最终以正式招生目录与大纲为准
+中央民族大学,2027,persistent_duration_change,应用统计自2026级起由2年调整为3年,2025-07-01,官方研招,minor,-5,-2,1,0.25,0.60,0.15,https://grs.muc.edu.cn/info/1178/7274.htm,已机器核验待人工复核,持续性成本事件而非当年考纲事件

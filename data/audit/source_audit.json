@@ -1,0 +1,29 @@
+{
+  "source_file": "applied_statistics_985_211_2026_source.xlsx",
+  "school_count": 81,
+  "program_year_rows": 405,
+  "year_range": [
+    2022,
+    2026
+  ],
+  "unique_school_years": 405,
+  "duplicate_school_years": 0,
+  "cutoff_available": 370,
+  "cutoff_official_or_official_secondary": 46,
+  "admission_min_available": 295,
+  "admission_median_available": 186,
+  "q10_proxy_available": 295,
+  "q10_exact_available": 0,
+  "review_issue_count": 24,
+  "review_issue_types": {
+    "retest_ratio_mismatch": 6,
+    "admitted_min_below_selected_cutoff": 8,
+    "special_plan_exclusion_unclear": 10
+  },
+  "important_limitations": [
+    "The source workbook does not contain candidate-level Q10 values. Q10 is transparently estimated from minimum, median, and admitted count where available.",
+    "Historical realized admitted count is not identical to the plan known before registration and must not be used as a leakage-free current-year seat feature.",
+    "Rows marked third-party remain lower-weight observations pending official verification.",
+    "Multiple colleges or directions are aggregated conservatively at school level when the source workbook uses the highest ordinary full-time cutoff."
+  ]
+}
