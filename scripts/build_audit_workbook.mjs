@@ -121,7 +121,7 @@ const events = coerceColumns(await csvMatrix("data/processed/events_2027.csv"), 
 const forecastRaw = coerceColumns(await csvMatrix("data/processed/forecast_2027.csv"), [
   "latestCutoff", "latestQ10Proxy", "historyCount", "confidenceScore", "q05", "q10", "q20",
   "q50", "q80", "q90", "q95", "nationalLineMedian", "nationalLineQ90", "lagSurpriseZ",
-  "peerPressure", "sourceRow",
+  "peerPressure", "sourceRow", "latitude", "longitude", "officeHubLatitude", "officeHubLongitude",
 ], ["is985"]);
 const backtest = coerceColumns(await csvMatrix("data/processed/rolling_backtest.csv"), [
   "year", "actual", "pred_q50", "pred_q80", "pred_q90", "pred_q95", "complex_q50", "weight", "baseline",
@@ -131,8 +131,11 @@ const sourceAudit = JSON.parse(await fs.readFile(path.join(root, "data/audit/sou
 const nationalLines = JSON.parse(await fs.readFile(path.join(root, "data/processed/national_lines.json"), "utf8"));
 
 const forecastFields = [
-  "school", "is985", "zone", "unit", "latestCutoff", "latestQ10Proxy", "historyCount", "confidence",
-  "confidenceScore", "q50", "q80", "q90", "q95", "lagSurpriseZ", "peerPressure", "eventCoverage", "selectedModel",
+  "school", "faction", "is985", "zone", "unit", "q50", "q80", "q90", "q95", "confidence",
+  "confidenceScore", "latestCutoff", "latestQ10Proxy", "historyCount", "lagSurpriseZ", "peerPressure",
+  "locationMatchedName", "latitude", "longitude", "locationPrecision", "officeHub", "officeHubLatitude",
+  "officeHubLongitude", "transitMode", "transitLines", "transitReviewStatus", "liveRouteUrl",
+  "eventCoverage", "selectedModel", "factionSource",
 ];
 const forecast = pickColumns(forecastRaw, forecastFields);
 
@@ -186,6 +189,15 @@ styleBody(summary.getRange("D7:F9"), { wrap: true });
 summary.getRange("E7:E9").format.numberFormat = "#,##0";
 summary.getRange("D7:D9").format.font = { name: fontName, size: 9, color: COLORS.red };
 
+summary.getRange("D11:F11").values = [["地图与通勤", "覆盖", "状态"]];
+summary.getRange("D12:F13").values = [
+  ["培养校区坐标", sourceAudit.coordinate_coverage, "公开地图坐标，待逐校人工复核"],
+  ["办公区与公交参考", sourceAudit.commute_reference_coverage, "代表性节点与候选线路"],
+];
+styleHeader(summary.getRange("D11:F11"), COLORS.cyan);
+styleBody(summary.getRange("D12:F13"), { wrap: true });
+summary.getRange("E12:E13").format.numberFormat = "#,##0";
+
 summary.getRange("A15:B15").values = [["滚动回测（2024—2026）", "结果"]];
 summary.getRange("A16:A22").values = [["回测样本"], ["主预测加权MAE"], ["稳健边际分锚点MAE"], ["上一年锚点加权MAE"], ["复杂候选模型加权MAE"], ["低估率"], ["90%原始区间覆盖率"]];
 summary.getRange("B16:B22").formulas = [
@@ -214,17 +226,19 @@ styleBody(summary.getRange("D16:F18"), { wrap: true });
 summary.getRange("E16:E18").format.numberFormat = "0%";
 
 summary.getRange("A24:F24").values = [["关键限制", null, null, null, null, null]];
-summary.getRange("A25:F28").values = [
+summary.getRange("A25:F30").values = [
   ["原始表没有考生级精确P10。295条标签由最低分、中位数和录取人数透明估算。", null, null, null, null, null],
   ["370条复试线中，原表仅46条标记为官方来源；第三方记录已降权。", null, null, null, null, null],
   ["当年最终拟录取人数在报名时不可见，不能作为无泄漏的当年名额输入。", null, null, null, null, null],
   ["未发现事件不等于确认无事件。报名截止前仍需逐校核验招生简章和公告。", null, null, null, null, null],
+  ["五大派系来自原工作簿的机构分类，并非院校官方分类；3所未覆盖院校保留为待核实。", null, null, null, null, null],
+  ["办公集聚区是研究用代表性节点，通勤线路为候选方案；应使用实时规划链接核对。", null, null, null, null, null],
 ];
 styleHeader(summary.getRange("A24:F24"), COLORS.red);
-summary.getRange("A25:F28").format = { fill: COLORS.paleRed, font: { name: fontName, size: 9, color: COLORS.red }, wrapText: true, verticalAlignment: "center" };
-summary.getRange("A25:F28").format.rowHeight = 26;
+summary.getRange("A25:F30").format = { fill: COLORS.paleRed, font: { name: fontName, size: 9, color: COLORS.red }, wrapText: true, verticalAlignment: "center" };
+summary.getRange("A25:F30").format.rowHeight = 26;
 summary.mergeCells("A24:F24");
-for (const row of [25, 26, 27, 28]) summary.mergeCells(`A${row}:F${row}`);
+for (const row of [25, 26, 27, 28, 29, 30]) summary.mergeCells(`A${row}:F${row}`);
 
 summary.getRange("H6:I9").values = [
   ["问题类型", "数量"],
@@ -244,36 +258,66 @@ issueChart.yAxis = { numberFormatCode: "0", numberFormatSourceLinked: false, tex
 issueChart.setPosition("H11", "N25");
 if (issueChart.series.items[0]) issueChart.series.items[0].fill = COLORS.amber;
 
-summary.getRange("A1:N30").format.font = { name: fontName, size: 10, color: COLORS.text };
-summary.getRange("A1:A30").format.columnWidth = 28;
-summary.getRange("B1:B30").format.columnWidth = 13;
-summary.getRange("C1:C30").format.columnWidth = 3;
-summary.getRange("D1:D30").format.columnWidth = 34;
-summary.getRange("E1:E30").format.columnWidth = 11;
-summary.getRange("F1:F30").format.columnWidth = 35;
-summary.getRange("G1:G30").format.columnWidth = 3;
-summary.getRange("H1:H30").format.columnWidth = 24;
-summary.getRange("I1:I30").format.columnWidth = 10;
+summary.getRange("H27:I34").values = [
+  ["派系", "院校数"],
+  ["纯贾", sourceAudit.faction_counts["纯贾"]],
+  ["纯茆", sourceAudit.faction_counts["纯茆"]],
+  ["贾茆", sourceAudit.faction_counts["贾茆"]],
+  ["茆Pro", sourceAudit.faction_counts["茆Pro"]],
+  ["贾茆Pro", sourceAudit.faction_counts["贾茆Pro"]],
+  ["待核实", sourceAudit.faction_counts["待核实"]],
+  ["合计", sourceAudit.school_count],
+];
+styleHeader(summary.getRange("H27:I27"), COLORS.teal);
+styleBody(summary.getRange("H28:I34"));
+summary.getRange("I28:I34").format.numberFormat = "#,##0";
+
+summary.getRange("A1:N34").format.font = { name: fontName, size: 10, color: COLORS.text };
+summary.getRange("A1:A34").format.columnWidth = 28;
+summary.getRange("B1:B34").format.columnWidth = 13;
+summary.getRange("C1:C34").format.columnWidth = 3;
+summary.getRange("D1:D34").format.columnWidth = 34;
+summary.getRange("E1:E34").format.columnWidth = 11;
+summary.getRange("F1:F34").format.columnWidth = 35;
+summary.getRange("G1:G34").format.columnWidth = 3;
+summary.getRange("H1:H34").format.columnWidth = 24;
+summary.getRange("I1:I34").format.columnWidth = 10;
 
 // Forecast output
 predictionsSheet.getRangeByIndexes(0, 0, forecast.length, forecast[0].length).values = forecast;
-styleHeader(predictionsSheet.getRange(`A1:Q1`), COLORS.cyan);
-styleBody(predictionsSheet.getRange(`A2:Q${forecast.length}`));
-addTable(predictionsSheet, `A1:Q${forecast.length}`, "ForecastTable", "TableStyleMedium2");
+styleHeader(predictionsSheet.getRange(`A1:AD1`), COLORS.cyan);
+styleBody(predictionsSheet.getRange(`A2:AD${forecast.length}`));
+addTable(predictionsSheet, `A1:AD${forecast.length}`, "ForecastTable", "TableStyleMedium2");
 predictionsSheet.freezePanes.freezeRows(1);
-predictionsSheet.freezePanes.freezeColumns(1);
-predictionsSheet.getRange(`E2:M${forecast.length}`).format.numberFormat = "0.0";
-predictionsSheet.getRange(`G2:G${forecast.length}`).format.numberFormat = "0";
-predictionsSheet.getRange(`I2:I${forecast.length}`).format.numberFormat = "0";
-predictionsSheet.getRange(`N2:O${forecast.length}`).format.numberFormat = "0.00";
-predictionsSheet.getRange(`I2:I${forecast.length}`).conditionalFormats.add("colorScale", { colors: ["#FEE2E2", "#FEF3C7", "#DCFCE7"], thresholds: ["min", { type: "percentile", value: 50 }, "max"] });
-predictionsSheet.getRange(`L2:L${forecast.length}`).conditionalFormats.add("dataBar", { color: COLORS.cyan, thresholds: ["min", "max"], gradient: false });
+predictionsSheet.freezePanes.freezeColumns(2);
+predictionsSheet.getRange(`F2:I${forecast.length}`).format.numberFormat = "0.0";
+predictionsSheet.getRange(`K2:K${forecast.length}`).format.numberFormat = "0";
+predictionsSheet.getRange(`L2:M${forecast.length}`).format.numberFormat = "0.0";
+predictionsSheet.getRange(`N2:N${forecast.length}`).format.numberFormat = "0";
+predictionsSheet.getRange(`O2:P${forecast.length}`).format.numberFormat = "0.00";
+predictionsSheet.getRange(`R2:S${forecast.length}`).format.numberFormat = "0.00000";
+predictionsSheet.getRange(`V2:W${forecast.length}`).format.numberFormat = "0.00000";
+predictionsSheet.getRange(`K2:K${forecast.length}`).conditionalFormats.add("colorScale", { colors: ["#FEE2E2", "#FEF3C7", "#DCFCE7"], thresholds: ["min", { type: "percentile", value: 50 }, "max"] });
+predictionsSheet.getRange(`H2:H${forecast.length}`).conditionalFormats.add("dataBar", { color: COLORS.cyan, thresholds: ["min", "max"], gradient: false });
+for (const [label, fill, color] of [
+  ["纯贾", "#E0F2FE", "#075985"], ["纯茆", "#DCFCE7", "#166534"], ["贾茆", "#FEF3C7", "#92400E"],
+  ["茆Pro", "#EDE9FE", "#5B21B6"], ["贾茆Pro", "#FFEDD5", "#9A3412"], ["待核实", "#F1F5F9", "#475569"],
+]) predictionsSheet.getRange(`B2:B${forecast.length}`).conditionalFormats.addCustom(`=$B2="${label}"`, { fill, font: { color, bold: true } });
 predictionsSheet.getRange(`A1:A${forecast.length}`).format.columnWidth = 18;
-predictionsSheet.getRange(`B1:C${forecast.length}`).format.columnWidth = 8;
-predictionsSheet.getRange(`D1:D${forecast.length}`).format.columnWidth = 22;
-predictionsSheet.getRange(`E1:O${forecast.length}`).format.columnWidth = 12;
-predictionsSheet.getRange(`P1:P${forecast.length}`).format.columnWidth = 26;
-predictionsSheet.getRange(`Q1:Q${forecast.length}`).format.columnWidth = 34;
+predictionsSheet.getRange(`B1:B${forecast.length}`).format.columnWidth = 12;
+predictionsSheet.getRange(`C1:D${forecast.length}`).format.columnWidth = 8;
+predictionsSheet.getRange(`E1:E${forecast.length}`).format.columnWidth = 24;
+predictionsSheet.getRange(`F1:P${forecast.length}`).format.columnWidth = 12;
+predictionsSheet.getRange(`Q1:Q${forecast.length}`).format.columnWidth = 40;
+predictionsSheet.getRange(`R1:T${forecast.length}`).format.columnWidth = 14;
+predictionsSheet.getRange(`U1:U${forecast.length}`).format.columnWidth = 28;
+predictionsSheet.getRange(`V1:X${forecast.length}`).format.columnWidth = 14;
+predictionsSheet.getRange(`Y1:Y${forecast.length}`).format.columnWidth = 28;
+predictionsSheet.getRange(`Z1:Z${forecast.length}`).format.columnWidth = 26;
+predictionsSheet.getRange(`AA1:AA${forecast.length}`).format.columnWidth = 56;
+predictionsSheet.getRange(`AB1:AB${forecast.length}`).format.columnWidth = 26;
+predictionsSheet.getRange(`AC1:AC${forecast.length}`).format.columnWidth = 34;
+predictionsSheet.getRange(`AD1:AD${forecast.length}`).format.columnWidth = 28;
 
 // Review queue
 reviewSheet.getRangeByIndexes(0, 0, review.length, review[0].length).values = review;
@@ -382,6 +426,13 @@ styleTitle(dictionarySheet, "字段字典", "字段按观测时点、单位和�
 const dictionaryHeaders = ["数据表", "字段", "中文名", "类型", "单位/取值", "是否必填", "定义与口径", "缺失处理"];
 const dictionaryRows = [
   ["年度数据", "school", "学校", "文本", "教育部传统985/211校名", "是", "预测与审核的院校主键", "不得缺失"],
+  ["院校主表", "faction", "派系", "分类", "纯贾/纯茆/贾茆/茆Pro/贾茆Pro/待核实", "是", "原工作簿的机构课程结构分类，并非院校官方分类", "未覆盖时标为待核实"],
+  ["院校主表", "faction_source", "派系来源", "文本", "原表标签/填色/合并规则", "是", "记录派系判定来自文字、填色或合并校区规则", "不得用猜测补齐"],
+  ["院校主表", "latitude/longitude", "培养校区坐标", "数值", "WGS84十进制度", "是", "按当前应用统计培养单位所在主要校区定位", "公开地图匹配后待人工复核"],
+  ["院校主表", "location_precision", "坐标精度", "分类", "campus/campus_area/campus_entrance", "是", "区分校区面、校区片区和校门点位", "缺失则不在地图显示"],
+  ["通勤参考", "office_hub", "代表性办公集聚区", "文本", "研究用节点", "是", "用于比较学校与本市代表性公司办公区的空间关系，不等同就业排名", "待人工复核"],
+  ["通勤参考", "transit_lines", "候选公共交通线路", "文本", "地铁/轨道/公交线路", "是", "静态候选方案，便于初筛通勤结构", "必须通过实时规划复核"],
+  ["通勤参考", "live_route_url", "实时公交规划", "URL", "高德地图URI API", "是", "按校区和办公区坐标打开当前公交规划", "路网变化由地图平台实时处理"],
   ["年度数据", "year", "招生年份", "整数", "YYYY", "是", "该年报名并参加初试的招生年度", "不得缺失"],
   ["年度数据", "national_zone", "国家线分区", "分类", "A/B", "是", "按学校所在地确定的国家线分区", "不得缺失"],
   ["年度数据", "national_line", "经管类国家线", "数值", "总分", "是", "对应年度、分区的经济学门类国家线", "官方来源优先"],
@@ -465,7 +516,7 @@ workbook.recalculate();
 
 const summaryCheck = await workbook.inspect({
   kind: "table",
-  range: "审计总览!A1:N28",
+  range: "审计总览!A1:N34",
   include: "values,formulas",
   tableMaxRows: 30,
   tableMaxCols: 14,
@@ -482,8 +533,8 @@ const errorCheck = await workbook.inspect({
 console.log(errorCheck.ndjson);
 
 const previews = [
-  ["审计总览", "A1:N28"],
-  ["预测结果", "A1:Q20"],
+  ["审计总览", "A1:N34"],
+  ["预测结果", "A1:AD20"],
   ["复核队列", "A1:G25"],
   ["年度数据模板", "A1:Q24"],
   ["事件模板", "A1:P18"],

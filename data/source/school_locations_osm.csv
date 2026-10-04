@@ -1,0 +1,82 @@
+﻿school,campus_label,latitude,longitude,matched_name,query,precision,source,source_url,review_status
+南京大学,江苏南京栖霞区仙林校区,32.1197390,118.9509277,"南京大学(仙林校区), 163, 仙林大道, 仙林街道, 栖霞区, 南京市, 江苏省, 210023, 中国",南京大学 仙林校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/89910837,机器匹配待人工复核
+华东师范大学,上海闵行区闵行校区,31.0321310,121.4473662,"华东师范大学（闵行校区）, 虹梅南路, 英武, 吴泾镇, 闵行区, 上海市, 200240, 中国",华东师范大学 闵行校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/293438840,机器匹配待人工复核
+上海交通大学,上海闵行区闵行校区,31.0275548,121.4323084,"上海交通大学（闵行校区）, 景谷东路, 江川路街道, 闵行区, 上海市, 200240, 中国",上海交通大学 闵行校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/288249651,机器匹配待人工复核
+中国科学技术大学,安徽合肥包河区东校区,31.8390720,117.2642075,"中国科学技术大学（东校区）, 96, 金寨路, 太湖新村, 小朱庄, 芜湖路街道, 包河区, 合肥市, 安徽省, 230026, 中国",中国科学技术大学 东校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/262614785,机器匹配待人工复核
+四川大学,四川成都武侯区望江校区,30.6335392,104.0815556,"四川大学（望江校区）, 郭家桥北街, 望江路街道, 武侯区, 成都市, 四川省, 610061, 中国",四川大学 望江校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/299440043,机器匹配待人工复核
+复旦大学,数学科学学院/大数据学院：邯郸校区（上海市杨浦区邯郸路220号）；上海数学中心：江湾校区（上海市杨浦区淞沪路2005号）；上海数学与交叉学科研究院：上海市杨浦区淞沪路657号,31.3011748,121.4974703,"复旦大学, 220, 邯郸路, 五角场, 五角场街道, 杨浦区, 上海市, 200433, 中国",复旦大学 邯郸校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/3936746,机器匹配待人工复核
+东南大学,江苏南京江宁区九龙湖校区,31.8891787,118.8156070,"东南大学(九龙湖校区), 文心街, 秣陵街道, 江宁区, 南京市, 江苏省, 211102, 中国",东南大学 九龙湖校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/171389014,机器匹配待人工复核
+清华大学,北京海淀区清华园,39.9980752,116.3237942,"清华大学经济管理学院, 法图东侧下沉广场, 三旗, 清华园街道, 海淀区, 北京市, 100084, 中国",清华大学 清华园,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/937482182,机器匹配待人工复核
+华中科技大学,湖北武汉洪山区主校区,30.5202172,114.4118463,"华中科技大学, 1037号, 珞喻路, 光谷社区, 关东街道, 东湖新技术开发区, 洪山区, 武汉市, 湖北省, 430074, 中国",华中科技大学 主校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/10717498,机器匹配待人工复核
+北京师范大学,广东珠海香洲区（培养地点明确为珠海）,22.3525551,113.5322245,"北京师范大学(珠海校区), 18, 金凤路, 唐家湾镇, 香洲区, 珠海市, 广东省, 519087, 中国",北京师范大学 珠海校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/9227472,机器匹配待人工复核
+吉林大学,吉林长春朝阳区前卫南区,43.8206879,125.2711103,"吉林大学（前卫南区）, 2699, 前进大街, 科苑社区, 双德街道, 长春高新技术产业开发区, 朝阳区, 长春市, 绿园区, 吉林省, 130012, 中国",吉林大学 前卫南区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/298032902,机器匹配待人工复核
+兰州大学,甘肃兰州城关区一分部,36.0466460,103.8611840,兰州大学城关校区东区（一分部），甘肃省兰州市城关区天水南路222号,兰州大学 一分部,campus_area,OpenStreetMap campus-area match,https://www.openstreetmap.org/way/303425302,机器匹配待人工复核
+西安交通大学,陕西西安碑林区兴庆校区；雁塔区财经校区,34.2476753,108.9789725,"西安交通大学兴庆校区, 28, 咸宁西路, 曹家巷社区, 东关南街街道, 碑林区, 西安市, 陕西省, 710049, 中国",西安交通大学 兴庆校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/17568632,机器匹配待人工复核
+中南大学,湖南长沙岳麓区校本部,28.1692907,112.9285200,中南大学校本部，湖南省长沙市岳麓区,中南大学 校本部,campus_area,OpenStreetMap campus-area match,https://www.openstreetmap.org/way/644418434,机器匹配待人工复核
+重庆大学,重庆沙坪坝区A校区,29.5699522,106.4596103,重庆大学A区，重庆市沙坪坝区沙坪坝正街174号,重庆大学 A区,campus_entrance,OpenStreetMap campus entrance,https://www.openstreetmap.org/node/10180144507,机器匹配待人工复核
+西北工业大学,陕西西安长安区长安校区,34.0296926,108.7598012,"西北工业大学(长安校区), 银河路, 长安区, 西安市, 陕西省, 710072, 中国",西北工业大学 长安校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/273391732,机器匹配待人工复核
+大连理工大学,辽宁大连甘井子区凌水校区,38.8812564,121.5201600,"大连理工大学, 2号, 五一路, 黑石礁街道, 杨树沟, 沙河口区, 甘井子区, 大连市, 辽宁省, 116024, 中国",大连理工大学 凌水校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/443031231,机器匹配待人工复核
+东北大学,辽宁沈阳和平区；河北秦皇岛海港区；广东佛山南海区,41.7634632,123.4117577,"东北大学, 11号, 文体西路, 南湖街道, 和平区, 沈阳市, 辽宁省, 110819, 中国",东北大学 沈阳 南湖校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/53573481,机器匹配待人工复核
+中国人民大学,北京海淀区（明德主楼）；两院均在中关村校区,39.9695397,116.3071291,"中国人民大学, 59号, 中关村大街, 友谊社区, 海淀南路北社区, 海淀街道, 海淀区, 北京市, 100872, 中国",中国人民大学 中关村校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/30725330,机器匹配待人工复核
+哈尔滨工业大学,黑龙江哈尔滨南岗区；江苏苏州吴江区,45.7415890,126.6255626,哈尔滨工业大学校本部，黑龙江省哈尔滨市南岗区西大直街92号,哈尔滨工业大学 哈尔滨校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/13053921,机器匹配待人工复核
+合肥工业大学,安徽合肥包河区屯溪路校区,31.8467178,117.2905698,"合肥工业大学（屯溪路校区）, 193号, 南一环路, 航运南村, 包公街道, 包河区, 合肥市, 安徽省, 230009, 中国",合肥工业大学 屯溪路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/324749077,机器匹配待人工复核
+中山大学,广东广州海珠区；广东珠海香洲区,23.0996034,113.2923509,"中山大学(广州校区南校园), 135, 新港西路, 新港街道, 海珠区, 广州市, 广东省, 510275, 中国",中山大学 广州校区南校园,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/300917756,机器匹配待人工复核
+厦门大学,福建厦门思明区思明校区,24.4399419,118.0930178,厦门大学思明校区，福建省厦门市思明区思明南路422号,厦门大学 思明校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/154986493,机器匹配待人工复核
+山东大学,山东济南历城区；山东威海环翠区（部分方向）,36.6762518,117.0538936,"山东大学(中心校区), 明德大道, 山大路街道, 历城区, 济南市, 山东省, 250100, 中国",山东大学 中心校区 济南,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/31734968,机器匹配待人工复核
+武汉大学,湖北武汉武昌区珞珈山校区,30.5373773,114.3615350,武汉大学珞珈山校区，湖北省武汉市武昌区八一路299号,武汉大学 珞珈山,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/10717504,机器匹配待人工复核
+太原理工大学,山西太原万柏林区迎西校区,37.8610470,112.5158226,"太原理工大学（迎西校区）, 瓦窑街, 千峰街道, 万柏林区, 太原市, 山西省, 030024, 中国",太原理工大学 迎西校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/182055471,机器匹配待人工复核
+上海财经大学,上海杨浦区国定路校区,31.3068662,121.4943346,"上海财经大学, 上海财经大学武川路地下人行通道, 五角场街道, 杨浦区, 上海市, 200433, 中国",上海财经大学 国定路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/68741490,机器匹配待人工复核
+西南财经大学,四川成都温江区柳林校区,30.6834841,103.8200878,"西南财经大学, 柳浪湾北二巷, 柳浪湾, 柳城街道, 温江区, 成都市, 四川省, 611130, 中国",西南财经大学 柳林校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/443825467,机器匹配待人工复核
+中央财经大学,北京海淀区学院南路；北京昌平区沙河校区,39.9581476,116.3362796,中央财经大学学院南路校区，北京市海淀区学院南路39号,中央财经大学 学院南路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/248393687,机器匹配待人工复核
+湖南大学,湖南长沙岳麓区财院校区,28.2018758,112.9255484,"湖南大学(财院校区), 月湖路, 西湖街道, 岳麓区, 湘江新区, 岳麓区, 长沙市, 湖南省, 410006, 中国",湖南大学 财院校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/644418501,机器匹配待人工复核
+对外经济贸易大学,北京朝阳区惠新东街校区,39.9775980,116.4215242,"对外经济贸易大学, 惠新东街, 小关街道, 朝阳区, 北京市, 100029, 中国",对外经济贸易大学 惠新东街,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/412468627,机器匹配待人工复核
+同济大学,上海杨浦区四平路校区,31.2834256,121.4969124,"同济大学医学楼, 爱校路(樱花大道), 鞍山, 四平路街道, 杨浦区, 上海市, 200092, 中国",同济大学 四平路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/184542420,机器匹配待人工复核
+中南财经政法大学,湖北武汉江夏区南湖校区,30.4764327,114.3801735,"中南财经政法大学（南湖校区）, 182, 梓年路, 清水源社区, 关东街道, 东湖新技术开发区, 洪山区, 武汉市, 湖北省, 430223, 中国",中南财经政法大学 南湖校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/11697627,机器匹配待人工复核
+国防科技大学,湖南长沙开福区三号院,28.2596800,113.0425000,国防科技大学三号院，湖南省长沙市开福区福元路1号,国防科技大学 三号院 长沙,campus,OpenStreetMap campus,https://www.openstreetmap.org/way/1301509862,机器匹配待人工复核
+西安电子科技大学,陕西西安长安区南校区,34.1251589,108.8289653,"西安电子科技大学南校区, 266号, 梧桐大道, 家属区, 兴隆街道, 长安区, 西安市, 陕西省, 710126, 中国",西安电子科技大学 南校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/287806713,机器匹配待人工复核
+南京航空航天大学,江苏南京江宁区将军路校区,31.9402131,118.7873810,"南京航空航天大学(将军路校区), 南京机场高速, 秣陵街道, 江宁区, 南京市, 江苏省, 211102, 中国",南京航空航天大学 将军路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/92364704,机器匹配待人工复核
+南京理工大学,江苏南京玄武区孝陵卫校区,32.0318260,118.8521427,"南京理工大学, 东胜巷, 孝陵卫街道, 玄武区, 南京市, 江苏省, 210095, 中国",南京理工大学 孝陵卫校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/2196059,机器匹配待人工复核
+中国海洋大学,山东青岛崂山区鱼山/崂山校区,36.1614396,120.4935835,"中国海洋大学(崂山校区), 238, 松岭路, 沙子口街道, 崂山区, 青岛市, 山东省, 266100, 中国",中国海洋大学 崂山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/8632624,机器匹配待人工复核
+暨南大学,广东广州天河区石牌校区,23.1334847,113.3428181,"暨南大学(石牌校区), 601, 黄埔大道西, 石牌街道, 天河区, 广州市, 广东省, 510620, 中国",暨南大学 石牌校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/360056995,机器匹配待人工复核
+北京交通大学,北京海淀区上园村校区,39.9501000,116.3371000,北京交通大学校本部，北京市海淀区上园村3号,北京交通大学 上园村,campus_area,OpenStreetMap campus-area match,https://www.openstreetmap.org/node/2108372992,机器匹配待人工复核
+华东理工大学,上海徐汇区梅陇校区；奉贤区海湾校区,31.1450814,121.4195085,"华东理工大学, 老沪闵路, 凌云路街道, 徐汇区, 上海市, 200237, 中国",华东理工大学 徐汇校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/70990157,机器匹配待人工复核
+上海大学,上海宝山区宝山校区,31.3159206,121.3880243,"上海大学（宝山校区）, 南外环路, 祁连, 大场镇, 宝山区, 上海市, 200444, 中国",上海大学 宝山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/13058054,机器匹配待人工复核
+苏州大学,江苏苏州姑苏区天赐庄校区,31.3047627,120.6463631,"苏州大学（天赐庄校区东区）, 50, 东环路, 团结社区, 娄葑街道, 苏州工业园区, 苏州市, 江苏省, 215006, 中国",苏州大学 天赐庄校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/513301275,机器匹配待人工复核
+河海大学,江苏南京江宁区江宁校区,31.9164367,118.7810077,"河海大学(江宁校区), 8, 佛城西路, 秣陵街道, 江宁区, 南京市, 江苏省, 211100, 中国",河海大学 江宁校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/92364518,机器匹配待人工复核
+武汉理工大学,湖北武汉洪山区马房山校区；襄阳专项,30.5217340,114.3506960,武汉理工大学马房山校区西院，湖北省武汉市洪山区珞狮路122号,武汉理工大学 马房山校区,campus_entrance,高德地图公开地点页,https://ditu.amap.com/place/B001B0IYJV,机器匹配待人工复核
+东北师范大学,吉林长春南关区净月校区,43.8245708,125.4207774,"东北师范大学（净月大街校区）, 2555, 净月大街, 净月街道, 长春净月高新技术产业开发区, 南关区, 长春市, 南关区, 吉林省, 130117, 中国",东北师范大学 净月校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/299869812,机器匹配待人工复核
+东华大学,上海松江区松江校区,31.0572856,121.2111004,"东华大学（松江校区）, 2999, 人民北路, 广富林街道, 松江区, 上海市, 201620, 中国",东华大学 松江校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/257578765,机器匹配待人工复核
+北京工业大学,北京朝阳区平乐园校区,39.8739144,116.4772024,"北京工业大学, 双龙路辅路, 南磨房乡, 朝阳区, 北京市, 100122, 中国",北京工业大学 平乐园校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/33617299,机器匹配待人工复核
+郑州大学,河南郑州中原区主校区,34.8088168,113.5352664,郑州大学主校区，河南省郑州市科学大道100号,郑州大学 主校区,campus_entrance,OpenStreetMap campus entrance,https://www.openstreetmap.org/node/4608190663,机器匹配待人工复核
+华南师范大学,广东广州天河区石牌校区,23.1414397,113.3467405,"华南师范大学(广州校区石牌校园), 中山大道西, 石牌街道, 天河区, 广州市, 广东省, 510635, 中国",华南师范大学 石牌校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/370947228,机器匹配待人工复核
+华中师范大学,湖北武汉洪山区桂子山校区,30.5204338,114.3563008,"华中师范大学, 152, 珞喻路, 珞南街道, 洪山区, 武汉市, 湖北省, 430079, 中国",华中师范大学 桂子山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/20383289,机器匹配待人工复核
+西南交通大学,四川成都郫都区犀浦校区,30.7660599,103.9844831,"西南交通大学（犀浦校区）, 锦宁巷, 犀浦街道, 郫都区, 成都市, 四川省, 610010, 中国",西南交通大学 犀浦校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/207566638,机器匹配待人工复核
+西北大学,陕西西安长安区长安校区,34.1454500,108.8699205,"西北大学长安校区, 1, 北门路, 郭杜街道, 长安区, 西安市, 陕西省, 710127, 中国",西北大学 长安校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/275396172,机器匹配待人工复核
+中国石油大学（北京）,北京昌平区；新疆克拉玛依市克拉玛依区,40.2182737,116.2413961,"中国石油大学（北京）, 18, 府学路, 燕平路社区, 城北街道, 昌平区, 北京市, 102249, 中国",中国石油大学 北京 昌平校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/13644491,机器匹配待人工复核
+华北电力大学,北京昌平区回龙观；河北保定莲池区,40.0881244,116.3035388,华北电力大学北京校部，北京市昌平区北农路2号,华北电力大学 北京校部,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/48049618,机器匹配待人工复核
+南京师范大学,江苏南京栖霞区仙林校区,32.1072982,118.9046537,"南京师范大学(仙林校区), 1号, 文苑路, 仙林大学城, 仙林街道, 栖霞区, 南京市, 江苏省, 210023, 中国",南京师范大学 仙林校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/9356340,机器匹配待人工复核
+中国石油大学（华东）,山东青岛黄岛区唐岛湾校区,35.9430351,120.1698165,"中国石油大学（华东）(唐岛湾校区), 66, 长江西路, 莲花山社区, 长江路街道, 青岛西海岸新区, 黄岛区, 青岛市, 山东省, 266580, 中国",中国石油大学 华东 唐岛湾校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/222840628,机器匹配待人工复核
+中国地质大学（武汉）,湖北武汉洪山区南望山校区,30.5253223,114.3938141,"中国地质大学（武汉）, 388号, 鲁磨路, 关东街道, 关山街道, 洪山区, 武汉市, 湖北省, 430074, 中国",中国地质大学 武汉 南望山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/10790904,机器匹配待人工复核
+中国地质大学（北京）,北京海淀区学院路校区,39.9886573,116.3406423,"中国地质大学（北京）, 29, 学院路, 学院路街道, 海淀区, 北京市, 100083, 中国",中国地质大学 北京 学院路,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/245164271,机器匹配待人工复核
+福州大学,福建福州闽侯县旗山校区,26.0614068,119.1933416,"福州大学旗山校区, 西环路, 闽侯县, 福州市, 福建省, 350100, 中国",福州大学 旗山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/12658065,机器匹配待人工复核
+西南大学,重庆北碚区北碚校区,29.8232372,106.4195884,西南大学北碚校区，重庆市北碚区天生路2号,西南大学 北碚校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/413071891,机器匹配待人工复核
+陕西师范大学,陕西西安长安区长安校区,34.1552786,108.8866313,"陕西师范大学（长安校区）, 620, 西长安街, 郭杜街道, 长安区, 西安市, 陕西省, 710119, 中国",陕西师范大学 长安校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/246285589,机器匹配待人工复核
+中央民族大学,北京海淀区中关村南大街校区,39.9496858,116.3148443,"中央民族大学, 中关村南大街, 紫竹院街道, 海淀区, 北京市, 100081, 中国",中央民族大学 中关村校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/365025448,机器匹配待人工复核
+辽宁大学,辽宁沈阳皇姑区崇山校区；沈北新区蒲河校区,41.8314278,123.4007626,"辽宁大学（崇山校区）, 66号, 崇山中路, 新乐街道, 皇姑区, 沈阳市, 辽宁省, 110036, 中国",辽宁大学 崇山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/368463199,机器匹配待人工复核
+湖南师范大学,湖南长沙岳麓区二里半校区,28.1909652,112.9450813,"湖南师范大学, 麓山路, 石门楼社区, 桔子洲街道, 岳麓区, 湘江新区, 岳麓区, 长沙市, 湖南省, 410006, 中国",湖南师范大学 二里半校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/486904541,机器匹配待人工复核
+北京林业大学,北京海淀区清华东路校区,40.0028750,116.3354804,"北京林业大学, 清华东路, 学院路街道, 海淀区, 北京市, 100083, 中国",北京林业大学 清华东路,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/412323504,机器匹配待人工复核
+河北工业大学,天津北辰区北辰校区,39.2367294,117.0526402,"河北工业大学（北辰校区）, 自强道, 河北工业大学教师公寓, 双口镇, 北辰区, 天津市, 中国",河北工业大学 北辰校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/517503748,机器匹配待人工复核
+中国药科大学,江苏南京江宁区江宁校区,31.9041707,118.9128238,"中国药科大学(江宁校区), 639, 龙眠大道, 淳化街道, 江宁区, 南京市, 江苏省, 211198, 中国",中国药科大学 江宁校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/92626954,机器匹配待人工复核
+南昌大学,江西南昌红谷滩区前湖校区,28.6572190,115.7931408,南昌大学前湖校区，江西省南昌市红谷滩区学府大道999号,南昌大学 前湖校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/223390772,机器匹配待人工复核
+华中农业大学,湖北武汉洪山区狮子山校区,30.4739905,114.3483980,"华中农业大学, 1, 狮子山大道, 狮子山街道, 洪山区, 武汉市, 湖北省, 430070, 中国",华中农业大学 狮子山,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/10811687,机器匹配待人工复核
+安徽大学,安徽合肥蜀山区磬苑校区,31.7692436,117.1781285,"安徽大学(磬苑校区), 111, 九龙路, 九龙居民委员会, 芙蓉社区, 合肥经济技术开发区, 蜀山区, 合肥市, 安徽省, 230601, 中国",安徽大学 磬苑校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/20701346,机器匹配待人工复核
+南京农业大学,江苏南京玄武区卫岗校区,32.0357088,118.8389780,"南京农业大学(卫岗校区), 1, 钟山路, 孝陵卫街道, 玄武区, 南京市, 江苏省, 210095, 中国",南京农业大学 卫岗校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/590891898,机器匹配待人工复核
+东北农业大学,黑龙江哈尔滨香坊区,45.7421537,126.7232750,"东北农业大学, 木材东街, 铁东街道, 香坊区, 哈尔滨市, 香坊区, 黑龙江省, 150000, 中国",东北农业大学 香坊区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/573792237,机器匹配待人工复核
+东北林业大学,黑龙江哈尔滨香坊区,45.7186275,126.6287385,"东北林业大学, 桃李桥, 文政街道, 香坊区, 哈尔滨市, 香坊区, 黑龙江省, 150000, 中国",东北林业大学 香坊区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/316890410,机器匹配待人工复核
+延边大学,吉林延边州延吉市,42.9100364,129.4809001,"延边大学(延吉校区), 977, 公园路, 园艺社区, 公园街道, 延吉市, 延边朝鲜族自治州, 吉林省, 133002, 中国",延边大学 延吉,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/248259366,机器匹配待人工复核
+云南大学,云南昆明呈贡区呈贡校区,24.8297177,102.8511808,"云南大学（呈贡校区）, 兴园路, 吴家营街道, 呈贡区, 昆明市, 云南省, 中国",云南大学 呈贡校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/287663050,机器匹配待人工复核
+贵州大学,贵州贵阳花溪区西校区,26.4495922,106.6540260,贵州大学西校区，贵州省贵阳市花溪区甲秀南路,贵州大学 西校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/12845727,机器匹配待人工复核
+内蒙古大学,内蒙古呼和浩特赛罕区,40.8087054,111.6837240,内蒙古大学北校区，内蒙古自治区呼和浩特市赛罕区大学西街235号,内蒙古大学 赛罕区,campus_entrance,OpenStreetMap campus entrance,https://www.openstreetmap.org/node/13108698977,机器匹配待人工复核
+新疆大学,新疆乌鲁木齐水磨沟区博达校区,43.8467785,87.7366251,"新疆大学（博达校区）, 777号, 华瑞街, 水磨沟街道, 水磨沟区, 乌鲁木齐市, 新疆维吾尔自治区, 830046, 中国",新疆大学 博达校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/923019317,机器匹配待人工复核
+宁夏大学,宁夏银川西夏区贺兰山校区,38.5024320,106.1280100,"宁夏大学(文萃校区), 539, 贺兰山西路, 怀远路街道, 西夏区, 银川市, 宁夏回族自治区, 750021, 中国",宁夏大学 贺兰山校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/way/1334170719,机器匹配待人工复核
+石河子大学,新疆石河子市北四路校区,44.3079869,86.0549057,"石河子大学, 北四路, 向阳街道, 兵团一五二团, 石河子市, 第八师, 新疆维吾尔自治区, 832000, 中国",石河子大学 北四路校区,campus,OpenStreetMap Nominatim,https://www.openstreetmap.org/relation/3432003,机器匹配待人工复核

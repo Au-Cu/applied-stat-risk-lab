@@ -14,6 +14,7 @@ import {
   GitBranch,
   Info,
   Layers3,
+  MapPinned,
   Network,
   Search,
   ShieldCheck,
@@ -27,6 +28,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SchoolCoordinateMap } from "@/components/school-coordinate-map";
 import forecastData from "./data/forecast.json";
 
 type EventScenario = {
@@ -42,10 +44,30 @@ type Prediction = {
   school: string;
   is985: boolean;
   zone: string;
+  faction: string;
+  factionSource: string;
   unit: string | null;
   english: string | null;
   math: string | null;
   location: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  locationMatchedName: string | null;
+  locationPrecision: string | null;
+  locationSource: string | null;
+  locationSourceUrl: string | null;
+  locationReviewStatus: string | null;
+  officeHub: string | null;
+  officeHubLatitude: number | null;
+  officeHubLongitude: number | null;
+  officeHubDefinition: string | null;
+  officeHubReviewStatus: string | null;
+  transitMode: string | null;
+  transitLines: string | null;
+  transitSummary: string | null;
+  transitReviewStatus: string | null;
+  liveRouteUrl: string | null;
+  routeSource: string | null;
   latestCutoff: number | null;
   latestQ10Proxy: number | null;
   historyCount: number;
@@ -70,6 +92,18 @@ type Prediction = {
 
 const predictions = forecastData.predictions as Prediction[];
 const meta = forecastData.meta;
+
+const factionOptions = ["纯贾", "纯茆", "贾茆", "茆Pro", "贾茆Pro", "待核实"];
+
+function factionTone(value: string) {
+  return {
+    "纯贾": "pure-jia",
+    "纯茆": "pure-mao",
+    "贾茆": "jia-mao",
+    "茆Pro": "mao-pro",
+    "贾茆Pro": "jia-mao-pro",
+  }[value] ?? "pending";
+}
 
 const pipelineSteps = [
   {
@@ -251,6 +285,7 @@ export default function Home() {
   const [score, setScore] = useState(390);
   const [query, setQuery] = useState("");
   const [tier, setTier] = useState("all");
+  const [faction, setFaction] = useState("all");
   const [sortBy, setSortBy] = useState("q90");
   const [pipelineStepId, setPipelineStepId] = useState<(typeof pipelineSteps)[number]["id"]>("collect");
   const defaultSchool = predictions.find((item) => item.school === "华东师范大学")?.school ?? predictions[0].school;
@@ -261,13 +296,14 @@ export default function Home() {
     return predictions
       .filter((item) => !normalized || item.school.toLowerCase().includes(normalized) || item.location?.toLowerCase().includes(normalized))
       .filter((item) => tier === "all" || (tier === "985" ? item.is985 : !item.is985))
+      .filter((item) => faction === "all" || item.faction === faction)
       .map((item) => ({ ...item, probability: probabilityAtScore(item, score) }))
       .sort((a, b) => {
         if (sortBy === "probability") return b.probability - a.probability;
         if (sortBy === "confidence") return b.confidenceScore - a.confidenceScore;
         return a.q90 - b.q90;
       });
-  }, [query, score, sortBy, tier]);
+  }, [faction, query, score, sortBy, tier]);
 
   const selected = predictions.find((item) => item.school === selectedSchool) ?? rows[0] ?? predictions[0];
   const selectedProbability = probabilityAtScore(selected, score);
@@ -311,15 +347,16 @@ export default function Home() {
         </div>
       </section>
 
-      <Tabs defaultValue="map" className="workspace-tabs">
+      <Tabs defaultValue="ranking" className="workspace-tabs">
         <TabsList variant="line" className="main-tabs">
-          <TabsTrigger value="map">择校地图</TabsTrigger>
+          <TabsTrigger value="ranking">风险排名</TabsTrigger>
+          <TabsTrigger value="map">院校地图</TabsTrigger>
           <TabsTrigger value="backtest">回测与可信度</TabsTrigger>
           <TabsTrigger value="audit">数据审计</TabsTrigger>
           <TabsTrigger value="method">全流程与优化</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="map" className="tab-panel">
+        <TabsContent value="ranking" className="tab-panel">
           <div className="main-grid">
             <section className="ranking-panel panel">
               <div className="panel-head">
@@ -329,6 +366,7 @@ export default function Home() {
               <div className="filter-row">
                 <div className="search-box"><Search size={15} /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索学校或城市" /></div>
                 <select value={tier} onChange={(event) => setTier(event.target.value)} aria-label="院校层次"><option value="all">全部层次</option><option value="985">985</option><option value="211">非985的211</option></select>
+                <select value={faction} onChange={(event) => setFaction(event.target.value)} aria-label="院校派系"><option value="all">全部派系</option>{factionOptions.map((item) => <option value={item} key={item}>{item}</option>)}</select>
                 <select value={sortBy} onChange={(event) => setSortBy(event.target.value)} aria-label="排序方式"><option value="q90">按稳妥线</option><option value="probability">按把握度</option><option value="confidence">按数据可信度</option></select>
               </div>
 
@@ -340,7 +378,7 @@ export default function Home() {
                       const risk = riskLabel(item.probability);
                       return (
                         <tr key={item.school} data-active={item.school === selected.school} onClick={() => setSelectedSchool(item.school)}>
-                          <td><strong>{item.school}</strong><span>{item.is985 ? "985" : "211"} · {item.zone}区 · {item.confidence}可信</span></td>
+                          <td><strong>{item.school}</strong><span className={`faction-badge ${factionTone(item.faction)}`}>{item.faction}</span><span>{item.is985 ? "985" : "211"} · {item.zone}区 · {item.confidence}可信</span></td>
                           <td className="mono">{Math.round(item.q50)}</td>
                           <td className="mono emphasis">{Math.round(item.q90)}</td>
                           <td><div className="prob-cell"><span>{Math.round(item.probability * 100)}%</span><Progress value={item.probability * 100} /></div></td>
@@ -356,7 +394,7 @@ export default function Home() {
 
             <aside className="detail-panel panel">
               <div className="detail-title">
-                <div><span className="eyebrow">SELECTED SCHOOL</span><h2>{selected.school}</h2><p>{selected.unit ?? "培养单位待核验"} · {selected.math ?? "数学科目待核验"}</p></div>
+                <div><span className="eyebrow">SELECTED SCHOOL</span><h2>{selected.school}</h2><p>{selected.unit ?? "培养单位待核验"} · {selected.math ?? "数学科目待核验"}</p><span className={`faction-badge detail-faction ${factionTone(selected.faction)}`}>{selected.faction}</span></div>
                 <span className={`risk-orb ${selectedRisk.tone}`}><strong>{selectedRisk.label}</strong><small>{Math.round(selectedProbability * 100)}%</small></span>
               </div>
 
@@ -394,6 +432,20 @@ export default function Home() {
           </div>
         </TabsContent>
 
+        <TabsContent value="map" className="tab-panel">
+          <section className="wide-panel panel map-panel-shell">
+            <div className="panel-head"><div><span className="eyebrow">CAMPUS · OFFICE · COMMUTE</span><h2>校区、办公集聚区与公共交通</h2></div><MapPinned size={28} /></div>
+            <p className="map-intro">81 所学校均配置培养校区点位。办公集聚区是研究用代表性节点；候选线路必须在出发前通过实时规划复核。</p>
+            <div className="filter-row map-filter-row">
+              <div className="search-box"><Search size={15} /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索学校或城市" /></div>
+              <select value={tier} onChange={(event) => setTier(event.target.value)} aria-label="地图院校层次"><option value="all">全部层次</option><option value="985">985</option><option value="211">非985的211</option></select>
+              <select value={faction} onChange={(event) => setFaction(event.target.value)} aria-label="地图院校派系"><option value="all">全部派系</option>{factionOptions.map((item) => <option value={item} key={item}>{item}</option>)}</select>
+              <span className="row-count map-row-count">{rows.length} / {predictions.length} 所</span>
+            </div>
+            <SchoolCoordinateMap items={rows} selectedSchool={selected.school} onSelect={setSelectedSchool} />
+          </section>
+        </TabsContent>
+
         <TabsContent value="backtest" className="tab-panel">
           <section className="wide-panel panel">
             <div className="panel-head"><div><span className="eyebrow">ROLLING ORIGIN · 2024—2026</span><h2>稳健历史锚点胜出，复杂模型继续负责尾部与解释</h2></div><BookOpenCheck size={28} /></div>
@@ -415,7 +467,7 @@ export default function Home() {
         <TabsContent value="audit" className="tab-panel">
           <section className="wide-panel panel">
             <div className="panel-head"><div><span className="eyebrow">DATA PROVENANCE</span><h2>先区分“有数据”和“可用于决策的数据”</h2></div><Database size={28} /></div>
-            <div className="metric-row"><Metric label="覆盖院校" value="81 所" note="传统985/211口径" /><Metric label="院校年度记录" value="405 条" note="2022—2026" /><Metric label="可训练标签" value="295 条" note="全部为P10代理" /><Metric label="待人工复核" value="24 条" note="已进入审计队列" /></div>
+            <div className="metric-row"><Metric label="覆盖院校" value="81 所" note="传统985/211口径" /><Metric label="校区坐标" value="81 所" note="全部待人工复核" /><Metric label="可训练标签" value="295 条" note="全部为P10代理" /><Metric label="待人工复核" value="24 条" note="模型数据审计队列" /></div>
             <div className="audit-layout">
               <div>
                 <h3>关键审核结论</h3>

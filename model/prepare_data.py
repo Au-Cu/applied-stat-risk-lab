@@ -13,8 +13,18 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "source" / "applied_statistics_985_211_2026_source.xlsx"
+LOCATION_SOURCE = ROOT / "data" / "source" / "school_locations_osm.csv"
+COMMUTE_SOURCE = ROOT / "data" / "source" / "school_commute_reference.csv"
 OUT = ROOT / "data" / "processed"
 AUDIT = ROOT / "data" / "audit"
+
+FACTION_BY_FILL = {
+    "FFE2F0D9": "纯贾",
+    "FFDDEBF7": "纯茆",
+    "FFFFF2CC": "贾茆",
+    "FFE4DFEC": "茆Pro",
+    "FFFCE4D6": "贾茆Pro",
+}
 
 NATIONAL_LINES = {
     2017: {"A": 335, "B": 325},
@@ -104,15 +114,45 @@ def lower_tail_q10(admitted_min, admitted_median, admitted_count):
     return round(value, 2), "order_stat_interpolation", 0.68
 
 
-def worksheet_records(ws, header_row):
+def worksheet_records(ws, header_row, include_style=False):
     headers = [clean(cell.value) for cell in ws[header_row]]
     records = []
-    for row in ws.iter_rows(min_row=header_row + 1, values_only=True):
-        if all(clean(value) is None for value in row):
+    for cells in ws.iter_rows(min_row=header_row + 1):
+        values = [cell.value for cell in cells]
+        if all(clean(value) is None for value in values):
             continue
-        record = {headers[i]: clean(value) for i, value in enumerate(row) if i < len(headers) and headers[i]}
+        record = {
+            headers[i]: clean(value)
+            for i, value in enumerate(values)
+            if i < len(headers) and headers[i]
+        }
+        record["__row__"] = cells[0].row
+        if include_style:
+            fill = cells[0].fill.fgColor
+            record["__fill_rgb__"] = fill.rgb if fill.type == "rgb" else None
         records.append(record)
     return records
+
+
+def school_faction(row, school):
+    if school == "华北电力大学":
+        return "贾茆Pro", "原表合并校区规则（北京/保定取较高阶）"
+    text = " ".join(str(value) for key, value in row.items() if not key.startswith("__") and value)
+    normalized = text.replace("甲", "贾").replace("卯", "茆")
+    for label in ("贾茆Pro", "茆Pro", "纯贾", "纯茆", "贾茆"):
+        if label in normalized:
+            return label, "院校总表课程结构标签"
+    faction = FACTION_BY_FILL.get(row.get("__fill_rgb__"))
+    if faction:
+        return faction, "院校总表五大门派填色"
+    return "待核实", "原表五大门派名单未覆盖"
+
+
+def read_location_rows(path):
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return {row["school"]: row for row in csv.DictReader(handle)}
 
 
 def write_csv(path, rows, fieldnames=None):
@@ -135,12 +175,14 @@ def write_csv(path, rows, fieldnames=None):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     AUDIT.mkdir(parents=True, exist_ok=True)
-    workbook = load_workbook(SOURCE, data_only=True, read_only=True)
+    workbook = load_workbook(SOURCE, data_only=True, read_only=False)
 
-    school_source = worksheet_records(workbook["院校总表"], 2)
+    school_source = worksheet_records(workbook["院校总表"], 2, include_style=True)
     year_source = worksheet_records(workbook["年度线与录取"], 4)
     source_registry = worksheet_records(workbook["来源台账"], 4)
     gap_source = worksheet_records(workbook["字段缺口审计"], 4)
+    location_rows = read_location_rows(LOCATION_SOURCE)
+    commute_rows = read_location_rows(COMMUTE_SOURCE)
 
     schools = []
     school_map = {}
@@ -150,10 +192,15 @@ def main():
             continue
         location = str(clean(row.get("学院校区地址（到区）")) or "")
         zone = "B" if B_ZONE_PATTERN.search(location) else "A"
+        faction, faction_source = school_faction(row, school)
+        geo = location_rows.get(school, {})
+        commute = commute_rows.get(school, {})
         item = {
             "school": school,
             "is_985": yes_no(row.get("985")),
             "is_211": yes_no(row.get("211")),
+            "faction": faction,
+            "faction_source": faction_source,
             "unit_2026": clean(row.get("2026招生学院/单位")),
             "study_mode": clean(row.get("学习方式")),
             "politics_subject": clean(row.get("政治")),
@@ -166,6 +213,24 @@ def main():
             "reexam_subjects": clean(row.get("复试科目")),
             "reexam_freshness": clean(row.get("复试信息新鲜度")),
             "location": clean(row.get("学院校区地址（到区）")),
+            "latitude": as_float(geo.get("latitude")),
+            "longitude": as_float(geo.get("longitude")),
+            "location_matched_name": clean(geo.get("matched_name")),
+            "location_precision": clean(geo.get("precision")),
+            "location_source": clean(geo.get("source")),
+            "location_source_url": clean(geo.get("source_url")),
+            "location_review_status": clean(geo.get("review_status")),
+            "office_hub": clean(commute.get("office_hub")),
+            "office_hub_latitude": as_float(commute.get("office_hub_latitude")),
+            "office_hub_longitude": as_float(commute.get("office_hub_longitude")),
+            "office_hub_definition": clean(commute.get("office_hub_definition")),
+            "office_hub_review_status": clean(commute.get("office_hub_review_status")),
+            "transit_mode": clean(commute.get("transit_mode")),
+            "transit_lines": clean(commute.get("transit_lines")),
+            "transit_summary": clean(commute.get("transit_summary")),
+            "transit_review_status": clean(commute.get("transit_review_status")),
+            "live_route_url": clean(commute.get("live_route_url")),
+            "route_source": clean(commute.get("route_source")),
             "city_center": clean(row.get("市中心地标")),
             "duration": clean(row.get("学制")),
             "tuition": clean(row.get("学费")),
@@ -377,6 +442,38 @@ def main():
             "source_sheet": "来源台账",
             "source_row": index,
         })
+    source_rows.extend([
+        {
+            "source_name": "院校坐标：OpenStreetMap Nominatim",
+            "evidence_level": "第三方坐标，待人工复核",
+            "covered_fields": "院校培养校区经纬度、匹配名称、精度状态",
+            "url": "https://nominatim.org/release-docs/latest/api/Search/",
+            "url_count": 1,
+            "notes": "一次性限速查询并本地缓存；网页运行时不调用地理编码服务。",
+            "source_sheet": "补充坐标台账",
+            "source_row": None,
+        },
+        {
+            "source_name": "武汉理工大学马房山校区坐标：高德地图公开地点页",
+            "evidence_level": "地图平台公开地点页，待人工复核",
+            "covered_fields": "武汉理工大学马房山校区坐标",
+            "url": "https://ditu.amap.com/place/B001B0IYJV",
+            "url_count": 1,
+            "notes": "使用公开地点页显示的校区西院东门坐标。",
+            "source_sheet": "补充坐标台账",
+            "source_row": None,
+        },
+        {
+            "source_name": "院校至办公集聚区实时公交规划：高德地图URI API",
+            "evidence_level": "官方地图平台接口；静态候选线路待人工复核",
+            "covered_fields": "实时公交规划链接、候选地铁/公交线路",
+            "url": "https://lbs.amap.com/api/uri-api/guide/travel/route",
+            "url_count": 1,
+            "notes": "静态线路只作候选提示；点击链接后由高德按当前路网重新规划。",
+            "source_sheet": "补充通勤台账",
+            "source_row": None,
+        },
+    ])
 
     gap_rows = []
     for school, row in gaps.items():
@@ -416,6 +513,11 @@ def main():
         "q10_exact_available": exact_q10_count,
         "review_issue_count": len(issues),
         "review_issue_types": dict(Counter(row["issue_code"] for row in issues)),
+        "faction_counts": dict(Counter(row["faction"] for row in schools)),
+        "faction_unverified_schools": [row["school"] for row in schools if row["faction"] == "待核实"],
+        "coordinate_coverage": sum(row["latitude"] is not None and row["longitude"] is not None for row in schools),
+        "coordinate_precision_counts": dict(Counter(row["location_precision"] or "missing" for row in schools)),
+        "commute_reference_coverage": sum(bool(row["office_hub"] and row["transit_lines"]) for row in schools),
         "important_limitations": [
             "The source workbook does not contain candidate-level Q10 values. Q10 is transparently estimated from minimum, median, and admitted count where available.",
             "Historical realized admitted count is not identical to the plan known before registration and must not be used as a leakage-free current-year seat feature.",

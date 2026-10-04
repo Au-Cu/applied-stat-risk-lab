@@ -3,6 +3,7 @@
 面向全日制 `025200 应用统计` 的择校风险研究原型。当前覆盖传统 985/211 院校，预测普通统考拟录取初试成绩 P10 的概率分布，并把考纲变化、参考书调整、学制变化和考生反向选择纳入三情景分析。
 
 - 公开网站：<https://applied-stat-choice-lab-2027.aucu050410.chatgpt.site>
+- GitHub Pages 镜像：<https://au-cu.github.io/applied-stat-risk-lab/>
 - 当前版本：`v0.2.0`
 
 ## 当前交付
@@ -15,6 +16,8 @@
 - 原始工作簿审计、24 条人工复核队列、字段字典和标准录入模板；
 - 可交互网页和可运行的数据处理、训练、预测代码。
 - 可点击的七步图形流程（证据层 → 推断层 → 决策层）、专业技术说明和精度优化路线图。
+- 五派系标签与筛选：纯贾、纯茆、贾茆、茆Pro、贾茆Pro（另保留“待核实”避免强行归类）。
+- 81 所学校的交互坐标图、代表性办公集聚区、候选地铁/公交线路与高德实时公交路线入口。
 
 ## 重要结论
 
@@ -51,6 +54,13 @@ python -m venv .venv
 .\.venv\Scripts\python.exe model\prepare_data.py
 ```
 
+如需从头更新地图与通勤参考数据，应先执行一次性地理编码和通勤表构建；公开 Nominatim 服务须遵守其限速与缓存政策：
+
+```powershell
+.\.venv\Scripts\python.exe scripts\geocode_school_locations.py
+.\.venv\Scripts\python.exe scripts\build_commute_reference.py
+```
+
 重新训练、逐年回测并生成 2027 预测：
 
 ```powershell
@@ -83,7 +93,7 @@ node node_modules/next/dist/bin/next dev -H 127.0.0.1
 生产静态构建：
 
 ```powershell
-node node_modules/next/dist/bin/next build
+npm run build:static
 ```
 
 输出位于 `out/`。
@@ -104,8 +114,10 @@ node scripts\build_audit_workbook.mjs
 
 ## 发布规则
 
-采用“先封存、再修改”：开始任何新一轮变更前，当前 `main` 必须已有对应 GitHub Release；完成并验证后发布新版本，作为下一轮修改的基线。本轮修改前已有 `v0.1.0`，本轮完成后发布 `v0.2.0`。
+采用“先封存、再修改”：开始任何新一轮变更前，当前 `main` 必须已有对应 GitHub Release；完成并验证后发布新版本，作为下一轮修改的基线。按本轮约定，本次构建替换原 `v0.2.0`，版本名不变；替换前的提交仍保留在 Git 历史中。
 
 ## 边界
 
 这是学校间风险比较工具，不是个人最终录取概率保证。单科线、估分误差、复试表现、排名、临时政策和未发现事件仍可能改变结果。报名截止前应回到目标学校研究生院或学院官网人工复核招生目录、考试科目、名额和专项计划口径。
+
+地图采用无行政区界线的坐标网格，仅用于比较相对位置，不是导航底图；学校坐标应以校方地址为准。办公区是代表性就业集聚区而非就业去向排名，静态地铁/公交文字为待人工复核的候选方案，实际出行请点击高德入口按当时路况和运营信息重新规划。

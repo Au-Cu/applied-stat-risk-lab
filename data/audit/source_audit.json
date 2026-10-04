@@ -20,6 +20,26 @@
     "admitted_min_below_selected_cutoff": 8,
     "special_plan_exclusion_unclear": 10
   },
+  "faction_counts": {
+    "茆Pro": 10,
+    "贾茆": 31,
+    "贾茆Pro": 13,
+    "纯茆": 12,
+    "纯贾": 12,
+    "待核实": 3
+  },
+  "faction_unverified_schools": [
+    "合肥工业大学",
+    "湖南大学",
+    "国防科技大学"
+  ],
+  "coordinate_coverage": 81,
+  "coordinate_precision_counts": {
+    "campus": 74,
+    "campus_area": 3,
+    "campus_entrance": 4
+  },
+  "commute_reference_coverage": 81,
   "important_limitations": [
     "The source workbook does not contain candidate-level Q10 values. Q10 is transparently estimated from minimum, median, and admitted count where available.",
     "Historical realized admitted count is not identical to the plan known before registration and must not be used as a leakage-free current-year seat feature.",
