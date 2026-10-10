@@ -4,7 +4,7 @@
 
 - 公开网站：<https://applied-stat-choice-lab-2027.aucu050410.chatgpt.site>
 - GitHub Pages 镜像：<https://au-cu.github.io/applied-stat-risk-lab/>
-- 当前版本：`v0.2.0`
+- 当前版本：`v0.3.0`
 
 ## 当前交付
 
@@ -159,7 +159,7 @@ powershell -ExecutionPolicy Bypass -File scripts\repair_audit_workbook_excel.ps1
 
 ## 发布规则
 
-采用“先封存、再修改”：开始任何新一轮变更前，当前 `main` 必须已有对应 GitHub Release；完成并验证后发布新版本，作为下一轮修改的基线。按本轮约定，本次构建替换原 `v0.2.0`，版本名不变；替换前的提交仍保留在 Git 历史中。
+采用“先封存、再修改”：开始任何新一轮变更前，当前 `main` 必须已有对应 GitHub Release；完成并验证后发布新版本，作为下一轮修改的基线。本轮 V5 作为新的 `v0.3.0` 发布，原 `v0.2.0` 的标签、Release 与附件保持为上一版本快照。
 
 ## 边界
 
