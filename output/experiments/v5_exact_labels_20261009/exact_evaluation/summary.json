@@ -1,0 +1,56 @@
+{
+  "exact_program_years_total": 77,
+  "exact_candidate_rows": 2312,
+  "exact_backtest_rows": 54,
+  "exact_backtest_years": [
+    2024,
+    2025,
+    2026
+  ],
+  "frozen_baseline_on_exact_labels": {
+    "n": 54,
+    "mae": 15.832222222222226,
+    "median_ae": 11.879999999999995,
+    "rmse": 19.511827467234102,
+    "bias_actual_minus_prediction": 1.176296296296294,
+    "q80_coverage": 0.7037037037037037,
+    "q80_mean_width": 16.895185185185184,
+    "q90_coverage": 0.8333333333333334,
+    "q90_mean_width": 29.540370370370365,
+    "q95_coverage": 0.8703703703703703,
+    "q95_mean_width": 39.55555555555555,
+    "wis_proxy": 32.31820370370371
+  },
+  "enhanced_model_on_exact_labels": {
+    "n": 54,
+    "mae": 14.897407407407412,
+    "median_ae": 11.569999999999993,
+    "rmse": 18.927182001516194,
+    "bias_actual_minus_prediction": -0.6248148148148118,
+    "q80_coverage": 0.7592592592592593,
+    "q80_mean_width": 17.665740740740745,
+    "q90_coverage": 0.8518518518518519,
+    "q90_mean_width": 31.214444444444446,
+    "q95_coverage": 0.8888888888888888,
+    "q95_mean_width": 42.058148148148156,
+    "wis_proxy": 31.856138888888896
+  },
+  "paired_year_block_mae_difference": {
+    "estimate": -1.508785039941899,
+    "p05": -2.68435294117646,
+    "p95": -0.33321713870733777,
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "interpretation": "enhanced MAE minus frozen-baseline MAE; negative favours the exact-label update"
+  },
+  "proxy_pair_rows": 73,
+  "bootstrap_sampling_sd": {
+    "median": 3.0949987493744344,
+    "p90": 6.025533033303689,
+    "max": 10.178850254019206
+  },
+  "guardrail": "The enhanced model is a post-freeze retrospective experiment. It does not replace the frozen 2027 forecast unless a separately versioned release is created before outcomes are known."
+}

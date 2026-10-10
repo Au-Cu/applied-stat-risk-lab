@@ -9,7 +9,7 @@ $pdfRoot = Join-Path $outputRoot 'workbook_previews_pdf'
 New-Item -ItemType Directory -Path $pdfRoot -Force | Out-Null
 
 $ranges = [ordered]@{
-  '审计总览' = 'A1:N28'
+  '审计总览' = 'A1:I34'
   '预测结果' = 'A1:Q20'
   '复核队列' = 'A1:G25'
   '年度数据模板' = 'A1:Q24'

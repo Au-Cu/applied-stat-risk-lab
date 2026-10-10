@@ -123,12 +123,17 @@ const forecastRaw = coerceColumns(await csvMatrix("data/processed/forecast_2027.
   "q50", "q80", "q90", "q95", "nationalLineMedian", "nationalLineQ90", "lagSurpriseZ",
   "peerPressure", "sourceRow", "latitude", "longitude", "officeHubLatitude", "officeHubLongitude",
 ], ["is985"]);
-const backtest = coerceColumns(await csvMatrix("data/processed/rolling_backtest.csv"), [
+const backtestFull = coerceColumns(await csvMatrix("data/processed/rolling_backtest.csv"), [
   "year", "actual", "pred_q50", "pred_q80", "pred_q90", "pred_q95", "complex_q50", "weight", "baseline",
+]);
+const backtest = pickColumns(backtestFull, [
+  "school", "year", "actual", "pred_q50", "pred_q80", "pred_q90", "pred_q95",
+  "complex_q50", "selected_model", "weight", "baseline", "robust_baseline",
 ]);
 const modelRun = JSON.parse(await fs.readFile(path.join(root, "data/audit/model_run.json"), "utf8"));
 const sourceAudit = JSON.parse(await fs.readFile(path.join(root, "data/audit/source_audit.json"), "utf8"));
 const nationalLines = JSON.parse(await fs.readFile(path.join(root, "data/processed/national_lines.json"), "utf8"));
+const v5Audit = JSON.parse(await fs.readFile(path.join(root, "app/data/model-v5-audit.json"), "utf8"));
 
 const forecastFields = [
   "school", "faction", "is985", "zone", "unit", "q50", "q80", "q90", "q95", "confidence",
@@ -160,43 +165,35 @@ backtestSheet.tabColor = COLORS.navy2;
 dictionarySheet.tabColor = "#64748B";
 
 // Summary
-styleTitle(summary, "应用统计择校模型：数据审计与回测", "范围：全日制 025200，传统 985/211 院校；信息截点：2026-10-03");
+styleTitle(summary, "应用统计择校模型：数据审计与回测", "2027 生产预测冻结于 2026-10-08；V5 逐人分布研究层更新至 2026-10-09");
 summary.getRange("A6:B6").values = [["数据覆盖", "结果"]];
-summary.getRange("A7:A12").values = [["覆盖院校"], ["院校年度记录"], ["有数值复试线"], ["官方复试线"], ["P10代理标签"], ["精确P10标签"]];
-summary.getRange("B7:B12").formulas = [
-  ["=COUNTA('预测结果'!$A$2:$A$82)"],
-  ["=COUNTA('院校年度数据'!$A$2:$A$406)"],
-  ["=COUNT('院校年度数据'!$E$2:$E$406)"],
-  ["=COUNTIFS('院校年度数据'!$H$2:$H$406,\"official\")"],
-  ["=COUNT('院校年度数据'!$S$2:$S$406)"],
-  ["=0"],
+summary.getRange("A7:A13").values = [["覆盖院校"], ["院校年度记录"], ["核心字段有公开URL"], ["逐人成绩原始行"], ["去重后有效行"], ["精确录取成绩"], ["精确P10校年"]];
+summary.getRange("B7:B13").values = [
+  [sourceAudit.school_count],
+  [program.length - 1],
+  [`${v5Audit.sourceAudit.coreValuesWithPublicUrl}/${v5Audit.sourceAudit.coreValues}`],
+  [v5Audit.scoreRows.raw],
+  [v5Audit.scoreRows.uniqueValid],
+  [v5Audit.scoreRows.exactAdmitted],
+  [v5Audit.scoreRows.exactProgramYears],
 ];
 styleHeader(summary.getRange("A6:B6"));
-styleBody(summary.getRange("A7:B12"));
-summary.getRange("B7:B12").format.numberFormat = "#,##0";
-summary.getRange("A7:A12").format.fill = COLORS.light;
+styleBody(summary.getRange("A7:B13"));
+summary.getRange("B7:B13").format.numberFormat = "#,##0";
+summary.getRange("A7:A13").format.fill = COLORS.light;
 
-summary.getRange("D6:F6").values = [["待复核问题", "数量", "优先动作"]];
-summary.getRange("D7:D9").values = [["retest_ratio_mismatch"], ["admitted_min_below_selected_cutoff"], ["special_plan_exclusion_unclear"]];
-summary.getRange("E7:E9").formulas = [
-  ["=COUNTIFS('复核队列'!$E$2:$E$25,D7)"],
-  ["=COUNTIFS('复核队列'!$E$2:$E$25,D8)"],
-  ["=COUNTIFS('复核队列'!$E$2:$E$25,D9)"],
+summary.getRange("D6:F6").values = [["成绩数据角色", "行数", "进入模型的方式"]];
+summary.getRange("D7:F12").values = [
+  ["精确录取层", v5Audit.scoreRows.exactAdmitted, "主标签、抽样误差和分布形状"],
+  ["软录取证据", v5Audit.scoreRows.softAdmitted, "敏感性分析；未自动升级主模型"],
+  ["诊断性录取行", v5Audit.scoreRows.diagnosticAdmitted, "质量审计，不转换为精确标签"],
+  ["明确未录取", v5Audit.scoreRows.notAdmitted, "复试选择梯度诊断"],
+  ["结果未知", v5Audit.scoreRows.unknownOutcome, "复试池分布敏感性，不伪造结局"],
+  ["重复行", v5Audit.scoreRows.duplicatesNotDoubleCounted, "保留审计痕迹但不重复计数"],
 ];
-summary.getRange("F7:F9").values = [["核对复试名单与拟录取人数"], ["排除专项计划与方向口径"], ["确认普通统考样本排除规则"]];
-styleHeader(summary.getRange("D6:F6"), COLORS.amber);
-styleBody(summary.getRange("D7:F9"), { wrap: true });
-summary.getRange("E7:E9").format.numberFormat = "#,##0";
-summary.getRange("D7:D9").format.font = { name: fontName, size: 9, color: COLORS.red };
-
-summary.getRange("D11:F11").values = [["地图与通勤", "覆盖", "状态"]];
-summary.getRange("D12:F13").values = [
-  ["培养校区坐标", sourceAudit.coordinate_coverage, "公开地图坐标，待逐校人工复核"],
-  ["办公区与公交参考", sourceAudit.commute_reference_coverage, "代表性节点与候选线路"],
-];
-styleHeader(summary.getRange("D11:F11"), COLORS.cyan);
-styleBody(summary.getRange("D12:F13"), { wrap: true });
-summary.getRange("E12:E13").format.numberFormat = "#,##0";
+styleHeader(summary.getRange("D6:F6"), COLORS.teal);
+styleBody(summary.getRange("D7:F12"), { wrap: true });
+summary.getRange("E7:E12").format.numberFormat = "#,##0";
 
 summary.getRange("A15:B15").values = [["滚动回测（2024—2026）", "结果"]];
 summary.getRange("A16:A22").values = [["回测样本"], ["主预测加权MAE"], ["稳健边际分锚点MAE"], ["上一年锚点加权MAE"], ["复杂候选模型加权MAE"], ["低估率"], ["90%原始区间覆盖率"]];
@@ -215,24 +212,28 @@ summary.getRange("A16:A22").format.fill = COLORS.light;
 summary.getRange("B17:B20").format.numberFormat = "0.00";
 summary.getRange("B21:B22").format.numberFormat = "0.0%";
 
-summary.getRange("D15:F15").values = [["模型选择", "权重", "说明"]];
-summary.getRange("D16:F18").values = [
-  ["历史边际分中位数锚点", 1, "滚动回测胜出；优先作为点预测中心"],
-  ["分层贝叶斯", 0, "用于分布形状、院校部分池化和变量解释"],
-  ["梯度提升分位数", 0, "用于非线性尾部与不确定性辅助"],
+summary.getRange("D15:F15").values = [["V5研究闸门", "结果", "时间外证据"]];
+summary.getRange("D16:F20").values = [
+  ["精确标签替换代理", "通过", `${v5Audit.exactLabelBacktest.frozenBaselineMae.toFixed(2)} → ${v5Audit.exactLabelBacktest.exactEnhancedMae.toFixed(2)} MAE`],
+  ["逐校滞后分布形状", "通过", `${v5Audit.shapeGate.pooledExactMae.toFixed(3)} → ${v5Audit.shapeGate.lagExactMae.toFixed(3)} 分位MAE`],
+  ["软证据叠加形状", "保留研究", `仅改善 ${v5Audit.shapeGate.softIncrementalGain.toFixed(3)}，落在简约等价带内`],
+  ["复试选择梯度入模", "拒绝", `${v5Audit.selectionGradient.anchorMae.toFixed(2)} → ${v5Audit.selectionGradient.candidateMae.toFixed(2)} MAE`],
+  ["2027生产预测", "冻结不变", "新增结果仅属冻结后回溯研究层"],
 ];
 styleHeader(summary.getRange("D15:F15"), COLORS.teal);
-styleBody(summary.getRange("D16:F18"), { wrap: true });
-summary.getRange("E16:E18").format.numberFormat = "0%";
+styleBody(summary.getRange("D16:F20"), { wrap: true });
+summary.getRange("E16:E20").conditionalFormats.add("containsText", { text: "通过", format: { fill: COLORS.paleTeal, font: { color: COLORS.green, bold: true } } });
+summary.getRange("E16:E20").conditionalFormats.add("containsText", { text: "拒绝", format: { fill: COLORS.paleRed, font: { color: COLORS.red, bold: true } } });
+summary.getRange("E16:E20").conditionalFormats.add("containsText", { text: "保留", format: { fill: COLORS.paleAmber, font: { color: COLORS.amber, bold: true } } });
 
 summary.getRange("A24:F24").values = [["关键限制", null, null, null, null, null]];
 summary.getRange("A25:F30").values = [
-  ["原始表没有考生级精确P10。295条标签由最低分、中位数和录取人数透明估算。", null, null, null, null, null],
-  ["370条复试线中，原表仅46条标记为官方来源；第三方记录已降权。", null, null, null, null, null],
-  ["当年最终拟录取人数在报名时不可见，不能作为无泄漏的当年名额输入。", null, null, null, null, null],
-  ["未发现事件不等于确认无事件。报名截止前仍需逐校核验招生简章和公告。", null, null, null, null, null],
-  ["五大派系来自原工作簿的机构分类，并非院校官方分类；3所未覆盖院校保留为待核实。", null, null, null, null, null],
-  ["办公集聚区是研究用代表性节点，通勤线路为候选方案；应使用实时规划链接核对。", null, null, null, null, null],
+  ["精确逐人成绩优先替代代理；尚无精确名单的校年继续保留代理并显式传播测量误差。", null, null, null, null, null],
+  ["精确标签当前只有77个校年、44所学校；有效时间外起点仍少，不能把校年数误当独立年份数。", null, null, null, null, null],
+  ["同年录取结果、最终人数和选择梯度属于事后信息；只允许以严格滞后或诊断方式使用。", null, null, null, null, null],
+  ["候选人姓名、考号、哈希和逐行原文不进入公开工作簿、网页或Git仓库。", null, null, null, null, null],
+  ["V5的研究改进没有覆盖已冻结的2027数值；重新生产发布必须另开版本并在结果发生前冻结。", null, null, null, null, null],
+  ["未发现事件不等于确认无事件；报名截止前仍需逐校核验招生简章、计划名额和公告。", null, null, null, null, null],
 ];
 styleHeader(summary.getRange("A24:F24"), COLORS.red);
 summary.getRange("A25:F30").format = { fill: COLORS.paleRed, font: { name: fontName, size: 9, color: COLORS.red }, wrapText: true, verticalAlignment: "center" };
@@ -240,23 +241,25 @@ summary.getRange("A25:F30").format.rowHeight = 26;
 summary.mergeCells("A24:F24");
 for (const row of [25, 26, 27, 28, 29, 30]) summary.mergeCells(`A${row}:F${row}`);
 
-summary.getRange("H6:I9").values = [
-  ["问题类型", "数量"],
-  ["复录比不一致", sourceAudit.review_issue_types.retest_ratio_mismatch],
-  ["最低分低于复试线", sourceAudit.review_issue_types.admitted_min_below_selected_cutoff],
-  ["专项计划排除不明", sourceAudit.review_issue_types.special_plan_exclusion_unclear],
+summary.getRange("H6:I11").values = [
+  ["逐人成绩角色", "行数"],
+  ["精确录取", v5Audit.scoreRows.exactAdmitted],
+  ["软录取证据", v5Audit.scoreRows.softAdmitted],
+  ["诊断性录取", v5Audit.scoreRows.diagnosticAdmitted],
+  ["明确未录取", v5Audit.scoreRows.notAdmitted],
+  ["结果未知", v5Audit.scoreRows.unknownOutcome],
 ];
 styleHeader(summary.getRange("H6:I6"), COLORS.amber);
-styleBody(summary.getRange("H7:I9"));
-const issueChart = summary.charts.add("bar", summary.getRange("H6:I9"));
-issueChart.title = "待复核问题数量";
-issueChart.titleTextStyle.fontSize = 12;
-issueChart.titleTextStyle.typeface = fontName;
-issueChart.hasLegend = false;
-issueChart.xAxis = { textStyle: { typeface: fontName, fontSize: 9 } };
-issueChart.yAxis = { numberFormatCode: "0", numberFormatSourceLinked: false, textStyle: { typeface: fontName, fontSize: 9 } };
-issueChart.setPosition("H11", "N25");
-if (issueChart.series.items[0]) issueChart.series.items[0].fill = COLORS.amber;
+styleBody(summary.getRange("H7:I11"));
+const roleChart = summary.charts.add("bar", summary.getRange("H6:I11"));
+roleChart.title = "14,317条成绩的证据分流";
+roleChart.titleTextStyle.fontSize = 12;
+roleChart.titleTextStyle.typeface = fontName;
+roleChart.hasLegend = false;
+roleChart.xAxis = { textStyle: { typeface: fontName, fontSize: 9 } };
+roleChart.yAxis = { numberFormatCode: "0", numberFormatSourceLinked: false, textStyle: { typeface: fontName, fontSize: 9 } };
+roleChart.setPosition("H13", "N25");
+if (roleChart.series.items[0]) roleChart.series.items[0].fill = COLORS.amber;
 
 summary.getRange("H27:I34").values = [
   ["派系", "院校数"],
@@ -447,6 +450,10 @@ const dictionaryRows = [
   ["年度数据", "q10_value", "录取初试P10", "数值", "总分", "目标", "普通统考拟录取样本初试总分10%分位数", "无逐人成绩时才用透明代理"],
   ["年度数据", "q10_method", "P10取得方法", "分类", "exact/interpolation/minimum", "是", "区分精确候选人分位数与代理算法", "不得用颜色代替"],
   ["年度数据", "q10_weight", "P10标签权重", "数值", "0—1", "是", "由取得方法与来源可靠性共同决定", "缺失标签权重为0"],
+  ["逐人成绩审计", "row_role", "证据角色", "分类", "exact/soft/diagnostic", "是", "依据名单图例、分组一致性、排除规则和来源质量分配角色", "不得因读取方便而混用"],
+  ["逐人成绩审计", "outcome_status", "录取结局", "分类", "admitted/not_admitted/unknown", "是", "仅在名单图例或结构明确时赋予录取结局", "unknown不得伪造为未录取"],
+  ["逐人成绩审计", "duplicate_status", "重复状态", "分类", "unique/exact_duplicate/conflict", "是", "相同来源与内容哈希不重复计数，冲突另行复核", "保留审计痕迹"],
+  ["逐人成绩审计", "privacy_scope", "公开边界", "分类", "private/aggregate_public", "是", "逐人原文、姓名、考号和哈希保留私有；仅校年聚合公开", "不得上传候选人逐行数据"],
   ["年度数据", "special_plan_excluded", "专项计划已排除", "分类", "是/否/不明确", "是", "是否排除少干、士兵、援藏等专项计划", "不明确则进入复核队列"],
   ["年度数据", "lag1_q10", "上一年P10", "数值", "总分", "模型生成", "严格滞后一年的目标代理", "无历史时回退到分层模型"],
   ["年度数据", "lag1_surprise_z", "上一年热冷异常", "数值", "标准差", "模型生成", "上一年相对更早历史的标准化偏离", "历史不足则留空"],

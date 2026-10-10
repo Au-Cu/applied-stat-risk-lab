@@ -1,0 +1,90 @@
+{
+  "version": "V5 逐人分布与来源审计增强",
+  "asOf": "2026-10-09",
+  "forecastFreeze": {
+    "forecastYear": 2027,
+    "frozenOn": "2026-10-08",
+    "status": "unchanged",
+    "note": "V5 是冻结后的回溯研究层；未用新增结果覆盖 2027 前瞻数值。"
+  },
+  "sourceAudit": {
+    "coreValues": 3690,
+    "coreValuesWithPublicUrl": 3685,
+    "publicUrlRecords": 940,
+    "rosterImages": 452,
+    "parsedImages": 412,
+    "modelEligibleProgramYears": 77
+  },
+  "scoreRows": {
+    "raw": 14317,
+    "uniqueValid": 14257,
+    "duplicatesNotDoubleCounted": 60,
+    "admitted": 9073,
+    "notAdmitted": 2444,
+    "unknownOutcome": 2800,
+    "exactAdmitted": 2312,
+    "softAdmitted": 5199,
+    "diagnosticAdmitted": 1562,
+    "exactProgramYears": 77,
+    "exactSchools": 44,
+    "auditedAdmittedRows": 7511,
+    "auditedDistributions": 202
+  },
+  "exactLabelBacktest": {
+    "rows": 54,
+    "years": [2024, 2025, 2026],
+    "frozenBaselineMae": 15.83,
+    "exactEnhancedMae": 14.90,
+    "yearBlockDifference": -1.51,
+    "bootstrapP05": -2.68,
+    "bootstrapP95": -0.33,
+    "status": "retrospective_improvement"
+  },
+  "proxyCalibration": {
+    "pairs": 73,
+    "interpolation": {
+      "pairs": 50,
+      "meanExactMinusProxy": 2.85,
+      "mae": 3.14
+    },
+    "minimumOnly": {
+      "pairs": 23,
+      "meanExactMinusProxy": 6.05,
+      "mae": 6.05
+    },
+    "q10BootstrapSdMedian": 3.09,
+    "q10BootstrapSdP90": 6.03
+  },
+  "nationalMixtures": {
+    "candidateWeighted": { "q10": 353, "q50": 388, "q90": 418 },
+    "schoolYearBalanced": { "q10": 354, "q50": 390, "q90": 420 },
+    "schoolBalanced": { "q10": 354, "q50": 390, "q90": 420 }
+  },
+  "varianceShares": {
+    "withinSchoolYear": 0.461,
+    "sameSchoolAcrossYears": 0.109,
+    "betweenSchools": 0.430
+  },
+  "shapeGate": {
+    "pooledExactMae": 6.045,
+    "lagExactMae": 5.733,
+    "lagExactPlusSoftMae": 5.732,
+    "softIncrementalGain": 0.001,
+    "selected": "lag_exact",
+    "softPromoted": false,
+    "reason": "软证据的额外改善落在 0.05 分简约等价带内，保留作敏感性分析，不增加生产复杂度。"
+  },
+  "selectionGradient": {
+    "qualifiedCohorts": 200,
+    "candidateRows": 10246,
+    "schools": 70,
+    "medianAuc": 0.876,
+    "medianScoreGap": 17,
+    "laggedBacktestRows": 14,
+    "anchorMae": 16.59,
+    "candidateMae": 21.84,
+    "promoted": false,
+    "reason": "复试选择梯度具有描述价值，但严格滞后后只覆盖 2026 年 14 个校年且 MAE 恶化 5.25 分。"
+  },
+  "privacy": "网页只读取校年级聚合与审计统计，不包含姓名、考号、候选人哈希或逐行原文。"
+}

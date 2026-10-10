@@ -1,0 +1,65 @@
+{
+  "status": "post_freeze_v5_retest_selection_experiment",
+  "input_audit": {
+    "raw_rows": 14317,
+    "valid_target_rows_before_deduplication": 14317,
+    "duplicate_rows_not_double_counted": 60,
+    "unique_valid_score_rows": 14257,
+    "raw_admitted_rows": 9073,
+    "raw_not_admitted_rows": 2444,
+    "raw_unknown_outcome_rows": 2800
+  },
+  "row_roles": {
+    "admitted_distribution_rows_raw": 9073,
+    "admitted_exact_rows": 2312,
+    "admitted_soft_rows": 5199,
+    "admitted_diagnostic_rows": 1562,
+    "explicit_outcome_rows_after_deduplication": 10995,
+    "unknown_outcome_score_rows_after_deduplication": 2800,
+    "note": "Roles overlap by design: an admitted row informs both its admitted distribution and, where the legend is explicit, the retest selection gradient."
+  },
+  "selection_cohorts": {
+    "school_years_with_both_outcomes": 229,
+    "qualified_school_years_minimum_three_each": 200,
+    "candidate_rows_in_qualified_cohorts": 10246,
+    "schools": 70,
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "median_selection_auc": 0.8757716049382716,
+    "median_admission_rate": 0.7729182582123759,
+    "median_admitted_minus_rejected_score": 17.0,
+    "share_auc_below_0_5": 0.005,
+    "interpretation": "Scores are associated with selection but the outcome distributions overlap; Q10 is a risk indicator, not a deterministic institutional cutoff."
+  },
+  "unknown_outcome_score_only": {
+    "rows": 2799,
+    "school_years": 71,
+    "role": "Used for retest-pool distribution sensitivity only; never converted into an admission label."
+  },
+  "lagged_predictive_diagnostic": {
+    "status": "diagnostic_not_promoted",
+    "school_years": 14,
+    "origins": [
+      2026
+    ],
+    "anchor_mae": 16.58928571428572,
+    "selection_ridge_mae": 21.84145670479807,
+    "candidate_minus_anchor_mae": 5.252170990512351,
+    "year_metrics": {
+      "2026": {
+        "n": 14,
+        "anchor_mae": 16.58928571428572,
+        "selection_ridge_mae": 21.84145670479807
+      }
+    },
+    "promotion_rule": "No promotion without a material, stable improvement under nested time-ordered validation.",
+    "same_year_leakage": false
+  },
+  "privacy": "Only school-year aggregates are public; no candidate hash or row-level source text is emitted.",
+  "production_guardrail": "Frozen V4 forecasts remain unchanged."
+}

@@ -1,0 +1,108 @@
+{
+  "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
+  "python_seed": 20261007,
+  "git_commit": "cf1159eadabb11f8a4b693559cc37eea94ec553c",
+  "working_tree_dirty": true,
+  "files": [
+    {
+      "path": "data/processed/program_year.csv",
+      "bytes": 323894,
+      "sha256": "7f7915720031809f17826844fb3f90bafff1d0d5a0c8131deb409709f83448b5"
+    },
+    {
+      "path": "data/processed/rolling_backtest.csv",
+      "bytes": 47360,
+      "sha256": "ab20b5068777fe46694febb3063568a940fd4adafb351deccf13888d0cc84f3e"
+    },
+    {
+      "path": "data/processed/events_2027.csv",
+      "bytes": 1561,
+      "sha256": "4f99c9775bf15bfcb2106148c34cedb9210aeae10a55f6f1b7d00f292daf60ab"
+    },
+    {
+      "path": "data/processed/forecast_2027.csv",
+      "bytes": 143090,
+      "sha256": "0bf17751a66e6112dc586ca11cc1814ec9a930786d184906ec17ad1db73f8db7"
+    },
+    {
+      "path": "data/processed/national_lines.json",
+      "bytes": 1094,
+      "sha256": "a2fbb0c615dbf2b0db8acadb94ed6cbaec19a16b0611df9497cc0ce215db19e4"
+    },
+    {
+      "path": "app/data/forecast.json",
+      "bytes": 811262,
+      "sha256": "6288633390668df840689d0dd1624edd82d3278daaf8de8364cd04dbd6c2196e"
+    },
+    {
+      "path": "output/experiments/v3_validation_20261007/summary.json",
+      "bytes": 24589,
+      "sha256": "12b5ce60c3d50ead332fc13926c9a8acbadd19d4d2e528097383520f9c2a43f0"
+    },
+    {
+      "path": "output/experiments/v3_validation_20261007/nested_calibration_rows.csv",
+      "bytes": 110756,
+      "sha256": "0c1caac6f792b743411b0c7399e38ef197a267239759587b70832bca8f165aed"
+    },
+    {
+      "path": "data/audit/provenance_coverage.json",
+      "bytes": 1712,
+      "sha256": "b6746c4441d184ced4693bcfb4fd5b274483a20efc32f22cbd1c58c44514e717"
+    },
+    {
+      "path": "data/audit/source_url_audit.json",
+      "bytes": 531,
+      "sha256": "364d5d68f25125138e4c7f4ef139b3246e3e12a648355b846efeabdb824cc570"
+    },
+    {
+      "path": "data/audit/supplemental_provenance.json",
+      "bytes": 43659,
+      "sha256": "12a0feae48a7caffda30c88ede3631e0879d9242611e432a62902998e1ca2dab"
+    },
+    {
+      "path": "data/audit/mini_program_roster_index.json",
+      "bytes": 30349,
+      "sha256": "ac37c48525ffb055da7d510172767aa660249d15d0665c59bc25160b120323fc"
+    },
+    {
+      "path": "data/audit/candidate_score_extraction.json",
+      "bytes": 16692,
+      "sha256": "3087b0f85069575fba06b8ef7348a59b662e50cc634114f8ea8cbdf8d3d1ee24"
+    },
+    {
+      "path": "data/processed/program_year_provenance.csv",
+      "bytes": 5492045,
+      "sha256": "1b7ba7ae2cc0f6e9614aab43fee1119a941a7d559809ecfa80d348ff90ad484a"
+    },
+    {
+      "path": "data/processed/program_year_supplemental_provenance.csv",
+      "bytes": 422331,
+      "sha256": "a54ae22d0fefb28ca7fb16885698175141435cdd6af7d15a27e14d7786b851d4"
+    },
+    {
+      "path": "data/processed/school_master_supplemental_provenance.csv",
+      "bytes": 200836,
+      "sha256": "fb5bf8114b8be18a66ee2e3017a60b985315085ff1cccc6fdc5c3f84565bfa70"
+    },
+    {
+      "path": "data/processed/candidate_label_audit.csv",
+      "bytes": 36018,
+      "sha256": "46393559e9847256f530727db40a8895cdbe716d4fe530c0ca95666abb926595"
+    },
+    {
+      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/summary.json",
+      "bytes": 1859,
+      "sha256": "814ec8f350a046c7f8fdba6f5853fc9eec24b9b65d91e32d9b8d72c1c50ba917"
+    },
+    {
+      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/exact_proxy_pairs.csv",
+      "bytes": 10421,
+      "sha256": "40639d377ffbce40d441a4165489f80727d2bc1a38072f2cc5ea018d698aab8f"
+    },
+    {
+      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/paired_exact_backtest.csv",
+      "bytes": 16139,
+      "sha256": "bc8313db5e7f4c5a69eb59f96827b36153f5c4508df0ba790e2289eef9735d0d"
+    }
+  ]
+}

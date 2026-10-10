@@ -1,0 +1,17 @@
+{
+  "generated_on": "2026-10-09",
+  "access_date": "2026-10-09",
+  "unique_public_urls": 940,
+  "structured_titles": 500,
+  "scope_descriptions": 440,
+  "reachability": {
+    "reachable": 464,
+    "not_checked": 246,
+    "failed": 230
+  },
+  "policy": "The compiled workbook is an internal evidence index and is not cited as a public underlying source.",
+  "outputs": [
+    "data/processed/public_source_bibliography.csv",
+    "paper/public_source_bibliography.html"
+  ]
+}

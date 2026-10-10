@@ -1,0 +1,77 @@
+{
+  "national_mixtures": {
+    "candidate_weighted": {
+      "meaning": "random admitted candidate; large programmes receive more mass",
+      "mean": 387.05276816609,
+      "sd": 24.781428284886783,
+      "q05": 344.0,
+      "q10": 353.0,
+      "q25": 371.0,
+      "q50": 388.0,
+      "q75": 405.0,
+      "q90": 418.0,
+      "q95": 425.0
+    },
+    "school_year_balanced": {
+      "meaning": "random observed school-year; every programme-year receives equal mass",
+      "mean": 388.20943727914494,
+      "sd": 25.065528452555167,
+      "q05": 344.0,
+      "q10": 354.0,
+      "q25": 372.0,
+      "q50": 390.0,
+      "q75": 406.0,
+      "q90": 420.0,
+      "q95": 427.0
+    },
+    "school_balanced": {
+      "meaning": "random school, then random observed year, then random admitted candidate",
+      "mean": 388.18066712416714,
+      "sd": 25.22007900660702,
+      "q05": 342.0742773060794,
+      "q10": 354.0,
+      "q25": 372.0,
+      "q50": 390.0,
+      "q75": 406.0,
+      "q90": 420.0,
+      "q95": 427.0
+    }
+  },
+  "two_level_variance": {
+    "candidate_weighted": {
+      "within_school_year_variance": 299.254207423205,
+      "between_school_year_variance": 324.80105880847674,
+      "total_variance": 624.0552662316818,
+      "within_share": 0.4795315793587202,
+      "between_share": 0.5204684206412796,
+      "icc_school_year": 0.5204684206412796,
+      "identity": "Var(Y)=E[Var(Y|school,year)]+Var(E[Y|school,year])"
+    },
+    "school_year_balanced": {
+      "within_school_year_variance": 298.3404317391043,
+      "between_school_year_variance": 343.788465385207,
+      "total_variance": 642.1288971243114,
+      "within_share": 0.4646114402811992,
+      "between_share": 0.5353885597188007,
+      "icc_school_year": 0.5353885597188007,
+      "identity": "Var(Y)=E[Var(Y|school,year)]+Var(E[Y|school,year])"
+    }
+  },
+  "three_level_school_balanced_variance": {
+    "within_school_year_candidate_variance": 299.7872389326324,
+    "within_school_across_year_variance": 71.08683353836918,
+    "between_school_variance": 279.3340661237219,
+    "total_variance": 650.2081385947236,
+    "shares": {
+      "within_school_year_candidate": 0.46106349819083176,
+      "within_school_across_year": 0.10932935058611715,
+      "between_school": 0.42960715122305104
+    },
+    "identity": "Y_i,s,t = national mean + school effect + school-year effect + candidate deviation"
+  },
+  "scope": {
+    "candidate_rows": 2312,
+    "school_years": 77,
+    "schools": 44
+  }
+}

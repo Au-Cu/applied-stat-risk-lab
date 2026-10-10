@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "forecastYear": 2027,
+  "informationCutoff": "2026-10-07 23:59 Asia/Hong_Kong",
+  "frozenAt": "2026-10-08T12:29:09+08:00",
+  "status": "frozen_for_prospective_test",
+  "git": {
+    "commit": "cf1159eadabb11f8a4b693559cc37eea94ec553c",
+    "workingTreeDirty": true
+  },
+  "headlineMetricsAtFreeze": {
+    "backtestRows": 226,
+    "proxyQ10WeightedMae": 17.66,
+    "strictNestedRows": 155,
+    "rawP90Coverage": 0.797,
+    "robustP90Coverage": 0.921,
+    "robustWis": 9.7,
+    "robustP90MinusP50": 29.35,
+    "exactCandidateQ10Labels": 0
+  },
+  "evaluationProtocol": {
+    "primaryRule": "Do not tune any model, calibration rule, width threshold, or event prior using 2027 outcomes.",
+    "deviationRule": "Any change after outcome access must receive a new version and be scored separately from this frozen baseline.",
+    "primaryMetrics": [
+      "weighted_mae",
+      "wis",
+      "q90_coverage",
+      "q95_coverage",
+      "p90_minus_p50"
+    ],
+    "subgroupMetrics": [
+      "is_985",
+      "national_zone",
+      "event_status"
+    ],
+    "subgroupPolicy": "Diagnostic only until additional independent forecast origins are available; no subgroup retuning on the 2027 result.",
+    "labelPolicy": "Score the proxy target for continuity and report any newly obtained exact normal-exam Q10 subset separately.",
+    "candidateScoreUncertainty": "excluded_by_current_research_scope"
+  },
+  "files": [
+    {
+      "path": "data/processed/program_year.csv",
+      "bytes": 323894,
+      "sha256": "7f7915720031809f17826844fb3f90bafff1d0d5a0c8131deb409709f83448b5"
+    },
+    {
+      "path": "data/processed/national_lines.json",
+      "bytes": 1094,
+      "sha256": "a2fbb0c615dbf2b0db8acadb94ed6cbaec19a16b0611df9497cc0ce215db19e4"
+    },
+    {
+      "path": "data/processed/events_2027.csv",
+      "bytes": 1561,
+      "sha256": "4f99c9775bf15bfcb2106148c34cedb9210aeae10a55f6f1b7d00f292daf60ab"
+    },
+    {
+      "path": "data/processed/quota_publication_events.csv",
+      "bytes": 3089,
+      "sha256": "27399ef1835777093ae077d0a6904aa335de1be02d5a984631ebbf6ed60b2a25"
+    },
+    {
+      "path": "data/processed/candidate_initial_scores.csv",
+      "bytes": 248,
+      "sha256": "fd19502b6df714961895ebc188733d0adcf39a9e3312135fc67e877a21b90c4a"
+    },
+    {
+      "path": "data/processed/rolling_backtest.csv",
+      "bytes": 47360,
+      "sha256": "ab20b5068777fe46694febb3063568a940fd4adafb351deccf13888d0cc84f3e"
+    },
+    {
+      "path": "data/processed/forecast_2027.csv",
+      "bytes": 143090,
+      "sha256": "0bf17751a66e6112dc586ca11cc1814ec9a930786d184906ec17ad1db73f8db7"
+    },
+    {
+      "path": "data/processed/forecast_2027.json",
+      "bytes": 264573,
+      "sha256": "7f7f34889a9e1692e2160cb4e5ff292f616050e87e4167f07427702717d82b6d"
+    },
+    {
+      "path": "data/audit/model_run.json",
+      "bytes": 3037,
+      "sha256": "82226cf43cd6ddc9b1354e6d4b60bd79aec6fc5259a3cecaa50a17894585b04b"
+    },
+    {
+      "path": "app/data/forecast.json",
+      "bytes": 811262,
+      "sha256": "6288633390668df840689d0dd1624edd82d3278daaf8de8364cd04dbd6c2196e"
+    },
+    {
+      "path": "model/train_model.py",
+      "bytes": 52052,
+      "sha256": "a0100a7053568bff9ada0d1ce238fc3fd58d1972afc3636a9920b4bbc53cf21b"
+    },
+    {
+      "path": "model/interval_calibration.py",
+      "bytes": 14917,
+      "sha256": "1046cadf2df8d4ba5337c86cfddc28e89928b136579322f116269826324aef31"
+    },
+    {
+      "path": "model/quota_features.py",
+      "bytes": 13485,
+      "sha256": "37b756ee05407ddc62b63cefd967423bc1c4a79e93794306b33e6de330cfb0a3"
+    },
+    {
+      "path": "model/candidate_score_layer.py",
+      "bytes": 6927,
+      "sha256": "d289fe2e5ee78f1c46df966ec29956627c3caa176e6008c44ff833def97d9990"
+    },
+    {
+      "path": "model/experiment_v3_validation.py",
+      "bytes": 30643,
+      "sha256": "9e1ee22c18af110285a932e872dc64559b9018f56e7cf801c04f63da8c849ee8"
+    },
+    {
+      "path": "output/experiments/v3_validation_20261007/summary.json",
+      "bytes": 24589,
+      "sha256": "12b5ce60c3d50ead332fc13926c9a8acbadd19d4d2e528097383520f9c2a43f0"
+    },
+    {
+      "path": "model/forecast_freeze.py",
+      "bytes": 6329,
+      "sha256": "6f5768b7ed761d242189fa280084ebd5037439a5f2f6a50c76aa53321fa405a1"
+    }
+  ]
+}

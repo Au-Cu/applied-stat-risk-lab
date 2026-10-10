@@ -45,5 +45,35 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+/tmp/
+# Source snapshots may contain names or candidate numbers.  Keep them local;
+# only de-identified scores, hashes, and public source URLs may be committed.
+/data/private/
+# Candidate-roster discovery and OCR intermediates can expose image endpoints,
+# local paths, masked names or candidate numbers.  Publish aggregates only.
+/data/processed/mini_program_roster_index.csv
+/data/processed/mini_program_year_index.csv
+/data/processed/roster_asset_manifest.csv
+/data/processed/roster_ocr_audit.csv
+/data/audit/candidate_score_extraction.json
+/data/audit/mini_program_roster_index.json
+/data/audit/roster_asset_collection.json
+/output/audits/
+/output/pdf/v4_render/
+/output/pdf/*.pdf
+!/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V5_逐人分布与来源审计增强.pdf
+!/output/pdf/应用统计硕士择校研究_逐字段公共数据来源目录_V5.pdf
+# Reproducible raster previews and superseded experiment bundles stay local;
+# public papers use the tracked SVG figures and selected V5 aggregate outputs.
+/paper/assets/**/*.png
+/output/experiments/calibration_candidates_20261008/
+/output/experiments/precision_upgrade_20261007/
+/output/experiments/quota_features_20261007/
+/output/experiments/v3_validation_20261007/
+/output/experiments/v4_exact_labels_20261009/
+/output/experiments/v5_candidate_distribution_20261009/
+/output/experiments/v5_exact_labels_20261009/audit/
+/output/experiments/v5_exact_labels_20261009/model/
+/output/experiments/v5_exact_labels_20261009/forecast_payload.json
 __pycache__/
 *.py[cod]

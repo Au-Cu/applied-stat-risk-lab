@@ -1,0 +1,44 @@
+{
+  "rows": 7,
+  "eligible_rows": 6,
+  "schools": [
+    "上海交通大学",
+    "中南财经政法大学",
+    "河北工业大学",
+    "重庆大学"
+  ],
+  "years": [
+    2025,
+    2026,
+    2027
+  ],
+  "duplicate_key_count": 0,
+  "errors": [],
+  "warnings": [],
+  "status": "ok",
+  "strict_policy": {
+    "event_rows": 6,
+    "eligible_event_rows": 6,
+    "schools": 4,
+    "years": [
+      2025,
+      2026,
+      2027
+    ]
+  },
+  "registration_window_sensitivity": {
+    "event_rows": 7,
+    "eligible_event_rows": 6,
+    "schools": 4,
+    "years": [
+      2025,
+      2026,
+      2027
+    ]
+  },
+  "policy_notes": [
+    "严格模型只接受正式报名开始前发布且 model_eligible=true 的记录。",
+    "registration_window 记录仅用于敏感性分析，不进入生产特征。",
+    "published_regular_quota 优先；只有总计划与推免/专项扣除可核实时才推导统考名额。"
+  ]
+}

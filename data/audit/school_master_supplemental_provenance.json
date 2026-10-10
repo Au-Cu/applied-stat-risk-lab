@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-10-09T10:50:21.240444+00:00",
+  "api_targets": 107,
+  "matched_field_sources": 642,
+  "matched_schools": 79,
+  "matched_by_field": {
+    "politics_subject": 107,
+    "major_subject": 107,
+    "english_subject": 103,
+    "math_subject": 98,
+    "study_mode": 95,
+    "duration": 77,
+    "unit_2026": 55
+  },
+  "errors": [],
+  "policy": "Only exact or predeclared semantic-equivalent values are linked; the API remains secondary evidence."
+}

@@ -1,0 +1,297 @@
+{
+  "generated_from": {
+    "program_year": "data\\processed\\program_year.csv",
+    "rolling_backtest": "data\\processed\\rolling_backtest.csv",
+    "events": "data\\processed\\events_2027.csv",
+    "forecast": "data\\processed\\forecast_2027.csv",
+    "national_lines": "data\\processed\\national_lines.json",
+    "app_forecast": "app\\data\\forecast.json"
+  },
+  "forecast_year": 2027,
+  "data_audit": {
+    "counts": {
+      "校年观测": 405,
+      "有复试线": 370,
+      "官方/官方二手复试线": 46,
+      "可构造Q10代理": 295,
+      "逐名精确Q10": 0
+    },
+    "q10_methods": {
+      "顺序统计插值": 143,
+      "仅最低分": 120,
+      "小样本最低分": 32,
+      "缺失": 110
+    },
+    "issues": {
+      "复试比不一致": 6,
+      "录取最低分低于所选线": 8,
+      "专项计划排除不明确": 10
+    }
+  },
+  "national_line": {
+    "forecast": {
+      "A": {
+        "mean": 330.39,
+        "sigma": 12.23,
+        "q50": 330.28,
+        "q80": 340.79,
+        "q90": 346.2,
+        "q95": 350.56
+      },
+      "B": {
+        "mean": 320.39,
+        "sigma": 12.23,
+        "q50": 320.39,
+        "q80": 330.46,
+        "q90": 335.63,
+        "q95": 339.87
+      }
+    },
+    "history_rows": 10
+  },
+  "backtest": {
+    "overall": {
+      "rows": 226,
+      "weighted_mae": 17.67452498651312,
+      "median_absolute_error": 15.620000000000033,
+      "asymmetric_loss_3x": 33.97690198064495,
+      "underprediction_rate": 0.48845633002675354,
+      "complex_candidate_mae": 20.349467020445015,
+      "last_year_baseline_mae": 18.579701391446935,
+      "robust_anchor_mae": 17.11945242549386,
+      "q80_coverage": 0.6716907595591716,
+      "q90_coverage": 0.7415803322727322,
+      "q95_coverage": 0.7659337876669345
+    },
+    "yearly": [
+      {
+        "year": 2024,
+        "n": 71,
+        "weighted_mae": 15.660505666331954,
+        "median_absolute_error": 13.990000000000009,
+        "underprediction_rate": 0.5220915220197964,
+        "q80_coverage": 0.7912064266245874,
+        "q90_coverage": 0.856835461196385,
+        "q95_coverage": 0.8834457036293215
+      },
+      {
+        "year": 2025,
+        "n": 78,
+        "weighted_mae": 20.78516114032265,
+        "median_absolute_error": 19.32000000000002,
+        "underprediction_rate": 0.15602532460564442,
+        "q80_coverage": 0.9033515756340093,
+        "q90_coverage": 0.9474192509925958,
+        "q95_coverage": 0.9649461673283973
+      },
+      {
+        "year": 2026,
+        "n": 77,
+        "weighted_mae": 16.7940762547159,
+        "median_absolute_error": 13.189999999999998,
+        "underprediction_rate": 0.7272779238596091,
+        "q80_coverage": 0.3913341717160169,
+        "q90_coverage": 0.48525208642963297,
+        "q95_coverage": 0.5132616897221904
+      }
+    ],
+    "by_model": [
+      {
+        "model": "hierarchical_ensemble_fallback",
+        "n": 16,
+        "weighted_mae": 25.756936257710752,
+        "q90_coverage": 0.9407128169979437
+      },
+      {
+        "model": "robust_margin_anchor",
+        "n": 210,
+        "weighted_mae": 17.119550433565117,
+        "q90_coverage": 0.7279070041062203
+      }
+    ]
+  },
+  "calibration_window_q90": {
+    "2024": 25.201346938775664,
+    "2024—2025": 18.516345238095145,
+    "2024—2026": 26.02312307692313,
+    "仅 2026": 31.448302040816404
+  },
+  "events": [
+    {
+      "school": "中央民族大学",
+      "event_name": "应用统计自2026级起由2年调整为3年",
+      "withdrawal_adjustment": -5,
+      "neutral_adjustment": -2,
+      "crowd_adjustment": 1,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.6,
+      "crowd_weight": 0.15,
+      "expected_adjustment": -2.3,
+      "source_url": "https://grs.muc.edu.cn/info/1178/7274.htm"
+    },
+    {
+      "school": "吉林大学",
+      "event_name": "432统计学改为统计与数据科学基础",
+      "withdrawal_adjustment": -14,
+      "neutral_adjustment": -2,
+      "crowd_adjustment": 13,
+      "withdrawal_weight": 0.3,
+      "neutral_weight": 0.42,
+      "crowd_weight": 0.28,
+      "expected_adjustment": -1.4,
+      "source_url": "https://math.jlu.edu.cn/info/1080/16897.htm"
+    },
+    {
+      "school": "华东师范大学",
+      "event_name": "432范围不变但考试内容与参考教材调整",
+      "withdrawal_adjustment": -6,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 7,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.5,
+      "crowd_weight": 0.25,
+      "expected_adjustment": 0.25,
+      "source_url": "https://stat.ecnu.edu.cn/c2/dd/c9708a770781/page.htm"
+    },
+    {
+      "school": "东南大学",
+      "event_name": "初试参考书更新且复试科目调整",
+      "withdrawal_adjustment": -4,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 5,
+      "withdrawal_weight": 0.2,
+      "neutral_weight": 0.58,
+      "crowd_weight": 0.22,
+      "expected_adjustment": 0.3,
+      "source_url": "https://stat.seu.edu.cn/2026/0625/c60842a573899/page.htm"
+    },
+    {
+      "school": "北京工业大学",
+      "event_name": "432统计学考试大纲内容调整",
+      "withdrawal_adjustment": -7,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 8,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.47,
+      "crowd_weight": 0.28,
+      "expected_adjustment": 0.49,
+      "source_url": "https://yanzhao.bjut.edu.cn/info/1025/18129.htm"
+    }
+  ],
+  "forecast_distribution": {
+    "q50_mean": 357.5654320987654,
+    "q50_sd": 17.820403758710317,
+    "q50_min": 319.9,
+    "q50_median": 360.9,
+    "q50_max": 403.9,
+    "q90_mean": 383.6444444444445,
+    "q90_sd": 17.81464285356291,
+    "q90_min": 346.0,
+    "q90_median": 387.0,
+    "q90_max": 429.9,
+    "confidence_counts": {
+      "中等": 62,
+      "较低": 11,
+      "较高": 8
+    },
+    "faction_counts": {
+      "贾茆": 31,
+      "贾茆Pro": 13,
+      "纯茆": 12,
+      "纯贾": 12,
+      "茆Pro": 10,
+      "待核实": 3
+    }
+  },
+  "ecnu_example": {
+    "anchors": {
+      "q05": 343.2,
+      "q10": 348.6,
+      "q20": 354.9,
+      "q50": 367.3,
+      "q80": 384.6,
+      "q90": 393.4,
+      "q95": 399.2
+    },
+    "score_probabilities": {
+      "375": 0.6335260115606933,
+      "380": 0.7202312138728321,
+      "385": 0.8045454545454543,
+      "390": 0.8613636363636364,
+      "393.4": 0.9,
+      "395": 0.913793103448276,
+      "400": 0.9544444444444444,
+      "405": 0.9822222222222222
+    }
+  },
+  "complex_feature_effects": [
+    {
+      "feature": "trailing_margin_median",
+      "label_cn": "历史边际中位数",
+      "effect_value": -5.884,
+      "sd_value": 4.538
+    },
+    {
+      "feature": "national_zone=B",
+      "label_cn": "B区",
+      "effect_value": -5.039,
+      "sd_value": 7.126
+    },
+    {
+      "feature": "peer_lag1_surprise_mean",
+      "label_cn": "竞校上一年异常",
+      "effect_value": -2.282,
+      "sd_value": 0.875
+    },
+    {
+      "feature": "lag1_surprise_z",
+      "label_cn": "上一年冷热异常",
+      "effect_value": -1.681,
+      "sd_value": 2.078
+    },
+    {
+      "feature": "lag1_cutoff_change",
+      "label_cn": "上一年复试线变化",
+      "effect_value": 2.118,
+      "sd_value": 0.881
+    },
+    {
+      "feature": "log_lag1_admitted_count",
+      "label_cn": "上一年录取数（对数）",
+      "effect_value": 2.824,
+      "sd_value": 1.658
+    },
+    {
+      "feature": "lag1_margin_q10",
+      "label_cn": "上一年Q10边际",
+      "effect_value": 4.038,
+      "sd_value": 4.914
+    },
+    {
+      "feature": "national_zone=A",
+      "label_cn": "A区",
+      "effect_value": 5.238,
+      "sd_value": 7.115
+    },
+    {
+      "feature": "is_985",
+      "label_cn": "985身份",
+      "effect_value": 11.184,
+      "sd_value": 2.272
+    },
+    {
+      "feature": "year_index",
+      "label_cn": "年份趋势",
+      "effect_value": 11.78,
+      "sd_value": 1.948
+    }
+  ],
+  "loss_ratio_to_quantile": {
+    "1": 0.5,
+    "2": 0.6666666666666666,
+    "3": 0.75,
+    "4": 0.8,
+    "5": 0.8333333333333334,
+    "9": 0.9
+  }
+}

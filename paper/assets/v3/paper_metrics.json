@@ -1,0 +1,1739 @@
+{
+  "generated_from": {
+    "program_year": "data\\processed\\program_year.csv",
+    "rolling_backtest": "data\\processed\\rolling_backtest.csv",
+    "events": "data\\processed\\events_2027.csv",
+    "forecast": "data\\processed\\forecast_2027.csv",
+    "national_lines": "data\\processed\\national_lines.json",
+    "app_forecast": "app\\data\\forecast.json"
+  },
+  "forecast_year": 2027,
+  "data_audit": {
+    "counts": {
+      "校年观测": 405,
+      "有复试线": 370,
+      "官方/官方二手复试线": 46,
+      "可构造Q10代理": 295,
+      "逐名精确Q10": 72
+    },
+    "q10_methods": {
+      "顺序统计插值": 143,
+      "仅最低分": 120,
+      "小样本最低分": 32,
+      "缺失": 110
+    },
+    "issues": {
+      "复试比不一致": 6,
+      "录取最低分低于所选线": 8,
+      "专项计划排除不明确": 10
+    }
+  },
+  "national_line": {
+    "forecast": {
+      "A": {
+        "mean": 330.39,
+        "sigma": 12.23,
+        "q50": 330.28,
+        "q80": 340.79,
+        "q90": 346.2,
+        "q95": 350.56
+      },
+      "B": {
+        "mean": 320.39,
+        "sigma": 12.23,
+        "q50": 320.39,
+        "q80": 330.46,
+        "q90": 335.63,
+        "q95": 339.87
+      }
+    },
+    "history_rows": 10
+  },
+  "backtest": {
+    "overall": {
+      "rows": 226,
+      "weighted_mae": 17.66172224729987,
+      "median_absolute_error": 15.219999999999999,
+      "asymmetric_loss_3x": 34.171895429873715,
+      "underprediction_rate": 0.5086040801946514,
+      "complex_candidate_mae": 20.349467020445015,
+      "last_year_baseline_mae": 18.579701391446935,
+      "robust_anchor_mae": 17.11945242549386,
+      "q80_coverage": 0.7430115932136212,
+      "q90_coverage": 0.8287991720705943,
+      "q95_coverage": 0.8785409946162568
+    },
+    "yearly": [
+      {
+        "year": 2024,
+        "n": 71,
+        "weighted_mae": 15.626162673934877,
+        "median_absolute_error": 14.310000000000002,
+        "underprediction_rate": 0.5487017644527329,
+        "q80_coverage": 0.8087792282312437,
+        "q90_coverage": 0.9010185052359776,
+        "q95_coverage": 0.9400372973748385
+      },
+      {
+        "year": 2025,
+        "n": 78,
+        "weighted_mae": 20.6143130521873,
+        "median_absolute_error": 19.39500000000001,
+        "underprediction_rate": 0.18592839002754233,
+        "q80_coverage": 0.9649461673283973,
+        "q90_coverage": 0.9649461673283973,
+        "q95_coverage": 0.9649461673283973
+      },
+      {
+        "year": 2026,
+        "n": 77,
+        "weighted_mae": 16.92472562021264,
+        "median_absolute_error": 14.0,
+        "underprediction_rate": 0.7344803932776952,
+        "q80_coverage": 0.5132616897221904,
+        "q90_coverage": 0.6624556990968332,
+        "q95_coverage": 0.7604893106207843
+      }
+    ],
+    "by_model": [
+      {
+        "model": "hierarchical_ensemble_fallback",
+        "n": 16,
+        "weighted_mae": 25.756936257710752,
+        "q90_coverage": 0.9407128169979437
+      },
+      {
+        "model": "robust_margin_anchor",
+        "n": 210,
+        "weighted_mae": 17.105868600943605,
+        "q90_coverage": 0.821114680032473
+      }
+    ]
+  },
+  "v3_validation": {
+    "experiment": "v3_validation_20261007",
+    "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
+    "rows": 226,
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "strict_nested_rows": 155,
+    "strict_nested_years": [
+      2025,
+      2026
+    ],
+    "effective_sample_size_weighted": 207.32548849261497,
+    "overall_all_origins": {
+      "raw_distribution": {
+        "rows": 226,
+        "effective_rows": 207.32548849261497,
+        "mae": 17.66172224729987,
+        "median_absolute_error": 15.219999999999999,
+        "asymmetric_loss_3x": 34.171895429873715,
+        "underprediction_rate": 0.5086040801946514,
+        "wis": 11.172509537702716,
+        "approx_crps": 13.432330196853428,
+        "q05_coverage": 0.14592255777339835,
+        "q05_pinball": 4.119815163659183,
+        "q10_coverage": 0.1987470961917449,
+        "q10_pinball": 6.100636415682216,
+        "q20_coverage": 0.2651355844499004,
+        "q20_pinball": 7.9625975844719195,
+        "q50_coverage": 0.4913959198053485,
+        "q50_pinball": 8.830861123649935,
+        "q80_coverage": 0.7430115932136212,
+        "q80_pinball": 7.11149971925266,
+        "q90_coverage": 0.8287991720705943,
+        "q90_pinball": 5.390903235750694,
+        "q95_coverage": 0.8785409946162568,
+        "q95_pinball": 3.4890579055147604,
+        "width_80": 69.81083959968731,
+        "width_90": 94.69780400532868,
+        "upper_width_90": 33.86610058461504,
+        "upper_width_90_sd": 39.87795762328511,
+        "upper_width_90_cv": 1.1723684623671111
+      },
+      "heteroscedastic_direct_tail": {
+        "rows": 226,
+        "effective_rows": 207.32548849261497,
+        "mae": 17.66172224729987,
+        "median_absolute_error": 15.219999999999999,
+        "asymmetric_loss_3x": 34.171895429873715,
+        "underprediction_rate": 0.5086040801946514,
+        "wis": 11.208242475100016,
+        "approx_crps": 13.439479497039684,
+        "q05_coverage": 0.14592255777339835,
+        "q05_pinball": 4.119815163659183,
+        "q10_coverage": 0.1987470961917449,
+        "q10_pinball": 6.100636415682216,
+        "q20_coverage": 0.2651355844499004,
+        "q20_pinball": 7.9625975844719195,
+        "q50_coverage": 0.4913959198053485,
+        "q50_pinball": 8.830861123649935,
+        "q80_coverage": 0.7430115932136212,
+        "q80_pinball": 7.11149971925266,
+        "q90_coverage": 0.8287991720705943,
+        "q90_pinball": 5.417730065866616,
+        "q95_coverage": 0.8893305001706503,
+        "q95_pinball": 3.551563418892091,
+        "width_80": 70.22757334002866,
+        "width_90": 97.09268081219645,
+        "upper_width_90": 34.28283432495638,
+        "upper_width_90_sd": 39.6911466909821,
+        "upper_width_90_cv": 1.151170912136108
+      },
+      "robust_origin_safety_bound": {
+        "rows": 226,
+        "effective_rows": 207.32548849261497,
+        "mae": 17.66172224729987,
+        "median_absolute_error": 15.219999999999999,
+        "asymmetric_loss_3x": 34.171895429873715,
+        "underprediction_rate": 0.5086040801946514,
+        "wis": 10.980291735210466,
+        "approx_crps": 13.334906789136012,
+        "q05_coverage": 0.14592255777339835,
+        "q05_pinball": 4.119815163659183,
+        "q10_coverage": 0.1987470961917449,
+        "q10_pinball": 6.100636415682216,
+        "q20_coverage": 0.2651355844499004,
+        "q20_pinball": 7.9625975844719195,
+        "q50_coverage": 0.4913959198053485,
+        "q50_pinball": 8.830861123649935,
+        "q80_coverage": 0.838245494280461,
+        "q80_pinball": 6.980890915407553,
+        "q90_coverage": 0.9147849255193825,
+        "q90_pinball": 5.179376627072295,
+        "q95_coverage": 0.9525261755606689,
+        "q95_pinball": 3.220040007962537,
+        "width_80": 77.89906509458453,
+        "width_90": 103.23408772934539,
+        "upper_width_90": 41.95432607951226,
+        "upper_width_90_sd": 37.092859358817726,
+        "upper_width_90_cv": 0.883421037549631
+      }
+    },
+    "overall_strict_nested": {
+      "raw_distribution": {
+        "rows": 155,
+        "effective_rows": 141.44801415396563,
+        "mae": 18.56345460322504,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 34.545546270553665,
+        "underprediction_rate": 0.4908412105806657,
+        "wis": 9.97500312971642,
+        "approx_crps": 12.882111960441659,
+        "q05_coverage": 0.21056477877512111,
+        "q05_pinball": 3.5596765668440713,
+        "q10_coverage": 0.27900548097545474,
+        "q10_pinball": 5.267277829851459,
+        "q20_coverage": 0.35094129795853535,
+        "q20_pinball": 7.48290011915164,
+        "q50_coverage": 0.5091587894193343,
+        "q50_pinball": 9.28172730161252,
+        "q80_coverage": 0.7138771943760427,
+        "q80_pinball": 6.468283294940027,
+        "q90_coverage": 0.7968067360393996,
+        "q90_pinball": 4.230854047184049,
+        "q95_coverage": 0.8512987528794982,
+        "q95_pinball": 2.597972078798952,
+        "width_80": 35.675124473746926,
+        "width_90": 45.85357502581619,
+        "upper_width_90": 17.67649837159425,
+        "upper_width_90_sd": 3.469743670576498,
+        "upper_width_90_cv": 0.196757215063953
+      },
+      "heteroscedastic_direct_tail": {
+        "rows": 155,
+        "effective_rows": 141.44801415396563,
+        "mae": 18.56345460322504,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 34.545546270553665,
+        "underprediction_rate": 0.4908412105806657,
+        "wis": 10.026565397900699,
+        "approx_crps": 12.89242832848705,
+        "q05_coverage": 0.21056477877512111,
+        "q05_pinball": 3.5596765668440713,
+        "q10_coverage": 0.27900548097545474,
+        "q10_pinball": 5.267277829851459,
+        "q20_coverage": 0.35094129795853535,
+        "q20_pinball": 7.48290011915164,
+        "q50_coverage": 0.5091587894193343,
+        "q50_pinball": 9.28172730161252,
+        "q80_coverage": 0.7138771943760427,
+        "q80_pinball": 6.468283294940027,
+        "q90_coverage": 0.7968067360393996,
+        "q90_pinball": 4.269564892407641,
+        "q95_coverage": 0.8668679005480976,
+        "q95_pinball": 2.688166904036058,
+        "width_80": 36.276467056977744,
+        "width_90": 49.30935809819671,
+        "upper_width_90": 18.27784095482507,
+        "upper_width_90_sd": 3.5338212409602914,
+        "upper_width_90_cv": 0.19298597348416166
+      },
+      "robust_origin_safety_bound": {
+        "rows": 155,
+        "effective_rows": 141.44801415396563,
+        "mae": 18.56345460322504,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 34.545546270553665,
+        "underprediction_rate": 0.4908412105806657,
+        "wis": 9.6976347798464,
+        "approx_crps": 12.741530965929545,
+        "q05_coverage": 0.21056477877512111,
+        "q05_pinball": 3.5596765668440713,
+        "q10_coverage": 0.27900548097545474,
+        "q10_pinball": 5.267277829851459,
+        "q20_coverage": 0.35094129795853535,
+        "q20_pinball": 7.48290011915164,
+        "q50_coverage": 0.5091587894193343,
+        "q50_pinball": 9.28172730161252,
+        "q80_coverage": 0.8512987528794982,
+        "q80_pinball": 6.279816108595645,
+        "q90_coverage": 0.9208833108269125,
+        "q90_pinball": 3.925623284777974,
+        "q95_coverage": 0.958058622607038,
+        "q95_pinball": 2.2097819665299734,
+        "width_80": 47.34635226747192,
+        "width_90": 58.171346324072005,
+        "upper_width_90": 29.347726165319244,
+        "upper_width_90_sd": 6.278170298074515,
+        "upper_width_90_cv": 0.2145677408868938
+      }
+    },
+    "unweighted_strict_nested": {
+      "raw_distribution": {
+        "rows": 155,
+        "effective_rows": 155.0,
+        "mae": 18.438451612903226,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 31.608000000000004,
+        "underprediction_rate": 0.432258064516129,
+        "wis": 9.947209032258066,
+        "approx_crps": 12.82724822580645,
+        "q05_coverage": 0.23870967741935484,
+        "q05_pinball": 3.7242967741935495,
+        "q10_coverage": 0.3161290322580645,
+        "q10_pinball": 5.471600000000002,
+        "q20_coverage": 0.3935483870967742,
+        "q20_pinball": 7.654658064516127,
+        "q50_coverage": 0.567741935483871,
+        "q50_pinball": 9.219225806451613,
+        "q80_coverage": 0.7612903225806451,
+        "q80_pinball": 6.256438709677418,
+        "q90_coverage": 0.8387096774193549,
+        "q90_pinball": 4.016741935483871,
+        "q95_coverage": 0.8838709677419355,
+        "q95_pinball": 2.4361580645161296,
+        "width_80": 35.666,
+        "width_90": 45.84651612903226,
+        "upper_width_90": 17.634645161290322,
+        "upper_width_90_sd": 3.469743670576498,
+        "upper_width_90_cv": 0.196757215063953
+      },
+      "heteroscedastic_direct_tail": {
+        "rows": 155,
+        "effective_rows": 155.0,
+        "mae": 18.438451612903226,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 31.608000000000004,
+        "underprediction_rate": 0.432258064516129,
+        "wis": 10.017562016364916,
+        "approx_crps": 12.841033245417268,
+        "q05_coverage": 0.23870967741935484,
+        "q05_pinball": 3.7242967741935495,
+        "q10_coverage": 0.3161290322580645,
+        "q10_pinball": 5.471600000000002,
+        "q20_coverage": 0.3935483870967742,
+        "q20_pinball": 7.654658064516127,
+        "q50_coverage": 0.567741935483871,
+        "q50_pinball": 9.219225806451613,
+        "q80_coverage": 0.7612903225806451,
+        "q80_pinball": 6.256438709677418,
+        "q90_coverage": 0.8387096774193549,
+        "q90_pinball": 4.066650901458482,
+        "q95_coverage": 0.896774193548387,
+        "q95_pinball": 2.5621315588086464,
+        "width_80": 36.3426402506016,
+        "width_90": 49.7350182729471,
+        "upper_width_90": 18.311285411891927,
+        "upper_width_90_sd": 3.5338212409602914,
+        "upper_width_90_cv": 0.19298597348416166
+      },
+      "robust_origin_safety_bound": {
+        "rows": 155,
+        "effective_rows": 155.0,
+        "mae": 18.438451612903226,
+        "median_absolute_error": 16.50999999999999,
+        "asymmetric_loss_3x": 31.608000000000004,
+        "underprediction_rate": 0.432258064516129,
+        "wis": 9.871142985358599,
+        "approx_crps": 12.881022104682234,
+        "q05_coverage": 0.23870967741935484,
+        "q05_pinball": 3.7242967741935495,
+        "q10_coverage": 0.3161290322580645,
+        "q10_pinball": 5.471600000000002,
+        "q20_coverage": 0.3935483870967742,
+        "q20_pinball": 7.654658064516127,
+        "q50_coverage": 0.567741935483871,
+        "q50_pinball": 9.219225806451613,
+        "q80_coverage": 0.8838709677419355,
+        "q80_pinball": 6.417335703648906,
+        "q90_coverage": 0.9419354838709677,
+        "q90_pinball": 4.00597530698007,
+        "q95_coverage": 0.967741935483871,
+        "q95_pinball": 2.256759575771262,
+        "width_80": 47.29097360583814,
+        "width_90": 57.9876628781214,
+        "upper_width_90": 29.25961876712846,
+        "upper_width_90_sd": 6.278170298074515,
+        "upper_width_90_cv": 0.2145677408868938
+      }
+    },
+    "latest_year": {
+      "raw": {
+        "rows": 77,
+        "effective_rows": 72.96309075087316,
+        "mae": 16.92472562021264,
+        "median_absolute_error": 14.0,
+        "asymmetric_loss_3x": 43.2435286383903,
+        "underprediction_rate": 0.7344803932776952,
+        "wis": 8.802809214587858,
+        "approx_crps": 11.601571001486224,
+        "q05_coverage": 0.07362524294043672,
+        "q05_pinball": 2.2715471876071804,
+        "q10_coverage": 0.08351434777638048,
+        "q10_pinball": 3.7896455927746664,
+        "q20_coverage": 0.13095918600663084,
+        "q20_pinball": 5.932791242711787,
+        "q50_coverage": 0.2655196067223048,
+        "q50_pinball": 8.46236281010632,
+        "q80_coverage": 0.5132616897221904,
+        "q80_pinball": 6.599515491025493,
+        "q90_coverage": 0.6624556990968332,
+        "q90_pinball": 4.550330513318851,
+        "q95_coverage": 0.7604893106207843,
+        "q95_pinball": 2.9331369326626264,
+        "width_80": 35.958335429290045,
+        "width_90": 46.07513890476734,
+        "upper_width_90": 17.89932605464731,
+        "upper_width_90_sd": 0.7091051469029971,
+        "upper_width_90_cv": 0.03957146006445146
+      },
+      "calibrated": {
+        "rows": 77,
+        "effective_rows": 72.96309075087316,
+        "mae": 16.92472562021264,
+        "median_absolute_error": 14.0,
+        "asymmetric_loss_3x": 43.2435286383903,
+        "underprediction_rate": 0.7344803932776952,
+        "wis": 7.972119303177799,
+        "approx_crps": 10.878157418423722,
+        "q05_coverage": 0.07362524294043672,
+        "q05_pinball": 2.2715471876071804,
+        "q10_coverage": 0.08351434777638048,
+        "q10_pinball": 3.7896455927746664,
+        "q20_coverage": 0.13095918600663084,
+        "q20_pinball": 5.932791242711787,
+        "q50_coverage": 0.2655196067223048,
+        "q50_pinball": 8.46236281010632,
+        "q80_coverage": 0.7604893106207843,
+        "q80_pinball": 5.334582490869006,
+        "q90_coverage": 0.8576654853092489,
+        "q90_pinball": 3.4142890725823514,
+        "q95_coverage": 0.9245455584771921,
+        "q95_pinball": 1.9924535948739783,
+        "width_80": 48.4141133413638,
+        "width_90": 60.4173154868282,
+        "upper_width_90": 30.355103966721074,
+        "upper_width_90_sd": 5.736450051909603,
+        "upper_width_90_cv": 0.18740301926651148
+      }
+    },
+    "recommendation": {
+      "status": "research_only",
+      "rule": {
+        "wis_non_worse": true,
+        "q90_calibration_closer": true,
+        "latest_year_wis_within_5pct": true,
+        "upper_width_increase_within_60pct": false
+      },
+      "caveat": "The strict calibration comparison has only two outer years (2025-2026) and proxy labels."
+    },
+    "forecast_2027_calibrator": {
+      "fitted_rows": 226,
+      "effective_rows": 207.32548849261497,
+      "standardized_floors": {
+        "80": 2.0779944216753257,
+        "90": 2.735901947186863,
+        "95": 3.433630022640433
+      },
+      "origin_floors": {
+        "80": {
+          "2024": 1.627051968501572,
+          "2025": -0.0110014944477283,
+          "2026": 2.0779944216753257
+        },
+        "90": {
+          "2024": 2.2407234976819437,
+          "2025": 0.3626217442341638,
+          "2026": 2.735901947186863
+        },
+        "95": {
+          "2024": 2.5824218350691823,
+          "2025": 0.6687597741547624,
+          "2026": 3.433630022640433
+        }
+      },
+      "feature_names": [
+        "log_raw_q90_width",
+        "log_history_n",
+        "history_weight_mean",
+        "log_history_margin_mad",
+        "history_interpolation_share",
+        "history_minimum_share",
+        "history_official_share",
+        "is_985",
+        "zone_b",
+        "complex_fallback"
+      ]
+    },
+    "missingness": {
+      "rows": 405,
+      "missing_rows": 110,
+      "missing_rate": 0.2716049382716049,
+      "in_sample_auc_descriptive_only": 0.8975808936825885,
+      "standardized_log_odds": {
+        "year": -2.143479427356233,
+        "is_985": -0.16181225299602203,
+        "zone_b": 0.18807445721622373
+      },
+      "by_year": [
+        {
+          "year": 2022,
+          "count": 81,
+          "sum": 74,
+          "mean": 0.9135802469135802
+        },
+        {
+          "year": 2023,
+          "count": 81,
+          "sum": 19,
+          "mean": 0.2345679012345679
+        },
+        {
+          "year": 2024,
+          "count": 81,
+          "sum": 10,
+          "mean": 0.12345679012345678
+        },
+        {
+          "year": 2025,
+          "count": 81,
+          "sum": 3,
+          "mean": 0.037037037037037035
+        },
+        {
+          "year": 2026,
+          "count": 81,
+          "sum": 4,
+          "mean": 0.04938271604938271
+        }
+      ],
+      "by_tier": [
+        {
+          "is_985": 0,
+          "count": 260,
+          "sum": 75,
+          "mean": 0.28846153846153844
+        },
+        {
+          "is_985": 1,
+          "count": 145,
+          "sum": 35,
+          "mean": 0.2413793103448276
+        }
+      ],
+      "by_zone": [
+        {
+          "national_zone": "A",
+          "count": 365,
+          "sum": 96,
+          "mean": 0.26301369863013696
+        },
+        {
+          "national_zone": "B",
+          "count": 40,
+          "sum": 14,
+          "mean": 0.35
+        }
+      ],
+      "interpretation": "缺失率从2022年的历史补录缺口快速下降，年份是主要解释变量；这不能证明条件随机缺失，仍需把来源可得性视为选择机制。"
+    },
+    "national_line_benchmark": [
+      {
+        "model": "last_year",
+        "count": 7,
+        "mean": 8.142857142857142,
+        "median": 8.0,
+        "max": 15.0
+      },
+      {
+        "model": "current_blend_55",
+        "count": 7,
+        "mean": 9.695357142857151,
+        "median": 8.0,
+        "max": 19.05000000000001
+      },
+      {
+        "model": "ewma_05",
+        "count": 7,
+        "mean": 10.585379464285714,
+        "median": 9.27734375,
+        "max": 20.5546875
+      },
+      {
+        "model": "linear_trend_5",
+        "count": 6,
+        "mean": 10.883333333333354,
+        "median": 12.100000000000023,
+        "max": 20.39999999999992
+      },
+      {
+        "model": "ewma_03",
+        "count": 7,
+        "mean": 11.213156435714277,
+        "median": 9.235000000000014,
+        "max": 21.126676499999974
+      },
+      {
+        "model": "mean_3",
+        "count": 7,
+        "mean": 12.0,
+        "median": 11.666666666666686,
+        "max": 25.0
+      },
+      {
+        "model": "mean_5",
+        "count": 7,
+        "mean": 12.869047619047617,
+        "median": 10.399999999999977,
+        "max": 24.0
+      }
+    ],
+    "national_line_school_ablation": [
+      {
+        "model": "line_blend_55",
+        "rows": 210.0,
+        "weighted_mae": 17.119512499323438,
+        "unweighted_mae": 17.066452380952384,
+        "under_loss_3x": 32.97462424372209
+      },
+      {
+        "model": "line_ewma_05",
+        "rows": 210.0,
+        "weighted_mae": 17.213073392159355,
+        "unweighted_mae": 17.259517113095242,
+        "under_loss_3x": 31.597982445402973
+      },
+      {
+        "model": "line_mean_3",
+        "rows": 210.0,
+        "weighted_mae": 17.93194832404973,
+        "unweighted_mae": 18.256007936507935,
+        "under_loss_3x": 30.08303741129202
+      },
+      {
+        "model": "line_last_year",
+        "rows": 210.0,
+        "weighted_mae": 18.84372657038709,
+        "unweighted_mae": 18.258833333333335,
+        "under_loss_3x": 41.64651117914638
+      }
+    ],
+    "anchor_ablation": [
+      {
+        "model": "relative_last2_median",
+        "rows": 210.0,
+        "weighted_mae": 16.89476673930386,
+        "unweighted_mae": 16.976880952380956,
+        "under_loss_3x": 31.74324224072405
+      },
+      {
+        "model": "relative_mean",
+        "rows": 210.0,
+        "weighted_mae": 17.019070851855425,
+        "unweighted_mae": 16.991202380952384,
+        "under_loss_3x": 32.80076329845023
+      },
+      {
+        "model": "relative_recency_mean",
+        "rows": 210.0,
+        "weighted_mae": 17.05962588345932,
+        "unweighted_mae": 17.08535933072025,
+        "under_loss_3x": 32.38122420176111
+      },
+      {
+        "model": "relative_all_median",
+        "rows": 210.0,
+        "weighted_mae": 17.11951249932344,
+        "unweighted_mae": 17.066452380952384,
+        "under_loss_3x": 32.974624243722104
+      },
+      {
+        "model": "raw_all_median",
+        "rows": 210.0,
+        "weighted_mae": 17.282315392887988,
+        "unweighted_mae": 17.316238095238095,
+        "under_loss_3x": 31.88735265670926
+      },
+      {
+        "model": "relative_last",
+        "rows": 210.0,
+        "weighted_mae": 18.503174543409354,
+        "unweighted_mae": 18.704619047619055,
+        "under_loss_3x": 34.30219300000236
+      },
+      {
+        "model": "raw_last",
+        "rows": 210.0,
+        "weighted_mae": 19.669311178205078,
+        "unweighted_mae": 19.362142857142857,
+        "under_loss_3x": 41.7161413413093
+      }
+    ],
+    "center_selection_audit": {
+      "selection_years": [
+        2024,
+        2025
+      ],
+      "outer_test_year": 2026,
+      "selected_model": "relative_all_median",
+      "selected_model_2026_mae": 16.794324421665838,
+      "production_robust_2026_mae": 16.794324421665838,
+      "conclusion": "Use the earlier-fold winner for the untouched 2026 test; do not use aggregate 2024-2026 results to claim an unbiased winner."
+    },
+    "paired_bootstrap": {
+      "paired_rows": 210,
+      "difference_definition": "MAE(relative_all_median) - MAE(relative_last); negative favors robust median",
+      "point_difference": -1.3836620440859133,
+      "year_block_bootstrap_95": [
+        -3.2567739446928075,
+        -1.3836620440859135,
+        0.1592627641290057
+      ],
+      "school_cluster_bootstrap_95": [
+        -2.5689975726540313,
+        -1.4026522350320976,
+        -0.1927312701238739
+      ],
+      "warning": "Only three independent calendar-year blocks are available; the year-block interval is necessarily unstable."
+    },
+    "confidence_validity": [
+      {
+        "confidence_band": "较高",
+        "rows": 3,
+        "effective_rows": 2.9236333468175992,
+        "mae": 21.234410413476247,
+        "median_absolute_error": 32.26999999999998,
+        "asymmetric_loss_3x": 46.4195558958652,
+        "underprediction_rate": 0.7427258805513016,
+        "wis": 12.450904747320054,
+        "approx_crps": 15.72809900459417,
+        "q05_coverage": 0.2572741194486983,
+        "q05_pinball": 3.6332128637059773,
+        "q10_coverage": 0.2572741194486983,
+        "q10_pinball": 5.693666156202143,
+        "q20_coverage": 0.2572741194486983,
+        "q20_pinball": 8.530572741194483,
+        "q50_coverage": 0.2572741194486983,
+        "q50_pinball": 10.617205206738124,
+        "q80_coverage": 0.6248085758039816,
+        "q80_pinball": 9.212312404287893,
+        "q90_coverage": 0.6248085758039816,
+        "q90_pinball": 6.657523736600304,
+        "q95_coverage": 0.6248085758039816,
+        "q95_pinball": 4.525653905053588,
+        "width_80": 36.453552833078106,
+        "width_90": 46.22052067381319,
+        "upper_width_90": 17.736539050535995,
+        "upper_width_90_sd": 0.4292241061885062,
+        "upper_width_90_cv": 0.02422713675570118
+      },
+      {
+        "confidence_band": "中等",
+        "rows": 65,
+        "effective_rows": 61.00642182358564,
+        "mae": 16.48907444803446,
+        "median_absolute_error": 14.0,
+        "asymmetric_loss_3x": 40.497076602046306,
+        "underprediction_rate": 0.6957458266020462,
+        "wis": 8.789704119547654,
+        "approx_crps": 11.419069184168011,
+        "q05_coverage": 0.08669897684437262,
+        "q05_pinball": 2.2411046042003235,
+        "q10_coverage": 0.09518039849219168,
+        "q10_pinball": 3.772636039310716,
+        "q20_coverage": 0.15105008077544424,
+        "q20_pinball": 5.807666666666664,
+        "q50_coverage": 0.3042541733979535,
+        "q50_pinball": 8.24453722401723,
+        "q80_coverage": 0.5678513731825524,
+        "q80_pinball": 6.556559504577273,
+        "q90_coverage": 0.7179590737749056,
+        "q90_pinball": 4.629066235864295,
+        "q95_coverage": 0.8004173397953687,
+        "q95_pinball": 3.0869161954765745,
+        "width_80": 39.29870018847603,
+        "width_90": 50.703832794830355,
+        "upper_width_90": 19.63538435648896,
+        "upper_width_90_sd": 11.22614491548464,
+        "upper_width_90_cv": 0.5734106207224035
+      },
+      {
+        "confidence_band": "较低",
+        "rows": 158,
+        "effective_rows": 144.60972136675704,
+        "mae": 18.166241159652913,
+        "median_absolute_error": 16.07499999999999,
+        "asymmetric_loss_3x": 30.762334854792602,
+        "underprediction_rate": 0.4105264917824481,
+        "wis": 12.328289083947773,
+        "approx_crps": 14.382318278410327,
+        "q05_coverage": 0.17291133737941183,
+        "q05_pinball": 5.063717635551988,
+        "q10_coverage": 0.24891742321646518,
+        "q10_pinball": 7.2659914564210615,
+        "q20_coverage": 0.32198090652221156,
+        "q20_pinball": 9.02068943839762,
+        "q50_coverage": 0.589473508217552,
+        "q50_pinball": 9.083120579826456,
+        "q80_coverage": 0.8326060423667886,
+        "q80_pinball": 7.3413023022520925,
+        "q90_coverage": 0.8883148584708499,
+        "q90_pinball": 5.74169982110314,
+        "q95_coverage": 0.9228904382137065,
+        "q95_pinball": 3.666193216966781,
+        "width_80": 85.69656802260454,
+        "width_90": 117.61098393272142,
+        "upper_width_90": 41.28761582317634,
+        "upper_width_90_sd": 45.79283597932925,
+        "upper_width_90_cv": 1.137325707125356
+      }
+    ],
+    "limitations": [
+      "No exact candidate-level Q10 labels are available.",
+      "Only three raw OOS years and two strictly calibrated outer years are available.",
+      "Historical event labels are insufficient for empirical event-effect estimation.",
+      "Quota coverage is too sparse for production promotion.",
+      "Candidate-score uncertainty is intentionally excluded in this iteration."
+    ]
+  },
+  "provenance_audit": {
+    "field_values": 3690,
+    "field_values_with_public_url": 3685,
+    "url_reachable": 464,
+    "url_failed_or_blocked": 230,
+    "dead_source_school_years": 225,
+    "dead_source_school_years_supplemented": 215,
+    "roster_funnel": {
+      "详情接口": 108,
+      "名单图片": 452,
+      "表格可解析": 421,
+      "四项核对通过": 86
+    }
+  },
+  "exact_label_upgrade": {
+    "exact_program_years": 72,
+    "exact_candidate_rows": 2579,
+    "proxy_mean_bias": 3.049999999999999,
+    "proxy_mae": 3.4191666666666674,
+    "baseline_exact_mae": 18.09861111111111,
+    "enhanced_exact_mae": 17.71611111111112,
+    "year_block_mae_difference": {
+      "estimate": -0.20360360360360374,
+      "p05": -0.5338738738738726,
+      "p95": 0.12666666666666515,
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "interpretation": "enhanced MAE minus frozen-baseline MAE; negative favours the exact-label update"
+    },
+    "bootstrap_sd_median": 3.2611747437938945
+  },
+  "calibration_window_q90": {
+    "2024": 25.325816326530713,
+    "2024-2025": 18.94404682274246,
+    "2024-2026": 25.94587692307708,
+    "仅 2026": 31.420722448979685
+  },
+  "events": [
+    {
+      "school": "中央民族大学",
+      "event_name": "应用统计自2026级起由2年调整为3年",
+      "withdrawal_adjustment": -5,
+      "neutral_adjustment": -2,
+      "crowd_adjustment": 1,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.6,
+      "crowd_weight": 0.15,
+      "expected_adjustment": -2.3,
+      "source_url": "https://grs.muc.edu.cn/info/1178/7274.htm"
+    },
+    {
+      "school": "吉林大学",
+      "event_name": "432统计学改为统计与数据科学基础",
+      "withdrawal_adjustment": -14,
+      "neutral_adjustment": -2,
+      "crowd_adjustment": 13,
+      "withdrawal_weight": 0.3,
+      "neutral_weight": 0.42,
+      "crowd_weight": 0.28,
+      "expected_adjustment": -1.4,
+      "source_url": "https://math.jlu.edu.cn/info/1080/16897.htm"
+    },
+    {
+      "school": "华东师范大学",
+      "event_name": "432范围不变但考试内容与参考教材调整",
+      "withdrawal_adjustment": -6,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 7,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.5,
+      "crowd_weight": 0.25,
+      "expected_adjustment": 0.25,
+      "source_url": "https://stat.ecnu.edu.cn/c2/dd/c9708a770781/page.htm"
+    },
+    {
+      "school": "东南大学",
+      "event_name": "初试参考书更新且复试科目调整",
+      "withdrawal_adjustment": -4,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 5,
+      "withdrawal_weight": 0.2,
+      "neutral_weight": 0.58,
+      "crowd_weight": 0.22,
+      "expected_adjustment": 0.3,
+      "source_url": "https://stat.seu.edu.cn/2026/0625/c60842a573899/page.htm"
+    },
+    {
+      "school": "北京工业大学",
+      "event_name": "432统计学考试大纲内容调整",
+      "withdrawal_adjustment": -7,
+      "neutral_adjustment": 0,
+      "crowd_adjustment": 8,
+      "withdrawal_weight": 0.25,
+      "neutral_weight": 0.47,
+      "crowd_weight": 0.28,
+      "expected_adjustment": 0.49,
+      "source_url": "https://yanzhao.bjut.edu.cn/info/1025/18129.htm"
+    }
+  ],
+  "forecast_distribution": {
+    "q50_mean": 357.6246913580247,
+    "q50_sd": 17.80924992008505,
+    "q50_min": 320.0,
+    "q50_median": 361.0,
+    "q50_max": 403.9,
+    "q90_mean": 391.1222222222222,
+    "q90_sd": 18.94241932805839,
+    "q90_min": 342.4,
+    "q90_median": 393.5,
+    "q90_max": 428.3,
+    "confidence_counts": {
+      "中等": 62,
+      "较低": 11,
+      "较高": 8
+    },
+    "faction_counts": {
+      "贾茆": 31,
+      "贾茆Pro": 13,
+      "纯茆": 12,
+      "纯贾": 12,
+      "茆Pro": 10,
+      "待核实": 3
+    }
+  },
+  "ecnu_example": {
+    "anchors": {
+      "q05": 343.3,
+      "q10": 348.6,
+      "q20": 355.0,
+      "q50": 367.4,
+      "q80": 391.6,
+      "q90": 399.2,
+      "q95": 407.4
+    },
+    "score_probabilities": {
+      "375": 0.594214876033058,
+      "380": 0.656198347107438,
+      "385": 0.718181818181818,
+      "390": 0.7801652892561981,
+      "399.2": 0.9,
+      "395": 0.8447368421052631,
+      "400": 0.9048780487804879,
+      "405": 0.9353658536585366
+    }
+  },
+  "complex_feature_effects": [
+    {
+      "feature": "trailing_margin_median",
+      "label_cn": "历史边际中位数",
+      "effect_value": -5.884,
+      "sd_value": 4.538
+    },
+    {
+      "feature": "national_zone=B",
+      "label_cn": "B区",
+      "effect_value": -5.039,
+      "sd_value": 7.126
+    },
+    {
+      "feature": "peer_lag1_surprise_mean",
+      "label_cn": "竞校上一年异常",
+      "effect_value": -2.282,
+      "sd_value": 0.875
+    },
+    {
+      "feature": "lag1_surprise_z",
+      "label_cn": "上一年冷热异常",
+      "effect_value": -1.681,
+      "sd_value": 2.078
+    },
+    {
+      "feature": "lag1_cutoff_change",
+      "label_cn": "上一年复试线变化",
+      "effect_value": 2.118,
+      "sd_value": 0.881
+    },
+    {
+      "feature": "log_lag1_admitted_count",
+      "label_cn": "上一年录取数（对数）",
+      "effect_value": 2.824,
+      "sd_value": 1.658
+    },
+    {
+      "feature": "lag1_margin_q10",
+      "label_cn": "上一年Q10边际",
+      "effect_value": 4.038,
+      "sd_value": 4.914
+    },
+    {
+      "feature": "national_zone=A",
+      "label_cn": "A区",
+      "effect_value": 5.238,
+      "sd_value": 7.115
+    },
+    {
+      "feature": "is_985",
+      "label_cn": "985身份",
+      "effect_value": 11.184,
+      "sd_value": 2.272
+    },
+    {
+      "feature": "year_index",
+      "label_cn": "年份趋势",
+      "effect_value": 11.78,
+      "sd_value": 1.948
+    }
+  ],
+  "loss_ratio_to_quantile": {
+    "1": 0.5,
+    "2": 0.6666666666666666,
+    "3": 0.75,
+    "4": 0.8,
+    "5": 0.8333333333333334,
+    "9": 0.9
+  },
+  "reliability": {
+    "rows": 155,
+    "quantiles": [
+      0.05,
+      0.1,
+      0.2,
+      0.5,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "raw_observed": [
+      0.21056477877512111,
+      0.27900548097545474,
+      0.35094129795853535,
+      0.5091587894193343,
+      0.7138771943760427,
+      0.7968067360393996,
+      0.8512987528794982
+    ],
+    "robust_observed": [
+      0.21056477877512111,
+      0.27900548097545474,
+      0.35094129795853535,
+      0.5091587894193343,
+      0.8512987528794982,
+      0.9208833108269125,
+      0.958058622607038
+    ]
+  },
+  "calibration_tradeoff": {
+    "raw": {
+      "rows": 155,
+      "effective_rows": 141.44801415396563,
+      "mae": 18.56345460322504,
+      "median_absolute_error": 16.50999999999999,
+      "asymmetric_loss_3x": 34.545546270553665,
+      "underprediction_rate": 0.4908412105806657,
+      "wis": 9.97500312971642,
+      "approx_crps": 12.882111960441659,
+      "q05_coverage": 0.21056477877512111,
+      "q05_pinball": 3.5596765668440713,
+      "q10_coverage": 0.27900548097545474,
+      "q10_pinball": 5.267277829851459,
+      "q20_coverage": 0.35094129795853535,
+      "q20_pinball": 7.48290011915164,
+      "q50_coverage": 0.5091587894193343,
+      "q50_pinball": 9.28172730161252,
+      "q80_coverage": 0.7138771943760427,
+      "q80_pinball": 6.468283294940027,
+      "q90_coverage": 0.7968067360393996,
+      "q90_pinball": 4.230854047184049,
+      "q95_coverage": 0.8512987528794982,
+      "q95_pinball": 2.597972078798952,
+      "width_80": 35.675124473746926,
+      "width_90": 45.85357502581619,
+      "upper_width_90": 17.67649837159425,
+      "upper_width_90_sd": 3.469743670576498,
+      "upper_width_90_cv": 0.196757215063953
+    },
+    "robust": {
+      "rows": 155,
+      "effective_rows": 141.44801415396563,
+      "mae": 18.56345460322504,
+      "median_absolute_error": 16.50999999999999,
+      "asymmetric_loss_3x": 34.545546270553665,
+      "underprediction_rate": 0.4908412105806657,
+      "wis": 9.6976347798464,
+      "approx_crps": 12.741530965929545,
+      "q05_coverage": 0.21056477877512111,
+      "q05_pinball": 3.5596765668440713,
+      "q10_coverage": 0.27900548097545474,
+      "q10_pinball": 5.267277829851459,
+      "q20_coverage": 0.35094129795853535,
+      "q20_pinball": 7.48290011915164,
+      "q50_coverage": 0.5091587894193343,
+      "q50_pinball": 9.28172730161252,
+      "q80_coverage": 0.8512987528794982,
+      "q80_pinball": 6.279816108595645,
+      "q90_coverage": 0.9208833108269125,
+      "q90_pinball": 3.925623284777974,
+      "q95_coverage": 0.958058622607038,
+      "q95_pinball": 2.2097819665299734,
+      "width_80": 47.34635226747192,
+      "width_90": 58.171346324072005,
+      "upper_width_90": 29.347726165319244,
+      "upper_width_90_sd": 6.278170298074515,
+      "upper_width_90_cv": 0.2145677408868938
+    }
+  },
+  "missingness": {
+    "rows": 405,
+    "missing_rows": 110,
+    "missing_rate": 0.2716049382716049,
+    "in_sample_auc_descriptive_only": 0.8975808936825885,
+    "standardized_log_odds": {
+      "year": -2.143479427356233,
+      "is_985": -0.16181225299602203,
+      "zone_b": 0.18807445721622373
+    },
+    "by_year": [
+      {
+        "year": 2022,
+        "count": 81,
+        "sum": 74,
+        "mean": 0.9135802469135802
+      },
+      {
+        "year": 2023,
+        "count": 81,
+        "sum": 19,
+        "mean": 0.2345679012345679
+      },
+      {
+        "year": 2024,
+        "count": 81,
+        "sum": 10,
+        "mean": 0.12345679012345678
+      },
+      {
+        "year": 2025,
+        "count": 81,
+        "sum": 3,
+        "mean": 0.037037037037037035
+      },
+      {
+        "year": 2026,
+        "count": 81,
+        "sum": 4,
+        "mean": 0.04938271604938271
+      }
+    ],
+    "by_tier": [
+      {
+        "is_985": 0,
+        "count": 260,
+        "sum": 75,
+        "mean": 0.28846153846153844
+      },
+      {
+        "is_985": 1,
+        "count": 145,
+        "sum": 35,
+        "mean": 0.2413793103448276
+      }
+    ],
+    "by_zone": [
+      {
+        "national_zone": "A",
+        "count": 365,
+        "sum": 96,
+        "mean": 0.26301369863013696
+      },
+      {
+        "national_zone": "B",
+        "count": 40,
+        "sum": 14,
+        "mean": 0.35
+      }
+    ],
+    "interpretation": "缺失率从2022年的历史补录缺口快速下降，年份是主要解释变量；这不能证明条件随机缺失，仍需把来源可得性视为选择机制。"
+  },
+  "anchor_ablation": [
+    {
+      "model": "relative_last2_median",
+      "rows": 210.0,
+      "weighted_mae": 16.89476673930386,
+      "unweighted_mae": 16.976880952380956,
+      "under_loss_3x": 31.74324224072405
+    },
+    {
+      "model": "relative_mean",
+      "rows": 210.0,
+      "weighted_mae": 17.019070851855425,
+      "unweighted_mae": 16.991202380952384,
+      "under_loss_3x": 32.80076329845023
+    },
+    {
+      "model": "relative_recency_mean",
+      "rows": 210.0,
+      "weighted_mae": 17.05962588345932,
+      "unweighted_mae": 17.08535933072025,
+      "under_loss_3x": 32.38122420176111
+    },
+    {
+      "model": "relative_all_median",
+      "rows": 210.0,
+      "weighted_mae": 17.11951249932344,
+      "unweighted_mae": 17.066452380952384,
+      "under_loss_3x": 32.974624243722104
+    },
+    {
+      "model": "raw_all_median",
+      "rows": 210.0,
+      "weighted_mae": 17.282315392887988,
+      "unweighted_mae": 17.316238095238095,
+      "under_loss_3x": 31.88735265670926
+    },
+    {
+      "model": "relative_last",
+      "rows": 210.0,
+      "weighted_mae": 18.503174543409354,
+      "unweighted_mae": 18.70461904761905,
+      "under_loss_3x": 34.30219300000236
+    },
+    {
+      "model": "raw_last",
+      "rows": 210.0,
+      "weighted_mae": 19.66931117820508,
+      "unweighted_mae": 19.362142857142857,
+      "under_loss_3x": 41.7161413413093
+    }
+  ],
+  "forecast_widths": {
+    "raw_mean": 17.7679012345679,
+    "raw_cv": 0.04070022139928645,
+    "robust_mean": 33.497530864197536,
+    "robust_cv": 0.1820876649720608,
+    "robust_min": 21.30000000000001,
+    "robust_max": 71.0,
+    "tukey_q1": 31.5,
+    "tukey_q3": 36.60000000000002,
+    "tukey_upper_fence": 44.25000000000006,
+    "information_limited_schools": [
+      "合肥工业大学"
+    ]
+  },
+  "calibration_candidates": [
+    {
+      "strategy": "raw",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 9.975003,
+      "approx_crps": 12.882112,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.468283,
+      "q90_coverage": 0.796807,
+      "q90_pinball": 4.230854,
+      "q95_coverage": 0.851299,
+      "q95_pinball": 2.597972,
+      "width_80": 35.675124,
+      "width_90": 45.853575,
+      "upper_width_90": 17.676498,
+      "upper_width_90_sd": 3.469744,
+      "upper_width_90_cv": 0.196757,
+      "q90_calibration_error": 0.103193,
+      "wis_non_worse": true,
+      "calibration_closer": false,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "pooled_floor",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 10.040057,
+      "approx_crps": 13.095645,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.938882,
+      "q90_coverage": 0.812376,
+      "q90_pinball": 4.402473,
+      "q95_coverage": 0.886727,
+      "q95_pinball": 2.588987,
+      "width_80": 39.621604,
+      "width_90": 51.743111,
+      "upper_width_90": 21.622978,
+      "upper_width_90_sd": 4.059222,
+      "upper_width_90_cv": 0.183979,
+      "q90_calibration_error": 0.087624,
+      "wis_non_worse": false,
+      "calibration_closer": true,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "recent_floor",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 10.132825,
+      "approx_crps": 13.113015,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.938882,
+      "q90_coverage": 0.812376,
+      "q90_pinball": 4.460213,
+      "q95_coverage": 0.866868,
+      "q95_pinball": 2.763169,
+      "width_80": 39.45401,
+      "width_90": 50.809399,
+      "upper_width_90": 21.455384,
+      "upper_width_90_sd": 4.211043,
+      "upper_width_90_cv": 0.192121,
+      "q90_calibration_error": 0.087624,
+      "wis_non_worse": false,
+      "calibration_closer": true,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "worst_origin_floor",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 9.633192,
+      "approx_crps": 12.699996,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.789022,
+      "q80_pinball": 6.234562,
+      "q90_coverage": 0.89753,
+      "q90_pinball": 3.77184,
+      "q95_coverage": 0.958059,
+      "q95_pinball": 2.202457,
+      "width_80": 43.582028,
+      "width_90": 56.199433,
+      "upper_width_90": 25.583402,
+      "upper_width_90_sd": 1.291495,
+      "upper_width_90_cv": 0.050453,
+      "q90_calibration_error": 0.00247,
+      "wis_non_worse": true,
+      "calibration_closer": true,
+      "promotion_eligible": true
+    },
+    {
+      "strategy": "pooled_tail",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 10.014583,
+      "approx_crps": 12.891323,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.468283,
+      "q90_coverage": 0.796807,
+      "q90_pinball": 4.273491,
+      "q95_coverage": 0.859083,
+      "q95_pinball": 2.654285,
+      "width_80": 36.331618,
+      "width_90": 48.608935,
+      "upper_width_90": 18.332992,
+      "upper_width_90_sd": 3.488213,
+      "upper_width_90_cv": 0.189799,
+      "q90_calibration_error": 0.103193,
+      "wis_non_worse": false,
+      "calibration_closer": false,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "recent_tail",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 10.014583,
+      "approx_crps": 12.891323,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.468283,
+      "q90_coverage": 0.796807,
+      "q90_pinball": 4.273491,
+      "q95_coverage": 0.859083,
+      "q95_pinball": 2.654285,
+      "width_80": 36.331618,
+      "width_90": 48.608935,
+      "upper_width_90": 18.332992,
+      "upper_width_90_sd": 3.488213,
+      "upper_width_90_cv": 0.189799,
+      "q90_calibration_error": 0.103193,
+      "wis_non_worse": false,
+      "calibration_closer": false,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "worst_origin_tail",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 9.754983,
+      "approx_crps": 12.839659,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.468283,
+      "q90_coverage": 0.804591,
+      "q90_pinball": 4.081346,
+      "q95_coverage": 0.919136,
+      "q95_pinball": 2.197431,
+      "width_80": 37.153216,
+      "width_90": 52.05725,
+      "upper_width_90": 19.15459,
+      "upper_width_90_sd": 3.469744,
+      "upper_width_90_cv": 0.181541,
+      "q90_calibration_error": 0.095409,
+      "wis_non_worse": true,
+      "calibration_closer": true,
+      "promotion_eligible": true
+    },
+    {
+      "strategy": "scaled_pooled_floor",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 9.980918,
+      "approx_crps": 13.100857,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.713877,
+      "q80_pinball": 6.983051,
+      "q90_coverage": 0.83573,
+      "q90_pinball": 4.351835,
+      "q95_coverage": 0.89753,
+      "q95_pinball": 2.491778,
+      "width_80": 42.237448,
+      "width_90": 52.946305,
+      "upper_width_90": 24.238822,
+      "upper_width_90_sd": 6.142907,
+      "upper_width_90_cv": 0.249342,
+      "q90_calibration_error": 0.06427,
+      "wis_non_worse": false,
+      "calibration_closer": true,
+      "promotion_eligible": false
+    },
+    {
+      "strategy": "scaled_worst_origin_floor",
+      "rows": 155,
+      "effective_rows": 141.448014,
+      "mae": 18.563455,
+      "median_absolute_error": 16.51,
+      "asymmetric_loss_3x": 34.545546,
+      "underprediction_rate": 0.490841,
+      "wis": 9.697635,
+      "approx_crps": 12.741531,
+      "q05_coverage": 0.210565,
+      "q05_pinball": 3.559677,
+      "q10_coverage": 0.279005,
+      "q10_pinball": 5.267278,
+      "q20_coverage": 0.350941,
+      "q20_pinball": 7.4829,
+      "q50_coverage": 0.509159,
+      "q50_pinball": 9.281727,
+      "q80_coverage": 0.851299,
+      "q80_pinball": 6.279816,
+      "q90_coverage": 0.920883,
+      "q90_pinball": 3.925623,
+      "q95_coverage": 0.958059,
+      "q95_pinball": 2.209782,
+      "width_80": 47.346352,
+      "width_90": 58.171346,
+      "upper_width_90": 29.347726,
+      "upper_width_90_sd": 6.27817,
+      "upper_width_90_cv": 0.214568,
+      "q90_calibration_error": 0.020883,
+      "wis_non_worse": true,
+      "calibration_closer": true,
+      "promotion_eligible": true
+    }
+  ],
+  "conditional_coverage": [
+    {
+      "group": "非985",
+      "rows": 100,
+      "effective_rows": 40.325,
+      "q90_coverage": 0.951395
+    },
+    {
+      "group": "985",
+      "rows": 55,
+      "effective_rows": 22.62,
+      "q90_coverage": 0.86649
+    },
+    {
+      "group": "A区",
+      "rows": 140,
+      "effective_rows": 57.073,
+      "q90_coverage": 0.912743
+    },
+    {
+      "group": "B区",
+      "rows": 15,
+      "effective_rows": 5.872,
+      "q90_coverage": 1.0
+    },
+    {
+      "group": "证据较低",
+      "rows": 88,
+      "effective_rows": 32.407,
+      "q90_coverage": 0.98488
+    },
+    {
+      "group": "证据中等",
+      "rows": 64,
+      "effective_rows": 29.232,
+      "q90_coverage": 0.846401
+    },
+    {
+      "group": "证据较高",
+      "rows": 3,
+      "effective_rows": 1.306,
+      "q90_coverage": 1.0
+    }
+  ],
+  "reproducibility_manifest": {
+    "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
+    "python_seed": 20261007,
+    "git_commit": "cf1159eadabb11f8a4b693559cc37eea94ec553c",
+    "working_tree_dirty": true,
+    "files": [
+      {
+        "path": "data/processed/program_year.csv",
+        "bytes": 323894,
+        "sha256": "7f7915720031809f17826844fb3f90bafff1d0d5a0c8131deb409709f83448b5"
+      },
+      {
+        "path": "data/processed/rolling_backtest.csv",
+        "bytes": 47360,
+        "sha256": "ab20b5068777fe46694febb3063568a940fd4adafb351deccf13888d0cc84f3e"
+      },
+      {
+        "path": "data/processed/events_2027.csv",
+        "bytes": 1561,
+        "sha256": "4f99c9775bf15bfcb2106148c34cedb9210aeae10a55f6f1b7d00f292daf60ab"
+      },
+      {
+        "path": "data/processed/forecast_2027.csv",
+        "bytes": 143090,
+        "sha256": "0bf17751a66e6112dc586ca11cc1814ec9a930786d184906ec17ad1db73f8db7"
+      },
+      {
+        "path": "data/processed/national_lines.json",
+        "bytes": 1094,
+        "sha256": "a2fbb0c615dbf2b0db8acadb94ed6cbaec19a16b0611df9497cc0ce215db19e4"
+      },
+      {
+        "path": "app/data/forecast.json",
+        "bytes": 811262,
+        "sha256": "6288633390668df840689d0dd1624edd82d3278daaf8de8364cd04dbd6c2196e"
+      },
+      {
+        "path": "output/experiments/v3_validation_20261007/summary.json",
+        "bytes": 24589,
+        "sha256": "12b5ce60c3d50ead332fc13926c9a8acbadd19d4d2e528097383520f9c2a43f0"
+      },
+      {
+        "path": "output/experiments/v3_validation_20261007/nested_calibration_rows.csv",
+        "bytes": 110756,
+        "sha256": "0c1caac6f792b743411b0c7399e38ef197a267239759587b70832bca8f165aed"
+      },
+      {
+        "path": "data/audit/provenance_coverage.json",
+        "bytes": 1712,
+        "sha256": "b6746c4441d184ced4693bcfb4fd5b274483a20efc32f22cbd1c58c44514e717"
+      },
+      {
+        "path": "data/audit/source_url_audit.json",
+        "bytes": 531,
+        "sha256": "364d5d68f25125138e4c7f4ef139b3246e3e12a648355b846efeabdb824cc570"
+      },
+      {
+        "path": "data/audit/supplemental_provenance.json",
+        "bytes": 43659,
+        "sha256": "12a0feae48a7caffda30c88ede3631e0879d9242611e432a62902998e1ca2dab"
+      },
+      {
+        "path": "data/audit/mini_program_roster_index.json",
+        "bytes": 30349,
+        "sha256": "ac37c48525ffb055da7d510172767aa660249d15d0665c59bc25160b120323fc"
+      },
+      {
+        "path": "data/audit/candidate_score_extraction.json",
+        "bytes": 16692,
+        "sha256": "3087b0f85069575fba06b8ef7348a59b662e50cc634114f8ea8cbdf8d3d1ee24"
+      },
+      {
+        "path": "data/processed/program_year_provenance.csv",
+        "bytes": 5492045,
+        "sha256": "1b7ba7ae2cc0f6e9614aab43fee1119a941a7d559809ecfa80d348ff90ad484a"
+      },
+      {
+        "path": "data/processed/program_year_supplemental_provenance.csv",
+        "bytes": 422331,
+        "sha256": "a54ae22d0fefb28ca7fb16885698175141435cdd6af7d15a27e14d7786b851d4"
+      },
+      {
+        "path": "data/processed/school_master_supplemental_provenance.csv",
+        "bytes": 200836,
+        "sha256": "fb5bf8114b8be18a66ee2e3017a60b985315085ff1cccc6fdc5c3f84565bfa70"
+      },
+      {
+        "path": "data/processed/candidate_label_audit.csv",
+        "bytes": 36018,
+        "sha256": "46393559e9847256f530727db40a8895cdbe716d4fe530c0ca95666abb926595"
+      },
+      {
+        "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/summary.json",
+        "bytes": 1859,
+        "sha256": "814ec8f350a046c7f8fdba6f5853fc9eec24b9b65d91e32d9b8d72c1c50ba917"
+      },
+      {
+        "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/exact_proxy_pairs.csv",
+        "bytes": 10421,
+        "sha256": "40639d377ffbce40d441a4165489f80727d2bc1a38072f2cc5ea018d698aab8f"
+      },
+      {
+        "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/paired_exact_backtest.csv",
+        "bytes": 16139,
+        "sha256": "bc8313db5e7f4c5a69eb59f96827b36153f5c4508df0ba790e2289eef9735d0d"
+      }
+    ]
+  }
+}

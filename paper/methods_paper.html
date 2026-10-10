@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>单志愿约束下的硕士研究生择校门槛概率预测</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'ams',
+        packages: {'[+]': ['ams']}
+      },
+      chtml: { scale: 0.94, mtextInheritFont: true }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    :root {
+      --ink: #17223b;
+      --muted: #5b667a;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --navy: #0b2340;
+      --cyan: #0f8ba6;
+      --cyan-soft: #e9f7fa;
+      --amber: #c77810;
+      --amber-soft: #fff6e8;
+      --magenta: #a63b70;
+      --magenta-soft: #fbeef5;
+      --green: #24745a;
+      --green-soft: #eaf6f1;
+      --red: #a33a32;
+      --red-soft: #fff0ee;
+    }
+    * { box-sizing: border-box; }
+    @page { size: A4; margin: 18mm 17mm 20mm; }
+    html { background: #e8edf3; }
+    body {
+      margin: 0 auto;
+      max-width: 210mm;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Han Serif SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
+      font-size: 10.3pt;
+      line-height: 1.72;
+      text-align: justify;
+      text-justify: inter-ideograph;
+    }
+    main { width: 100%; }
+    .cover { min-height: 246mm; display: flex; flex-direction: column; break-after: page; }
+    .kicker, h1, h2, h3, h4, .meta, .chip, .callout-title, table th, figcaption, .figure-title, .caption-label {
+      font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+    .kicker { color: var(--cyan); font-size: 8.4pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 9mm 0 4mm; color: var(--navy); font-size: 26pt; line-height: 1.26; letter-spacing: -.02em; text-align: left; }
+    .subtitle { margin: 0 0 5mm; color: var(--muted); font-size: 12pt; line-height: 1.55; text-align: left; }
+    .meta { display: flex; gap: 6mm; color: var(--muted); font-size: 8.7pt; border-top: 1px solid var(--line); padding-top: 3mm; }
+    .cover-diagram { margin: 6mm 0 4mm; padding: 3mm; border: 1px solid var(--line); border-radius: 2mm; background: #f8fbfd; }
+    .cover-diagram svg { width: 100%; height: auto; display: block; }
+    .abstract { margin-top: auto; padding: 5mm 5.5mm; background: #f5f8fb; border-left: 1.3mm solid var(--cyan); border-radius: 1.5mm; }
+    .abstract h2 { margin: 0 0 2mm; padding: 0; border: 0; font-size: 11pt; }
+    .abstract p { margin: 0; font-size: 9.5pt; line-height: 1.65; }
+    .keywords { margin-top: 3mm; color: var(--muted); font-size: 8.8pt; }
+    section { break-before: auto; }
+    h2 { margin: 8mm 0 3.5mm; padding-bottom: 1.7mm; color: var(--navy); border-bottom: 1.2px solid var(--line); font-size: 16pt; line-height: 1.35; text-align: left; break-after: avoid; }
+    h2 .num { color: var(--cyan); margin-right: 2mm; }
+    h3 { margin: 5.5mm 0 2mm; color: var(--navy); font-size: 12.2pt; line-height: 1.4; text-align: left; break-after: avoid; }
+    h4 { margin: 4mm 0 1.5mm; color: var(--cyan); font-size: 10.4pt; break-after: avoid; }
+    p { margin: 0 0 3mm; }
+    ul, ol { margin: 1.5mm 0 3.5mm 5mm; padding-left: 5mm; }
+    li { margin-bottom: 1.1mm; }
+    strong { color: var(--navy); }
+    .lead { font-size: 11pt; color: #2b3b55; }
+    .chips { display: flex; flex-wrap: wrap; gap: 2mm; margin: 3mm 0 4mm; }
+    .chip { padding: 1mm 2.5mm; background: var(--cyan-soft); color: #096779; border-radius: 99px; font-size: 8.2pt; font-weight: 700; }
+    .note, .warning, .finding { margin: 4mm 0; padding: 3.5mm 4mm; border-radius: 1.8mm; break-inside: avoid; }
+    .note { background: var(--cyan-soft); border-left: 1mm solid var(--cyan); }
+    .warning { background: var(--amber-soft); border-left: 1mm solid var(--amber); }
+    .finding { background: var(--green-soft); border-left: 1mm solid var(--green); }
+    .callout-title { display: block; margin-bottom: 1mm; font-size: 9pt; font-weight: 800; letter-spacing: .03em; }
+    .equation { margin: 3.2mm 0; padding: 2.5mm 3mm; background: #fbfcfe; border: 1px solid var(--line); border-radius: 1.5mm; overflow: hidden; break-inside: avoid; }
+    .equation mjx-container[display="true"] { margin: .25em 0 !important; }
+    .where { margin-top: -1.5mm; color: var(--muted); font-size: 8.8pt; }
+    .figure { margin: 5mm 0; padding: 3.5mm; border: 1px solid var(--line); border-radius: 2mm; background: #fff; break-inside: avoid; }
+    .figure svg { width: 100%; height: auto; display: block; }
+    .figure-title { margin-bottom: 2mm; color: var(--navy); font-size: 10.4pt; font-weight: 800; text-align: left; }
+    figcaption { margin-top: 2mm; color: var(--muted); font-size: 8.3pt; line-height: 1.5; text-align: left; }
+    .caption-label { color: var(--navy); font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 8.6pt; line-height: 1.45; break-inside: avoid; }
+    th { padding: 2mm 2.2mm; color: #fff; background: var(--navy); font-weight: 700; text-align: left; }
+    td { padding: 1.8mm 2.2mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .small { font-size: 8.3pt; color: var(--muted); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 3mm 0; }
+    .card { padding: 3.5mm; border: 1px solid var(--line); border-radius: 1.8mm; break-inside: avoid; }
+    .card h4 { margin-top: 0; }
+    .formula-line { font-family: Cambria, "Times New Roman", serif; color: var(--navy); }
+    .page-break { break-before: page; }
+    .avoid { break-inside: avoid; }
+    .references { font-size: 8.5pt; line-height: 1.48; text-align: left; }
+    .references li { margin-bottom: 2mm; }
+    .appendix-tag { display: inline-block; padding: .4mm 1.6mm; color: #fff; background: var(--magenta); border-radius: 1mm; font-size: 7.8pt; }
+    .source-code { font-family: Consolas, "Courier New", monospace; font-size: 8.2pt; color: #20304a; background: #f5f7fa; padding: 3mm; border-radius: 1.5mm; white-space: pre-wrap; }
+    a { color: #0a6d86; text-decoration: none; word-break: break-all; }
+    .footnote { color: var(--muted); font-size: 8.1pt; }
+    @media print {
+      html { background: #fff; }
+      body { max-width: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <article>
+    <section class="cover">
+      <div class="kicker">METHODS PAPER · AUDITABLE FORECASTING PROTOTYPE</div>
+      <h1>单志愿约束下的硕士研究生择校门槛概率预测</h1>
+      <p class="subtitle">一个面向全日制应用统计专硕的可审计、事件驱动与滚动回测框架</p>
+      <div class="meta"><span>应用统计择校风险实验室</span><span>方法论文初稿</span><span>2026 年 10 月 7 日</span></div>
+      <div class="cover-diagram">
+        <svg viewBox="0 0 1000 315" role="img" aria-label="单志愿约束下从学校门槛分布到风险标签的研究问题图">
+          <defs><marker id="cover-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52657b"/></marker></defs>
+          <g font-family="Microsoft YaHei">
+            <text x="30" y="32" font-size="15" font-weight="700" fill="#0b2340">研究问题一览：报名时只能选一校，未知的是未来门槛；模型输出的是估分覆盖该门槛的概率</text>
+            <rect x="28" y="62" width="245" height="210" rx="14" fill="#ffffff" stroke="#0f8ba6" stroke-width="2"/>
+            <text x="150" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#0b2340">① 单志愿约束</text>
+            <g font-size="12" text-anchor="middle"><rect x="58" y="116" width="185" height="30" rx="6" fill="#f1f5f9"/><text x="150" y="136" fill="#52657b">候选学校 A</text><rect x="58" y="153" width="185" height="42" rx="7" fill="#fff6e8" stroke="#c77810" stroke-width="2"/><text x="150" y="179" fill="#8a520b" font-weight="700">唯一选择：学校 s</text><rect x="58" y="202" width="185" height="30" rx="6" fill="#f1f5f9"/><text x="150" y="222" fill="#52657b">候选学校 C</text></g>
+            <text x="150" y="253" text-anchor="middle" font-size="11" fill="#a33a32">成绩公布前作出，不可组合“冲稳保”</text>
+
+            <path d="M273 167 H340" stroke="#52657b" stroke-width="2.5" marker-end="url(#cover-arrow)"/>
+            <rect x="342" y="62" width="310" height="210" rx="14" fill="#ffffff" stroke="#0f8ba6" stroke-width="2"/>
+            <text x="497" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#0b2340">② 学校未来门槛 Tₛ,ₜ</text>
+            <line x1="375" y1="230" x2="618" y2="230" stroke="#94a3b8"/>
+            <path d="M375 230 C405 229,420 220,440 186 C462 147,481 116,505 116 C530 116,548 151,565 185 C583 219,598 228,618 230" fill="#e9f7fa" stroke="#0f8ba6" stroke-width="3"/>
+            <line x1="505" y1="113" x2="505" y2="230" stroke="#0f8ba6" stroke-dasharray="6 5"/><text x="505" y="249" text-anchor="middle" font-size="11" fill="#0f8ba6">P50</text>
+            <line x1="575" y1="181" x2="575" y2="230" stroke="#a63b70" stroke-dasharray="6 5"/><text x="575" y="249" text-anchor="middle" font-size="11" fill="#a63b70">P90</text>
+            <text x="497" y="108" text-anchor="middle" font-size="11" fill="#52657b">由历史、国家线、事件与未知风险共同决定</text>
+
+            <path d="M652 167 H719" stroke="#52657b" stroke-width="2.5" marker-end="url(#cover-arrow)"/>
+            <rect x="721" y="62" width="251" height="210" rx="14" fill="#0b2340"/>
+            <text x="846" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">③ 估分 x 的覆盖概率</text>
+            <text x="846" y="128" text-anchor="middle" font-size="18" font-weight="700" fill="#bcecf4">Cₛ,ₜ(x) = P(Tₛ,ₜ ≤ x)</text>
+            <rect x="753" y="153" width="186" height="18" rx="9" fill="#284663"/><rect x="753" y="153" width="159" height="18" rx="9" fill="#0f8ba6"/>
+            <text x="846" y="194" text-anchor="middle" font-size="12" fill="#dbe9f5">概率语义：覆盖门槛，不是最终录取率</text>
+            <g font-size="11" font-weight="700" text-anchor="middle"><text x="767" y="231" fill="#ffb3ad">冲 &lt;60%</text><text x="824" y="231" fill="#ffdda6">观察</text><text x="876" y="231" fill="#bcecf4">稳 ≥90%</text><text x="932" y="231" fill="#bdebd9">保 ≥95%</text></g>
+          </g>
+        </svg>
+      </div>
+      <div class="abstract">
+        <h2>摘　要</h2>
+        <p>考研志愿在成绩公布前一次性确定，使择校成为一个低容错、非对称损失下的预测决策问题。本文以传统 985/211 院校全日制 025200 应用统计专业为例，将预测对象定义为“普通统考拟录取考生初试总分第 10 百分位所对应的学校门槛”，并在报名开始前的信息集上估计其条件分布。当前原型先以国家线以上边际分的历史中位数构造稳健中心，再以弱信息先验贝叶斯正则化回归、梯度提升分位数模型、国家线不确定性、事件三情景与厚尾未知风险共同生成分布；点预测模型由逐年滚动回测选择，保守上界再以历史残差分位数校准。2022—2026 年数据形成 295 条代理目标，2024—2026 年滚动回测共 226 条预测，主流程加权 MAE 为 17.67 分，稳健锚点 MAE 为 17.12 分，优于上一年锚点的 18.58 分及复杂候选模型的 20.35 分。论文同时给出冲、观察、稳、保的概率语义、适用边界，以及从代理标签、时间自适应校准、事件学习、竞争网络和个人估分误差五个方向提升精度的路线。本文强调：所输出的是“估分覆盖学校预测门槛的模型概率”，并非个人最终录取概率。</p>
+        <p class="keywords"><strong>关键词：</strong>考研择校；概率预测；分位数回归；滚动回测；事件情景；非对称损失；应用统计</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">1</span>研究问题：不是猜一条分数线，而是估计一整个门槛分布</h2>
+      <p class="lead">高考通常在成绩已知后进行多志愿匹配；考研则在成绩未知时先选唯一目标。因而，问题的核心不只是“明年分数线是多少”，而是：在报名时可见的信息下，一所学校的有效竞争门槛会落在什么分布中，以及一个给定估分覆盖该门槛的概率有多大。</p>
+      <p>记学校为 \(s\)，招生年份为 \(t\)，学校所在国家线分区为 \(z_s\in\{A,B\}\)，报名信息截点为 \(\tau_t\)。本文的首选目标是普通统考、全日制考生拟录取初试总分的第 10 百分位：</p>
+      <div class="equation">\[
+        Y_{s,t}=Q_{0.10}\!\left(\text{初试总分}\mid\text{普通统考、全日制、学校 }s\right). \tag{1}
+      \]</div>
+      <p>专项计划、非全日制、调剂及明确不属于普通统考的样本排除。学校或学院公布的复试线是辅助目标，而不是默认等同于最终拟录取门槛。预测对象是在报名信息集 \(\mathcal F_{\tau_t}\) 下的随机门槛：</p>
+      <div class="equation">\[
+        T_{s,t}\mid\mathcal F_{\tau_t}\sim\mathcal D_{s,t},\qquad
+        C_{s,t}(x)=\Pr\!\left(T_{s,t}\le x\mid\mathcal F_{\tau_t}\right), \tag{2}
+      \]</div>
+      <p>其中 \(x\) 是考生在报名时的估分，\(C_{s,t}(x)\) 是“估分覆盖预测门槛”的概率。它没有包含复试表现、单科线、个人排名与临时政策，故<strong>不能解释为最终录取概率</strong>。</p>
+      <div class="warning"><span class="callout-title">最容易混淆的两个“90%”</span>学校的 \(Q_{0.10}\) 是拟录取群体内部的低位分数目标；预测分布的 \(q_{0.90}\) 是该目标跨未来状态的 90% 上界。二者处于不同层级。网页所称“90% 稳妥线”是后者，不表示“有 90% 的个人录取率”。</div>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>数据、口径与证据审计</h2>
+      <p>当前样本覆盖 81 所学校、2022—2026 年共 405 个“学校—年份”记录。原始工作簿提供院校、复试线、拟录取最低分/中位数/人数、考试科目、培养单位及部分来源。数据在进入模型前保留来源 URL、证据等级、审核状态、口径异常和原始行号，以便逐条追溯。</p>
+      <table>
+        <thead><tr><th>审计维度</th><th>当前数量</th><th>对模型的处理</th></tr></thead>
+        <tbody>
+          <tr><td>学校—年份记录</td><td class="num">405</td><td>构造面板；只允许使用预测年份以前的信息</td></tr>
+          <tr><td>可数值化复试线</td><td class="num">370</td><td>辅助目标；官方或官方二次来源仅 46 条</td></tr>
+          <tr><td>可用训练目标</td><td class="num">295</td><td>全部为透明代理，尚无逐名成绩形成的精确 Q10</td></tr>
+          <tr><td>代理中位数可用</td><td class="num">186</td><td>可在最低分与中位数之间插值</td></tr>
+          <tr><td>口径审核问题</td><td class="num">24</td><td>6 条复试比例不一致、8 条最低分低于复试线、10 条专项排除不清，统一降权</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2.1 Q10 透明代理</h3>
+      <p>若拟录取人数为 \(n\)，最低分为 \(a\)，中位数为 \(b\)，则样本最小值的近似顺序统计量概率为 \(p_{\min}=1/(n+1)\)。当 \(p_{\min}\lt0.10\) 且中位数可用时，在最低分与中位数之间线性插值：</p>
+      <div class="equation">\[
+        \widehat Q_{0.10}^{\text{proxy}}=
+        \begin{cases}
+        a+\dfrac{0.10-p_{\min}}{0.50-p_{\min}}(b-a), & b,n\text{ 可用且 }p_{\min}\lt0.10,\\[6pt]
+        a, & \text{小样本或只有最低分可用}.
+        \end{cases} \tag{3}
+      \]</div>
+      <p>该插值不是对真实分布形状的强假设，而是一种<strong>可复算、可降权、可被逐名数据替换</strong>的标签构造。插值代理基础权重为 0.68，小样本最低分回退为 0.48，仅最低分时为 0.35；非官方录取来源再乘 0.72。若 Q10 代理缺失而以复试线回退，目标权重再乘 0.55。</p>
+
+      <h3>2.2 证据权重</h3>
+      <p>训练权重分解为来源、标签质量与问题惩罚的乘积：</p>
+      <div class="equation">\[
+        w_{s,t}=w^{\text{source}}_{s,t}\,w^{\text{label}}_{s,t}\,w^{\text{issue}}_{s,t}. \tag{4}
+      \]</div>
+      <table>
+        <thead><tr><th>组成</th><th>权重</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>官方 / 官方二次 / 第三方 / 仅国家线 / 未分类</td><td>1.00 / 0.85 / 0.62 / 0.35 / 0.50</td><td>来源证据等级</td></tr>
+          <tr><td>复试比例不一致</td><td>× 0.70</td><td>招生口径可能发生混合</td></tr>
+          <tr><td>专项排除不清</td><td>× 0.55</td><td>普通统考样本边界不确定</td></tr>
+          <tr><td>最低拟录取分低于所选复试线</td><td>× 0.55</td><td>学院/方向/专项口径可能不一致</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="callout-title">建模原则</span>缺失与错误不是同一件事。缺失值可在模型中显式标记；来源冲突必须保留问题标签并降低其对参数的影响，不能用简单均值“洗掉”。</div>
+    </section>
+
+    <section class="page-break">
+      <h2><span class="num">3</span>从原始证据到决策标签：完整计算图</h2>
+      <figure class="figure">
+        <div class="figure-title">图 1　当前 v0.2 原型的真实数据流与模型职责</div>
+        <svg viewBox="0 0 1040 620" role="img" aria-label="数据到决策的完整流程图">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52657b"/></marker>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#16324f" flood-opacity=".14"/></filter>
+          </defs>
+          <rect x="12" y="12" width="1016" height="596" rx="20" fill="#f7fafc" stroke="#d7e2ec"/>
+          <text x="40" y="48" font-size="17" font-weight="700" fill="#0b2340" font-family="Microsoft YaHei">报名时可见的信息集合 𝓕</text>
+
+          <g filter="url(#shadow)" font-family="Microsoft YaHei">
+            <rect x="40" y="72" width="185" height="72" rx="12" fill="#e9f7fa" stroke="#0f8ba6"/>
+            <text x="132" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#0b6577">历年录取与复试</text><text x="132" y="124" text-anchor="middle" font-size="12" fill="#466174">最低分 · 中位数 · 人数</text>
+            <rect x="250" y="72" width="160" height="72" rx="12" fill="#e9f7fa" stroke="#0f8ba6"/>
+            <text x="330" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#0b6577">国家线</text><text x="330" y="124" text-anchor="middle" font-size="12" fill="#466174">A/B 区 · 年度波动</text>
+            <rect x="435" y="72" width="185" height="72" rx="12" fill="#fbeef5" stroke="#a63b70"/>
+            <text x="527" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#823058">官方事件</text><text x="527" y="124" text-anchor="middle" font-size="12" fill="#6b5262">考纲 · 科目 · 学制</text>
+            <rect x="645" y="72" width="170" height="72" rx="12" fill="#fff6e8" stroke="#c77810"/>
+            <text x="730" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#9a5c0b">来源与口径审计</text><text x="730" y="124" text-anchor="middle" font-size="12" fill="#6b5a44">证据等级 · 问题降权</text>
+          </g>
+
+          <path d="M132 145 V186 H284" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M730 145 V186 H460" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+          <g filter="url(#shadow)" font-family="Microsoft YaHei">
+            <rect x="280" y="168" width="360" height="76" rx="13" fill="#ffffff" stroke="#0f8ba6" stroke-width="2"/>
+            <text x="460" y="198" text-anchor="middle" font-size="16" font-weight="700" fill="#0b2340">Q10 透明代理与国家线上方边际分</text>
+            <text x="460" y="222" text-anchor="middle" font-size="13" fill="#52657b">Mₛ,ₜ = Q̂₀.₁₀,ₛ,ₜ − Lz,ₜ</text>
+          </g>
+          <path d="M330 145 V168" stroke="#52657b" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <g filter="url(#shadow)" font-family="Microsoft YaHei">
+            <rect x="40" y="290" width="260" height="98" rx="13" fill="#ffffff" stroke="#0f8ba6"/>
+            <text x="170" y="319" text-anchor="middle" font-size="15" font-weight="700" fill="#0b2340">严格滞后的动态特征</text>
+            <text x="170" y="344" text-anchor="middle" font-size="12" fill="#52657b">历史中位边际 · 上年热冷异常</text>
+            <text x="170" y="365" text-anchor="middle" font-size="12" fill="#52657b">变化率 · 竞校溢出 · 缺失指示</text>
+            <rect x="330" y="290" width="225" height="98" rx="13" fill="#e9f7fa" stroke="#0f8ba6"/>
+            <text x="442" y="319" text-anchor="middle" font-size="15" font-weight="700" fill="#0b2340">弱先验贝叶斯回归</text>
+            <text x="442" y="344" text-anchor="middle" font-size="12" fill="#52657b">学校部分池化 · Student-t 尾部</text>
+            <text x="442" y="365" text-anchor="middle" font-size="12" fill="#52657b">候选分布权重 65%</text>
+            <rect x="585" y="290" width="225" height="98" rx="13" fill="#fff6e8" stroke="#c77810"/>
+            <text x="697" y="319" text-anchor="middle" font-size="15" font-weight="700" fill="#0b2340">梯度提升分位数</text>
+            <text x="697" y="344" text-anchor="middle" font-size="12" fill="#52657b">非线性与交互 · 保序处理</text>
+            <text x="697" y="365" text-anchor="middle" font-size="12" fill="#52657b">候选分布权重 35%</text>
+          </g>
+          <path d="M460 245 V270 H170 V290" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M300 339 H330" stroke="#52657b" stroke-width="2" marker-end="url(#arrow)"/><path d="M300 355 H575 V339 H585" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+          <g filter="url(#shadow)" font-family="Microsoft YaHei">
+            <rect x="40" y="438" width="280" height="104" rx="13" fill="#eaf6f1" stroke="#24745a" stroke-width="2"/>
+            <text x="180" y="468" text-anchor="middle" font-size="15" font-weight="700" fill="#18533f">滚动回测选择中心</text>
+            <text x="180" y="493" text-anchor="middle" font-size="12" fill="#45655a">稳健历史锚点胜出；复杂模型</text>
+            <text x="180" y="515" text-anchor="middle" font-size="12" fill="#45655a">负责尾部、解释与缺失回退</text>
+            <rect x="355" y="438" width="285" height="104" rx="13" fill="#fbeef5" stroke="#a63b70"/>
+            <text x="497" y="468" text-anchor="middle" font-size="15" font-weight="700" fill="#823058">未来分布合成</text>
+            <text x="497" y="493" text-anchor="middle" font-size="12" fill="#6b5262">锚点 + 0.35×复杂形状 + 国家线</text>
+            <text x="497" y="515" text-anchor="middle" font-size="12" fill="#6b5262">+ 事件三情景 + 未知厚尾</text>
+            <rect x="675" y="438" width="155" height="104" rx="13" fill="#fff6e8" stroke="#c77810"/>
+            <text x="752" y="468" text-anchor="middle" font-size="15" font-weight="700" fill="#9a5c0b">残差校准</text>
+            <text x="752" y="493" text-anchor="middle" font-size="12" fill="#6b5a44">P80/P90/P95</text><text x="752" y="515" text-anchor="middle" font-size="12" fill="#6b5a44">保守上界</text>
+            <rect x="860" y="290" width="140" height="252" rx="13" fill="#0b2340" stroke="#0b2340"/>
+            <text x="930" y="329" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">决策输出</text>
+            <line x1="885" y1="346" x2="975" y2="346" stroke="#57708c"/>
+            <text x="930" y="379" text-anchor="middle" font-size="13" fill="#bcecf4">门槛中位数</text>
+            <text x="930" y="410" text-anchor="middle" font-size="13" fill="#bcecf4">80/90/95% 上界</text>
+            <text x="930" y="441" text-anchor="middle" font-size="13" fill="#ffdda6">事件情景</text>
+            <text x="930" y="472" text-anchor="middle" font-size="13" fill="#ffdda6">可信度</text>
+            <text x="930" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">冲 · 观察 · 稳 · 保</text>
+          </g>
+          <path d="M442 388 V414 H260 V438" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M697 388 V414 H310 V438" stroke="#52657b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+          <path d="M320 490 H355" stroke="#52657b" stroke-width="2" marker-end="url(#arrow)"/><path d="M527 145 V420 H497 V438" stroke="#a63b70" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M640 490 H675" stroke="#52657b" stroke-width="2" marker-end="url(#arrow)"/><path d="M830 490 H860" stroke="#52657b" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="40" y="585" font-size="12" fill="#64748b" font-family="Microsoft YaHei">实线箭头表示实际计算依赖；中心、分布形状、事件与校准被明确拆开，便于定位误差来源。</text>
+        </svg>
+        <figcaption><span class="caption-label">说明：</span>这不是装饰性流程图。每个方框对应代码中的可定位对象：数据审计、代理标签、滞后特征、两个候选模型、滚动择模、事件抽样、残差校准与前端概率映射。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>相对国家线建模与无泄漏动态特征</h2>
+      <h3>4.1 国家线以上边际分</h3>
+      <p>不同年份整体试卷难度与政策环境会推动全国分数共同移动。为减少这种共同漂移，模型先将学校门槛转换为高于当年国家线的边际分：</p>
+      <div class="equation">\[
+        M_{s,t}=Y_{s,t}-L_{z_s,t}. \tag{5}
+      \]</div>
+      <p>2027 年国家线中心采用“最近一年 + 最近五年均值”的简单收缩：</p>
+      <div class="equation">\[
+        \mu^{L}_{A,t}=0.55L_{A,t-1}+0.45\,\overline L_{A,t-5:t-1},\qquad
+        \mu^{L}_{B,t}=\mu^{L}_{A,t}-10. \tag{6}
+      \]</div>
+      <p>标准差取扩展窗口一步预测残差的样本标准差，并设 7 分下限。当前 2027 年 A 区预测均值为 330.39，标准差为 12.23；B 区均值为 320.39。该模块的目的是传播宏观共同不确定性，并非宣称国家线服从稳定结构。</p>
+
+      <h3>4.2 市场反转与竞校溢出</h3>
+      <p>设学校此前边际分的稳健位置与尺度分别为中位数和 \(1.4826\operatorname{MAD}\)，并将尺度下限设为 4 分。上一年热冷异常为：</p>
+      <div class="equation">\[
+        R_{s,t-1}=\frac{M_{s,t-1}-\operatorname{median}(M_{s,k\le t-2})}
+        {\max\{1.4826\operatorname{MAD}(M_{s,k\le t-2}),4\}}. \tag{7}
+      \]</div>
+      <p>同为 985/非 985、同 A/B 区且历史难度相近的学校构成竞争集合 \(\mathcal N(s,t-1)\)，其平均异常：</p>
+      <div class="equation">\[
+        P_{s,t-1}=\frac{1}{|\mathcal N(s,t-1)|}\sum_{j\in\mathcal N(s,t-1)}R_{j,t-1}. \tag{8}
+      \]</div>
+      <p>与上年边际、历史边际中位数、边际变化、复试线变化、上一年拟录取人数对数、985/分区/考试科目以及缺失指示共同进入候选模型。所有时间变化特征都先滞后；同年最终拟录取人数不会作为报名时可知的名额变量。</p>
+      <div class="finding"><span class="callout-title">因果边界</span>“上年爆热后回撤”在此是可预测性假设，不是对考生从 A 校迁移到 B 校的因果识别。竞校集合只形成滞后网络特征；没有个体报考流向数据时，不能把相关性写成迁移量。</div>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>候选模型：弱先验回归与非线性分位数提升</h2>
+      <h3>5.1 贝叶斯正则化的分层近似</h3>
+      <p>将标准化后的动态与静态变量记为 \(x_{s,t}\)，学校指示效应为 \(u_s\)。候选模型为：</p>
+      <div class="equation">\[
+        M_{s,t}=\beta_0+u_s+x_{s,t}^{\mathsf T}\beta+\varepsilon_{s,t}, \tag{9}
+      \]
+      \[
+        \beta_0\sim\mathcal N(0,100^2),\quad
+        u_s\sim\mathcal N(0,18^2),\quad
+        \beta_{\rm dyn}\sim\mathcal N(\mu_{\rm dyn},14^2I),\quad
+        \beta_{\rm stat}\sim\mathcal N(0,9^2I). \tag{10}
+      \]</div>
+      <p>其中市场反转变量的先验均值方向为负，其他系数以 0 为中心。带证据权重的高斯似然与正态先验给出解析后验：</p>
+      <div class="equation">\[
+        \Sigma_n=\left(\frac{X^{\mathsf T}WX}{\sigma^2}+\Lambda_0\right)^{-1},\qquad
+        \mu_n=\Sigma_n\left(\frac{X^{\mathsf T}Wy}{\sigma^2}+\Lambda_0\mu_0\right). \tag{11}
+      \]</div>
+      <p>预测时再以 Student-\(t\) 尾部近似参数和残差不确定性。学校虚拟变量共享相同先验尺度，因此产生部分池化；但该实现没有为学校方差建立可学习超先验，也没有 MCMC/变分推断。因此，准确称呼应是<strong>“弱信息先验的贝叶斯正则化回归（分层近似）”</strong>，而不是完整的贝叶斯分层动态模型。</p>
+
+      <h3>5.2 梯度提升分位数回归</h3>
+      <p>为吸收非线性与低阶交互，分别在 \(\tau\in\{0.50,0.80,0.90,0.95\}\) 下最小化加权 pinball 损失：</p>
+      <div class="equation">\[
+        \widehat f_{\tau}=\arg\min_f\sum_i w_i\,\rho_\tau\!\left(M_i-f(x_i)\right),\qquad
+        \rho_\tau(u)=u\bigl(\tau-\mathbf 1\{u<0\}\bigr). \tag{12}
+      \]</div>
+      <p>当前实现使用 180 棵树、学习率 0.035、深度 2、叶节点最小样本 8、子采样率 0.82。各分位输出排序以防止交叉。这里使用的是 scikit-learn 的 <em>GradientBoostingRegressor</em>，不是 CatBoost；论文不以规划中的模型名称替代实际代码。</p>
+
+      <h3>5.3 候选复杂分布</h3>
+      <p>贝叶斯预测样本与提升树分位锚点插值生成的样本按固定 65%/35% 混合：</p>
+      <div class="equation">\[
+        Z^{\rm complex}_{s,t}\sim0.65\,p_{\rm Bayes}(z\mid x_{s,t})+0.35\,p_{\rm GB}(z\mid x_{s,t}). \tag{13}
+      \]</div>
+      <p>固定权重用于原型期稳定性；它并非由独立验证集最优学习得到。更重要的是，逐年滚动回测显示这一复杂候选的中心预测尚未胜过透明基准，所以它不会被强行用作大多数学校的点预测中心。</p>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>滚动回测选择中心，而不是默认复杂模型更好</h2>
+      <p>评估采用 expanding-window rolling origin：预测 2024 只使用 2022—2023，预测 2025 只使用 2022—2024，预测 2026 只使用 2022—2025。每个预测年份都重新构造特征与拟合模型。</p>
+      <figure class="figure">
+        <div class="figure-title">图 2　逐年滚动原点回测</div>
+        <svg viewBox="0 0 960 300" role="img" aria-label="2024到2026滚动回测时间轴">
+          <defs><marker id="tarrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52657b"/></marker></defs>
+          <g font-family="Microsoft YaHei">
+            <text x="30" y="38" font-size="14" fill="#52657b">训练窗口</text><rect x="108" y="24" width="34" height="18" rx="4" fill="#0f8ba6"/><text x="158" y="38" font-size="14" fill="#52657b">测试年份</text><rect x="232" y="24" width="34" height="18" rx="4" fill="#c77810"/>
+            <g font-size="13" text-anchor="middle" fill="#52657b"><text x="230" y="282">2022</text><text x="350" y="282">2023</text><text x="470" y="282">2024</text><text x="590" y="282">2025</text><text x="710" y="282">2026</text></g>
+            <line x1="200" y1="258" x2="750" y2="258" stroke="#94a3b8" stroke-width="2" marker-end="url(#tarrow)"/>
+            <text x="70" y="92" font-size="15" font-weight="700" fill="#0b2340">回测 1</text><rect x="200" y="68" width="240" height="38" rx="8" fill="#0f8ba6"/><rect x="445" y="68" width="50" height="38" rx="8" fill="#c77810"/><text x="470" y="92" text-anchor="middle" font-size="13" fill="#fff">测</text>
+            <text x="70" y="158" font-size="15" font-weight="700" fill="#0b2340">回测 2</text><rect x="200" y="134" width="360" height="38" rx="8" fill="#0f8ba6"/><rect x="565" y="134" width="50" height="38" rx="8" fill="#c77810"/><text x="590" y="158" text-anchor="middle" font-size="13" fill="#fff">测</text>
+            <text x="70" y="224" font-size="15" font-weight="700" fill="#0b2340">回测 3</text><rect x="200" y="200" width="480" height="38" rx="8" fill="#0f8ba6"/><rect x="685" y="200" width="50" height="38" rx="8" fill="#c77810"/><text x="710" y="224" text-anchor="middle" font-size="13" fill="#fff">测</text>
+          </g>
+        </svg>
+        <figcaption><span class="caption-label">信息纪律：</span>任何在年份 \(t\) 报名后才能知道的变量都不能进入该年的测试预测；这比随机拆分更符合真实使用场景。</figcaption>
+      </figure>
+
+      <p>透明候选包括：上一年门槛平移锚点，以及“历史年份中 Q10 高出国家线边际的中位数”锚点：</p>
+      <div class="equation">\[
+        A^{\rm robust}_{s,t}=\mu^L_{z_s,t}+\operatorname{median}\{\widehat Q^{\rm proxy}_{0.10,s,k}-L_{z_s,k}:k\le t-1\}. \tag{14}
+      \]</div>
+      <table>
+        <thead><tr><th>指标 / 候选</th><th>结果</th><th>解释</th></tr></thead>
+        <tbody>
+          <tr><td>回测预测数</td><td class="num">226</td><td>测试年份 2024—2026</td></tr>
+          <tr><td>v0.2 主流程加权 MAE</td><td class="num">17.67</td><td>按数据证据权重计算</td></tr>
+          <tr><td>主流程中位绝对误差</td><td class="num">15.62</td><td>对极端误差更稳健</td></tr>
+          <tr><td>稳健历史边际锚点 MAE</td><td class="num"><strong>17.12</strong></td><td>可比样本上最佳</td></tr>
+          <tr><td>上一年锚点 MAE</td><td class="num">18.58</td><td>容易追逐单年爆冷爆热</td></tr>
+          <tr><td>复杂候选模型 MAE</td><td class="num">20.35</td><td>当前数据质量下未胜出</td></tr>
+          <tr><td>低估率</td><td class="num">48.8%</td><td>中心预测大体平衡，但不代表尾部已校准</td></tr>
+          <tr><td>3:1 非对称损失</td><td class="num">33.98</td><td>低估误差按高估的 3 倍计</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="figure">
+        <div class="figure-title">图 3　逐年误差与原始 P90 覆盖率</div>
+        <svg viewBox="0 0 960 430" role="img" aria-label="2024到2026逐年MAE和P90覆盖率">
+          <g font-family="Microsoft YaHei">
+            <text x="55" y="36" font-size="15" font-weight="700" fill="#0b2340">A. 加权 MAE（分）</text>
+            <line x1="70" y1="330" x2="440" y2="330" stroke="#94a3b8"/><line x1="70" y1="70" x2="70" y2="330" stroke="#94a3b8"/>
+            <g fill="#64748b" font-size="11"><text x="46" y="333">0</text><text x="39" y="229">10</text><text x="39" y="125">20</text></g>
+            <rect x="105" y="167" width="72" height="163" rx="5" fill="#0f8ba6"/><rect x="218" y="114" width="72" height="216" rx="5" fill="#c77810"/><rect x="331" y="155" width="72" height="175" rx="5" fill="#0f8ba6"/>
+            <g text-anchor="middle" font-size="13"><text x="141" y="156" fill="#0b2340">15.66</text><text x="254" y="103" fill="#0b2340">20.79</text><text x="367" y="144" fill="#0b2340">16.79</text><text x="141" y="355" fill="#52657b">2024</text><text x="254" y="355" fill="#52657b">2025</text><text x="367" y="355" fill="#52657b">2026</text></g>
+
+            <text x="520" y="36" font-size="15" font-weight="700" fill="#0b2340">B. 原始 P90 覆盖率</text>
+            <line x1="535" y1="330" x2="920" y2="330" stroke="#94a3b8"/><line x1="535" y1="70" x2="535" y2="330" stroke="#94a3b8"/>
+            <line x1="535" y1="96" x2="920" y2="96" stroke="#a63b70" stroke-width="2" stroke-dasharray="7 6"/><text x="918" y="86" text-anchor="end" font-size="11" fill="#a63b70">目标 90%</text>
+            <g fill="#64748b" font-size="11"><text x="500" y="333">0%</text><text x="493" y="203">50%</text><text x="486" y="75">100%</text></g>
+            <polyline points="595,107 725,84 855,204" fill="none" stroke="#0f8ba6" stroke-width="4"/>
+            <g fill="#0f8ba6"><circle cx="595" cy="107" r="7"/><circle cx="725" cy="84" r="7"/><circle cx="855" cy="204" r="7"/></g>
+            <g text-anchor="middle" font-size="13"><text x="595" y="92" fill="#0b2340">85.7%</text><text x="725" y="68" fill="#0b2340">94.7%</text><text x="855" y="188" fill="#a33a32">48.5%</text><text x="595" y="355" fill="#52657b">2024</text><text x="725" y="355" fill="#52657b">2025</text><text x="855" y="355" fill="#52657b">2026</text></g>
+            <rect x="535" y="378" width="385" height="35" rx="8" fill="#fff0ee"/><text x="727" y="400" text-anchor="middle" font-size="12" fill="#8f332d">2026 的显著失准提示分布发生漂移，不能只看总体覆盖率</text>
+          </g>
+        </svg>
+        <figcaption><span class="caption-label">数据来源：</span><code>data/processed/rolling_backtest.csv</code>。总体原始 P90 覆盖率为 74.2%，但逐年结果并不稳定；这是下一版时间自适应校准的直接动机。</figcaption>
+      </figure>
+    </section>
+
+    <section class="page-break">
+      <h2><span class="num">7</span>从中心到概率分布：形状、事件与未知风险</h2>
+      <p>当稳健锚点可用时，复杂模型不会移动中心，而是只以 0.35 倍幅度提供个体学校的分布形状；国家线模块提供共同波动。定义复杂样本的中心化版本 \(\widetilde Z^{\rm complex}=Z^{\rm complex}-Q_{0.50}(Z^{\rm complex})\)，则校准前所需分数样本为：</p>
+      <div class="equation">\[
+        T^{\rm raw}_{s,t}=A^{\rm robust}_{s,t}+0.35\widetilde Z^{\rm complex}_{s,t}
+        +(L_{z_s,t}-\mu^L_{z_s,t})+E_{s,t}+U_{s,t}. \tag{15}
+      \]</div>
+      <p>若历史中位锚点缺失，依次回退至上一年锚点与复杂集成中心。该优先级完全由滚动回测确定。</p>
+
+      <h3>7.1 事件三情景</h3>
+      <p>考纲、初试科目、参考书、学制、扩缩招等事件可能同时产生退潮、正常吸收和机会型涌入。模型不把方向不确定的事件压成一个固定加减分，而设离散混合：</p>
+      <div class="equation">\[
+        E_{s,t}\sim\sum_{k\in\{\text{退潮,中性,涌入}\}}\pi_{s,t,k}\,\delta_{a_{s,t,k}},
+        \qquad \sum_k\pi_{s,t,k}=1. \tag{16}
+      \]</div>
+      <table>
+        <thead><tr><th>学校与已发现事件</th><th>退潮</th><th>中性</th><th>涌入</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>吉林大学：432 改为统计与数据科学基础</td><td>−14（0.30）</td><td>−2（0.42）</td><td>+13（0.28）</td><td>机器核验，待人工复核</td></tr>
+          <tr><td>华东师范大学：范围不变，内容与参考教材调整</td><td>−6（0.25）</td><td>0（0.50）</td><td>+7（0.25）</td><td>机器核验，待人工复核</td></tr>
+          <tr><td>东南大学：初试参考书、复试科目调整</td><td>−4（0.20）</td><td>0（0.58）</td><td>+5（0.22）</td><td>机器核验，待人工复核</td></tr>
+          <tr><td>北京工业大学：432 考试大纲内容调整</td><td>−7（0.25）</td><td>0（0.47）</td><td>+8（0.28）</td><td>机器核验，待人工复核</td></tr>
+          <tr><td>中央民族大学：应用统计学制 2 年改 3 年</td><td>−5（0.25）</td><td>−2（0.60）</td><td>+1（0.15）</td><td>机器核验，待人工复核</td></tr>
+        </tbody>
+      </table>
+      <p>这些权重是<strong>结构化专家先验</strong>，不是事件因果效应估计。尚未发现官方事件的学校加入 \(U_{s,t}=2.5t_6\) 厚尾噪声；“未发现”不等于“确认没有”。有已知事件时，当前实现不再叠加该未知事件尾部，避免重复计入。</p>
+
+      <h3>7.2 残差分位数校准</h3>
+      <p>以全部滚动回测的中位数预测残差 \(e_i=y_i-\widehat q_{0.50,i}^{\rm raw}\) 计算加权经验分位数 \(c_\tau=Q^w_\tau(e)\)。当前得到：</p>
+      <div class="equation">\[
+        (c_{0.50},c_{0.80},c_{0.90},c_{0.95})=(-0.06,17.24,26.02,31.78). \tag{17}
+      \]</div>
+      <p>中位数为 \(\widetilde q_{0.50}=q^{\rm raw}_{0.50}+c_{0.50}\)；上界取原始分位数与残差加成中更保守者：</p>
+      <div class="equation">\[
+        \widetilde q_{\tau}=\max\left\{q^{\rm raw}_{\tau},\ q^{\rm raw}_{0.50}+c_\tau,\ \widetilde q_{0.50}\right\},
+        \qquad \tau\in\{0.80,0.90,0.95\}. \tag{18}
+      \]</div>
+      <div class="warning"><span class="callout-title">校准证据的限制</span>74.2% 是校准前原始 P90 的滚动覆盖率；最终网页上界使用同一组滚动残差拟合校准量，但尚未在外层时间切分上再次评估。因此，当前 P90 是“更保守的 90% 名义上界”，还不能声称已有严格的样本外 90% 覆盖保证。</div>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>概率、上界与“冲稳保”的可解释映射</h2>
+      <p>前端保存 \(q_{0.05},q_{0.10},q_{0.20},q_{0.50},q_{0.80},q_{0.90},q_{0.95}\) 七个锚点，并在相邻锚点之间线性插值近似门槛分布函数 \(\widehat F_{s,t}(x)\)。尾部以 180 分为尺度作有限线性外推，并截断在 1%—99%。标签定义为：</p>
+      <div class="equation">\[
+        \operatorname{label}(x)=
+        \begin{cases}
+        \text{保}, & \widehat F(x)\ge0.95,\\
+        \text{稳}, & 0.90\le\widehat F(x)\lt0.95,\\
+        \text{观察}, & 0.60\le\widehat F(x)\lt0.90,\\
+        \text{冲}, & \widehat F(x)\lt0.60.
+        \end{cases} \tag{19}
+      \]</div>
+
+      <figure class="figure">
+        <div class="figure-title">图 4　从学校门槛分位数到个人“覆盖概率”：华东师范大学 2027 示例</div>
+        <svg viewBox="0 0 960 470" role="img" aria-label="华东师范大学门槛分布CDF示例">
+          <g font-family="Microsoft YaHei">
+            <line x1="90" y1="365" x2="880" y2="365" stroke="#94a3b8" stroke-width="2"/><line x1="90" y1="55" x2="90" y2="365" stroke="#94a3b8" stroke-width="2"/>
+            <g fill="#64748b" font-size="11"><text x="55" y="368">0%</text><text x="48" y="291">25%</text><text x="48" y="214">50%</text><text x="48" y="137">75%</text><text x="42" y="60">100%</text></g>
+            <g fill="#64748b" font-size="11" text-anchor="middle"><text x="90" y="390">335</text><text x="259" y="390">350</text><text x="428" y="390">365</text><text x="598" y="390">380</text><text x="767" y="390">395</text><text x="880" y="390">405</text></g>
+            <text x="485" y="425" text-anchor="middle" font-size="13" fill="#52657b">估分 x（分）</text><text x="18" y="205" transform="rotate(-90 18 205)" text-anchor="middle" font-size="13" fill="#52657b">P（预测门槛 ≤ x）</text>
+            <path d="M90 365 L182 350 L243 334 L314 303 L454 210 L649 117 L748 86 L813 70 L880 55" fill="none" stroke="#0f8ba6" stroke-width="4"/>
+            <path d="M90 365 L182 350 L243 334 L314 303 L454 210 L649 117 L748 86 L813 70 L880 55 L880 365 Z" fill="#0f8ba6" opacity=".08"/>
+            <g fill="#0f8ba6" stroke="#fff" stroke-width="2"><circle cx="182" cy="350" r="6"/><circle cx="243" cy="334" r="6"/><circle cx="314" cy="303" r="6"/><circle cx="454" cy="210" r="6"/><circle cx="649" cy="117" r="6"/><circle cx="748" cy="86" r="6"/><circle cx="813" cy="70" r="6"/></g>
+            <g fill="#52657b" font-size="10" text-anchor="middle"><text x="182" y="340">343.2</text><text x="243" y="324">348.6</text><text x="314" y="293">354.9</text><text x="454" y="200">367.3</text><text x="649" y="107">384.6</text><text x="748" y="76">393.4</text><text x="813" y="60">399.2</text></g>
+            <line x1="710" y1="365" x2="710" y2="98" stroke="#c77810" stroke-width="3" stroke-dasharray="8 6"/><circle cx="710" cy="98" r="8" fill="#c77810"/>
+            <rect x="525" y="238" width="250" height="78" rx="10" fill="#fff6e8" stroke="#c77810"/><text x="650" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#8a520b">估分 390：覆盖概率约 86%</text><text x="650" y="292" text-anchor="middle" font-size="12" fill="#6b5a44">介于 P80 与 P90，因此标签仍为“观察”</text>
+            <line x1="90" y1="86" x2="748" y2="86" stroke="#a63b70" stroke-width="1.7" stroke-dasharray="5 5"/><text x="875" y="80" text-anchor="end" font-size="11" fill="#a63b70">P90 上界 = 393.4</text>
+          </g>
+        </svg>
+        <figcaption><span class="caption-label">读图方法：</span>横轴是你的估分，纵轴是该估分覆盖学校未来门槛的模型概率。393.4 分是门槛分布的 90% 上界；390 分按分段插值约为 86%，没有达到“稳≥90%”。</figcaption>
+      </figure>
+
+      <h3>8.1 非对称损失与 90% 风险约束</h3>
+      <p>若低估门槛 1 分的损失是高估 1 分的 \(\lambda\) 倍，绝对损失下的最优点是 \(\lambda/(1+\lambda)\) 分位数。取 \(\lambda=3\) 时为 75% 分位数：</p>
+      <div class="equation">\[
+        a^*=Q_{\lambda/(1+\lambda)}(T),\qquad \lambda=3\Rightarrow a^*=Q_{0.75}(T). \tag{20}
+      \]</div>
+      <p>本项目将“稳”设为覆盖概率至少 90%，比 3:1 损失对应的 75% 最优点更保守。这是明确的风险约束，而不是由 3:1 损失机械推出的阈值。</p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>解释、可信度与不确定性归因</h2>
+      <p>每所学校的输出不应只有一个数字。当前系统同时返回：</p>
+      <div class="two-col">
+        <div class="card"><h4>预测层</h4><ul><li>门槛 P50、P80、P90、P95</li><li>事件退潮/中性/涌入情景</li><li>当前估分的覆盖概率与标签</li><li>点预测所选模型与回退路径</li></ul></div>
+        <div class="card"><h4>证据层</h4><ul><li>历史目标数量与官方来源占比</li><li>口径问题数及可信度等级</li><li>市场反转、竞校溢出和事件贡献</li><li>“未发现事件”与“确认无事件”的区别</li></ul></div>
+      </div>
+      <p>可信度分数是数据覆盖度指标，而非预测正确率：</p>
+      <div class="equation">\[
+        D_s=55\min\left(\frac{n_s}{4},1\right)+30r_s^{\rm official}+
+        \begin{cases}15,&k_s=0,\\\max(0,15-7k_s),&k_s>0,\end{cases} \tag{21}
+      \]</div>
+      <p>其中 \(n_s\) 是可用历史目标数，\(r_s^{\rm official}\) 是录取来源官方 URL 占比，\(k_s\) 是最新记录的问题数；\(D_s\ge72\) 为较高，48—71 为中等，低于 48 为较低。该分数只回答“输入证据有多完整、可追溯”，不能保证某校的误差一定更小。</p>
+      <div class="note"><span class="callout-title">建议的解释顺序</span>先看数据可信度，再看门槛分布宽度；随后审查事件情景和竞校溢出，最后才看一个估分被映射成什么标签。这样可避免把“精确到 0.1 分的显示”误当成“精确到 0.1 分的知识”。</div>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>有效性边界：当前模型能回答什么，不能回答什么</h2>
+      <table>
+        <thead><tr><th>可以回答</th><th>尚不能回答</th></tr></thead>
+        <tbody>
+          <tr><td>在统一口径下比较学校门槛的相对风险</td><td>给定个人背景后的最终录取概率</td></tr>
+          <tr><td>报名时信息条件下的门槛中位数与保守上界</td><td>复试表现、单科线与排名共同作用</td></tr>
+          <tr><td>考纲变化等事件的三种可审核情景</td><td>事件的因果效应或考生真实迁移量</td></tr>
+          <tr><td>逐年滚动样本上的代理目标可预测性</td><td>逐名真实 Q10 的误差（当前标签仍为代理）</td></tr>
+          <tr><td>数据、模型、事件与校准各自的职责</td><td>对未收录公告或突发政策的完全覆盖</td></tr>
+        </tbody>
+      </table>
+      <ol>
+        <li><strong>标签误差可能支配模型误差。</strong>295 条训练目标均为透明代理；没有逐名成绩时，继续增加模型复杂度可能只是在拟合代理噪声。</li>
+        <li><strong>学院与方向聚合会产生混合分布。</strong>学校层面保守聚合可能高估某些方向，也可能掩盖同校不同单位的考试科目差异。</li>
+        <li><strong>来源结构不均衡。</strong>370 条复试线中仅 46 条标注为官方或官方二次来源；降权只能减少影响，不能自动消除系统偏差。</li>
+        <li><strong>报名时可见的计划名额序列不足。</strong>最终拟录取人数只能作滞后市场规模信号，不能冒充当年计划。</li>
+        <li><strong>回测年份少且存在漂移。</strong>2026 年原始 P90 覆盖率明显下降，提示总体三年平均会掩盖时间失准。</li>
+        <li><strong>当前校准不是嵌套样本外验证。</strong>因此不得将名义 P90 写成频率学意义上已证实的 90% 保证。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="num">11</span>提升精度的优先路线</h2>
+      <p>优化顺序应服从“先减少不可辨识误差，再增加模型自由度”。在当前数据结构下，优先级如下。</p>
+      <table>
+        <thead><tr><th>优先级</th><th>优化项</th><th>统计作用</th><th>验收方式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>P0</strong></td><td>逐名拟录取成绩与口径化去重</td><td>把代理目标替换为真实 Q10；同时估计样本量导致的分位数误差</td><td>同校同年代理与真实 Q10 偏差分布</td></tr>
+          <tr><td><strong>P0</strong></td><td>嵌套滚动校准</td><td>内层拟合残差修正，外层只评估未见年份，避免校准复用</td><td>P80/P90/P95 覆盖误差与区间宽度</td></tr>
+          <tr><td><strong>P1</strong></td><td>报名时点计划名额、推免占用与统考口径</td><td>把“供给冲击”从历史规模代理中分离</td><td>增量滚动 MAE、pinball loss、CRPS</td></tr>
+          <tr><td><strong>P1</strong></td><td>历史事件库与层级事件效应</td><td>按事件类型/严重度共享信息，替代手工固定权重</td><td>留一事件类型回测与情景覆盖</td></tr>
+          <tr><td><strong>P1</strong></td><td>时间自适应校准与漂移检测</td><td>对近期残差加权，发现类似 2026 的结构变化</td><td>按年份、层次、数据等级分组覆盖率</td></tr>
+          <tr><td><strong>P2</strong></td><td>竞争院校动态图</td><td>以科目、区域、层次和历史门槛学习网络权重</td><td>删边/换图敏感性与时间外增益</td></tr>
+          <tr><td><strong>P2</strong></td><td>个人估分分布</td><td>把估分 \(x\) 从固定值升级为随机变量 \(S\)</td><td>多次模拟估分校准与决策后悔值</td></tr>
+        </tbody>
+      </table>
+
+      <h3>11.1 从“门槛覆盖”升级为“双重不确定性”</h3>
+      <p>当前前端把考生估分 \(x\) 当作确定值；更完整的决策应同时传播个人估分误差与学校门槛误差。若模拟卷、主观题评分与学习进度形成个人分数分布 \(S_i\)，则：</p>
+      <div class="equation">\[
+        \Pr(S_i\ge T_{s,t})=\iint \mathbf 1(s\ge t)\,p_i(s)\,p_{s,t}(t)\,\mathrm ds\,\mathrm dt. \tag{22}
+      \]</div>
+      <p>这仍不是完整录取概率，但比固定估分的 \(C_{s,t}(x)\) 更接近报名决策；还可在单志愿约束下最小化后悔值或最大化风险约束后的期望效用。</p>
+
+      <div class="avoid">
+        <h3>11.2 从固定混合权重升级为时间外堆叠</h3>
+        <p>65%/35% 仅是原型权重。下一版可在每个滚动训练窗口内部再划分时间验证层，以 proper scoring rule 学习非负权重：</p>
+        <div class="equation">\[
+          \widehat\omega=\arg\min_{\omega_m\ge0,\,\sum_m\omega_m=1}
+          \sum_{i\in\mathcal V_t} S\!\left(\sum_m\omega_mF_{m,i},y_i\right), \tag{23}
+        \]</div>
+        <p>其中 \(S\) 可取 CRPS、加权区间分数或多分位 pinball loss。若复杂模型在时间外没有稳定增益，权重应自然收缩到透明基准。</p>
+      </div>
+
+      <h3>11.3 从单层回归升级为观测误差状态空间</h3>
+      <p>逐名数据补齐前，可显式区分潜在真实门槛 \(Y^*_{s,t}\) 与代理观测 \(\widetilde Y_{s,t}\)：</p>
+      <div class="equation">\[
+        \widetilde Y_{s,t}\sim\mathcal N(Y^*_{s,t},\sigma^2_{\rm proxy,type}),\qquad
+        Y^*_{s,t}=L_{z_s,t}+\alpha_s+\gamma_t+x_{s,t-1}^{\mathsf T}\beta+\eta_{s,t}, \tag{24}
+      \]</div>
+      <p>让代理类型决定观测误差方差，比简单把权重当成精度更有概率解释；学校、年份、学院与事件可在层级中部分池化。该升级只有在更多官方记录和更长历史后才可能稳定识别。</p>
+    </section>
+
+    <section>
+      <h2><span class="num">12</span>结论</h2>
+      <p>单志愿考研择校的关键不是给出一个看似精确的“预测线”，而是建立一条可审核的证据链：定义门槛、审计口径、锁定报名时信息集、比较透明基准与复杂模型、传播事件和宏观不确定性、用时间外回测检验，并把输出翻译成具有明确概率语义的风险标签。</p>
+      <p>当前 v0.2 原型最重要的实证结论不是“复杂模型已经足够强”，而是相反：在 295 条代理标签和三年滚动回测上，历史国家线上方边际分中位数这一透明锚点优于复杂候选中心。于是系统保留复杂模型的分布形状、解释能力和缺失回退职责，同时拒绝用复杂度掩盖标签质量不足。下一阶段最有价值的工作是取得真实逐名 Q10、完成嵌套滚动校准、建立可复用事件库，并把个人估分误差纳入联合决策。</p>
+      <div class="finding"><span class="callout-title">用于后续网页可视化的主线</span>网页应让读者沿着“原始证据 → 代理目标 → 相对国家线 → 候选模型 → 滚动择模 → 事件与未知风险 → 校准 → 门槛 CDF → 冲稳保”逐层展开，并允许每一步点击查看公式、输入、输出和失败条件。图形必须对应真实计算关系，而不是在文字旁添加无关装饰。</div>
+    </section>
+
+    <section class="page-break">
+      <h2><span class="num">附录 A</span>可复现性与版本信息</h2>
+      <p><span class="appendix-tag">冻结版本</span> 本文对应仓库提交 <code>cf1159eadabb11f8a4b693559cc37eea94ec553c</code> 的 v0.2.0 模型与 2026-10-03 数据快照；论文写作日期为 2026-10-07。随机种子为 <code>20261003</code>。</p>
+      <div class="source-code">.\.venv\Scripts\python.exe model\prepare_data.py
+.\.venv\Scripts\python.exe model\train_model.py</div>
+      <p class="small">主要可复查产物：<code>data/audit/source_audit.json</code>、<code>data/audit/model_run.json</code>、<code>data/processed/rolling_backtest.csv</code>、<code>data/processed/events_2027.csv</code> 与 <code>app/data/forecast.json</code>。</p>
+
+      <h3>A.1 事件来源</h3>
+      <ol class="references">
+        <li>吉林大学数学学院（2026-04-29）：<a href="https://math.jlu.edu.cn/info/1080/16897.htm">https://math.jlu.edu.cn/info/1080/16897.htm</a></li>
+        <li>华东师范大学统计学院（2026-07-21）：<a href="https://stat.ecnu.edu.cn/c2/dd/c9708a770781/page.htm">https://stat.ecnu.edu.cn/c2/dd/c9708a770781/page.htm</a></li>
+        <li>东南大学相关学院（2026-06-25）：<a href="https://stat.seu.edu.cn/2026/0625/c60842a573899/page.htm">https://stat.seu.edu.cn/2026/0625/c60842a573899/page.htm</a></li>
+        <li>北京工业大学研究生招生网（2026-07-21）：<a href="https://yanzhao.bjut.edu.cn/info/1025/18129.htm">https://yanzhao.bjut.edu.cn/info/1025/18129.htm</a></li>
+        <li>中央民族大学研究生院（2025-07-01）：<a href="https://grs.muc.edu.cn/info/1178/7274.htm">https://grs.muc.edu.cn/info/1178/7274.htm</a></li>
+      </ol>
+      <p class="footnote">以上事件页在当前数据表中的状态为“已机器核验待人工复核”；本文按这一状态表述，不将其升级为人工最终确认。</p>
+
+      <h3>A.2 国家线来源</h3>
+      <p class="small">2022—2026 年经济学门类国家线使用教育部公开 PDF；URL 已保存在 <code>data/processed/national_lines.json</code>。B 区线在这些年份均比 A 区低 10 分。</p>
+
+      <h2><span class="num">参考文献</span></h2>
+      <ol class="references">
+        <li>Friedman, J. H. (2001). Greedy function approximation: A gradient boosting machine. <em>The Annals of Statistics</em>, 29(5), 1189–1232. https://doi.org/10.1214/aos/1013203451.</li>
+        <li>Gelman, A. (2006). Prior distributions for variance parameters in hierarchical models. <em>Bayesian Analysis</em>, 1(3), 515–534.</li>
+        <li>Gneiting, T., &amp; Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. <em>Journal of the American Statistical Association</em>, 102(477), 359–378. https://doi.org/10.1198/016214506000001437.</li>
+        <li>Hoerl, A. E., &amp; Kennard, R. W. (1970). Ridge regression: Biased estimation for nonorthogonal problems. <em>Technometrics</em>, 12(1), 55–67. https://doi.org/10.1080/00401706.1970.10488634.</li>
+        <li>Koenker, R., &amp; Bassett, G. (1978). Regression quantiles. <em>Econometrica</em>, 46(1), 33–50. https://doi.org/10.2307/1913643.</li>
+        <li>Romano, Y., Patterson, E., &amp; Candès, E. (2019). Conformalized quantile regression. <em>Advances in Neural Information Processing Systems</em>, 32.（仅作为下一版严格校准的参考；当前实现不宣称其覆盖保证。）</li>
+        <li>Tashman, L. J. (2000). Out-of-sample tests of forecasting accuracy: An analysis and review. <em>International Journal of Forecasting</em>, 16(4), 437–450. https://doi.org/10.1016/S0169-2070(00)00065-0.</li>
+      </ol>
+    </section>
+  </article>
+</main>
+</body>
+</html>

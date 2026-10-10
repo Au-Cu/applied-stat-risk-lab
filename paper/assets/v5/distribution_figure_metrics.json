@@ -1,0 +1,104 @@
+{
+  "source_experiment": "output/experiments/v5_hierarchical_distribution_20261009",
+  "scope": {
+    "candidate_rows": 2312,
+    "school_year_distributions": 77,
+    "schools": 44,
+    "year_counts": {
+      "2022": 5,
+      "2023": 18,
+      "2024": 10,
+      "2025": 27,
+      "2026": 17
+    },
+    "schools_with_two_or_more_years": 26,
+    "schools_with_three_or_more_years": 6,
+    "audited_candidate_rows_retained_all_tiers": 7511,
+    "audited_candidate_rows_used_in_group_models": 7507,
+    "audited_rows_below_five_person_group_minimum": 4,
+    "audited_school_year_distributions_all_tiers": 202,
+    "soft_candidate_rows": 5195,
+    "soft_school_year_distributions": 125
+  },
+  "figures": {
+    "17_source_evidence_audit": {
+      "field_values": 3690,
+      "field_values_with_public_url": 3685,
+      "unique_public_urls": 940,
+      "roster_images": 452,
+      "parsed_images": 412,
+      "validated_exact_programmes": 87,
+      "model_eligible_programmes": 77
+    },
+    "18_candidate_evidence_utilisation": {
+      "all_readable_rows": 14317,
+      "admitted_rows": 9073,
+      "not_admitted_rows": 2444,
+      "unknown_outcome_rows": 2800,
+      "exact_rows": 2312,
+      "soft_rows": 5199,
+      "diagnostic_rows": 1562
+    },
+    "19_within_between_school_intervals": {
+      "schools_total": 44,
+      "schools_displayed": 28
+    },
+    "20_national_mixture_estimands": {
+      "medians": {
+        "录取考生等权": 388.0,
+        "校年等权": 390.0,
+        "院校等权": 390.0,
+        "审计扩展软权重": 391.0
+      }
+    },
+    "21_three_level_variance_decomposition": {
+      "校年内个体差异": 0.46106349819083176,
+      "同校跨年波动": 0.10932935058611715,
+      "院校间差异": 0.42960715122305104
+    },
+    "22_q10_sampling_uncertainty": {
+      "school_years": 77,
+      "median_bootstrap_sd": 3.0949987493744344,
+      "p90_bootstrap_sd": 6.025533033303689
+    },
+    "23_prequential_validation_and_reliability": {
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "anchor_mae": [
+        11.113333333333307,
+        14.388000000000005,
+        16.09518518518519,
+        16.10764705882353
+      ],
+      "selected_mae": [
+        11.113333333333307,
+        14.388000000000005,
+        16.09518518518519,
+        16.10764705882353
+      ],
+      "mean_absolute_calibration_error": 0.08545140512032703
+    },
+    "24_school_shape_heatmap": {
+      "schools_displayed": 36
+    },
+    "25_retest_selection_gradient": {
+      "qualified_school_years": 200,
+      "candidate_rows": 10246,
+      "median_selection_auc": 0.8757716049382716,
+      "median_admission_rate": 0.7729182582123759
+    },
+    "26_exact_label_proxy_and_backtest": {
+      "proxy_pairs": 73,
+      "exact_backtest_rows": 54,
+      "baseline_mae": 15.832222222222226,
+      "enhanced_mae": 14.897407407407412,
+      "year_block_difference_p05": -2.68435294117646,
+      "year_block_difference_p95": -0.33321713870733777
+    }
+  },
+  "privacy": "Figures contain only aggregates or empirical distribution functions; no candidate identifiers are emitted."
+}

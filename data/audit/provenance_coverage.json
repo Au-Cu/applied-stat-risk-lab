@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-10-09T05:53:33.140873+00:00",
+  "workbook": "data/source/applied_statistics_985_211_2026_source.xlsx",
+  "workbook_sha256": "7104049cab26bbfe9db59035e71aa0d9e4430873cacc7b319742a370a6244865",
+  "interpretation": "The workbook is a compiled research index. Public URLs, not the workbook alone, are the underlying evidence. Multi-URL source cells are linked at cell scope.",
+  "program_year": {
+    "record_count": 405,
+    "field_value_count": 3690,
+    "field_values_with_public_url": 3685,
+    "field_url_coverage": 0.9986,
+    "records_with_any_public_url": 405,
+    "unique_public_urls": 668,
+    "source_types": {
+      "web_page": 1210,
+      "university_official": 210,
+      "mini_program_api": 2895,
+      "government_official": 288,
+      "mini_program_asset": 1459,
+      "wechat_article": 566,
+      "document_pdf": 4
+    },
+    "authority_grades": {
+      "unclassified_web": 1210,
+      "primary_official": 498,
+      "secondary_structured": 2895,
+      "secondary_snapshot": 1459,
+      "secondary_article": 566,
+      "unclassified_document": 4
+    }
+  },
+  "school_master_exam_syllabus": {
+    "record_count": 81,
+    "field_value_count": 729,
+    "field_values_with_public_url": 81,
+    "field_url_coverage": 0.1111,
+    "records_with_any_public_url": 9,
+    "unique_public_urls": 11,
+    "source_types": {
+      "web_page": 36,
+      "university_official": 63
+    },
+    "authority_grades": {
+      "unclassified_web": 36,
+      "primary_official": 63
+    }
+  },
+  "registry": {
+    "rows": 51,
+    "entries_with_public_url": 51,
+    "unique_public_urls": 49
+  }
+}

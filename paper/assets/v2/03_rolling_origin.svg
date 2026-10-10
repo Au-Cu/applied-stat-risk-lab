@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="650.684531pt" height="191.804883pt" viewBox="0 0 650.684531 191.804883" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-07T12:31:24.361672</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 191.804883 
+L 650.684531 191.804883 
+L 650.684531 0 
+L -0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 37.864531 154.509336 
+L 644.924531 154.509336 
+L 644.924531 21.8325 
+L 37.864531 21.8325 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 37.864531 38.316592 
+L 136.222405 38.316592 
+L 136.222405 57.615041 
+L 37.864531 57.615041 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 157.813158 38.316592 
+L 256.171032 38.316592 
+L 256.171032 57.615041 
+L 157.813158 57.615041 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 277.761785 38.316592 
+L 376.119659 38.316592 
+L 376.119659 57.615041 
+L 277.761785 57.615041 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #d97706; stroke: #d97706; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 37.864531 78.521694 
+L 136.222405 78.521694 
+L 136.222405 97.820142 
+L 37.864531 97.820142 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 157.813158 78.521694 
+L 256.171032 78.521694 
+L 256.171032 97.820142 
+L 157.813158 97.820142 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 277.761785 78.521694 
+L 376.119659 78.521694 
+L 376.119659 97.820142 
+L 277.761785 97.820142 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 397.710412 78.521694 
+L 496.068285 78.521694 
+L 496.068285 97.820142 
+L 397.710412 97.820142 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #d97706; stroke: #d97706; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 37.864531 118.726795 
+L 136.222405 118.726795 
+L 136.222405 138.025244 
+L 37.864531 138.025244 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 157.813158 118.726795 
+L 256.171032 118.726795 
+L 256.171032 138.025244 
+L 157.813158 138.025244 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 277.761785 118.726795 
+L 376.119659 118.726795 
+L 376.119659 138.025244 
+L 277.761785 138.025244 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 397.710412 118.726795 
+L 496.068285 118.726795 
+L 496.068285 138.025244 
+L 397.710412 138.025244 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #dbe8f6; stroke: #245a9b; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 517.659038 118.726795 
+L 616.016912 118.726795 
+L 616.016912 138.025244 
+L 517.659038 138.025244 
+z
+" clip-path="url(#p52e7567dca)" style="fill: #d97706; stroke: #d97706; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m1e84ca6acd" d="M 0 0 
+L 0 3.5 
+" style="stroke: #1f2933; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m1e84ca6acd" x="87.043468" y="154.509336" style="fill: #1f2933; stroke: #1f2933; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="87.043468" y="168.817441" transform="rotate(-0 87.043468 168.817441)">2022</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m1e84ca6acd" x="206.992095" y="154.509336" style="fill: #1f2933; stroke: #1f2933; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="206.992095" y="168.817441" transform="rotate(-0 206.992095 168.817441)">2023</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m1e84ca6acd" x="326.940722" y="154.509336" style="fill: #1f2933; stroke: #1f2933; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="326.940722" y="168.817441" transform="rotate(-0 326.940722 168.817441)">2024</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m1e84ca6acd" x="446.889348" y="154.509336" style="fill: #1f2933; stroke: #1f2933; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="446.889348" y="168.817441" transform="rotate(-0 446.889348 168.817441)">2025</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m1e84ca6acd" x="566.837975" y="154.509336" style="fill: #1f2933; stroke: #1f2933; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="566.837975" y="168.817441" transform="rotate(-0 566.837975 168.817441)">2026</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="341.394531" y="183.510703" transform="rotate(-0 341.394531 183.510703)">年份：蓝色只用于训练，橙色作为下一年时间外检验</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6"/>
+     <g id="text_7">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #1f2933" x="34.364531" y="51.725426" transform="rotate(-0 34.364531 51.725426)">第 1 折</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #1f2933" x="34.364531" y="91.930527" transform="rotate(-0 34.364531 91.930527)">第 2 折</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <text style="font-size: 9px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #1f2933" x="34.364531" y="132.135629" transform="rotate(-0 34.364531 132.135629)">第 3 折</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_15">
+    <path d="M 37.864531 154.509336 
+L 644.924531 154.509336 
+" style="fill: none; stroke: #1f2933; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="326.940722" y="50.250894" transform="rotate(-0 326.940722 50.250894)">检验 2024</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="446.889348" y="90.455996" transform="rotate(-0 446.889348 90.455996)">检验 2025</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="566.837975" y="130.661098" transform="rotate(-0 566.837975 130.661098)">检验 2026</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'SimHei', 'Noto Sans CJK SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f2933" x="341.394531" y="15.8325" transform="rotate(-0 341.394531 15.8325)">逐年扩窗滚动回测：报名后信息不得进入当年预测</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p52e7567dca">
+   <rect x="37.864531" y="21.8325" width="607.06" height="132.676836"/>
+  </clipPath>
+ </defs>
+</svg>

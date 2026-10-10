@@ -9,23 +9,102 @@
       2025,
       2026
     ],
-    "mae": 17.67,
-    "median_absolute_error": 15.62,
-    "asymmetric_loss_3x": 33.98,
-    "underprediction_rate": 0.488,
+    "mae": 17.66,
+    "median_absolute_error": 15.22,
+    "asymmetric_loss_3x": 34.17,
+    "underprediction_rate": 0.509,
     "complex_candidate_mae": 20.35,
-    "q80_coverage": 0.672,
-    "q90_coverage": 0.742,
-    "q95_coverage": 0.766,
+    "q80_coverage": 0.743,
+    "q90_coverage": 0.829,
+    "q95_coverage": 0.879,
     "last_year_baseline_mae": 18.58,
     "robust_margin_anchor_mae": 17.12,
     "robust_margin_anchor_asymmetric_loss_3x": 32.97
   },
+  "robust_upper_backtest": {
+    "rows": 155,
+    "years": [
+      2025,
+      2026
+    ],
+    "q80_coverage": 0.851,
+    "q90_coverage": 0.921,
+    "q95_coverage": 0.958,
+    "wis": 9.7,
+    "q90_minus_q50": 29.35,
+    "warning": "仅两个严格嵌套外层年份；稳健安全上界不等于已证明的频率分位数。"
+  },
+  "quota_coverage": {
+    "event_rows": 6,
+    "eligible_event_rows": 6,
+    "schools": 4,
+    "years": [
+      2025,
+      2026,
+      2027
+    ],
+    "frame_rows": 405,
+    "frame_rows_with_quota": 5,
+    "frame_coverage": 0.0123
+  },
+  "quota_backtest_rows": 5,
+  "quota_feature_status": "candidate_not_promoted",
+  "exact_candidate_labels": {
+    "candidate_programs": 0,
+    "applied_programs": 0,
+    "applied_rows": 0
+  },
   "calibration_offsets": {
-    "q50": -0.06,
-    "q80": 17.24,
-    "q90": 26.02,
-    "q95": 31.78
+    "q50": 0.24,
+    "q80": 18.16,
+    "q90": 25.95,
+    "q95": 32.05
+  },
+  "robust_upper_calibration": {
+    "method": "scaled_worst_origin_floor",
+    "fitted_rows": 226,
+    "effective_rows": 207.32548849261497,
+    "standardized_floors": {
+      "80": 2.0779944216753257,
+      "90": 2.735901947186863,
+      "95": 3.433630022640433
+    },
+    "origin_floors": {
+      "80": {
+        "2024": 1.627051968501572,
+        "2025": -0.0110014944477283,
+        "2026": 2.0779944216753257
+      },
+      "90": {
+        "2024": 2.2407234976819437,
+        "2025": 0.3626217442341638,
+        "2026": 2.735901947186863
+      },
+      "95": {
+        "2024": 2.5824218350691823,
+        "2025": 0.6687597741547624,
+        "2026": 3.433630022640433
+      }
+    },
+    "status": "provisional_safety_bound"
+  },
+  "upper_width_guardrail": {
+    "method": "tukey_upper_fence",
+    "q1": 31.5,
+    "q3": 36.6,
+    "iqr": 5.1,
+    "threshold": 44.25,
+    "flaggedSchools": [
+      "合肥工业大学"
+    ],
+    "interpretation": "超过阈值表示上界信息量不足，不等同于学校真实风险或难度更高；上界不作裁剪。",
+    "outcomeFree": true
+  },
+  "forecast_freeze": {
+    "status": "frozen_for_prospective_2027_test",
+    "information_cutoff": "2026-10-07 23:59 Asia/Hong_Kong",
+    "freeze_date": "2026-10-08",
+    "rule": "No tuning on 2027 outcomes; preserve this baseline and version any deviation."
   },
   "official_event_schools": [
     "东南大学",

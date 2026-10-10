@@ -1,0 +1,583 @@
+[
+  {
+    "origin": 2023,
+    "train_school_years": 5,
+    "train_exact_candidate_rows": 127,
+    "train_audited_candidate_rows": 818,
+    "train_audited_school_years": 24,
+    "test_school_years": 3,
+    "correction": {
+      "kind": "zero",
+      "data_source": "exact",
+      "blend": 0.0,
+      "reason": "fewer than two strictly prior inner forecast origins",
+      "inner_origins": [],
+      "candidates": []
+    },
+    "shape": {
+      "kind": "pooled_exact",
+      "reason": "fewer than two strictly prior inner forecast origins",
+      "inner_origins": [],
+      "candidates": []
+    }
+  },
+  {
+    "origin": 2024,
+    "train_school_years": 23,
+    "train_exact_candidate_rows": 709,
+    "train_audited_candidate_rows": 1803,
+    "train_audited_school_years": 55,
+    "test_school_years": 10,
+    "correction": {
+      "kind": "zero",
+      "data_source": "exact",
+      "blend": 0.0,
+      "reason": "fewer than two strictly prior inner forecast origins",
+      "inner_origins": [],
+      "candidates": []
+    },
+    "shape": {
+      "kind": "pooled_exact",
+      "reason": "fewer than two strictly prior inner forecast origins",
+      "inner_origins": [
+        2023
+      ],
+      "candidates": []
+    }
+  },
+  {
+    "origin": 2025,
+    "train_school_years": 33,
+    "train_exact_candidate_rows": 1015,
+    "train_audited_candidate_rows": 3636,
+    "train_audited_school_years": 103,
+    "test_school_years": 27,
+    "correction": {
+      "kind": "zero",
+      "data_source": "exact",
+      "blend": 0.0,
+      "reason": "fewer than two strictly prior inner forecast origins",
+      "inner_origins": [
+        2024
+      ],
+      "candidates": []
+    },
+    "shape": {
+      "kind": "pooled_exact",
+      "reason": "best shape improvement 0.057 or worst-year degradation 0.111 failed guardrail",
+      "inner_origins": [
+        2023,
+        2024
+      ],
+      "best_candidate": {
+        "kind": "lag_exact",
+        "quantile_mae": 5.275299670748196,
+        "yearly_quantile_mae": {
+          "2023": 5.503069688695781,
+          "2024": 4.865313638442542
+        }
+      },
+      "raw_lowest_mae_candidate": {
+        "kind": "lag_exact_plus_audited_pool",
+        "quantile_mae": 5.272897421105645,
+        "yearly_quantile_mae": {
+          "2023": 5.777621630500823,
+          "2024": 4.364393844194325
+        }
+      },
+      "parsimony_equivalence_band": 0.05,
+      "candidates": [
+        {
+          "kind": "lag_exact",
+          "quantile_mae": 5.275299670748196,
+          "yearly_quantile_mae": {
+            "2023": 5.503069688695781,
+            "2024": 4.865313638442542
+          }
+        },
+        {
+          "kind": "lag_exact_plus_audited_pool",
+          "quantile_mae": 5.272897421105645,
+          "yearly_quantile_mae": {
+            "2023": 5.777621630500823,
+            "2024": 4.364393844194325
+          }
+        },
+        {
+          "kind": "pooled_audited",
+          "quantile_mae": 5.317550835366342,
+          "yearly_quantile_mae": {
+            "2023": 5.69873102046471,
+            "2024": 4.631426502189279
+          }
+        },
+        {
+          "kind": "pooled_exact",
+          "quantile_mae": 5.3320245757728255,
+          "yearly_quantile_mae": {
+            "2023": 5.392246553163658,
+            "2024": 5.223625016469326
+          }
+        }
+      ]
+    }
+  },
+  {
+    "origin": 2026,
+    "train_school_years": 60,
+    "train_exact_candidate_rows": 1765,
+    "train_audited_candidate_rows": 5225,
+    "train_audited_school_years": 145,
+    "test_school_years": 17,
+    "correction": {
+      "kind": "zero",
+      "data_source": "exact",
+      "blend": 0.0,
+      "reason": "candidate improvement 0.000 or worst-year degradation 0.000 failed guardrail",
+      "inner_origins": [
+        2024,
+        2025
+      ],
+      "baseline_mae": 15.633783783783791,
+      "best_candidate": {
+        "kind": "zero",
+        "data_source": "exact",
+        "blend": 0.0,
+        "mae": 15.633783783783791,
+        "yearly_mae": {
+          "2024": 14.388000000000005,
+          "2025": 16.09518518518519
+        }
+      },
+      "raw_lowest_mae_candidate": {
+        "kind": "global_median",
+        "data_source": "audited",
+        "blend": 0.0,
+        "mae": 15.633783783783791,
+        "yearly_mae": {
+          "2024": 14.388000000000005,
+          "2025": 16.09518518518519
+        }
+      },
+      "parsimony_equivalence_band": 0.1,
+      "candidates": [
+        {
+          "kind": "global_median",
+          "data_source": "audited",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "audited",
+          "blend": 0.25,
+          "mae": 16.247567567567582,
+          "yearly_mae": {
+            "2024": 15.031000000000024,
+            "2025": 16.69814814814816
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "audited",
+          "blend": 0.5,
+          "mae": 16.941351351351358,
+          "yearly_mae": {
+            "2024": 15.970000000000017,
+            "2025": 17.301111111111116
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "audited",
+          "blend": 0.75,
+          "mae": 17.635135135135148,
+          "yearly_mae": {
+            "2024": 16.90900000000002,
+            "2025": 17.904074074074078
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "audited",
+          "blend": 1.0,
+          "mae": 18.398108108108126,
+          "yearly_mae": {
+            "2024": 17.990000000000038,
+            "2025": 18.54925925925927
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "audited",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "audited",
+          "blend": 0.25,
+          "mae": 16.760751911269363,
+          "yearly_mae": {
+            "2024": 15.385976788874888,
+            "2025": 17.269927882526574
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "audited",
+          "blend": 0.5,
+          "mae": 17.963780876290095,
+          "yearly_mae": {
+            "2024": 16.66537867662987,
+            "2025": 18.444670579867957
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "audited",
+          "blend": 0.75,
+          "mae": 19.208628759792884,
+          "yearly_mae": {
+            "2024": 17.952068014944803,
+            "2025": 19.674021628255137
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "audited",
+          "blend": 1.0,
+          "mae": 20.668381781141637,
+          "yearly_mae": {
+            "2024": 19.23875735325973,
+            "2025": 21.197872309986792
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "audited",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "audited",
+          "blend": 0.25,
+          "mae": 16.169280405405416,
+          "yearly_mae": {
+            "2024": 15.120062500000023,
+            "2025": 16.55787962962964
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "audited",
+          "blend": 0.5,
+          "mae": 16.78477702702704,
+          "yearly_mae": {
+            "2024": 16.148125000000014,
+            "2025": 17.020574074074084
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "audited",
+          "blend": 0.75,
+          "mae": 17.423300675675684,
+          "yearly_mae": {
+            "2024": 17.17618750000002,
+            "2025": 17.514824074074077
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "audited",
+          "blend": 1.0,
+          "mae": 18.375391891891912,
+          "yearly_mae": {
+            "2024": 18.346250000000037,
+            "2025": 18.386185185185198
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "exact",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "exact",
+          "blend": 0.25,
+          "mae": 16.060405405405415,
+          "yearly_mae": {
+            "2024": 14.52000000000001,
+            "2025": 16.63092592592593
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "exact",
+          "blend": 0.5,
+          "mae": 16.48702702702703,
+          "yearly_mae": {
+            "2024": 14.65200000000001,
+            "2025": 17.166666666666668
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "exact",
+          "blend": 0.75,
+          "mae": 16.940675675675685,
+          "yearly_mae": {
+            "2024": 14.88400000000002,
+            "2025": 17.70240740740741
+          }
+        },
+        {
+          "kind": "global_median",
+          "data_source": "exact",
+          "blend": 1.0,
+          "mae": 17.402972972972982,
+          "yearly_mae": {
+            "2024": 15.14800000000003,
+            "2025": 18.23814814814815
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "exact",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "exact",
+          "blend": 0.25,
+          "mae": 16.532451995004834,
+          "yearly_mae": {
+            "2024": 14.615669182107627,
+            "2025": 17.242371555337133
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "exact",
+          "blend": 0.5,
+          "mae": 17.563269055917644,
+          "yearly_mae": {
+            "2024": 14.919944302760523,
+            "2025": 18.54227822375361
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "exact",
+          "blend": 0.75,
+          "mae": 19.08618351721036,
+          "yearly_mae": {
+            "2024": 15.33391645414078,
+            "2025": 20.47591205908798
+          }
+        },
+        {
+          "kind": "ridge",
+          "data_source": "exact",
+          "blend": 1.0,
+          "mae": 21.531436748909336,
+          "yearly_mae": {
+            "2024": 15.747888605521036,
+            "2025": 23.673491616830923
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "exact",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "exact",
+          "blend": 0.25,
+          "mae": 16.042317567567572,
+          "yearly_mae": {
+            "2024": 14.65125000000001,
+            "2025": 16.557527777777782
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "exact",
+          "blend": 0.5,
+          "mae": 16.450851351351353,
+          "yearly_mae": {
+            "2024": 14.91450000000001,
+            "2025": 17.019870370370374
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "exact",
+          "blend": 0.75,
+          "mae": 16.88641216216217,
+          "yearly_mae": {
+            "2024": 15.27775000000002,
+            "2025": 17.48221296296296
+          }
+        },
+        {
+          "kind": "school_eb",
+          "data_source": "exact",
+          "blend": 1.0,
+          "mae": 17.3408918918919,
+          "yearly_mae": {
+            "2024": 15.67300000000003,
+            "2025": 17.95862962962963
+          }
+        },
+        {
+          "kind": "zero",
+          "data_source": "exact",
+          "blend": 0.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "zero",
+          "data_source": "exact",
+          "blend": 0.25,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "zero",
+          "data_source": "exact",
+          "blend": 0.5,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "zero",
+          "data_source": "exact",
+          "blend": 0.75,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        },
+        {
+          "kind": "zero",
+          "data_source": "exact",
+          "blend": 1.0,
+          "mae": 15.633783783783791,
+          "yearly_mae": {
+            "2024": 14.388000000000005,
+            "2025": 16.09518518518519
+          }
+        }
+      ]
+    },
+    "shape": {
+      "kind": "pooled_exact",
+      "reason": "best shape improvement 0.152 or worst-year degradation 0.111 failed guardrail",
+      "inner_origins": [
+        2023,
+        2024,
+        2025
+      ],
+      "best_candidate": {
+        "kind": "lag_exact",
+        "quantile_mae": 5.4935333314195045,
+        "yearly_quantile_mae": {
+          "2023": 5.503069688695781,
+          "2024": 4.865313638442542,
+          "2025": 5.7198497202638245
+        }
+      },
+      "raw_lowest_mae_candidate": {
+        "kind": "lag_exact_plus_audited_pool",
+        "quantile_mae": 5.481017768106066,
+        "yearly_quantile_mae": {
+          "2023": 5.777621630500823,
+          "2024": 4.364393844194325,
+          "2025": 5.696846276106502
+        }
+      },
+      "parsimony_equivalence_band": 0.05,
+      "candidates": [
+        {
+          "kind": "lag_exact",
+          "quantile_mae": 5.4935333314195045,
+          "yearly_quantile_mae": {
+            "2023": 5.503069688695781,
+            "2024": 4.865313638442542,
+            "2025": 5.7198497202638245
+          }
+        },
+        {
+          "kind": "lag_exact_plus_audited_pool",
+          "quantile_mae": 5.481017768106066,
+          "yearly_quantile_mae": {
+            "2023": 5.777621630500823,
+            "2024": 4.364393844194325,
+            "2025": 5.696846276106502
+          }
+        },
+        {
+          "kind": "pooled_audited",
+          "quantile_mae": 5.620532315211909,
+          "yearly_quantile_mae": {
+            "2023": 5.69873102046471,
+            "2024": 4.631426502189279,
+            "2025": 5.934735331348053
+          }
+        },
+        {
+          "kind": "pooled_exact",
+          "quantile_mae": 5.645551534298106,
+          "yearly_quantile_mae": {
+            "2023": 5.392246553163658,
+            "2024": 5.223625016469326,
+            "2025": 5.970690602398396
+          }
+        }
+      ]
+    }
+  }
+]

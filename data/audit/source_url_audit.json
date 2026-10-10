@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-09T06:33:06.296934+00:00",
+  "unique_urls": 694,
+  "reachable": 464,
+  "failed_or_blocked": 230,
+  "reachability_rate": 0.6686,
+  "methods": {
+    "HEAD": 354,
+    "api_json_fetch": 107,
+    "GET_range": 22,
+    "asset_download": 211
+  },
+  "status_codes": {
+    "400": 1,
+    "200": 461,
+    "none": 3,
+    "206": 3,
+    "404": 226
+  },
+  "interpretation": "A failed check may mean anti-bot blocking or temporary outage; it does not by itself invalidate the historical citation."
+}
