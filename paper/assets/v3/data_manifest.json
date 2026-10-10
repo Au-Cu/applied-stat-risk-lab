@@ -1,7 +1,8 @@
 {
   "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
+  "retrospective_audit_as_of": "2026-10-09",
   "python_seed": 20261007,
-  "git_commit": "cf1159eadabb11f8a4b693559cc37eea94ec553c",
+  "git_commit": "6284dd065993de684761b03ccc7ed0d7320f1b36",
   "working_tree_dirty": true,
   "files": [
     {
@@ -45,9 +46,24 @@
       "sha256": "0c1caac6f792b743411b0c7399e38ef197a267239759587b70832bca8f165aed"
     },
     {
+      "path": "output/experiments/v3_validation_20261007/missingness.json",
+      "bytes": 1513,
+      "sha256": "48f46725e5c25d6cce7bde1da217574247e1cb56ab6e533922d77d971db89e45"
+    },
+    {
+      "path": "output/experiments/v3_validation_20261007/anchor_ablation.csv",
+      "bytes": 610,
+      "sha256": "7b47be3e3deefdef94128eaebec549620b037137ea1a8e80729ebd1ce173700e"
+    },
+    {
+      "path": "output/experiments/calibration_candidates_20261008/metrics.csv",
+      "bytes": 5300,
+      "sha256": "be779cbd4e997343184a8ec1d99413d5a76dd74eff5a374c79f9bb144fc3d62e"
+    },
+    {
       "path": "data/audit/provenance_coverage.json",
-      "bytes": 1712,
-      "sha256": "b6746c4441d184ced4693bcfb4fd5b274483a20efc32f22cbd1c58c44514e717"
+      "bytes": 1661,
+      "sha256": "0f332aa5e560c0045003e676221cbf231716e5c508f342411734416eb65dc9cb"
     },
     {
       "path": "data/audit/source_url_audit.json",
@@ -60,14 +76,14 @@
       "sha256": "12a0feae48a7caffda30c88ede3631e0879d9242611e432a62902998e1ca2dab"
     },
     {
-      "path": "data/audit/mini_program_roster_index.json",
-      "bytes": 30349,
-      "sha256": "ac37c48525ffb055da7d510172767aa660249d15d0665c59bc25160b120323fc"
+      "path": "data/audit/candidate_score_quality.json",
+      "bytes": 677,
+      "sha256": "2553314a44709ddf0d1baf4cb3c2ab5bc1f2a581f4c338c2781adba5d0b13655"
     },
     {
-      "path": "data/audit/candidate_score_extraction.json",
-      "bytes": 16692,
-      "sha256": "3087b0f85069575fba06b8ef7348a59b662e50cc634114f8ea8cbdf8d3d1ee24"
+      "path": "data/audit/score_row_utilisation.json",
+      "bytes": 2430,
+      "sha256": "6d65d1b7a0bcd65ffc5080e6345399b29068fd3837d7a9fce1ad1b4ea76368cb"
     },
     {
       "path": "data/processed/program_year_provenance.csv",
@@ -86,23 +102,38 @@
     },
     {
       "path": "data/processed/candidate_label_audit.csv",
-      "bytes": 36018,
-      "sha256": "46393559e9847256f530727db40a8895cdbe716d4fe530c0ca95666abb926595"
+      "bytes": 52342,
+      "sha256": "94d0f96af40f631171112f9121c5dd30ff0d43205b67f2c2a067e218a34961a3"
     },
     {
-      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/summary.json",
-      "bytes": 1859,
-      "sha256": "814ec8f350a046c7f8fdba6f5853fc9eec24b9b65d91e32d9b8d72c1c50ba917"
+      "path": "output/experiments/v5_exact_labels_20261009/exact_evaluation/summary.json",
+      "bytes": 1861,
+      "sha256": "18e53cb7e63227abbb2e296b6291857dd7328b3fc3e97add56a421ee9149341a"
     },
     {
-      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/exact_proxy_pairs.csv",
-      "bytes": 10421,
-      "sha256": "40639d377ffbce40d441a4165489f80727d2bc1a38072f2cc5ea018d698aab8f"
+      "path": "output/experiments/v5_exact_labels_20261009/exact_evaluation/exact_proxy_pairs.csv",
+      "bytes": 10091,
+      "sha256": "77b312f2129dbaf122d94c5512777afb627ac92f6841c605c46c3c2d33582a4e"
     },
     {
-      "path": "output/experiments/v4_exact_labels_20261009/exact_evaluation/paired_exact_backtest.csv",
-      "bytes": 16139,
-      "sha256": "bc8313db5e7f4c5a69eb59f96827b36153f5c4508df0ba790e2289eef9735d0d"
+      "path": "output/experiments/v5_exact_labels_20261009/exact_evaluation/paired_exact_backtest.csv",
+      "bytes": 12187,
+      "sha256": "159750ddb168160aba9eb516a22f12b5c70b51f6c78163ecaa28156159b07fd3"
+    },
+    {
+      "path": "output/experiments/v5_hierarchical_distribution_20261009/summary.json",
+      "bytes": 40773,
+      "sha256": "66cb6957df7cd0178c1029f465f07ba56c58a84c9a237f912388a8f36644376b"
+    },
+    {
+      "path": "output/experiments/v5_retest_selection_20261009/summary.json",
+      "bytes": 2430,
+      "sha256": "6d65d1b7a0bcd65ffc5080e6345399b29068fd3837d7a9fce1ad1b4ea76368cb"
+    },
+    {
+      "path": "app/data/model-v5-audit.json",
+      "bytes": 2644,
+      "sha256": "69d983753087696430562b4338129ee5503c071dbdf08fab0bd749b859833187"
     }
   ]
 }

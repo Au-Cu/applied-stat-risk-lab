@@ -136,13 +136,18 @@ def configure_matplotlib() -> None:
             "savefig.bbox": "tight",
             "savefig.pad_inches": 0.08,
             "svg.fonttype": "none",
+            "svg.hashsalt": "applied-stat-risk-lab-v5",
             "pdf.fonttype": 42,
         }
     )
 
 
 def finish(fig: plt.Figure, output_dir: Path, stem: str) -> None:
-    fig.savefig(output_dir / f"{stem}.svg", format="svg")
+    fig.savefig(
+        output_dir / f"{stem}.svg",
+        format="svg",
+        metadata={"Date": "2026-10-09"},
+    )
     fig.savefig(output_dir / f"{stem}.png", format="png", dpi=220)
     plt.close(fig)
 
@@ -1305,17 +1310,8 @@ def _five_point_band(value: float) -> str:
     return f"{lower}-{lower + 5}"
 
 
-def build_manifest(root: Path, paths: list[Path]) -> dict:
-    files = []
-    for path in paths:
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        files.append(
-            {
-                "path": str(path.relative_to(root)).replace("\\", "/"),
-                "bytes": path.stat().st_size,
-                "sha256": digest,
-            }
-        )
+def capture_git_state(root: Path) -> tuple[str, bool]:
+    """Capture the source state before generated figures modify the tree."""
     try:
         commit = subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=root, text=True
@@ -1326,7 +1322,24 @@ def build_manifest(root: Path, paths: list[Path]) -> dict:
             ).strip()
         )
     except (OSError, subprocess.CalledProcessError):
-        commit, dirty = "unavailable", True
+        return "unavailable", True
+    return commit, dirty
+
+
+def build_manifest(
+    root: Path, paths: list[Path], source_git_state: tuple[str, bool]
+) -> dict:
+    files = []
+    for path in paths:
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        files.append(
+            {
+                "path": str(path.relative_to(root)).replace("\\", "/"),
+                "bytes": path.stat().st_size,
+                "sha256": digest,
+            }
+        )
+    commit, dirty = source_git_state
     return {
         "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
         "retrospective_audit_as_of": "2026-10-09",
@@ -1368,6 +1381,7 @@ def export_appendix_table(forecast: pd.DataFrame, output_dir: Path) -> None:
 def main() -> None:
     args = parse_args()
     root = args.repo_root.resolve()
+    source_git_state = capture_git_state(root)
     output_dir = (args.output_dir or root / "paper" / "assets" / "v3").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     configure_matplotlib()
@@ -1384,9 +1398,8 @@ def main() -> None:
     nested = read_csv(v3_dir / "nested_calibration_rows.csv")
     missingness = json.loads((v3_dir / "missingness.json").read_text(encoding="utf-8"))
     anchor_ablation = read_csv(v3_dir / "anchor_ablation.csv")
-    calibration_candidates = read_csv(
-        root / "output" / "experiments" / "calibration_candidates_20261008" / "metrics.csv"
-    )
+    calibration_dir = root / "output" / "experiments" / "calibration_candidates_20261008"
+    calibration_candidates = read_csv(calibration_dir / "metrics.csv")
     audit_dir = root / "data" / "audit"
 
     def read_optional_json(path: Path) -> dict:
@@ -1460,6 +1473,9 @@ def main() -> None:
         root / "app" / "data" / "forecast.json",
         v3_dir / "summary.json",
         v3_dir / "nested_calibration_rows.csv",
+        v3_dir / "missingness.json",
+        v3_dir / "anchor_ablation.csv",
+        calibration_dir / "metrics.csv",
         audit_dir / "provenance_coverage.json",
         audit_dir / "source_url_audit.json",
         audit_dir / "supplemental_provenance.json",
@@ -1477,7 +1493,7 @@ def main() -> None:
         root / "app" / "data" / "model-v5-audit.json",
     ]
     manifest_paths = [path for path in manifest_paths if path.exists()]
-    manifest = build_manifest(root, manifest_paths)
+    manifest = build_manifest(root, manifest_paths, source_git_state)
     summary["reproducibility_manifest"] = manifest
     (output_dir / "data_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"

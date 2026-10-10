@@ -69,13 +69,20 @@ def configure() -> None:
             "axes.titleweight": "bold",
             "axes.titlesize": 13,
             "axes.labelsize": 10,
+            "svg.fonttype": "none",
+            "svg.hashsalt": "applied-stat-risk-lab-v5",
         }
     )
 
 
 def finish(fig: plt.Figure, output: Path, stem: str) -> None:
     fig.savefig(output / f"{stem}.png", dpi=240, bbox_inches="tight", facecolor="white")
-    fig.savefig(output / f"{stem}.svg", bbox_inches="tight", facecolor="white")
+    fig.savefig(
+        output / f"{stem}.svg",
+        bbox_inches="tight",
+        facecolor="white",
+        metadata={"Date": "2026-10-09"},
+    )
     plt.close(fig)
 
 
