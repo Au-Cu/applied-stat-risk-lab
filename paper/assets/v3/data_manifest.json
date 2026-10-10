@@ -2,8 +2,8 @@
   "data_vintage": "2026-10-07 23:59 Asia/Hong_Kong",
   "retrospective_audit_as_of": "2026-10-09",
   "python_seed": 20261007,
-  "git_commit": "6284dd065993de684761b03ccc7ed0d7320f1b36",
-  "working_tree_dirty": true,
+  "git_commit": "84cc5ed9ef0b599eee0ae066e1266d04fd67bdce",
+  "working_tree_dirty": false,
   "files": [
     {
       "path": "data/processed/program_year.csv",
