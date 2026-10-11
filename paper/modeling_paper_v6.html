@@ -1,0 +1,1474 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>报名前信息集下应用统计硕士拟录取初试低位分数的概率预测</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+      },
+      svg: { fontCache: 'local' },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    @page {
+      size: A4;
+      margin: 17mm 19mm 18mm 21mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+    }
+
+    body {
+      font-family: "SimSun", "Songti SC", "Noto Serif CJK SC", serif;
+      font-size: 10.5pt;
+      line-height: 1.72;
+      text-align: justify;
+      counter-reset: figure table;
+    }
+
+    main { width: 100%; }
+
+    .title-block {
+      min-height: 248mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-spacer { height: 18mm; }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+      font-size: 21pt;
+      line-height: 1.42;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin-top: 4mm;
+      text-align: center;
+      font-size: 11pt;
+      letter-spacing: 0.08em;
+    }
+
+    .paper-meta {
+      margin: 6mm 0 8mm;
+      text-align: center;
+      font-size: 9.5pt;
+    }
+
+    .abstract {
+      margin-top: 4mm;
+      border-top: 1.1pt solid #111;
+      padding-top: 4mm;
+    }
+
+    .abstract h2,
+    .toc h2 {
+      margin: 0 0 3mm;
+      text-align: center;
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+      font-size: 14pt;
+      letter-spacing: 0.35em;
+    }
+
+    .abstract p {
+      margin: 0.7em 0;
+      text-indent: 2em;
+      font-size: 9.7pt;
+      line-height: 1.65;
+    }
+
+    .keywords {
+      margin-top: 2mm !important;
+      text-indent: 0 !important;
+    }
+
+    .version-note {
+      margin-top: auto;
+      padding-top: 4mm;
+      text-align: center;
+      color: #444;
+      font-size: 8.5pt;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .toc {
+      min-height: 246mm;
+      padding-top: 5mm;
+      page-break-before: always;
+      break-before: page;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .toc-list {
+      margin: 7mm 7mm 0;
+      padding: 0;
+      list-style: none;
+      font-size: 10pt;
+      line-height: 1.9;
+    }
+
+    .toc-list li {
+      display: flex;
+      gap: 0.5em;
+      align-items: baseline;
+    }
+
+    .toc-list .label { white-space: nowrap; }
+    .toc-list .dots {
+      flex: 1;
+      border-bottom: 1px dotted #777;
+      transform: translateY(-0.28em);
+    }
+    .toc-list .page { min-width: 1.8em; text-align: right; }
+    .toc-sub { padding-left: 2em; font-size: 9.5pt; }
+
+    h2, h3, h4 {
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+      text-align: left;
+      break-after: avoid-page;
+      page-break-after: avoid;
+    }
+
+    h2 {
+      margin: 1.35em 0 0.55em;
+      font-size: 14pt;
+      line-height: 1.45;
+    }
+
+    h3 {
+      margin: 1.05em 0 0.42em;
+      font-size: 12pt;
+      line-height: 1.45;
+    }
+
+    h4 {
+      margin: 0.9em 0 0.35em;
+      font-size: 10.5pt;
+    }
+
+    p { margin: 0.45em 0; text-indent: 2em; }
+    p.no-indent, .source-note, figcaption, td p, th p { text-indent: 0; }
+
+    ul, ol {
+      margin: 0.35em 0 0.6em 2.1em;
+      padding: 0;
+    }
+    li { margin: 0.16em 0; }
+
+    .problem-list li { margin: 0.45em 0; }
+
+    .equation {
+      margin: 0.65em 0;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      overflow: visible;
+    }
+
+    mjx-container[jax="SVG"][display="true"] {
+      margin: 0.7em 0 !important;
+      overflow: visible;
+    }
+
+    .definition,
+    .warning,
+    .conclusion-box {
+      margin: 0.8em 0;
+      padding: 0.6em 0.9em;
+      border-left: 2.5pt solid #333;
+      background: #f7f7f7;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .warning { border-left-color: #8f3e32; background: #fbf5f4; }
+    .conclusion-box { border-left-color: #2f6652; background: #f3f8f5; }
+
+    .definition strong,
+    .warning strong,
+    .conclusion-box strong {
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+    }
+
+    figure {
+      margin: 1.1em auto 1.15em;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      counter-increment: figure;
+    }
+
+    figure img {
+      display: block;
+      max-width: 100%;
+      max-height: 190mm;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    figure.compact img { max-height: 128mm; }
+    figure.wide img { width: 100%; }
+
+    figcaption {
+      margin: 0.45em auto 0;
+      max-width: 94%;
+      text-align: center;
+      font-size: 9pt;
+      line-height: 1.5;
+    }
+
+    figcaption::before {
+      content: "图 " counter(figure) "　";
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+    }
+
+    .source-note {
+      display: block;
+      margin-top: 0.15em;
+      color: #555;
+      font-size: 8pt;
+    }
+
+    table {
+      width: 100%;
+      margin: 0.85em 0 1em;
+      border-collapse: collapse;
+      border-top: 1.2pt solid #111;
+      border-bottom: 1.2pt solid #111;
+      font-size: 9pt;
+      line-height: 1.48;
+      break-inside: auto;
+      page-break-inside: auto;
+      counter-increment: table;
+    }
+
+    table caption {
+      caption-side: top;
+      margin-bottom: 0.4em;
+      text-align: center;
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+      font-size: 9.5pt;
+    }
+
+    table caption::before { content: "表 " counter(table) "　"; }
+
+    thead { display: table-header-group; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+    th {
+      padding: 0.42em 0.48em;
+      border-bottom: 0.8pt solid #333;
+      text-align: center;
+      font-family: "SimHei", "Microsoft YaHei", sans-serif;
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4em 0.48em;
+      border-bottom: 0.35pt solid #bbb;
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .center { text-align: center; }
+    .small-table { font-size: 8.25pt; line-height: 1.38; }
+    .appendix-table { font-size: 7.2pt; line-height: 1.22; }
+    .appendix-table th, .appendix-table td { padding: 0.25em 0.3em; }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      align-items: start;
+    }
+
+    .two-column > * { min-width: 0; }
+
+    .formula-list td:first-child {
+      white-space: nowrap;
+      text-align: center;
+      width: 19%;
+    }
+
+    .references {
+      font-size: 9pt;
+      line-height: 1.55;
+    }
+    .references p {
+      padding-left: 2.2em;
+      text-indent: -2.2em;
+      margin: 0.35em 0;
+    }
+
+    code {
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 0.88em;
+      word-break: break-all;
+    }
+
+    .footnote {
+      color: #444;
+      font-size: 8.4pt;
+      line-height: 1.5;
+    }
+
+    .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+  .toc-summary { font-size:9pt; line-height:1.8; margin-top:12mm; } figure img { max-height:155mm; object-fit:contain; } table.formula-list { break-inside:avoid; page-break-inside:avoid; } .references { line-height:1.45; } .references p { margin:0.25em 0; }
+  </style>
+</head>
+<body>
+<main>
+  <section class="title-block">
+    <div class="title-spacer"></div>
+    <h1>报名前信息集下应用统计硕士<br />拟录取初试低位分数的概率预测</h1>
+    <div class="subtitle">- 以 985/211 院校全日制 025200 应用统计专业为例</div>
+    <div class="paper-meta">应用统计择校风险实验室　　2026 年 10 月</div>
+
+    <div class="abstract">
+      <h2>摘　要</h2>
+      <p>研究生招生在成绩揭示前要求完成单志愿选择。本文以传统 985/211 院校全日制应用统计专业为例，研究报名前信息集下普通统考拟录取者初试总分第 10 百分位的概率预测。该量是群体低位风险指标，不是制度分数线或个人录取概率。区分已实现有限总体、假想选择总体与未来队列预测，形成来源审计、分层测量、状态推断与时间外验证框架。</p>
+      <p>研究覆盖 81 校、2022-2026 年 405 个校年。14,317 条可读成绩按用途保留，审计层确认 77 个精确校年、44 校和 2,312 名拟录取者；另保留软证据、未录取与状态未知记录。来源台账关联 3,685/3,690 个非空核心字段，伴随目录逐项列示 940 个公开来源，不以研究者工作簿替代原始公开文献。</p>
+      <p>对逐人成绩建立年份固定效应和院校、校年嵌套随机效应模型。REML 方差占比分别为院校间 26.9%、校年状态 19.9%、校年内个体 53.2%，同校同年相关为 0.468。相对 Q10 分位曲线的前两个主成分解释 94.8% 的观察变异，聚类描述较窄、中等与较宽的分布形状；这些描述不等于全国总体推断或预测增益。总体低尾的非参数识别在小名单中受限。</p>
+      <p>同一批 54 个精确时间外校年中，标签增强使中心 MAE 从 15.83 降至 14.90 分。新观测误差随机截距候选 MAE 为 15.05 分，但标准 WIS 为 8.80，低于增强模型 10.81；平均 P90−P50 从 31.21 缩至 23.22 分，总体覆盖由 85.2% 增至 92.6%，2026 年却仍只有 82.4%。局部水平、岭回归、小型神经网络均未改善中心误差；形状压缩仅有小幅增益。三个年份的 MAE 差 t 区间跨 0，不能宣布新年份稳定优越。</p>
+      <p>研究据此保留经比较支持的简约结构，并将预测效果较弱的候选用于描述分布异质性和诊断跨年稳定性。代理误差、队列波动和未来状态不确定性尚有识别限制；精确名单覆盖、独立年份、官方计划名额及事件库仍是改进重点。2027 前瞻基线保持独立冻结，新增结果属于回溯性统计研究，不回写既有预测。</p>
+      <p class="keywords"><strong>关键词：</strong>分位数预测；限制最大似然；观测误差；经验贝叶斯；随机过程；多元统计；机器学习；滚动验证</p>
+    </div>
+    <div class="version-note">第六版研究稿 - 统计推断、分布结构与现代统计候选比较｜2027 基线冻结于 2026-10-08｜研究快照 2026-10-11｜不纳入考生估分随机性</div>
+  </section>
+
+  <section class="toc">
+    <h2>目　录</h2>
+    <ol class="toc-list"><li><span class="label">一、引言</span><span class="dots"></span><span class="page" data-toc="0">3</span></li><li><span class="label">二、理论机制与研究框架</span><span class="dots"></span><span class="page" data-toc="1">4</span></li><li><span class="label">三、数据与研究设计</span><span class="dots"></span><span class="page" data-toc="2">5</span></li><li><span class="label">四、门槛预测方法</span><span class="dots"></span><span class="page" data-toc="3">14</span></li><li><span class="label">五、事件冲击与预测不确定性</span><span class="dots"></span><span class="page" data-toc="4">21</span></li><li><span class="label">六、从门槛分布到择校决策</span><span class="dots"></span><span class="page" data-toc="5">23</span></li><li><span class="label">七、实证结果</span><span class="dots"></span><span class="page" data-toc="6">25</span></li><li><span class="label">八、稳健性分析</span><span class="dots"></span><span class="page" data-toc="7">35</span></li><li><span class="label">九、讨论：方法价值、局限与推广</span><span class="dots"></span><span class="page" data-toc="8">39</span></li><li><span class="label">十、结论</span><span class="dots"></span><span class="page" data-toc="9">40</span></li><li><span class="label">参考文献</span><span class="dots"></span><span class="page" data-toc="10">41</span></li><li><span class="label">附录 A　2027 年 81 所院校预测表</span><span class="dots"></span><span class="page" data-toc="11">42</span></li><li><span class="label">附录 B　数据字典、复现协议与隐私边界</span><span class="dots"></span><span class="page" data-toc="12">44</span></li></ol><p class="toc-summary no-indent">研究逻辑：先界定有限名单与未来风险目标，继而说明公开证据与观测误差，再估计分层状态和分布形状，最后以真实时间顺序比较中心、锐度、覆盖和少数年份的不确定性。描述性统计不自动等于预测增益，预测上界也不等于个人录取保证。</p>
+  </section>
+
+  <section>
+    <h2>一、引言</h2>
+
+    <h3>1.1 研究背景与意义</h3>
+    <p>普通高考通常在成绩揭示后填报多个平行志愿，而全国硕士研究生招生考试要求考生在初试前即确定一所招生单位和一个专业。报名时，考生尚不知道自己的正式成绩，也不知道同年报考人数、考生能力分布及最终招生执行情况。一次错误选择几乎没有同批次志愿可以分散风险，调剂又受到专业课、院校政策与名额等约束。因此，“某校今年大约多少分”并不是充分问题；真正需要回答的是：在报名时点已有信息下，该校当年普通统考全日制拟录取低位风险指标可能落在什么区间，个人估分覆盖该门槛的概率有多大，最坏但仍较常见的情形需要准备到多少分。</p>
+    <p>传统做法往往把上一年复试线、近年均值或模拟卷分数直接比较。这种直觉方法忽略四类结构：其一，复试线与最终拟录取低位分数并不等价；其二，国家线变化会使所有学校共同移动；其三，上一年异常爆冷或爆热会触发下一年考生迁移；其四，考纲、参考书、学制、名额等事件会改变报考成本与市场预期。本文将这些结构转化为可审计变量和概率分布。</p>
+
+    <h3>1.2 研究对象、预测时点与目标</h3>
+    <p>本文研究范围限定为传统 985/211 院校中招收全日制 025200 应用统计专业硕士的 81 所学校，不区分研究方向。预测时点为当年正式报名开始前，信息集记为 \(\mathcal F_{\tau_t}\)。仅保留普通统考、全日制样本，排除明确的专项计划、非全日制、调剂和不属于普通统考的记录。</p>
+    <p>设学校为 \(s\)，招生年份为 \(t\)，普通统考全日制拟录取初试总分集合为 \(\mathcal A_{s,t}\)。首选预测目标定义为：</p>
+    <div class="equation">
+      \[
+        Y_{s,t}=Q_{0.10}\!\left(\mathcal A_{s,t}\right),
+        \qquad
+        Y_{s,t}\mid \mathcal F_{\tau_t}.
+        \tag{1}
+      \]
+    </div>
+    <p>这里的 \(Y_{s,t}\) 是学校层面的“拟录取低位门槛”，不是复试线，也不是某个具体考生的录取结果。选取第 10 百分位而非绝对最低分，是为了降低单个破格、少数民族骨干计划误混、同分特殊情况或数据录入异常对目标的支配。</p>
+
+    <div class="warning">
+      <strong>两个 90% 不可混淆。</strong> \(Q_{0.10}\) 描述拟录取群体内部的低位分数；预测分布的 \(q_{0.90}\) 描述未来状态下该低位门槛的 90% 上界。网页中的“90% 稳”属于后者，不等同于“个人最终录取概率为 90%”。
+    </div>
+
+    <h3>1.3 研究内容与主要贡献</h3>
+    <p>围绕报名前单志愿决策中的“目标不可直接观测、历史样本短、政策事件方向不确定、概率结果难以解释”等特征，本文形成以下四方面工作：</p>
+    <ol class="problem-list">
+      <li><strong>建立可审计且不浪费已有信息的目标测量层。</strong>统一异质招生材料的统计口径；对名单对账通过者直接计算精确 Q10，对内部一致但未完全对账者作为降权软证据，对结果状态未知者只估计复试队列分布。所有记录均保留原始证据、用途标签与人工复核入口。</li>
+      <li><strong>建立适用于短面板的稳健预测层。</strong>通过相对国家线建模分离公共波动，以严格滞后特征描述历史难度、市场反转和竞校迁移，并由时间外回测约束复杂模型的使用范围。</li>
+      <li><strong>建立事件驱动的概率分布层。</strong>将考纲、参考书、名额和学制变化表示为方向不确定的三情景混合分布，与国家线波动、模型残差和未知事件风险共同形成保守上界。</li>
+      <li><strong>建立面向报名决策的解释层。</strong>区分校年内拟录取分布 \(F^{adm}_{s,t}\)、其低位分位数 \(T_{s,t}\) 与未来门槛预测分布 \(G_{s,t}\)，输出 P50、P80、P90、P95、估分覆盖概率、情景及不确定性分解，并用复试队列数据实证说明其与最终录取概率之间的边界。</li>
+    </ol>
+
+    <figure class="wide">
+      <img src="assets/v3/00_model_workflow.svg" alt="从报名前可见证据、目标构建、中心候选、滚动选择到概率输出的完整计算图" />
+      <figcaption>
+        从原始证据到个人决策的可复现计算图。上排给出主要计算链，下排给出每一阶段的约束与检验；图中每一箭头均对应程序中的数据变换或模型步骤。
+        <span class="source-note">由 <code>paper/scripts/build_paper_analysis.py</code> 根据实际数据结构与模型实现生成。</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>二、理论机制与研究框架</h2>
+
+    <h3>2.1 目标测量误差与证据分级</h3>
+    <p>当前数据最主要的困难不是算法选择，而是目标不可直接观察。学校公布材料可能只有复试线、拟录取最低分或部分学院名单；同一学校不同年份的来源又可能来自官网、研招网转载或第三方汇总。若简单把所有可见分数当作同一标签，复杂模型只会更精确地拟合口径差异。</p>
+    <p>因此本文不再采用“通过质量闸门即使用、未通过即删除”的二元逻辑，而建立按用途分层的证据结构。精确层要求名单人口口径、图例、人数及可得汇总统计相互一致，可直接形成经验 Q10；软证据层要求专业、学习方式、图例、排序与 OCR 质量内部一致，但与外部汇总尚未完全对账，只能降权进入分布形状或观测误差敏感性；诊断层保存口径不明、特殊人群或状态未知的可读成绩，用于发现数据问题、估计复试队列分布和安排人工复核。110 条只有复试线而没有 Q10 代理的校年记录也继续保留为辅助信息。这样，未晋级为精确标签不等于数据被丢弃，只意味着其统计角色受到限制。</p>
+
+    <h3>2.2 短面板数据中的稳健预测</h3>
+    <p>81 所学校每校最多只有 5 个年度观测，若为每所学校拟合独立时间序列，样本远不足以识别趋势；若把所有学校完全合并，又会抹平学校层面的长期难度。本文采用“相对国家线的边际分 + 跨校共享系数 + 学校部分池化近似”的思路，并保留简单锚点作为基准。</p>
+    <p>市场行为以两个滞后量进入模型。上一年学校相对自身历史异常偏高，可能引发报考退潮；异常偏低，可能引发次年拥入，表现为市场反转。同类型、同分区、历史难度相近学校的上一年异常还可能改变本校竞争，表现为竞校溢出。二者都必须使用 \(t-1\) 年及以前信息，不能把 \(t\) 年最终录取人数等报名后结果作为当年特征。</p>
+
+    <h3>2.3 事件冲击与考生市场反馈</h3>
+    <p>考纲或参考书变化同时存在两种相反机制：备考成本提高会使一部分考生退出，而“新旧分数不可比”“上一年爆冷”又可能吸引风险偏好者。缩招通常提高门槛，但也可能因高分考生提前避开而被部分抵消。故事件不宜编码成单一确定增量，而应形成退潮、中性和涌入三个互斥状态及其先验权重。</p>
+    <p>另一方面，历史残差分布并不稳定。2025 年原始 P90 明显偏保守，2026 年却偏低，说明汇总覆盖率会掩盖日历年漂移。本文因此把“生成原始分布”和“形成稳健安全上界”分开，并按时间顺序完成嵌套检验：预测 2025 年只能使用 2024 年时间外残差，预测 2026 年只能使用 2024-2025 年残差。该设计减少泄漏，却也揭示当前严格校准证据只有两个外层年份。</p>
+
+    <h3>2.4 从门槛分布到风险决策</h3>
+    <p>逐人原始分数使三个容易混淆的分布能够被明确分开。令 \(A_{i,s,t}\) 为学校 \(s\)、年份 \(t\) 第 \(i\) 名拟录取者初试总分，校年内已实现的拟录取分布为 \(F^{adm}_{s,t}\)，本文目标门槛为 \(T_{s,t}=Q_{0.10}(F^{adm}_{s,t})\)。而报名前真正未知的是未来状态下门槛 \(T_{s,t}\) 的预测分布 \(G_{s,t}\)。逐人样本可直接计算 \(F^{adm}_{s,t}\) 及其经验 Q10；额外的总体分位数推断须另加假设，但不会把一个校年的几十名考生变成几十个独立的时间外预测起点。</p>
+    <p>令 \(T_{s,t}\) 为学校未来所需门槛，考生在报名时给出的单点估分为 \(x\)。可直接用于择校比较的量为：</p>
+    <div class="equation">
+      \[
+        C_{s,t}(x)
+        =\Pr(T_{s,t}\le x\mid \mathcal F_{\tau_t})
+        =G_{s,t}(x).
+        \tag{2}
+      \]
+    </div>
+    <p>它只回答“估分是否覆盖学校低位风险指标”，不包含单科线、复试表现、正式排名与个人估分误差。为了避免一个看似精确的概率遮蔽证据差异，输出还必须同时给出分位数、证据完备度、事件情景和形成路径。</p>
+    <p>由此，本文的方法链条不是把若干算法并列堆放，而是依次处理四个相互依赖的环节：先定义并测量门槛，再从短面板中选择可靠的预测中心，随后把公共波动与事件冲击传播为完整分布，最后才将分布转换为个人决策量。第三节据此规定数据口径与信息边界，第四至第六节依次给出预测、校准和决策方法。</p>
+  </section>
+
+  <section>
+    <h2>三、数据与研究设计</h2>
+    <h3>3.1 研究边界与建模假设</h3>
+    <ol>
+      <li><strong>口径可比假设。</strong>在排除专项计划、非全日制、调剂和明确异常记录后，同一学校不同年份的普通统考全日制拟录取低位分数具有可比较含义。</li>
+      <li><strong>报名信息集假设。</strong>所有进入年份 \(t\) 预测的变量，在 \(\tau_t\) 前已经公开或可由更早数据计算；报名后才揭示的实际录取人数不得作为当年无泄漏特征。</li>
+      <li><strong>相对国家线稳定性假设。</strong>国家线能吸收一部分公共试题难度和全国政策波动，使边际分 \(M_{s,t}=Y_{s,t}-L_{z_s,t}\) 比绝对分数更适合跨年建模。</li>
+      <li><strong>有限迁移假设。</strong>考生主要在同 985 层级、同国家线分区且历史难度相近的院校间迁移；用该邻域的滞后异常均值近似竞校溢出。</li>
+      <li><strong>代理误差可降权假设。</strong>Q10 代理虽有误差，但其可靠程度能由来源等级、构造方法和口径问题近似排序；加权似然可减少低质量记录的影响。</li>
+      <li><strong>事件互斥情景假设。</strong>对某一已识别事件，退潮、中性、涌入三种市场状态在单次未来实现中互斥，其权重为结构化专家先验，而非已识别的因果概率。</li>
+      <li><strong>未识别事件厚尾假设。</strong>未发现官方变化不等于确认无变化，对无已知事件学校保留零均值厚尾扰动，以承认遗漏事件风险。</li>
+      <li><strong>决策含义限制。</strong>覆盖概率仅作为报名风险指标，不被解释为最终录取概率；用户仍需核验招生简章、单科线与复试规则。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>3.2 符号约定</h3>
+    <table class="formula-list">
+      <caption>主要符号及含义</caption>
+      <thead>
+        <tr><th>符号</th><th>含义</th><th>单位/取值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>\(s,t\)</td><td>学校索引与招生年份</td><td>离散</td></tr>
+        <tr><td>\(\tau_t\)</td><td>年份 \(t\) 的报名信息截点</td><td>时间</td></tr>
+        <tr><td>\(\mathcal A_{s,t}\)</td><td>普通统考全日制拟录取初试总分集合</td><td>分数集合</td></tr>
+        <tr><td>\(A_{i,s,t}\)</td><td>第 \(i\) 名普通统考全日制拟录取者的初试总分</td><td>分</td></tr>
+        <tr><td>\(F^{adm}_{s,t}\)</td><td>学校—年份内已实现的拟录取初试总分分布</td><td>分布函数</td></tr>
+        <tr><td>\(T_{s,t}\)</td><td>校年低位风险状态，\(Q_{0.10}(F^{adm}_{s,t})\)</td><td>分</td></tr>
+        <tr><td>\(G_{s,t}\)</td><td>报名前信息集下未来 \(T_{s,t}\) 的预测分布</td><td>分布函数</td></tr>
+        <tr><td>\(Y_{s,t}\)</td><td>真实但通常不可完整观察的拟录取初试分 Q10</td><td>分</td></tr>
+        <tr><td>\(\widetilde Y_{s,t}\)</td><td>由最低分、中位数、人数构造的 Q10 代理</td><td>分</td></tr>
+        <tr><td>\(L_{z,t}\)</td><td>分区 \(z\in\{A,B\}\) 的国家线</td><td>分</td></tr>
+        <tr><td>\(M_{s,t}\)</td><td>相对国家线的门槛边际，\(\widetilde Y_{s,t}-L_{z_s,t}\)</td><td>分</td></tr>
+        <tr><td>\(w_{s,t}\)</td><td>来源、代理方式与审计问题合成的观测权重</td><td>\((0,1]\)</td></tr>
+        <tr><td>\(Z_{s,t-1}\)</td><td>学校上一年相对自身历史的稳健异常</td><td>标准化分数</td></tr>
+        <tr><td>\(P_{s,t-1}\)</td><td>竞争院校上一年异常均值</td><td>标准化分数</td></tr>
+        <tr><td>\(B_{s,t}\)</td><td>滚动回测选出的中心锚点</td><td>分</td></tr>
+        <tr><td>\(E_{s,t},U_{s,t}\)</td><td>已知事件情景冲击与未识别事件厚尾扰动</td><td>分</td></tr>
+        <tr><td>\(q_\alpha\)</td><td>未来所需门槛分布的 \(\alpha\) 分位点</td><td>分</td></tr>
+        <tr><td>\(C_{s,t}(x)\)</td><td>估分 \(x\) 覆盖预测门槛的概率</td><td>\([0,1]\)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>3.3 数据范围、来源与统一口径</h3>
+    <p>数据以学校-年份为基本单元，覆盖 2022-2026 年。基础工作簿是研究者根据公开材料整理形成的<strong>证据索引</strong>，而不是可脱离原链接单独引用的公共数据库；本研究因此把学校研究生院或学院官网、教育部文件、招生简章、复试与拟录取名单、公告及可复核的公开快照视为底层证据，把工作簿视为字段口径、来源定位和人工判断的汇编层。纳入本次分析的工作簿 SHA256 为 <code>7104049c…6244865</code>，完整哈希、表名、单元格坐标、原始 URL、提取时间及处理状态均写入来源台账。</p>
+    <p>字段级审计以“学校—年份—字段”为最小单位，而不是给整行笼统挂一个来源。405 条校年记录共有 3,690 个非空核心字段值，其中 3,685 个能够关联至少一个公开 URL，字段链接覆盖率为 99.86%；全部 405 条校年记录至少有一个公开来源。独立来源目录对各字段台账、名单资产和补充证据去重后汇总 940 个公开 URL，并保留结构化标题或可复核的用途说明。需要强调，<em>有 URL</em>只证明可追溯，不等于来源为官方、当前可访问或字段已被独立验证，因此台账另列来源类型、权威等级、现时访问状态与值级核对结果；研究者工作簿只是这些底层证据的内部索引，不作为参考文献中的公共数据集。</p>
+    <p>2026 年 10 月 9 日的链接健康检查覆盖 694 个唯一 URL，其中 464 个可访问，230 个失效或受阻；失效主要集中在一个已经下线的第三方域名。链接失效不反向否定其历史引用，但会降低当下复核能力。为此，系统又用独立公开接口和名单快照作补充核对：得到 984 个数值一致的年度字段证据，覆盖 356 个校年；另有 642 个培养单位、学习方式、考试科目与学制字段在 79 所学校上实现精确或预先定义的语义等价核对。在 225 个含失效第三方链接的校年中，215 个至少新增一个仍可访问且数值一致的补充来源。765 个数值不一致的候选证据只进入差异审计，绝不覆盖原值。</p>
+    <p>逐名名单来自“统计战线统数圈”公开展示的历年名单快照及其详情接口，作为<strong>二级结构化证据</strong>而非院校官方原件。采集程序仅保留学校、专业、年份、图片 URL、内容哈希、录取图例和初试总分；姓名、考生编号、头像、评论及用户标识均不进入公开分析层。452 张名单图片共抽取 14,317 条可读总分，其中 9,073 条被图例识别为已录取、2,444 条明确未录取、2,800 条录取状态未知。重复哈希记录不作二次计数，但保留在资产审计中。</p>
+    <p>精确标签优先要求录取人数、最低分、中位数和最高分与独立汇总全部一致；对于早期年份外部汇总不完整的名单，只有同时满足人数可核、图例明确、分数单调、排名覆盖充分和 OCR 置信度阈值的校年，才按预先声明的结构一致规则晋级。最终 87 个校年通过核对，其中 77 个校年样本量不少于 10，覆盖 44 所学校和 2,312 名拟录取者。未通过精确闸门的可读成绩不会被一律删除：内部一致的 5,199 条已录取记录作为降权软证据进入分布形状敏感性，另 1,562 条进入诊断复核；结果状态未知的分数只进入复试队列分布，不被转换成录取标签。</p>
+    <p>学校层面聚合是当前版本的限制：若同校存在不同学院或试卷，采用较保守记录会产生选择偏差；未来应以“学校 × 学院 × 考试科目组合”为基本单元。</p>
+    <p>主目标模型使用精确 Q10 或 \(\widetilde Y_{s,t}\) 可得、全日制且综合权重不低于 0.12 的校年记录。只有复试线而无录取低位代理的 110 条记录用于展示与辅助核验，不混入主边际标签。历史实际录取人数只可作为下一年的滞后特征，不能冒充报名时已知的计划名额；逐人名单及复试结果同样只在其公开之后用于下一期特征或回溯验证。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/17_source_evidence_audit.svg" alt="字段级来源覆盖、公开链接目录和逐名名单质量闸门" />
+      <figcaption>
+        证据链分为“字段有链接—链接现时可访问—图像可解析—名单口径可核对”四层。左图衡量字段可追溯性，中图统计 940 个去重公开 URL 的复核状态，右图显示 452 张图片到 77 个建模校年的逐层收缩；各层不能互相替代。
+        <span class="source-note">数据来源：<code>provenance_coverage.json</code>、<code>public_source_bibliography.json</code> 与 <code>candidate_score_extraction.json</code>；图由统一 Python 管线生成。</span>
+      </figcaption>
+    </figure>
+
+    <h3>3.4 Q10 透明代理</h3>
+    <p>设可识别的拟录取人数为 \(n\)，最低分为 \(a\)，中位数为 \(b\)。样本最小值大致对应经验概率 \(p_{\min}=1/(n+1)\)。当 \(p_{\min}\lt0.10\) 且中位数可用时，在最低分与中位数之间作顺序统计插值；否则保守使用最低分：</p>
+    <div class="equation">
+      \[
+      \widetilde Y_{s,t}=
+      \begin{cases}
+      a+\dfrac{0.10-p_{\min}}{0.50-p_{\min}}(b-a),
+      & b,n\text{ 可用且 }p_{\min}\lt0.10,\\[8pt]
+      a, & \text{其他可用情形}.
+      \end{cases}
+      \tag{3}
+      \]
+    </div>
+    <p>相应代理基础权重为：顺序统计插值 0.68；小样本最低分 0.48；仅有最低分且无法插值 0.35。若拟录取来源含学校官方 URL，则保持该权重；否则再乘 0.72。代理公式的目的不是声称能从两个统计量恢复真实 Q10，而是给出可复算、可替换的过渡标签。</p>
+    <p>从统计识别看，最低分与中位数不能唯一确定 Q10。因此更自然的最终模型应把真实低位水平记为潜变量 \(\theta_{s,t}\)，把代理视为带方法特异误差的观测：</p>
+    <div class="equation">
+      \[
+        \widetilde Y_{s,t}\mid\theta_{s,t},m_{s,t}
+        \sim \mathcal N\!\left(\theta_{s,t},\sigma^2_{m_{s,t}}\right),
+        \qquad
+        \theta_{s,t}=\alpha_s+X_{s,t-1}^{\mathsf T}\beta+\gamma_t+\eta_{s,t}.
+        \tag{4}
+      \]
+    </div>
+    <p>其中 \(m_{s,t}\) 表示代理方法。77 个可建模精确校年中有 73 个能与现有代理配对，首次同时覆盖两类主要代理：50 个“最低分—中位数顺序统计插值”配对的 \(Y^{\mathrm{exact}}-\widetilde Y\) 均值为 2.85 分、配对 MAE 为 3.14 分；23 个“仅最低分”配对的均值和 MAE 均为 6.05 分。两类代理均整体向下，但误差尺度明显不同，支持按方法估计 \(\sigma_m\)，也否定了用一个统一折减权重代表全部代理误差的做法。</p>
+    <p>给定正确完整的本届名单，经验 Q10 可直接计算，不另加随机抽样误差。若在假想选择总体下把本届分数作为独立同分布重复队列样本，Bootstrap 标准差中位数为 3.09 分、90 分位数为 6.03 分、最大值为 10.18 分。这些值描述带模型假设的低尾波动，不是 OCR 或名单覆盖误差，也不是下一年预测区间；统计对象的进一步区别见第 3.9 节。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/26_exact_label_proxy_and_backtest.svg" alt="两类Q10代理误差分布与精确标签增强模型回测" />
+      <figcaption>
+        逐人原始分数对代理误差与中心预测的双重检验。左图显示顺序统计插值和仅最低分两类代理都存在系统向下偏差，后者更明显；右图在 54 个 2024-2026 年精确回测校年上比较冻结基线与精确标签增强模型。总体 MAE 从 15.83 降至 14.90 分，但 2025 年没有改善，故不能把“总体改善”写成“每年都改善”。
+        <span class="source-note">数据来源：<code>output/experiments/v5_exact_labels_20261009/exact_evaluation/</code>；逐名原表留在本地私有层。</span>
+      </figcaption>
+    </figure>
+
+    <figure class="wide">
+      <img src="assets/v5/22_q10_sampling_uncertainty.svg" alt="Q10抽样标准差随校年拟录取样本量变化" />
+      <figcaption>
+        在假想独立同分布选择总体下，散点为 77 个校年 Q10 的 Bootstrap 标准差，虚线给出 \(c/\sqrt n\) 参考尺度。该图描述重复队列低尾的工作波动，不表示完整名单的已实现 Q10 含随机抽样误差，也不把个体数当成独立年份数。
+        <span class="source-note">数据来源：<code>candidate_distribution_summary.csv</code>；图由同一模型程序从逐人样本生成。</span>
+      </figcaption>
+    </figure>
+
+    <h3>3.5 证据等级与审计折减</h3>
+    <p>复试线来源基础权重设置为：官方 1.00、官方二手来源 0.85、第三方 0.62、仅国家线 0.35、未分类 0.50。三类口径问题分别折减：复试比不一致乘 0.70，专项计划排除不清乘 0.55，拟录取最低分低于所选复试线乘 0.55。综合权重写为：</p>
+    <div class="equation">
+      \[
+        w_{s,t}
+        =w^{\mathrm{source}}_{s,t}
+         \times w^{\mathrm{proxy}}_{s,t}
+         \times \prod_{k\in\mathcal{I}_{s,t}}\rho_k ,
+        \qquad 0\lt w_{s,t}\le 1 .
+        \tag{5}
+      \]
+    </div>
+    <p>低权重不等于删除。它使模型保留稀缺信息，同时降低不确定记录对参数估计和误差指标的支配；所有触发项都能回溯到原行与原链接。</p>
+    <p>这些权重仍主要属于结构化专家判断。新增配对数据已经能分别检验顺序统计插值和仅最低分代理的误差，却尚不能把代理方法、来源等级、OCR 质量与口径异常的独立方差完全识别；乘法形式也仍隐含质量维度可分离且按比例作用。因此本文同时报告加权、非加权和分组指标，并把方法特异观测误差模型列为后续替代方案，不凭同一批配对样本直接重估全部生产权重。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/18_candidate_evidence_utilisation.svg" alt="全部可读成绩与已录取子集的分层使用" />
+      <figcaption>
+        全量成绩的用途审计。14,317 条可读记录先按结果状态分层；9,073 条已录取记录再分为精确标签、降权软证据和诊断复核三类。两条横带的统计总体不同，不能相加；同一条已录取成绩可以同时服务于拟录取分布和复试选择关系。
+        <span class="source-note">数据来源：本地私有逐行表与公开聚合审计 <code>score_row_utilisation.json</code>；图中不含个人标识。</span>
+      </figcaption>
+    </figure>
+
+    <h3>3.6 国家线以上边际分</h3>
+    <p>绝对分数同时受全国试题难度与学校竞争影响。为分离共同波动，定义：</p>
+    <div class="equation">
+      \[
+        M_{s,t}=\widetilde Y_{s,t}-L_{z_s,t},
+        \qquad z_s\in\{A,B\}.
+        \tag{6}
+      \]
+    </div>
+    <p>若国家线整体下降而某校相对国家线的边际不变，则模型不应把该下降误判为学校吸引力下降。2022 年 A 区国家线达到 360 分，2025 年降至 323 分，跨年幅度足以扭曲仅对绝对分数求均值的做法。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/02_national_line.svg" alt="2017年至2026年A区B区国家线及2027年预测" />
+      <figcaption>
+        国家线历史及 2027 年报名时点预测。2027 年 A 区中位数约 330.3 分、B 区约 320.4 分；误差棒表示模型给出的共同不确定性尺度。
+        <span class="source-note">历史来源保存在 <code>data/processed/national_lines.json</code>；预测来自 <code>app/data/forecast.json</code>。</span>
+      </figcaption>
+    </figure>
+
+    <h3>3.7 缺失值与防泄漏处理</h3>
+    <p>所有动态特征先按学校和年份排序，再整体滞后一阶。对缺失的滞后值，训练管线保留缺失指示变量并使用训练折内部统计量处理；不会用测试年份的真实值回填。2026 年实际招生人数可以进入 2027 年预测，但不能进入 2026 年预测。标准化参数、邻域划分和残差校准都在每个滚动训练窗内由历史数据估计。</p>
+    <p>至此，预测对象、观测误差、样本权重与报名时点信息集均已固定。下一节所有候选模型都在同一训练样本和同一时间边界下比较，从而把模型差异与数据口径差异分离开来。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/14_missingness.svg" alt="2022至2026年Q10代理缺失率" />
+      <figcaption>
+        Q10 代理缺失率按年份分解。2022 年缺失率为 91.4%，2025 和 2026 年分别降至 3.7% 与 4.9%；缺失机制明显随历史补录进度变化，不能假定为完全随机缺失。
+        <span class="source-note">描述性缺失模型的样本内 AUC 为 0.898，仅用于诊断选择机制，不用于预测精度宣称。</span>
+      </figcaption>
+    </figure>
+
+    <h3>3.8 校年内分布、全国混合分布与三层变异</h3>
+    <p>有了逐人分数后，“全国应用统计拟录取分数分布”不再是唯一对象。若所有考生等权，大规模招生项目获得更多质量；若校年等权，每个已观测项目年份占同等质量；若院校等权，则先均衡同校不同年份，再令每所学校占同等质量。三种经验混合分别写为：</p>
+    <div class="equation">
+      \[
+      \begin{aligned}
+        F_{\mathrm{cand}}(y)&=\sum_{s,t}\frac{n_{s,t}}{\sum_{j,r}n_{j,r}}F^{adm}_{s,t}(y),\\
+        F_{\mathrm{sy}}(y)&=\frac{1}{K}\sum_{s,t}F^{adm}_{s,t}(y),\\
+        F_{\mathrm{school}}(y)&=\frac{1}{S}\sum_s\frac{1}{T_s}\sum_tF^{adm}_{s,t}(y).
+      \end{aligned}
+      \tag{7}
+      \]
+    </div>
+    <p>它们分别回答“随机抽取一名拟录取考生”“随机抽取一个校年”“随机抽取一所学校再抽一年和一名考生”时的分数分布，不能互换。精确样本下三种口径的中位数分别为 388、390 和 390 分；加入软证据并按校年与证据质量降权后的敏感性中位数为 391 分，说明全国位置统计对这批软证据较稳健，但这不等于软证据可改写某个校年的精确标签。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/19_within_between_school_intervals.svg" alt="院校内部拟录取分数区间与院校间位置差异" />
+      <figcaption>
+        每所学校取最新可用精确年份。绿点为 Q10，蓝色粗线为 Q25-Q75，细线为 Q10-Q90，红点为中位数。图同时展示校年内部离散程度与学校之间的位置差异，说明单个最低分或中位数都不足以代表完整分布。
+      </figcaption>
+    </figure>
+
+    <figure class="wide">
+      <img src="assets/v5/20_national_mixture_estimands.svg" alt="考生等权、校年等权、院校等权与软证据敏感性的全国分布" />
+      <figcaption>
+        三种“全国分布”实线只使用精确校年；橙色虚线追加内部一致但尚未完全对账的已录取名单，并按证据质量降权。曲线接近表明总体位置对软证据不敏感，但三种抽样对象仍有不同政策含义。
+      </figcaption>
+    </figure>
+
+    <p>为避免把 2,312 名考生误当成 2,312 个独立年份，本文先按院校等权作描述性方差分解；以下分量是有限样本均值与残差的记号，不是本节已拟合随机效应的 REML 估计：</p>
+    <div class="equation">
+      \[
+        A_{i,s,t}=\mu+a_s+u_{s,t}+\varepsilon_{i,s,t},
+        \qquad
+        \operatorname{Var}(A)=\sigma_a^2+\sigma_u^2+\sigma_\varepsilon^2.
+        \tag{8}
+      \]
+    </div>
+    <p>估计得到校年内个体差异、同校跨年波动和院校间差异分别占总方差的 46.1%、10.9% 和 43.0%。逐人数据显著改善已实现校年分布，并支持带假设的重复队列低尾波动估计，但中心预测的独立时间信息仍主要来自校年和日历年。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/21_three_level_variance_decomposition.svg" alt="拟录取分数的三层方差分解" />
+      <figcaption>
+        院校等权的三层方差分解。校年内个体差异与院校间差异均占较大份额，因此既不能只研究全国混合分布，也不能把同一校年的个人记录当作时间外样本扩容。
+      </figcaption>
+    </figure>
+  </section>
+
+<section>
+  <h3>3.9 已实现分位数、潜在总体分位数与未来预测的区别</h3>
+  <p>“精确标签仍有抽样误差”需要限定统计对象。若某校某年目标人群的名单完整、录取类型正确且分数读取无误，则经验分布 \(F^{adm}_{s,t}\) 是该届已实现有限总体的完整记录；给定名单后，其经验 Q10 是可直接计算的函数，并不存在因随机抽样而产生的标签误差。OCR、名单漏页、人口口径和学院聚合错误属于观测或覆盖误差，不能用重抽样自动修复。本文所谓“精确”首先指审计通过名单覆盖范围内的经验分位数，不表示已取得每所学校官方完整原件。</p>
+  <p>如果另设假想的、可重复产生拟录取者的选择总体分布 \(H^{adm}_{s,t}\)，其分位数 \(\theta_{s,t}=Q_{0.10}(H^{adm}_{s,t})\) 才有总体推断含义。把本届名单看成该总体的独立同分布样本是额外工作假设；实际招生有排名、名额和复试选择约束，独立同分布不由公开名单本身保证。Bootstrap 标准差在此描述重复届次的低尾波动近似，而不是完整名单标签的读取置信度。最终任务仍是预测下一届已实现 Q10，而非把潜在总体分位数置信区间直接当作下一年预测区间。</p>
+  <table class="small-table">
+    <caption>三个统计对象及误差的含义</caption>
+    <thead><tr><th>对象</th><th>已知/未知</th><th>恰当的不确定性</th></tr></thead>
+    <tbody>
+      <tr><td>本届完整名单的经验 \(T_{s,t}\)</td><td>名单正确完整时可计算</td><td>读取、覆盖和定义差异；不是条件抽样误差</td></tr>
+      <tr><td>假想选择总体的 \(\theta_{s,t}\)</td><td>模型中的未知参数</td><td>依赖独立性假设的顺序统计区间与 Bootstrap</td></tr>
+      <tr><td>报名前下一届 \(T_{s,t+1}\)</td><td>未来随机结果</td><td>状态、公共年份、未来队列与模型参数不确定性</td></tr>
+    </tbody>
+  </table>
+  <p>经验分位数采用 Hyndman-Fan 第 7 类线性插值[23]。对升序分数 \(A_{(1)},\ldots,A_{(n)}\)，令 \(r=1+(n-1)p\)、\(j=\lfloor r\rfloor\)、\(g=r-j\)，则：</p>
+  <div class="equation">\[ \widehat Q_p=(1-g)A_{(j)}+gA_{(j+1)}. \tag{9} \]</div>
+  <p>端点按样本最小值、最大值处理。定义敏感性比较第 1 类经验逆分布、第 7 类线性插值及第 8 类中位数无偏插值，并比较 Q05、Q10、Q15、Q20 的排序。对于假想连续独立同分布总体，令 \(B\sim\operatorname{Binomial}(n,p)\)，取 \(l=F_B^{-1}(0.025)\)、\(u=F_B^{-1}(0.975)+1\)，可构造总体分位数区间：</p>
+  <div class="equation">\[ [A_{(l)},A_{(u)}], \qquad \Pr\{l\le B\le u-1\}\ge0.95. \tag{10} \]</div>
+  <p>若 \(l=0\) 或 \(u=n+1\)，分别用总分理论支持界 0、500 替代[18,25]，并显式标注该端点没有样本支持；离散分数和并列通常使该构造更保守。这里的 0 不表示现实中可能以 0 分录取，而说明小名单不足以用该非参数假设识别总体低尾下界。该区间既不是下一年 Q10 的预测区间，也不是个人最终录取区间。</p>
+</section>
+
+  <section>
+    <h2>四、门槛预测方法</h2>
+    <p>门槛预测分为“中心位置”和“分布形状”两个层次。中心位置直接决定点预测误差，必须由时间外回测选择；分布形状负责表达学校特异的不确定性，可以综合贝叶斯后验、分位数提升树和残差尾部。这样的职责分离避免复杂模型在点预测没有增益时仍整体接管结果。</p>
+
+    <h3>4.1 动态特征与市场行为</h3><p>预测关联不等于市场机制识别。上一年偏离与次年回落也可能由测量噪声的回归均值造成；在缺少历史报考人数和独立热度证据时，“冷热反转”只作为滞后预测假设，不解释为已识别的考生迁移因果效应。</p>
+    <p>对学校 \(s\) 在 \(t-1\) 年以前的边际分序列，记稳健位置为中位数 \(\operatorname{Med}_{s,t-1}\)，尺度为 \(1.4826\operatorname{MAD}_{s,t-1}\)，并将尺度下限设为 4 分。上一年冷热异常定义为：</p>
+    <div class="equation">
+      \[
+        Z_{s,t-1}
+        =
+        \frac{M_{s,t-1}-\operatorname{Med}_{s,t-1}}
+        {\max\!\left(1.4826\,\operatorname{MAD}_{s,t-1},4\right)}.
+        \tag{11}
+      \]
+    </div>
+    <p>若市场存在均值反转，\(Z_{s,t-1}\) 的系数应为负：上一年异常偏高，下一年部分考生退出；上一年异常偏低，下一年涌入。为描述院校间迁移，在相同 985 身份、相同 A/B 分区且历史难度带相近的集合 \(\mathcal N(s,t-1)\) 中计算：</p>
+    <div class="equation">
+      \[
+        P_{s,t-1}
+        =
+        \frac{1}{|\mathcal N(s,t-1)|}
+        \sum_{j\in\mathcal N(s,t-1)} Z_{j,t-1}.
+        \tag{12}
+      \]
+    </div>
+    <p>其余特征包括上一年边际、过去可用边际中位数、上一年边际变化、上一年复试线变化、上一年录取人数对数、年份趋势、985 身份、国家线分区、英语与数学科目，以及相应缺失指示变量。</p>
+
+    <h3>4.2 弱信息先验贝叶斯正则化回归（分层近似）</h3>
+    <p>设标准化特征向量为 \(x_{s,t}\)，学校指示效应为 \(u_s\)，则候选中心模型为：</p>
+    <div class="equation">
+      \[
+      \begin{aligned}
+        M_{s,t} &= \beta_0+x_{s,t}^{\mathsf T}\beta+u_s+\varepsilon_{s,t},\\
+        \varepsilon_{s,t} &\sim
+        \mathcal N\!\left(0,\frac{\sigma^2}{w_{s,t}}\right),\\
+        u_s&\sim\mathcal N(0,18^2).
+      \end{aligned}
+      \tag{13}
+      \]
+    </div>
+    <p>截距先验标准差设为 100，静态变量与缺失指示变量为 9，动态变量为 14；市场反转项使用负方向弱信息先验。令设计矩阵为 \(X\)，观测权重矩阵为 \(W\)，先验均值为 \(m_0\)，先验精度为 \(\Lambda_0\)，则高斯近似后验为：</p>
+    <div class="equation">
+      \[
+      \begin{aligned}
+        V_n&=\left(\Lambda_0+\frac{X^{\mathsf T}WX}{\sigma^2}\right)^{-1},\\
+        m_n&=V_n\left(\Lambda_0m_0+\frac{X^{\mathsf T}Wy}{\sigma^2}\right).
+      \end{aligned}
+      \tag{14}
+      \]
+    </div>
+    <p>预测残差用 Student-\(t\) 尾部近似，以增加小样本下的尾部质量。学校虚拟变量共享同一先验尺度，因而产生部分池化效果；但当前实现没有为学校方差建立超先验，也没有运行 MCMC 或变分推断。故应准确称为“贝叶斯正则化回归（分层近似）”，而不是完整贝叶斯分层动态模型。</p>
+
+    <h3>4.3 梯度提升分位数回归</h3>
+    <p>为吸收非线性和低阶交互，分别对 \(\tau\in\{0.50,0.80,0.90,0.95\}\) 拟合梯度提升回归器，最小化加权 pinball 损失：</p>
+    <div class="equation">
+      \[
+        \widehat f_{\tau}
+        =
+        \arg\min_f
+        \sum_i w_i\,
+        \rho_{\tau}\!\left(M_i-f(x_i)\right),
+        \qquad
+        \rho_\tau(u)=u\bigl(\tau-\mathbf 1\{u\lt0\}\bigr).
+        \tag{15}
+      \]
+    </div>
+    <p>当前实现使用 180 棵树、学习率 0.035、最大深度 2、最小叶节点 8、子采样比例 0.82，并对输出分位数执行单调排序。这里实际采用的是 scikit-learn 梯度提升树，而非 CatBoost；模型名称必须与代码一致。</p>
+
+    <h3>4.4 复杂候选分布与稳健锚点</h3>
+    <p>贝叶斯样本与提升树分位数反演样本按 65% 和 35% 构成复杂候选分布：</p>
+    <div class="equation">
+      \[
+        \mathcal L(Z^{\mathrm{complex}}_{s,t})
+        =
+        0.65\,\mathcal L(Z^{\mathrm{Bayes}}_{s,t})
+        +0.35\,\mathcal L(Z^{\mathrm{GB}}_{s,t}).
+        \tag{16}
+      \]
+    </div>
+    <p>同时构造两个透明中心基准：历史边际分中位数加当年国家线的稳健锚点，以及上一年边际加当年国家线的上一年锚点。所有候选都必须在逐年时间外回测中竞争，不以模型复杂度预先决定胜者。</p>
+
+    <h3>4.5 逐年扩窗滚动回测</h3>
+    <p>对检验年 \(t\)，只使用年份严格小于 \(t\) 的记录训练，再预测 \(t\)。2024、2025、2026 年依次形成三个时间外检验折。该设计复刻真实部署：模型在报名时不能看到当年最终录取数据。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/03_rolling_origin.svg" alt="逐年扩窗滚动回测时间轴" />
+      <figcaption>
+        逐年扩窗滚动回测。蓝色年份为训练窗口，橙色年份为下一年时间外检验；任何报名后信息均不得跨过橙色边界。
+        <span class="source-note">由 <code>data/processed/rolling_backtest.csv</code> 的检验年份自动生成。</span>
+      </figcaption>
+    </figure>
+
+    <p>点预测比较使用加权 MAE、绝对误差中位数和低估三倍惩罚的非对称损失。若 \(\widehat y_i\lt y_i\)，损失为 \(3(y_i-\widehat y_i)\)；否则为 \(\widehat y_i-y_i\)：</p>
+    <div class="equation">
+      \[
+        \mathcal L_{3}(y,\widehat y)
+        =
+        3(y-\widehat y)_+
+        +(\widehat y-y)_+.
+        \tag{17}
+      \]
+    </div>
+    <p>为减少“用同一批回测既选模型又证明模型”的乐观偏差，本文另做严格中心选择审计：只用 2024-2025 选择中心规则，再把 2026 作为未参与选择的外层检验。胜者仍为全历史相对国家线边际中位数，其 2026 加权 MAE 为 16.79 分。因此最终规则保持不变：可计算稳健锚点时由其负责中心；否则回退到上一年锚点；两者均不可用时才用复杂集成中心。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/04_model_comparison.svg" alt="稳健边际锚点、上一年锚点和复杂候选模型的加权MAE比较" />
+      <figcaption>
+        候选中心预测的时间外加权 MAE。稳健边际锚点为 17.12 分，优于上一年锚点 18.58 分和复杂候选模型 20.35 分。
+        <span class="source-note">这不是否定复杂模型，而是将其用途限制在经回测证明有价值的部分。</span>
+      </figcaption>
+    </figure>
+
+    <figure class="compact">
+      <img src="assets/v3/15_anchor_ablation.svg" alt="七种简单中心预测的时间外加权MAE消融" />
+      <figcaption>
+        中心预测消融。近两年相对边际中位数在三年聚合 MAE 上略低，但 2024-2025 的内层选择仍选出全历史中位数；故不利用 2026 的结果事后更换正式中心。
+        <span class="source-note">年份块 bootstrap 对“稳健中位数优于上一年锚点”的 95% 区间跨 0，结论限定为当前回测中更优。</span>
+      </figcaption>
+    </figure>
+
+    <h3>4.6 中心预测与分布形状的职责分离</h3>
+    <p>回测选择结果意味着：复杂候选模型中可以保留的信息，不应等同于让其决定最终点预测。本文先用稳健锚点确定 \(B_{s,t}\)，再将复杂候选样本减去自身中位数，只保留相对形状；该形状在后续分布合成中缩放为原幅度的 0.35。0.35 与贝叶斯/提升树的 65/35 混合均属于工程设定，不是由当前三个测试年份可靠识别的参数；为避免反复调参造成过拟合，本研究不在同一测试集上事后选新值。</p>
+    <p>这一处理也使模型回退路径可解释：历史充足的学校主要依赖稳健边际锚点；只有上一年信息时采用上一年锚点；两类锚点均缺失时才由复杂集成提供中心。模型复杂度因而服从数据可用性，而不是反过来要求稀疏数据支持高复杂度结构。</p>
+
+    <h3>4.7 逐人分布形状与预序晋级护栏</h3>
+    <p>精确校年可直接估计各分位点相对 Q10 的形状向量：</p>
+    <div class="equation">
+      \[
+        h_{s,t}(p)=Q_p(F^{adm}_{s,t})-Q_{0.10}(F^{adm}_{s,t}),
+        \qquad p\in\{0.05,0.10,0.25,0.50,0.75,0.90,0.95\}.
+        \tag{18}
+      \]
+    </div>
+    <p>候选形状包括：精确校年池化形状、精确加软证据的降权池化形状、上一期同校精确形状与全国池化形状的收缩，以及在上一候选上追加软证据池。每个校年总权重相等，防止大项目凭考生人数支配损失。对外层年份 \(t\) 的候选选择只能使用严格早于 \(t\) 的内层预测原点；若两个候选的分位 MAE 差不超过 0.05 分，则选择依赖更少软证据、结构更简单者。</p>
+    <p>类似地，逐人复试队列可形成录取选择 AUC、录取比例、录取与未录取分差及队列四分位距，但这些都是报名后信息。它们只能以滞后一期形式进入实验，并须在时间外 MAE 上实质改善才能晋级。该护栏贯彻“尽量使用全部数据”与“不得为使用数据而强行加变量”两项原则。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/24_school_shape_heatmap.svg" alt="各学校最新精确校年分位形状相对Q10的偏移热图" />
+      <figcaption>
+        各校最新精确年份的分位形状。每行以本校 Q10 为零点，颜色表示其他分位点相对 Q10 的分数差；学校间上尾跨度确有差异，为同校滞后形状收缩提供依据，但不支持在历史稀疏时拟合高维校别分布模型。
+      </figcaption>
+    </figure>
+  </section>
+
+<section>
+  <h3>4.8 基于逐人成绩的嵌套随机效应模型</h3>
+  <p>为将描述性方差分解推进到模型化估计，针对精确层 77 个校年建立带共同年份固定效应的三层高斯工作模型：</p>
+  <div class="equation">\[
+    A_{i,s,t}=\delta_t+a_s+u_{s,t}+e_{i,s,t},\qquad
+    a_s\sim N(0,\sigma_a^2),\quad u_{s,t}\sim N(0,\sigma_u^2),\quad e_{i,s,t}\sim N(0,\sigma_e^2).
+    \tag{19}
+  \]</div>
+  <p>各随机项在模型中独立。\(a_s\) 表示持久院校差异，\(u_{s,t}\) 表示共同年份效应以外的校年变化，\(e_{i,s,t}\) 表示同届个体离散性。该模型针对拟录取选择后的分布，不能推断全体报名者能力，更不能把学校随机效应解释为学校造成的分数提升。以年份固定效应条件化也不同于把未知年份冲击视为零。</p>
+  <p>估计采用限制最大似然（REML）[22]。对每个校年保存人数 \(n_{s,t}\)、均值 \(\bar A_{s,t}\) 及组内平方和 \(S_{s,t}\)，它们在该高斯模型下保留逐人似然的充分信息；因此公开层不需要披露个人记录。令 \(K\) 为校年数，\(N\) 为总人数，\(X\) 为年份设计矩阵，\(p_X\) 为其列数，\(Z\) 为学校归属矩阵，则校年均值协方差与忽略常数的限制对数似然为：</p>
+  <div class="equation">\[
+  \begin{aligned}
+    V&=\sigma_a^2ZZ^{\mathsf T}+\operatorname{diag}\!\left(\sigma_u^2+\sigma_e^2/n_{s,t}\right),\\
+    -2\ell_R&=\log|V|+\log|X^{\mathsf T}V^{-1}X|+r^{\mathsf T}V^{-1}r
+      +(N-K)\log\sigma_e^2+\sum_{s,t}S_{s,t}/\sigma_e^2,\\
+    \widehat\delta&=(X^{\mathsf T}V^{-1}X)^{-1}X^{\mathsf T}V^{-1}\bar A,\qquad r=\bar A-X\widehat\delta.
+  \end{aligned}\tag{20}
+  \]</div>
+  <p>组内平方和为 \(S_{s,t}=(n_{s,t}-1)s_{s,t}^2\)，不能在仅拟合组均值时遗漏；否则校年内信息会被浪费。代码测试核对了上述充分统计量似然与直接逐人协方差似然仅相差参数无关常数。方差在对数尺度数值优化；固定某一方差、重新优化其余方差，使用 \(2(\ell_{R,\max}-\ell_R)\le\chi^2_{1,0.95}\) 给出近似剖面区间。小样本、边界和工作正态性均限制该区间的解释，且不能对不同固定效应设计的 REML 值直接作似然比检验。</p>
+  <p>同校不同年份的相关系数为 \(\sigma_a^2/(\sigma_a^2+\sigma_u^2+\sigma_e^2)\)，同校同年的相关系数为 \((\sigma_a^2+\sigma_u^2)/(\sigma_a^2+\sigma_u^2+\sigma_e^2)\)。该量说明组内依赖，而不是预测精度。本节对逐人成绩的方差估计与下节对 Q10 的状态预测是两个相连但不相同的模型，不能直接把个体分数方差当作 Q10 预测方差。</p>
+
+  <h3>4.9 方法特异的代理观测误差层</h3>
+  <p>令 \(m_{s,t}=\theta_{s,t}-L_{z_s,t}\) 为潜在选择总体 Q10 的国家线边际。经验精确分位数与代理分位数都围绕这一潜在状态形成观测，但二者的误差结构不同：</p>
+  <div class="equation">\[
+  \begin{aligned}
+    T^{exact}_{s,t}-L_{z_s,t}&=m_{s,t}+\eta^{cohort}_{s,t},\\
+    \widetilde T^{(h)}_{s,t}-L_{z_s,t}&=m_{s,t}-b_h+\eta^{cohort}_{s,t}+\eta^{proxy,h}_{s,t}.
+  \end{aligned}\tag{21}
+  \]</div>
+  <p>其中 \(b_h\) 为“精确−代理”的方法偏差。每个预测原点只用更早年份的精确—代理配对估计 \(b_h\) 和差异方差；至少有 5 个配对、来自至少 3 所学校时才作经验估计，否则保持偏差 0、代理差异标准差 10 分的工作默认值。精确观测方差取此前已计算的队列 Bootstrap 方差，下限 0.25 分²；代理观测方差取训练窗精确队列方差中位数加方法差异方差。已有精确标签时，配对代理仅用于方法校准，绝不作为第二条独立目标观测重复训练。</p>
+  <p>这里存在识别限制：精确—代理差异可能与 Bootstrap 队列波动相关，二者方差相加属于暂定近似，不是已证明独立；默认值也不是数据估计。该层把质量信息显式表达为观测精度，但并未完全解决覆盖偏差。软证据、状态未知记录仍保留既有敏感性与描述角色，不被强制转换为精确标签。</p>
+
+  <h3>4.10 经验贝叶斯部分池化与局部水平随机过程</h3>
+  <p>比较两个状态结构。简约模型为 \(m_{s,t}=\mu+a_s+v_{s,t}\)，其中学校随机截距共享 \(\tau_a^2\)，独立校年创新共享 \(q^2\)。动态候选则设：</p>
+  <div class="equation">\[
+    m_{s,t}=\mu+a_s+b_{s,t},\qquad b_{s,t}=b_{s,t-1}+\omega_{s,t},\quad
+    \omega_{s,t}\sim N(0,q^2),\quad b_{s,t_0}=0.
+    \tag{22}
+  \]</div>
+  <p>第二个模型是局部水平随机过程[24]，其时间协方差为 \(q^2\min(t-t_0,r-t_0)\)。与独立创新模型相比，它允许同校状态沿时间延续，但在短面板中也可能把单年噪声持续传播。另拟合同精度动态模型作为消融，将所有观测方差替换为训练窗中位数。模型的学校方差、创新方差及总体位置均在外层训练窗用 REML 估计；这是真正的共享方差部分池化，但采用经验贝叶斯插件估计，而不是超参数也被积分的完整贝叶斯后验。</p>
+  <p>设某校历史观测向量为 \(y_s\)，其协方差为 \(V_s\)，未来状态与历史观测的协方差向量为 \(c_s\)，未来先验方差为 \(v_*\)，则条件预测为：</p>
+  <div class="equation">\[
+  \begin{aligned}
+    \widehat m_*&=\widehat\mu+c_s^{\mathsf T}V_s^{-1}(y_s-\widehat\mu\mathbf1),\\
+    v^{state}_*&=v_*-c_s^{\mathsf T}V_s^{-1}c_s+
+       (1-c_s^{\mathsf T}V_s^{-1}\mathbf1)^2\operatorname{Var}(\widehat\mu),\\
+    T_*\mid\mathcal F_{\tau}&\approx N\!\left(\widehat L+\widehat m_*,
+      v^{national}+v^{state}_*+v^{future\ cohort}\right).
+  \end{aligned}\tag{23}
+  \]</div>
+  <p>未来队列项使用同校最近一期精确 Bootstrap 方差；没有同校精确历史时用训练窗中位数，不能读取测试年人数或 Bootstrap。国家线位置继续采用过去一年与近五年均值的 0.55/0.45 组合，波动只从更早一步预测残差估计并设置 7 分标准差下限。三个方差相加要求公共年份与边际冲击近似独立；超参数估计、方法偏差估计和重大结构事件尚未全部积分。因此本候选不再额外叠加已有最终残差安全垫，以避免同一误差被重复计入；但也不能声称其已穷尽全部风险。</p>
+
+  <h3>4.11 岭回归和小型神经网络中心候选</h3>
+  <p>现代统计建模并不排斥机器学习。为比较共享部分池化与跨校函数学习，另用七个严格历史特征：最近边际、中位边际、最近变化、历史标准差、历史数量、最近观测年龄及年份。没有同校历史时以当时全国历史中位边际填补，同时保留数量与年龄信息；不能用当前或未来标签计算特征。</p>
+  <div class="equation">\[
+    \widehat\beta=\arg\min_{\beta}\left\{
+      \sum_i w_i(y_i-\beta_0-x_i^{\mathsf T}\beta)^2+\lambda\|\beta\|_2^2\right\},
+      \qquad w_i\propto1/v_i^{obs}.
+    \tag{24}
+  \]</div>
+  <p>岭回归[2]的 \(\lambda\in\{1,10,100\}\) 仅在外层训练窗内以最近一个已揭示年份的精确标签验证选择；可验证年份不足时固定为 10。内层也重新校准代理偏差、重建历史特征与标准化，不能把外层已经吸收验证年信息的观测误差参数直接交给内层。外层拟合完毕后，测试年只使用更早成绩。特征标准化只拟合训练集。</p>
+  <p>神经网络采用单隐层前馈结构[27]，设 4 个双曲正切节点，结构为 \(f(x)=c+\sum_{j=1}^{4}v_j\tanh(w_j^{\mathsf T}x+b_j)\)。输入与目标在训练窗标准化，使用同一观测精度权重、L2 参数 10、L-BFGS 优化与固定种子。该小型结构是受短面板约束的非线性候选，不代表对深度学习模型类别的全面检验。两类候选仅检验中心 MAE；未经概率校准，不能人为为其附上“90%”上界。新增模型族是知晓旧结果后的回溯比较，而非预注册盲测。</p>
+
+  <h3>4.12 相对分位曲线的主成分、因子与聚类分析</h3>
+  <p>把校年分布形状写成六维向量 \(h_{s,t}=(Q_{05},Q_{25},Q_{50},Q_{75},Q_{90},Q_{95})-Q_{10}\mathbf1\)。删除恒为零的 Q10 坐标避免退化；各坐标都以分为单位，只作列中心化，不作单位方差标准化。该研究对象是拟录取分布的相对展开，不是未来 Q10 的预测分布。</p>
+  <div class="equation">\[
+    S_h=V\Lambda V^{\mathsf T},\qquad z_{s,t}=V_k^{\mathsf T}(h_{s,t}-\bar h),\qquad
+    \widehat h_{s,t}=\bar h+V_kz_{s,t}.
+    \tag{25}
+  \]</div>
+  <p>主成分分析[26]保留 1 或 2 个方向；单因子分析采用 \(h=\bar h+\Lambda_f f+\epsilon\)，其中 \(f\sim N(0,1)\)、\(\epsilon\sim N(0,\operatorname{diag}\psi)\)，允许不同分位坐标有独特噪声；K-means 将过去形状划分为 3 类，类数为探索性设定，而非“存在三种天然院校类型”的结论。因子与主成分的符号均可整体翻转，不能赋予符号本身政策含义。</p>
+  <p>全部 77 校年的主成分、因子与聚类只用于描述。时间外形状比较另在每个原点重拟合基底、因子与聚类中心：用上一期同校形状的降维重构或所属类中心，与训练窗全国中位形状收缩；权重取 \(\min\{n/(n+30),0.75\}\exp[-0.35(\text{年龄}-1)]\)。没有同校历史则回退全国形状。测试年 Q10 只用于把真实测试分布变为相对形状并评分，不参与候选输入。本节六分位、54 校年的形状 MAE 与第 7.7 节七分位、57 校年结果不同口径，不宜直接相减。</p>
+  <p>模型比较使用如下标准 WIS，\(K_q=3\)，\(\alpha\in\{0.1,0.2,0.4\}\)，\(l_\alpha=q_{\alpha/2}\) 与 \(u_\alpha=q_{1-\alpha/2}\) 表示对应端点：</p>
+  <div class="equation">\[
+  \begin{aligned}
+    IS_\alpha&=(u_\alpha-l_\alpha)+\frac2\alpha(l_\alpha-y)_++\frac2\alpha(y-u_\alpha)_+,\\
+    WIS&=\frac{\tfrac12|y-q_{0.5}|+\sum_\alpha\tfrac\alpha2 IS_\alpha}{K_q+\tfrac12}.
+  \end{aligned}\tag{26}
+  \]</div>
+  <p>这里分母为 3.5[14]。冻结基线与精确增强候选的七个分位数均重新用同一程序评分；旧精确标签实验摘要中的未规范化 <code>wis_proxy</code> 不与本节值混用。新增随机截距、局部水平和等精度局部水平的预序选择，要求至少已有两个更早测试原点，并要求过去 WIS 改善至少 0.1 分、任何过去年份 MAE 恶化不超过 2 分；不满足则保留简约随机截距。规则避免测试年残差倒灌，但不抹去研究者在旧结果已知后提出新模型族的选择偏差。</p>
+</section>
+
+  <section>
+    <h2>五、事件冲击与预测不确定性</h2>
+    <p>确定预测中心后，还需解释门槛为何可能偏离该中心。本文将不确定性拆分为国家线的共同波动、复杂模型提供的学校特异形状、已知事件的离散情景、未识别事件的厚尾扰动，以及时间外残差校准五部分。这一分解既服务于概率计算，也便于用户识别风险来自公共环境、学校自身还是证据不足。</p>
+
+    <h3>5.1 国家线共同波动</h3>
+    <p>2027 年国家线中心采用上一年与近五年均值的凸组合：</p>
+    <div class="equation">
+      \[
+        \widehat\mu_{L,A,t}
+        =
+        0.55L_{A,t-1}
+        +0.45\overline L_{A,t-5:t-1},
+        \qquad
+        \widehat\mu_{L,B,t}=\widehat\mu_{L,A,t}-10.
+        \tag{27}
+      \]
+    </div>
+    <p>尺度由扩窗一步预测残差的标准差估计，下限设为 7 分。2027 年 A 区均值为 330.39、标准差为 12.23；B 区均值为 320.39。国家线样本对同区学校产生共同移动，避免把全国性冲击误认为单校事件。</p>
+
+    <h3>5.2 已知事件的三情景混合</h3>
+    <p>对已核实公告中的重大科目变化、考纲与参考书调整、学制变化等，建立：</p>
+    <div class="equation">
+      \[
+        E_{s,t}\sim
+        \begin{cases}
+        \delta^{(-)}_{s,t}, & \text{概率 }\pi^{(-)}_{s,t},\\
+        \delta^{(0)}_{s,t}, & \text{概率 }\pi^{(0)}_{s,t},\\
+        \delta^{(+)}_{s,t}, & \text{概率 }\pi^{(+)}_{s,t},
+        \end{cases}
+        \qquad
+        \sum_k\pi^{(k)}_{s,t}=1.
+        \tag{28}
+      \]
+    </div>
+    <p>三状态分别表示报考退潮、中性消化和考生涌入。当前 5 所事件学校的权重由公告内容、变化幅度与市场机制形成结构化专家先验，均处于“机器核验、待人工终审”状态，不能解释为事件的因果效应。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/07_event_scenarios.svg" alt="五所院校已知事件的退潮中性涌入三情景" />
+      <figcaption>
+        五所已知事件院校的退潮-中性-涌入情景及加权期望。吉林大学科目重大调整的情景跨度最大，说明方向不确定性远大于一个固定“加分项”。
+        <span class="source-note">事件及官方链接来自 <code>data/processed/events_2027.csv</code>。</span>
+      </figcaption>
+    </figure>
+
+    <h3>5.3 未识别事件与原始未来分布</h3>
+    <p>对未发现明确事件的学校，引入 \(U_{s,t}=2.5t_6\) 的零均值厚尾扰动；已知事件学校不再叠加该项，以避免重复计入。若滚动选择中心为 \(B_{s,t}\)，复杂候选样本中心化为：</p>
+    <div class="equation">
+      \[
+        \widetilde Z^{\mathrm{complex}}_{s,t}
+        =
+        Z^{\mathrm{complex}}_{s,t}
+        -Q_{0.50}\!\left(Z^{\mathrm{complex}}_{s,t}\right),
+        \tag{29}
+      \]
+    </div>
+    <p>则校准前的所需分数样本为：</p>
+    <div class="equation">
+      \[
+        T^{\mathrm{raw}}_{s,t}
+        =
+        B_{s,t}
+        +0.35\,\widetilde Z^{\mathrm{complex}}_{s,t}
+        +\Delta L_{z_s,t}
+        +E_{s,t}
+        +U_{s,t},
+        \tag{30}
+      \]
+    </div>
+    <p>其中 \(\Delta L_{z_s,t}\) 为国家线预测样本相对其中位数的偏差。系数 0.35 使复杂模型提供学校特异的形状而不推翻回测胜出的中心。</p>
+
+    <h3>5.4 跨历史预测年份的异方差稳健安全上界</h3>
+    <p>旧方案把全部时间外中位数残差汇总成一个全局偏移，容易得到近似 \(P90=P50+26\) 的统一安全垫，也会让一个异常容易的年份压低下一年的保护。当前方法先用严格位于预测原点之前的信息拟合残差尺度 \(s_i\)：输入包括原始区间宽度、历史样本数、历史边际 MAD、证据权重、代理方法构成、985 身份、分区与回退路径；目标为交叉拟合的 \(\log(1+|y_i-q^{\mathrm{raw}}_{0.50,i}|)\)。然后在每个历史预测年份 \(h\) 内计算标准化中位数残差分位：</p>
+    <div class="equation">
+      \[
+        r_i=\frac{y_i-q^{\mathrm{raw}}_{0.50,i}}{s_i},
+        \qquad
+        c_{h,\alpha}=Q^w_\alpha\!\left(r_i:\operatorname{year}(i)=h\right),
+        \qquad
+        c^*_{\alpha}=\max_{h\lt t}c_{h,\alpha}.
+        \tag{31}
+      \]
+    </div>
+    <p>对待预测学校，使用其历史证据估计 \(s_{s,t}\)，中心保持原始中位数不动，上尾定义为：</p>
+    <div class="equation">
+      \[
+        q^{R}_{\alpha,s,t}
+        =\max\!\left\{
+          q^{\mathrm{raw}}_{\alpha,s,t},
+          q^{\mathrm{raw}}_{0.50,s,t}+s_{s,t}c^*_{\alpha}
+        \right\},
+        \qquad \alpha\in\{0.80,0.90,0.95\}.
+      \tag{32}
+      \]
+    </div>
+    <p>式（32）不会收窄原始上界，并让安全余量随学校特异尺度变化。严格检验时，2025 只能看 2024 残差，2026 只能看 2024-2025 残差。155 条严格嵌套记录上，原始 P90 覆盖率 79.7%、WIS 9.98；稳健 P90* 覆盖率 92.1%、WIS 9.70，但平均上尾宽度由 17.68 增至 29.35 分。由于只有两个校准外层年份，星号表示“暂定安全上界”，不是已证明的精确 90% 频率分位。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/06_calibration_drift.svg" alt="不同残差窗口下P90校准偏移比较" />
+      <figcaption>
+        P90 残差校准对历史窗口敏感。只用 2024-2025 年得到约 18.52 分，而只用 2026 年需要约 31.45 分，表明时间漂移是当前不确定性的重要来源。
+        <span class="source-note">数值由滚动回测残差与观测权重重新计算。</span>
+      </figcaption>
+    </figure>
+
+    <figure class="wide">
+      <img src="assets/v3/13_calibration_tradeoff.svg" alt="原始分布与稳健安全上界的WIS覆盖率和宽度比较" />
+      <figcaption>
+        严格嵌套校准的三维权衡。稳健上界同时改善 P90 覆盖距离与 WIS，但以更宽区间为代价；因此评价不能只看覆盖率。
+        <span class="source-note">严格检验仅含 2025-2026 两个预测原点，共 155 条代理标签。</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>六、从门槛分布到择校决策</h2>
+    <p>前述模型输出的是学校层面的未来门槛分布，尚不能直接回答个人应如何选择。为连接预测与决策，本节把离散分位点还原为近似分布函数，再根据个人估分计算覆盖概率，并将风险偏好与“冲、观察、稳、保”标签明确分开。</p>
+
+    <h3>6.1 由七个分位锚点构造门槛分布函数</h3>
+    <p>前端保存 \(q_{0.05},q_{0.10},q_{0.20},q_{0.50},q_{0.80},q_{0.90},q_{0.95}\) 七个锚点。若 \(x\in[q_{\alpha_j},q_{\alpha_{j+1}}]\)，则线性插值：</p>
+    <div class="equation">
+      \[
+        \widehat G_{s,t}(x)
+        =
+        \alpha_j+
+        \frac{x-q_{\alpha_j}}
+        {q_{\alpha_{j+1}}-q_{\alpha_j}}
+        \left(\alpha_{j+1}-\alpha_j\right).
+        \tag{33}
+      \]
+    </div>
+    <p>式（33）只在 P05 至 P95 的模型支持区间内使用。若 \(x\lt q_{0.05}\)，前端只显示“≤5%”；若 \(x\gt q_{0.95}\)，只显示“≥95%”。本文不再使用任意 180 分尺度的尾部外推和 1%-99% 截断，避免制造模型并未识别的极端概率。上尾锚点采用稳健安全上界，因此由其得到的概率也应读作保守决策尺度，而不是精确录取概率。</p>
+
+    <h3>6.2 冲、观察、稳、保的规则</h3>
+    <div class="equation">
+      \[
+      \operatorname{Label}(x)=
+      \begin{cases}
+      \text{保},&\widehat G_{s,t}(x)\ge0.95,\\
+      \text{稳},&0.90\le\widehat G_{s,t}(x)\lt0.95,\\
+      \text{观察},&0.60\le\widehat G_{s,t}(x)\lt0.90,\\
+      \text{冲},&\widehat G_{s,t}(x)\lt0.60.
+      \end{cases}
+      \tag{34}
+      \]
+    </div>
+    <p>这里“稳”的 90% 是用户给定的保守风险约束。模型同时展示 P80、P90 和 P95，避免把一条标签阈值误当作自然定律。证据完备度较低或存在重大事件时，即使覆盖尺度较高，也应优先查看情景区间和原始来源。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/09_ecnu_cdf.svg" alt="华东师范大学七个分位锚点插值得到的覆盖概率曲线" />
+      <figcaption>
+        华东师范大学示例。原始 P90 约为 386 分，稳健 P90* 约为 399 分；400 分对应门槛覆盖概率约 91%。这仍不包含个人估分误差和复试表现。
+        <span class="source-note">分位锚点来自 <code>data/processed/forecast_2027.csv</code>。</span>
+      </figcaption>
+    </figure>
+
+    <table>
+      <caption>华东师范大学不同估分的覆盖概率示例</caption>
+      <thead>
+        <tr><th>估分</th><th>375</th><th>380</th><th>385</th><th>390</th><th>395</th><th>400</th><th>405</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center">覆盖概率</td>
+          <td class="center">约59%</td><td class="center">约66%</td><td class="center">约72%</td><td class="center">约78%</td>
+          <td class="center">约85%</td><td class="center">约91%</td><td class="center">约94%</td>
+        </tr>
+        <tr>
+          <td class="center">标签</td>
+          <td class="center">冲/观察边界</td><td class="center">观察</td><td class="center">观察</td><td class="center">观察</td>
+          <td class="center">观察</td><td class="center">稳</td><td class="center">稳</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>6.3 非对称损失与风险约束的区别</h3>
+    <p>若低估 1 分的损失是高估 1 分的 \(\lambda\) 倍，则非对称绝对损失的 Bayes 最优点为：</p>
+    <div class="equation">
+      \[
+        \tau^*=\frac{\lambda}{1+\lambda}.
+        \tag{35}
+      \]
+    </div>
+    <p>当 \(\lambda=3\) 时，\(\tau^*=0.75\)，并不自动得到 0.90。“低估三倍惩罚”用于模型比较，“稳必须达到 90%”是额外的决策约束；二者属于不同层级。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/11_loss_quantile.svg" alt="低估高估损失比与最优分位点关系" />
+      <figcaption>
+        非对称损失倍数与最优分位点的关系。若要仅靠损失函数得到 P90，低估损失需设为高估的 9 倍；当前 \(\lambda=3\) 对应 P75。
+        <span class="source-note">曲线由式（35）直接计算。</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>七、实证结果</h2>
+    <p>本节依次报告时间外预测精度、逐年覆盖稳定性、2027 年院校门槛分布和复杂候选模型的变量效应。结果分析不只比较单一平均误差，还同时考察年度漂移、区间覆盖与不同数据条件下的模型回退表现。</p>
+
+    <h3>7.1 整体回测结果</h3>
+    <table>
+      <caption>2024-2026 年时间外滚动回测总体指标</caption>
+      <thead>
+        <tr><th>指标</th><th>数值</th><th>解释</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>检验记录数</td><td class="num">226</td><td>三个逐年扩窗检验折</td></tr>
+        <tr><td>加权 MAE</td><td class="num">17.66 分</td><td>代理 Q10 上最终选择中心的平均绝对误差</td></tr>
+        <tr><td>绝对误差中位数</td><td class="num">15.22 分</td><td>降低少数极端误差的影响</td></tr>
+        <tr><td>低估三倍非对称损失</td><td class="num">34.17</td><td>将低估风险指标视为更高代价</td></tr>
+        <tr><td>低估率</td><td class="num">50.9%</td><td>三年汇总接近对称，但年度方向差异很大</td></tr>
+        <tr><td>原始 P80 / P90 / P95 覆盖率</td><td class="num">74.3% / 82.9% / 87.9%</td><td>修复国家线波动缩放错误后的结果，仍低于名义水平</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 年度稳定性</h3>
+    <figure class="wide">
+      <img src="assets/v3/05_yearly_backtest.svg" alt="2024至2026年逐年MAE与原始分位数覆盖率" />
+      <figcaption>
+        逐年误差与原始上界覆盖率。2025 年覆盖偏高，2026 年 P90 覆盖率降至 66.2%，说明分布漂移比总体平均值更值得警惕。
+        <span class="source-note">2024、2025、2026 年样本量分别为 71、78、77。</span>
+      </figcaption>
+    </figure>
+
+    <table class="small-table">
+      <caption>逐年时间外回测指标</caption>
+      <thead>
+        <tr><th>年份</th><th>样本数</th><th>加权 MAE</th><th>绝对误差中位数</th><th>低估率</th><th>P80 覆盖</th><th>P90 覆盖</th><th>P95 覆盖</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="center">2024</td><td class="num">71</td><td class="num">15.63</td><td class="num">14.31</td><td class="num">54.9%</td><td class="num">80.9%</td><td class="num">90.1%</td><td class="num">94.0%</td></tr>
+        <tr><td class="center">2025</td><td class="num">78</td><td class="num">20.61</td><td class="num">19.40</td><td class="num">18.6%</td><td class="num">96.5%</td><td class="num">96.5%</td><td class="num">96.5%</td></tr>
+        <tr><td class="center">2026</td><td class="num">77</td><td class="num">16.92</td><td class="num">14.00</td><td class="num">73.4%</td><td class="num">51.3%</td><td class="num">66.2%</td><td class="num">76.0%</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="compact">
+      <img src="assets/v3/12_reliability_curve.svg" alt="原始分布与稳健安全上界的可靠性曲线" />
+      <figcaption>
+        严格嵌套年份的可靠性曲线。稳健校准改善上尾，但下尾仍沿用原始分布并明显偏离 45 度线，故当前模型不是完整联合概率校准。
+        <span class="source-note">加权有效样本量约 141.4；日历预测原点只有 2 个。</span>
+      </figcaption>
+    </figure>
+
+    <h3>7.3 2027 年院校分布</h3>
+    <p>81 所院校的 P50 均值为 357.6 分、标准差 17.8 分，范围 320.0-403.9 分；稳健 P90* 均值为 391.1 分、标准差 18.9 分，范围 342.4-428.3 分。证据完备度为中等、较低、较高的学校分别为 62、11、8 所；该标签描述数据来源与历史长度，不是已验证的预测置信等级。派系标签分布为：贾茆 31、贾茆Pro 13、纯茆 12、纯贾 12、茆Pro 10、待核实 3 所。</p>
+
+    <figure>
+      <img src="assets/v3/08_forecast_spectrum.svg" alt="2027年低门槛与高门槛院校P50至P90预测区间" />
+      <figcaption>
+        2027 年风险带光谱。横线从 P50 延伸到稳健 P90*，颜色表示院校派系；图仅展示两端各 8 所，完整 81 所以 5 分带列于附录 A，不解释 1 分以内的精细名次。
+        <span class="source-note">派系用于课程结构筛选，不直接作为因果变量解释。</span>
+      </figcaption>
+    </figure>
+
+    <h3>7.4 复杂候选模型中的预测关联</h3>
+    <p>复杂候选模型的标准化系数显示，年份趋势和 985 身份与较高预测边际相关，历史边际中位数、竞校异常与上一年冷热异常在该正则化设定下呈负向关联。冷热项的方向同时可能来自市场反馈和测量误差后的回归均值；竞校项也依赖人工邻域。因此这些量只解释复杂候选，不解释最终稳健锚点的全部中心，更不作因果推断。</p>
+
+    <figure class="compact">
+      <img src="assets/v3/10_feature_effects.svg" alt="复杂候选模型十个主要变量的标准化后验效应" />
+      <figcaption>
+        复杂候选模型的主要预测关联及后验标准差。横轴为标准化输入变化对应的模型关联，误差线反映参数不确定性；静态类别和小样本系数存在较宽区间。
+        <span class="source-note">来自 <code>app/data/forecast.json</code> 中的模型参数摘要。</span>
+      </figcaption>
+    </figure>
+
+    <h3>7.5 双层不确定性与安全余量</h3>
+    <p>可预见但不可消除的未来波动包括国家线、考生竞争、已知事件情景和未识别事件，属于未来随机性；历史短、参数不稳、代理 Q10、来源缺失和模型选择不足属于知识不确定性。原始分布主要表达前一类和部分参数形状，稳健安全上界再加入基于历史预测失败的保护。新增逐名样本已量化代理与精确标签的差异，并在假想重复队列下计算低尾波动近似，但尚未将它们作为独立方差分量完整传播到所有学校；考生估分不确定性按本研究研究边界不进入模型。</p>
+    <p>必须进一步区分“原始尾部异质性”和“安全层异质性”。81 校原始 P90-P50 的变异系数只有 0.04，说明生成分布的尾部宽度仍相当同质；稳健上界的变异系数升至 0.18，当前大部分学校差异实际由校准尺度与证据安全层产生，不能写成复杂模型已经充分学会学校特异尾部。本文因此同时展示两层，而不以 P90* 覆盖原始 P90。</p>
+    <figure class="wide">
+      <img src="assets/v3/16_forecast_widths.svg" alt="原始与稳健P90上界宽度分布及学校特异尺度" />
+      <figcaption>
+        2027 年上界宽度。小提琴与箱线显示总体分布，散点把原始宽度映射到稳健宽度。原始 P90-P50 均值 17.8 分且变异系数仅 0.04；稳健上界均值 33.5 分、变异系数 0.18。按预先声明的 Tukey 上围栏 44.25 分，合肥工业大学的 71.0 分被标为“证据不足：不宜精算”；该提示不裁剪上界，也不把极宽上界解释成真实难度更高。
+      </figcaption>
+    </figure>
+
+    <h3>7.6 精确标签对中心预测的回溯检验</h3>
+    <p>77 个精确校年覆盖 2022-2026 年，其中 54 个位于既有 2024-2026 时间外回测折，可在同一对象上比较冻结基线与精确标签增强模型。冻结基线在真实 Q10 上的 MAE 为 15.83 分、RMSE 为 19.51 分；替换精确历史标签并重算滞后状态后，MAE 降至 14.90 分、RMSE 降至 18.93 分。按年份先求配对 MAE 差再做年份块 bootstrap，增强模型减基线的估计为 -1.51 分，90% 区间为 [-2.68,-0.33]。</p>
+    <p>这比只在代理标签上比较更接近研究目标，但仍不能当作独立确认：只有 2024、2025、2026 三个日历年，且名单获取并非随机。增强模型因此被记录为“有支持的回溯升级候选”，不覆盖结果揭示前已冻结的 2027 数值。未来应在 2027 及后续新原点上评分，避免反复使用同三年调参。</p>
+
+    <h3>7.7 分布形状模型与软证据的实际增益</h3>
+    <p>在 57 个具有严格先前信息的精确校年上，任何全局、院校经验贝叶斯或岭校正都没有通过预序中心护栏，最终 Q10 仍采用稳健锚点，MAE 为 15.54 分。形状层中，全国精确池化的七分位平均 MAE 为 6.05 分；使用最近一期同校精确形状收缩后降至 5.73 分。追加 5,199 条软证据的原始最低值为 5.732 分，比纯精确滞后形状的 5.733 分只低约 0.001 分，未越过 0.05 分的简约性等价带，故最终选择较简单的纯精确滞后形状。</p>
+    <p>完整拟录取分布的七分位平均 MAE 为 15.16 分，校年内考生实现率从 Q05 到 Q95 依次为 17.9%、21.0%、27.2%、42.3%、64.7%、79.7% 和 89.7%，平均绝对校准误差为 8.55 个百分点。该分布适合解释“若校年门槛状态确定，其拟录取群体可能如何展开”，尚不能替代第六节对未来门槛 \(G_{s,t}\) 的决策概率校准。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/23_prequential_validation_and_reliability.svg" alt="逐人分布实验的预序中心验证和七分位可靠性曲线" />
+      <figcaption>
+        左图显示校正候选未通过预序护栏，最终中心与稳健锚点一致；右图显示已录取分布的分位实现率。逐人样本提供了新的分布信息，但“有新信息”不等于“每个新组件都应进入生产预测”。
+      </figcaption>
+    </figure>
+
+    <h3>7.8 复试队列中的分数—录取选择关系</h3>
+    <p>明确图例且录取、未录取各不少于 3 人的 200 个校年复试队列包含 10,246 条去重成绩，覆盖 70 所学校和 2022-2026 年。校年内用初试分数排序录取结果的 AUC 中位数为 0.876，录取比例中位数为 77.3%，录取者与未录取者初试中位数差的校年中位数为 17 分。绝大多数校年中初试分数具有较强排序信息，但不同十分位组的录取比例区间仍宽，且个别校年 AUC 接近或低于 0.5，说明复试、专项清理、并列规则和名单口径仍会改变最终结果。</p>
+    <p>把 AUC、录取比例、分差、队列四分位距和样本量严格滞后后加入岭校正，只在 2026 年形成 14 个与精确 Q10 同时可得的外层校年；其 MAE 从锚点的 16.59 分恶化为 21.84 分。该模块因此只用于解释 Q10 的制度边界和形成未来候选变量，不进入当前中心模型。</p>
+
+    <figure class="wide">
+      <img src="assets/v5/25_retest_selection_gradient.svg" alt="复试队列成绩十分位组录取比例和校年AUC分布" />
+      <figcaption>
+        左图按每个校年内部成绩十分位组汇总录取比例，阴影为校年间 P10-P90；右图给出校年 AUC 分布。初试分数与录取结果强相关，但并非确定性阈值，故本文只能预测拟录取低位风险指标，不能把覆盖概率改称最终录取概率。
+      </figcaption>
+    </figure>
+  </section>
+
+<section>
+  <h3>7.9 低位目标的定义敏感性与识别边界</h3>
+  <p>三种 Q10 定义在 77 个精确校年上的极差中位数为 1.00 分，最大为 17.10 分。Q05 与 Q10、Q10 与 Q20 的 Spearman 相关分别为 0.994 和 0.988，说明当前名单中的整体难度排序对目标分位选择较稳定，但个别小名单的插值差异仍然重要；高相关也不能证明相邻学校的 1 分排序有决策意义。</p>
+  <p>在总体 Q10 的独立同分布非参数区间中，51/77 个校年的下端只能使用理论支持界，反映小样本低尾推断的困难。该结果不是模型发现某校低位成绩可能为 0，也不是完整名单的经验 Q10 不可确定。非参数区间可作为识别诊断，不能直接移植为明年风险上界。</p>
+  <figure class="wide"><img src="assets/v6/01_quantile_identification.svg" alt="人数与总体低尾区间和分位定义敏感性" /><figcaption>名单规模影响潜在总体低尾的可识别性，也影响不同经验分位定义的差异；两个纵轴都不等于未来 Q10 的预测误差。来源：审计名单的校年聚合与二项顺序统计计算。</figcaption></figure>
+
+  <h3>7.10 年份条件化后的方差分量与组内相关</h3>
+  <p>REML 使用 2,312 名考生、44 所学校、77 个校年和 5 个年份固定效应。估计结果如下，剖面区间以分²为单位：</p>
+  <table class="small-table"><caption>年份条件化的嵌套方差模型</caption><thead><tr><th>分量</th><th>估计方差</th><th>近似 95% 剖面区间</th><th>方差占比</th></tr></thead><tbody><tr><td>院校间</td><td>151.2</td><td>[52.5, 299.1]</td><td>26.9%</td></tr><tr><td>校年状态</td><td>111.6</td><td>[63.6, 207.9]</td><td>19.9%</td></tr><tr><td>校年内个体</td><td>299.3</td><td>[282.4, 317.5]</td><td>53.2%</td></tr></tbody></table>
+  <p>同校不同年份相关为 0.269，同校同年相关为 0.468。保留大量个体记录能较精确估计校年内离散性，但院校间与校年状态方差的区间仍宽，符合有效组数和年份数有限的结构。不加年份固定效应时，校年状态方差占比约 31.3%，条件化后约 19.9%；这说明共同年份差异能解释部分变异，但属于工作模型比较，不是国家政策或公共试卷难度的因果分解。</p>
+  <p>第 3.8 节的 43.0%/10.9%/46.1% 是院校等权的描述性方差分解；本节是高斯逐人似然权重、年份固定效应条件化的随机效应估计。两套比例回答不同问题，差异不应包装成“旧分解计算错了”或“某类差异真实占全国多少”。审计学校并非全国应用统计项目的概率样本，REML 占比也不能直接推广到全部报名者。</p>
+  <figure class="wide"><img src="assets/v6/02_reml_profiles.svg" alt="三类方差分量的剖面限制似然" /><figcaption>剖面曲线横轴为方差，阴影为近似 95% 区间，虚线为卡方工作阈值。校年内个体方差的信息量明显大于跨校、跨年的方差信息量。</figcaption></figure>
+
+  <h3>7.11 状态预测的概率评分与逐年覆盖</h3>
+  <p>所有候选在同一批 54 个精确校年上比较，外层年份 2024、2025、2026 分别含 10、27、17 个校年。样本和真值不变，不能把这组 MAE 与 226 条代理目标的加权 MAE 当作同一指标。</p>
+  <table class="small-table"><caption>同一精确标签测试集的联合表现</caption><thead><tr><th>模型</th><th>MAE</th><th>标准 WIS</th><th>P90 覆盖</th><th>平均 P90−P50</th></tr></thead><tbody><tr><td>冻结基线</td><td>15.83</td><td>10.77</td><td>83.3%</td><td>29.54</td></tr><tr><td>精确标签增强</td><td>14.90</td><td>10.81</td><td>85.2%</td><td>31.21</td></tr><tr><td>观测误差随机截距</td><td>15.05</td><td>8.80</td><td>92.6%</td><td>23.22</td></tr><tr><td>局部水平</td><td>16.64</td><td>9.28</td><td>94.4%</td><td>24.57</td></tr><tr><td>等精度局部水平</td><td>16.58</td><td>9.25</td><td>92.6%</td><td>24.70</td></tr></tbody></table>
+  <p>简约观测误差随机截距的 MAE 为 15.05 分，略高于精确增强模型的 14.90 分；但 WIS 从 10.81 降至 8.80，P90−P50 平均宽度从 31.21 缩至 23.22 分，总体 P90 覆盖从 85.2% 提升至 92.6%。这是本测试集上中心误差、分布评分与锐度之间的取舍，不是所有指标同时改善。其“真实−预测”平均偏差为 -5.24 分，说明位置整体偏高亦有助于上尾覆盖；不能只凭较高覆盖宣布已校准。</p>
+  <p>分年结果更关键：随机截距候选的 P90 覆盖分别为 90.0%、100.0%、82.4%，2026 年仍低于名义 90%。动态局部水平与等精度消融未改善中心 MAE，预序规则在三个原点均保留简约随机截距。新增状态分布亦没有纳入全部事件先验与超参数不确定性；未满足相对精确增强模型至少改善 0.5 分 MAE 的升级条件。因此保留为概率研究候选，不替换已经独立冻结的 2027 前瞻数值。</p>
+  <figure class="wide"><img src="assets/v6/03_distribution_tradeoff.svg" alt="分布宽度、标准WIS和上分位覆盖的联合比较" /><figcaption>左图同时衡量上尾锐度和标准概率评分，右图比较三个上分位的总体覆盖。覆盖接近对角线仍不能保证新年份、事件学校或低证据学校的条件覆盖。</figcaption></figure>
+
+  <h3>7.12 回归与神经网络：预测失败亦有诊断价值</h3>
+  <p>岭回归与 4 隐节点网络的中心 MAE 分别为 22.26 和 23.68 分，均未超过精确标签增强模型。岭参数在 2024 原点固定为 10，在后两原点由更早精确验证年选择为 100；三原点训练分别有 63、134、212 个历史校年，不能以 2,312 名逐人记录宣称年度网络拥有 2,312 个独立训练单位。当前网络已收敛，因而不能简单将差结果解释为“优化程序没跑完”。</p>
+  <figure class="wide"><img src="assets/v6/06_regression_challengers.svg" alt="随机截距、局部水平、岭回归和小型神经网络的逐年中心误差" /><figcaption>同一批测试校年、同一中心目标下的逐年误差。网络在 2024 年误差较低，却在 2025 年明显恶化；单个好看的年份不足以支持跨年稳定泛化。</figcaption></figure>
+  <p>负结果仍支持三个有边界的描述：第一，当前七个历史特征的共享回归函数没有稳定优于学校部分池化；第二，放宽非线性并未自动解决年份漂移；第三，数据量增长和位置误差之间不是单调关系。这些是给定特征、损失、正则和结构下的结果，不证明岭回归或神经网络普遍无效，也不确定恶化究竟来自观测精度、非平稳性还是遗漏事件。未进入预测的候选仍可用于检验哪些机制需要更强的数据支持。</p>
+
+  <h3>7.13 多元分布形状的描述性发现与预测边界</h3>
+  <p>全样本 PC1、PC2 分别解释 89.7%、5.0% 的相对分位曲线变异，累计约 94.8%。PC1 与校年内 IQR 的 Spearman 相关为 0.879，表明主方向主要描述分布展开程度。PC2 与 Bowley 偏度的相关仅为 -0.245，不足以把第二主成分命名为“偏度因子”。此外，解释率依赖所选分位坐标与是否标准化，并不表示未来预测解释率。</p>
+  <table class="small-table"><caption>六分位相对形状的时间外比较（54 校年）</caption><thead><tr><th>候选</th><th>形状 MAE / 分</th><th>统计角色</th></tr></thead><tbody><tr><td>全国池化</td><td>7.07</td><td>位置展开的基准</td></tr><tr><td>同校未压缩滞后</td><td>6.62</td><td>过去形状的收缩或压缩</td></tr><tr><td>一主成分</td><td>6.60</td><td>过去形状的收缩或压缩</td></tr><tr><td>二主成分</td><td>6.58</td><td>过去形状的收缩或压缩</td></tr><tr><td>单因子</td><td>6.63</td><td>过去形状的收缩或压缩</td></tr><tr><td>三类聚类</td><td>6.56</td><td>过去形状的收缩或压缩</td></tr></tbody></table>
+  <p>两主成分和三类聚类候选相对同校未压缩形状仅有小幅改善；单因子候选未取得额外增益。候选之间差距小于约 0.1 分，不足以在仅三个年份上确认优势，故不自动选择聚类或因子预测器。描述性分析则仍有独立价值：按 Q05−Q95 展开程度排序的三个探索类分别含 19、38、20 个校年，平均展开跨度约为 31.9、46.6、66.1 分，主要区分较窄、中等和较宽的拟录取分布。</p>
+  <figure class="wide"><img src="assets/v6/04_multivariate_shape.svg" alt="主成分载荷、校年主成分得分和形状候选误差" /><figcaption>载荷解释压缩了哪类分位差异；得分图的颜色表示 IQR、点大小表示名单人数；右图用真正下一年形状误差检验“可压缩”是否转化为“更可预测”。全样本坐标只用于描述，各预测原点另拟合训练期基底。</figcaption></figure>
+  <figure class="wide"><img src="assets/v6/07_shape_typology_and_factor.svg" alt="探索性分布形状聚类与单因子共同及独特方差" /><figcaption>聚类将 Q10 对齐后的分布分成宽窄不同的形状；因子模型在上分位识别较强的共同展开，同时保留低尾坐标的独特差异。形状类别不是课程派系、院校层级或择校风险等级。</figcaption></figure>
+  <p>单因子载荷在中上分位较大、Q05 坐标载荷较弱，提供了“上半部共同展开、低尾尚有独特结构”的描述性线索。但低尾独特方差也可能含小样本分位误差；在未分离这些误差前不能称其为已识别的独立招生机制。不同年份的同一学校可能属于不同形状类，故类标签属于校年而不是学校永久属性。类数 3 未经独立验证，不用于公众网页筛选或招生政策解释。</p>
+</section>
+
+  <section>
+    <h2>八、稳健性分析</h2>
+
+    <h3>8.1 中心模型选择的稳健性</h3>
+    <p>稳健边际锚点在 210 个可比样本上的加权 MAE 为 17.12 分，上一年相对边际为 18.50 分。二者差值 -1.38 分；按学校聚类 bootstrap 的 95% 区间约为 [-2.57,-0.19]，但按仅三个日历年份做 block bootstrap 的区间约为 [-3.26,0.16]，跨过 0。故准确结论是“当前回测中稳健锚点表现更好”，而不是已证明其普遍优越。只用 2024-2025 选择、2026 外层检验的结果仍选中稳健锚点，降低了胜者诅咒风险。</p>
+
+    <h3>8.2 校准窗口敏感性</h3>
+    <p>简单时间衰减与直接上尾 conformal 在严格检验中没有同时改善校准和 WIS，因而没有上线。跨预测年份最不利残差方案在 2025 年偏保守（P90 覆盖 100%），在 2026 年把覆盖由 66.2% 提高到 85.8%；两年合计为 92.1%。这说明稳健方案能抵抗容易年份冲淡风险，但仍有明显的年份条件偏差，只能作为暂定安全上界。</p>
+    <figure class="wide">
+      <img src="assets/v3/17_calibration_frontier.svg" alt="九种校准候选在WIS、区间宽度、P90与P95覆盖率上的权衡" />
+      <figcaption>
+        九种校准候选的多目标比较。左图同时检查锐度与 WIS，右图检查 P90 和 P95 是否共同达到名义目标；仅提高一个覆盖率并不足以上线。选定方案不是每个单指标的冠军，而是在当前冻结规则下同时越过两个上尾目标，代价是更宽区间。由于候选仍复用 2025-2026 两个外层年份，本图用于解释选择，不构成独立验证。
+      </figcaption>
+    </figure>
+
+    <h3>8.3 Q10 代理敏感性</h3>
+    <p>295 个可用代理中，143 个由最低分与中位数插值得到，120 个只能使用最低分，32 个属于小样本最低分。73 个精确配对首次覆盖两类主要方法：50 个顺序统计插值代理平均低估 2.85 分、MAE 为 3.14 分；23 个仅最低分代理平均低估和 MAE 均为 6.05 分。后者偏差更大且几乎同向，说明最低分不能直接当作 Q10，也说明未来观测误差模型应按方法分别估计偏差和方差。</p>
+    <p>54 个可配对时间外校年上，精确标签增强模型的 P50 MAE 从 15.83 降至 14.90 分，RMSE 从 19.51 降至 18.93 分。年份等权 MAE 差为 -1.51 分，90% 年份块 bootstrap 区间 [-2.68,-0.33] 未跨 0；但区间只建立在三个日历年上，且名单可得性存在选择偏差。因此准确结论是“当前三年回溯样本支持精确标签增强”，而非已经获得普适或前瞻保证。下一步应继续扩展官方原件并冻结规则，用新年份验证方法特异观测误差模型。</p>
+
+    <h3>8.4 事件权重敏感性</h3>
+    <p>事件权重目前为专家先验。对任一学校，可在概率单纯形上扰动 \(\pi^{(-)},\pi^{(0)},\pi^{(+)}\)，观察 P90 与个人标签是否改变。若小幅权重扰动即可使“稳”变为“观察”，应把该校标记为事件敏感，而不只显示加权平均。吉林大学的三情景跨度为 27 分，明显高于东南大学的 9 分，故前者需要更强的情景展示与人工核验。</p>
+
+    <h3>8.5 损失偏好敏感性</h3>
+    <p>当 \(\lambda\) 从 1、2、3、4、5 增至 9 时，最优分位点依次为 0.50、0.667、0.75、0.80、0.833、0.90。用户把“稳”设为 90% 实际对应极强的低估厌恶。若用户愿意承担更高落榜风险以换取学校层次，可改用 P80 或期望效用排序，但标签定义应保持透明且不可在结果出现后反向调整。</p>
+
+    <h3>8.6 国家线、先验与条件覆盖</h3>
+    <p>国家线单独一步预测中，“沿用上一年”MAE 为 8.14，优于 0.55/0.45 凸组合的 9.70；但将国家线放回学校边际锚点后，凸组合的学校门槛 MAE 为 17.12，反而优于上一年国家线方案的 18.84。因此生产模型保持凸组合，避免用子模块冠军替换整体冠军。先验敏感性中，较紧先验改善复杂候选，但该候选并不负责正式中心，且比较仍复用三个年份，所以不据此事后调参。</p>
+    <p>条件覆盖同样不均衡：稳健上界在 985 组的 P90 覆盖约为 86.6%，非 985 组约为 95.1%；A 区约为 91.3%，B 区样本少且为 100%。证据完备度“较高”组只有 3 条，无法验证误差单调性。因此总体 92.1% 不能解释为每所学校都达到 90%。</p>
+    <figure class="compact">
+      <img src="assets/v3/18_conditional_coverage.svg" alt="985、分区和证据完备度分组的严格嵌套P90覆盖率诊断" />
+      <figcaption>
+        严格嵌套 P90* 的条件覆盖诊断。点位显示加权覆盖率，文字同时给出原始记录数；叉号表示样本少于 10 条，只可作为风险提示。图形把“总体达标但 985 子组偏低”直接呈现出来，避免用总体 92.1% 掩盖分组失配。
+      </figcaption>
+    </figure>
+
+    <table class="small-table">
+      <caption>关键参数的证据来源分类</caption>
+      <thead><tr><th>对象</th><th>当前来源</th><th>本文处理</th></tr></thead>
+      <tbody>
+        <tr><td>中心模型</td><td>时间内选择 + 2026 外层检验</td><td>正式使用稳健边际中位数</td></tr>
+        <tr><td>国家线 0.55/0.45</td><td>工程规则 + 联合消融</td><td>整体模型更优，暂保留</td></tr>
+        <tr><td>形状系数 0.35、混合 65/35</td><td>工程设定</td><td>不在同一三年测试集事后调优</td></tr>
+        <tr><td>代理权重</td><td>结构化专家判断 + 50 个插值、23 个最低分代理配对</td><td>已确认方法差异；新候选只在各训练窗校准偏差与方差，不改生产权重</td></tr>
+        <tr><td>逐人分布形状</td><td>57 个严格外层精确校年预序比较</td><td>选择同校滞后精确形状；软证据增益未过 0.05 分护栏</td></tr>
+        <tr><td>复试选择特征</td><td>200 个描述性校年；14 个严格滞后外层校年</td><td>解释机制但 MAE 恶化，不进入生产中心</td></tr>
+        <tr><td>事件概率与幅度</td><td>结构化专家先验</td><td>只作情景分析，不称因果概率</td></tr>
+        <tr><td>稳健安全上界</td><td>严格前推候选</td><td>标 P90*，等待新年份确认</td></tr>
+      </tbody>
+    </table>
+
+    <div class="conclusion-box">
+      <strong>稳健性分析的核心结论：</strong>中心规则在当前资料下相对稳定，稳健上界改善了最重要的上尾风险；逐名标签确认两类代理均系统低估，精确标签增强在当前测试集合上改善中心误差，但三年中一年的配对差为正，且小年份 t 区间跨 0。与此同时，软证据对分布形状的额外增益近乎为零，复试选择特征还会恶化中心预测，因此均未被强行上线。日历年份数量、条件覆盖和官方名单覆盖仍是主要瓶颈；新年份到来前不应继续用同三年反复选择超参数。
+    </div>
+    <div class="warning">
+      <strong>前瞻检验冻结规则。</strong>2027 基线的中心模型、校准方法、极宽上界阈值和事件先验已经写入哈希清单。2027 结果揭示后只允许评分，不允许用该结果回调本版；任何修改必须形成新版本，并与冻结基线并列报告。
+    </div>
+  </section>
+
+<section>
+  <h3>8.7 只有三个日历年时的配对误差推断</h3>
+  <p>精确增强模型减冻结基线的分年 MAE 差分别为 -2.93、+0.59、-2.19 分，年份等权差为 -1.51 分。原先按三个已观察年份重抽的 90% Bootstrap 区间为 [-2.68,-0.33]，主要反映这几个年份被重复组合的变化；它不能凭较窄区间证明对未知年份稳定优越。年份只有三个时，常规按校年视为独立的标准误也会低估公共年度依赖。</p>
+  <p>把三个年份均值作为分析单位，在“年份效应独立、近似正态”的额外假设下，使用自由度 2 的 t 区间，90% 区间为 [-4.64,1.62]，跨过 0；独立、对称年份效应下枚举 \(2^3\) 种符号翻转，双侧 p 为 0.50。两种假设均难以从三个年份检验，不能把后者包装成更确定的统计结论，也不能把不显著解释为不存在实际增益。</p>
+  <figure class="wide"><img src="assets/v6/05_small_year_inference.svg" alt="三个年份的配对误差差及不同小年份推断区间" /><figcaption>年份层面的样本数而非考生人数约束泛化推断。不同假设导致不同区间；图中负值仅表示当前样本的增强误差较小。</figcaption></figure>
+  <p>合理结论是“精确标签增强在当前测试集合上改善中心误差，但新年份稳定优越尚未证实”。年度趋势、共同政策冲击和数据可得性偏差都不会被符号翻转或 Bootstrap 自动消除。后续新原点和公开数据时点快照比继续在这三年上选择更好看的 p 值更重要。</p>
+
+  <h3>8.8 统计结构与模型选择的剩余不确定性</h3>
+  <p>方差分量剖面已表明学校与校年参数存在较大估计区间，但预测分布仍使用点估计超参数；观测误差插件也尚未传播偏差估计的全部不确定性。局部水平模型中心较差，不表示随机过程思路应被排除，而表明单一随机游走在当前短面板和公共波动处理下未获得支持。因子、聚类和网络的负结果同样只限制本次设定，不限制相应统计方法类别。</p>
+  <p>当前新模型的事件冲击未与状态变化共同识别，国家线与边际的协方差也尚未经验确认。应优先扩展独立年份和历史事件，之后在训练窗口中比较稳健 t 创新、局部平稳状态、时变系数及超参数积分；若比较完整贝叶斯、树模型或更深网络，仍须保持同一标签、同一未来信息边界和同一 proper scoring rule。没有这些约束，换模型名称并不提升论文的统计可信度。</p>
+</section>
+
+  <section>
+    <h2>九、讨论：方法价值、局限与推广</h2>
+
+    <h3>9.1 方法价值</h3>
+    <ol>
+      <li><strong>口径透明。</strong>将拟录取初试低位风险指标与复试线区分，所有代理公式、来源等级与审计折减均可复算。</li>
+      <li><strong>符合真实时间顺序。</strong>滚动回测严格模拟报名前预测下一年的使用场景，避免随机划分造成的时间泄漏。</li>
+      <li><strong>复杂度受证据约束。</strong>复杂模型在回测中没有胜出时，不强行替代稳健锚点；同时保留其非线性尾部与解释价值。</li>
+      <li><strong>事件方向不确定性显式化。</strong>退潮-中性-涌入混合比单一事件加减分更符合考生市场行为。</li>
+      <li><strong>输出与决策相连。</strong>原始分布、稳健安全上界、覆盖区间、冲稳保标签、证据完备度和不确定性来源在同一框架中呈现。</li>
+      <li><strong>信息按角色充分利用。</strong>精确、软证据、诊断与结果未知记录分别服务于门槛、形状敏感性、复试队列分布和质量复核；未通过精确闸门不等于删除。</li>
+      <li><strong>可复现。</strong>正文图表、附录表和指标摘要由同一 Python 程序读取仓库数据自动生成，数据刷新后可整体重算。</li>
+    </ol>
+
+    <h3>9.2 研究局限</h3>
+    <ol>
+      <li>77 个精确 Q10 虽覆盖 2022-2026 年，但学校覆盖只有 44 所、可用于既有时间外比较的只有 54 个校年；真正独立的回测日历年仍很少。</li>
+      <li>名单快照属于可哈希的二级证据而非招生单位官方原件；四项核对或结构一致规则降低了 OCR 错误风险，但 5,199 条软证据与 1,562 条诊断记录仍需逐校补官方名单和人工复核。</li>
+      <li>每校历史很短，难以可靠识别学校特异趋势、结构突变和复杂跨校网络。</li>
+      <li>事件情景权重尚未由历史同类事件频率校准，属于结构化专家先验。</li>
+      <li>稳健上界已完成 2025-2026 的嵌套滚动检验，但只有两个外层年份，P90* 仍不具备充分的频率覆盖证据。</li>
+      <li>按本研究研究边界，考生估分被当作确定值；模拟卷、主观题评分与复习进度不进入模型。</li>
+      <li>学校层面聚合会掩盖学院、方向、考试科目组合和名额口径的差异。</li>
+      <li>覆盖概率不包含复试、单科线、体检、政审及个人排序，不能取代官方规则。</li>
+      <li>复试队列选择分析依赖颜色图例且录取名单可能不是完整复试总体；AUC 与录取比例只能作描述性机制证据。</li>
+    </ol>
+
+    <h3>9.3 提升精度的优先路线</h3>
+    <table>
+      <caption>按预期收益排序的模型改进路线</caption>
+      <thead>
+        <tr><th>优先级</th><th>改进项</th><th>具体方法</th><th>验证标准</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="center">P0</td><td>逐名录取数据扩展</td><td>为现有 77 个精确校年补官方原件，优先复核软证据中对外部汇总差异最小的校年</td><td>学校覆盖扩大；新年份时间外增益稳定</td></tr>
+        <tr><td class="center">P0</td><td>报名时计划名额</td><td>当前严格面板仅 5 条回测记录；继续保存简章统招名额与后续实际执行名额两个时点</td><td>扩大跨校跨年覆盖后再做无泄漏名额弹性检验</td></tr>
+        <tr><td class="center">P1</td><td>潜在真实门槛模型</td><td>插件 REML 候选已完成；下一步检验稳健创新、超参数积分与误差相关性</td><td>新年份 WIS、MAE 和条件覆盖同时改善</td></tr>
+        <tr><td class="center">P1</td><td>事件历史库</td><td>把往年考纲、参考书、名额和学制变化编码为可复用事件面板</td><td>滚动窗口内学习情景权重</td></tr>
+        <tr><td class="center">P1</td><td>观测误差状态空间</td><td>已区分潜在总体分位数与代理观测；进一步扩展年份和条件覆盖</td><td>优先新原点 WIS 和条件覆盖；普通留一法不能代替时间外检验</td></tr>
+        <tr><td class="center">P1</td><td>稳健上界再验证</td><td>保持算法冻结，用 2027 新原点作真正前瞻检验</td><td>WIS、覆盖误差、区间宽度与条件覆盖</td></tr>
+        <tr><td class="center">P2</td><td>个人估分分布</td><td>本研究明确排除；未来由多次模拟卷和主观题评分区间建立 \(S_i\)</td><td>后悔值与稳定择校概率</td></tr>
+        <tr><td class="center">P2</td><td>竞校网络</td><td>用地理、课程、难度和用户行为共同学习迁移图</td><td>时间外消融优于当前人工邻域</td></tr>
+      </tbody>
+    </table>
+
+    <h3>9.4 双重不确定性与决策推广</h3>
+    <p>若考生真实可达分数也视为随机变量 \(S_i\)，则更完整的门槛覆盖概率为：</p>
+    <div class="equation">
+      \[
+        \Pr(S_i\ge T_{s,t}\mid\mathcal F_{\tau_t})
+        =
+        \int F_{T_{s,t}}(s)\,\mathrm dF_{S_i}(s).
+        \tag{36}
+      \]
+    </div>
+    <p>进一步可在单志愿约束下定义期望效用 \(U_s\)，把学校偏好、地域、培养方向、通勤与落榜损失共同纳入：</p>
+    <div class="equation">
+      \[
+        s^*
+        =
+        \arg\max_s
+        \mathbb E\!\left[
+        u_s\,\mathbf 1\{S_i\ge T_{s,t}\}
+        -c_i\,\mathbf 1\{S_i\lt T_{s,t}\}
+        \right],
+        \quad
+        \Pr(S_i\ge T_{s,t})\ge\gamma .
+        \tag{37}
+      \]
+    </div>
+    <p>其中 \(\gamma\) 可设为 0.90 或 0.95。该框架可推广到其他单志愿或先选择后揭示结果的决策问题，例如推免夏令营、海外项目申请和部分职业资格考试，但目标定义与损失函数必须随场景重设。</p>
+  </section>
+
+  <section>
+    <h2>十、结论</h2>
+    <p>本文将报名前单志愿择校中的学校风险表达为普通统考全日制拟录取初试低位分数的概率预测，区分完整名单的已实现 Q10、假想选择总体分位数和下一届预测分布。研究以可审计公共材料及逐人成绩构建分层证据：明确使用精确、软证据、未录取和状态未知记录的不同统计角色，不以研究者工作簿替代公开一手材料，也不把低位风险指标解释为个人录取保证。</p>
+    <p>在审计样本上，年份条件化 REML 的院校间、校年状态与校年内个体方差占比为 26.9%、19.9%、53.2%，说明组内与组间均须保留；PCA、因子和聚类进一步描述分布展开及低尾独特结构。精确标签增强在同一 54 个时间外校年上将中心 MAE 从 15.83 降至 14.90 分；观测误差随机截距 MAE 为 15.05，但 WIS 改善至 8.80、平均 P90−P50 缩至 23.22 分。总体覆盖较好而 2026 年仍欠覆盖，表明联合评价比仅比较 MAE 或覆盖率更有实际意义。</p>
+    <p>岭回归、局部水平与小型网络未改善本次中心预测，因子和聚类的形状预测优势亦有限；这些负结果仍有描述和稳定性诊断价值，不构成对相应统计方法类别的否定。只有三个外层年份，误差差的年份 t 区间跨 0，故研究不能宣称新年份稳定显著优越。后续应优先补官方完整名单、独立年份、报名前统招名额和事件库，再评估超参数积分、误差相关性及更丰富的非线性结构。2027 前瞻基线独立冻结，新回溯候选不回写该数值，个人估分随机性仍不在本研究范围内。</p>
+  </section>
+
+  <section class="page-break">
+    <h2>参考文献</h2>
+    <div class="references">
+      <p>[1] Koenker R, Bassett G. Regression Quantiles[J]. Econometrica, 1978, 46(1): 33-50.</p>
+      <p>[2] Hoerl A E, Kennard R W. Ridge Regression: Biased Estimation for Nonorthogonal Problems[J]. Technometrics, 1970, 12(1): 55-67.</p>
+      <p>[3] Friedman J H. Greedy Function Approximation: A Gradient Boosting Machine[J]. The Annals of Statistics, 2001, 29(5): 1189-1232.</p>
+      <p>[4] Gneiting T, Raftery A E. Strictly Proper Scoring Rules, Prediction, and Estimation[J]. Journal of the American Statistical Association, 2007, 102(477): 359-378.</p>
+      <p>[5] Tashman L J. Out-of-sample Tests of Forecasting Accuracy: An Analysis and Review[J]. International Journal of Forecasting, 2000, 16(4): 437-450.</p>
+      <p>[6] Gelman A. Prior Distributions for Variance Parameters in Hierarchical Models[J]. Bayesian Analysis, 2006, 1(3): 515-534.</p>
+      <p>[7] Romano Y, Patterson E, Candès E J. Conformalized Quantile Regression[C]//Advances in Neural Information Processing Systems. 2019, 32.</p>
+      <p>[8] 教育部. 2022-2026 年全国硕士研究生招生考试考生进入复试的初试成绩基本要求[EB/OL]. 相关官方 PDF 链接见仓库 <code>data/processed/national_lines.json</code>.</p>
+      <p>[9] 吉林大学数学学院. 2027 年硕士研究生招生考试初试科目调整公告[EB/OL]. 2026-04-29.</p>
+      <p>[10] 华东师范大学统计学院. 2027 年应用统计硕士考试范围与参考教材调整说明[EB/OL]. 2026-07-21.</p>
+      <p>[11] 东南大学统计与数据科学相关院系. 2027 年初试参考书及复试科目调整公告[EB/OL]. 2026-06-25.</p>
+      <p>[12] 北京工业大学研究生招生网. 2027 年 432 统计学考试大纲调整公告[EB/OL]. 2026.</p>
+      <p>[13] 中央民族大学研究生院. 应用统计专业学制调整说明[EB/OL]. 2026.</p>
+      <p>[14] Bracher J, Ray E L, Gneiting T, Reich N G. Evaluating Epidemic Forecasts in an Interval Format[J]. PLOS Computational Biology, 2021, 17(2): e1008618.</p>
+      <p>[15] Carroll R J, Ruppert D, Stefanski L A, Crainiceanu C M. Measurement Error in Nonlinear Models: A Modern Perspective[M]. 2nd ed. Boca Raton: Chapman &amp; Hall/CRC, 2006.</p>
+      <p>[16] Tibshirani R J, Foygel Barber R, Candès E J, Ramdas A. Conformal Prediction Under Covariate Shift[C]//Advances in Neural Information Processing Systems. 2019, 32.</p>
+      <p>[17] Efron B, Tibshirani R J. An Introduction to the Bootstrap[M]. New York: Chapman &amp; Hall/CRC, 1994.</p>
+      <p>[18] David H A, Nagaraja H N. Order Statistics[M]. 3rd ed. Hoboken: Wiley, 2003.</p>
+      <p>[19] Gelman A, Hill J, Vehtari A. Regression and Other Stories[M]. Cambridge: Cambridge University Press, 2020.</p>
+      <p>[20] 统计战线统数圈. 应用统计硕士院校历年复试与拟录取名单公开展示、名单图片及详情接口[DB/OL]. 2022—2026[2026-10-09]. 逐校 URL、支持字段、访问状态与图片哈希见伴随《逐字段公共数据来源目录》及 <code>roster_asset_manifest.csv</code>.</p>
+      <p>[21] 各招生单位研究生院、学院及中华人民共和国教育部. 应用统计招生简章、专业目录、考试科目、复试线、复试与拟录取名单及国家线文件[EB/OL]. 2022—2026[2026-10-09]. 共 940 个去重公开 URL，逐条题名或用途说明、权威等级和访问状态见伴随《逐字段公共数据来源目录》.</p>
+<p>[22] Patterson H D, Thompson R. Recovery of Inter-block Information When Block Sizes Are Unequal[J]. Biometrika, 1971, 58(3): 545-554. DOI: 10.1093/biomet/58.3.545.</p>
+      <p>[23] Hyndman R J, Fan Y. Sample Quantiles in Statistical Packages[J]. The American Statistician, 1996, 50(4): 361-365. DOI: 10.1080/00031305.1996.10473566.</p>
+      <p>[24] Durbin J, Koopman S J. Time Series Analysis by State Space Methods[M]. 2nd ed. Oxford: Oxford University Press, 2012. DOI: 10.1093/acprof:oso/9780199641178.001.0001.</p>
+      <p>[25] Lu Z J. Estimating Instrument Performance: with Confidence Intervals and Confidence Bounds[R]. NIST Technical Note 2119, 2020. DOI: 10.6028/NIST.TN.2119. 第 5.3 节：总体分位数置信区间。</p>
+      <p>[26] Jolliffe I T, Cadima J. Principal Component Analysis: a Review and Recent Developments[J]. Philosophical Transactions of the Royal Society A, 2016, 374: 20150202. DOI: 10.1098/rsta.2015.0202.</p>
+      <p>[27] Rumelhart D E, Hinton G E, Williams R J. Learning Representations by Back-propagating Errors[J]. Nature, 1986, 323: 533-536. DOI: 10.1038/323533a0.</p>
+    </div>
+    <p class="footnote no-indent">数据来源说明：研究者工作簿仅是内部证据索引，不列为公共数据集参考文献。正文事实数据的底层来源为第 [20]-[21] 项所概括的公开页面、文件和名单资产；940 条逐项引文另成伴随来源目录。事件公告的完整 URL、发布日期、机器核验状态和情景参数保存在 <code>data/processed/events_2027.csv</code>。</p>
+  </section>
+
+  <section class="page-break">
+    <h2>附录 A　2027 年 81 所院校预测表</h2>
+    <p>为避免假精度，下表只给 5 分风险带：中心区间来自 P50，原始 P90 区间来自生成分布，稳健上界区间来自 P90*。表格按稳健上界分组后排序，同一 5 分带内不解释名次。证据完备度不等于预测置信等级；“证据不足：不宜精算”表示上界宽度越过预先声明的异常阈值，该行不得据此与其他学校作精细难度排序。院校派系使用“纯贾、纯茆、贾茆、茆Pro、贾茆Pro”五类及“待核实”，仅用于课程结构筛选。</p>
+    <table class="appendix-table">
+      <caption>2027 年全日制应用统计院校低位风险指标（5 分带）</caption>
+      <thead>
+        <tr>
+          <th>序号</th><th>院校</th><th>985</th><th>区</th><th>派系</th>
+          <th>中心区间</th><th>原始P90区间</th><th>稳健上界区间</th><th>证据完备度</th><th>上界可比性</th>
+        </tr>
+      </thead>
+      <tbody id="forecast-appendix-body">
+        <tr><td colspan="10" class="center">渲染时由 forecast_appendix.csv 自动注入 81 所院校数据。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-break">
+    <h2>附录 B　数据字典、复现协议与隐私边界</h2>
+
+    <h3>B.1 主要数据文件</h3>
+    <table class="small-table">
+      <caption>主要研究记录及统计口径</caption>
+      <thead>
+        <tr><th>文件</th><th>作用</th><th>关键字段/输出</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>data/processed/program_year.csv</code></td><td>学校-年份建模面板</td><td>复试线、录取统计、Q10 代理、权重、审计码、滞后特征</td></tr>
+        <tr><td><code>data/processed/rolling_backtest.csv</code></td><td>逐年时间外回测</td><td>真实目标、各分位预测、中心候选、权重</td></tr>
+        <tr><td><code>data/processed/events_2027.csv</code></td><td>事件三情景输入</td><td>事件类型、公告日期、三情景调整与权重、来源链接</td></tr>
+        <tr><td><code>data/processed/forecast_2027.csv</code></td><td>81 所院校最终预测</td><td>原始分位、稳健上界、证据完备度、派系、事件、分解与中心路径</td></tr>
+        <tr><td><code>app/data/forecast.json</code></td><td>网页使用的公开模型快照</td><td>模型元数据、预测、变量效应、回测行、国家线历史</td></tr>
+        <tr><td><code>data/audit/source_audit.json</code></td><td>来源覆盖与数据问题审计</td><td>学校数、校年数、精确/代理目标数、复核问题</td></tr>
+        <tr><td><code>data/processed/program_year_provenance.csv</code></td><td>字段级来源台账</td><td>学校、年份、字段、原值、工作簿单元格、公开 URL、来源类型与权威等级</td></tr>
+        <tr><td><code>data/processed/source_url_audit.csv</code></td><td>唯一 URL 健康检查</td><td>访问状态、HTTP 状态码、检查方法、时间与错误摘要</td></tr>
+        <tr><td><code>data/processed/program_year_supplemental_provenance.csv</code></td><td>独立值级补充证据</td><td>只收录与原表数值吻合的接口/名单来源；差异项不覆盖原值</td></tr>
+        <tr><td><code>data/processed/school_master_supplemental_provenance.csv</code></td><td>院校静态字段补充证据</td><td>培养单位、学习方式、四门初试科目与学制的值级语义核对</td></tr>
+        <tr><td><code>data/processed/roster_asset_manifest.csv</code></td><td>逐名名单资产清单</td><td>公开图片 URL、内容哈希、校年映射与抓取状态；原图仅在本地私有目录保存</td></tr>
+        <tr><td><code>data/processed/candidate_label_audit.csv</code></td><td>精确标签质量闸门</td><td>人数、最低分、中位数、最高分四项核对、Q10 与晋级状态</td></tr>
+        <tr><td><code>data/private/candidate_initial_scores.csv</code></td><td>本地私有逐名初试分</td><td>仅供标签计算，不进入公开仓库；公开层只保留校年级汇总与核对状态</td></tr>
+        <tr><td><code>data/private/retest_initial_scores.csv</code></td><td>本地私有复试/录取成绩</td><td>已录取、明确未录取和结果未知分数；去重后只输出校年聚合</td></tr>
+        <tr><td><code>data/processed/retest_selection_summary.csv</code></td><td>复试选择关系汇总</td><td>校年样本量、录取比例、AUC、分差与复试队列分位数</td></tr>
+        <tr><td><code>data/processed/retest_score_only_summary.csv</code></td><td>结果未知成绩汇总</td><td>只描述复试队列分布，不生成录取标签</td></tr>
+        <tr><td><code>data/processed/public_source_bibliography.csv</code></td><td>逐项公共来源目录</td><td>940 个去重 URL、题名/用途、支持字段、权威等级与访问状态</td></tr>
+        <tr><td><code>data/audit/score_row_utilisation.json</code></td><td>逐行数据用途审计</td><td>14,317 条成绩在精确、软证据、选择关系、分布敏感性与复核层的去向</td></tr>
+        <tr><td><code>docs/provenance_protocol.md</code></td><td>来源与隐私协议</td><td>证据层级、字段链接规则、值级核对、隐私最小化与复现命令</td></tr>
+        <tr><td><code>paper/assets/v5/distribution_figure_metrics.json</code></td><td>逐人分布图表摘要</td><td>本文新增图形的样本范围、指标和隐私声明</td></tr>
+        <tr><td><code>paper/assets/v3/data_manifest.json</code></td><td>可复现数据清单</td><td>数据冻结时间、Git commit、dirty 状态、关键文件 SHA256</td></tr>
+        <tr><td><code>data/audit/forecast_freeze_2027.json</code></td><td>2027 前瞻基线冻结清单</td><td>模型、输入、输出及核心脚本哈希；结果揭示后只评分不回调</td></tr>
+        <tr><td><code>docs/reviewer_70_point_response.md</code></td><td>七十项方法审查响应</td><td>逐条判断、已完成改动与剩余数据条件</td></tr>
+      </tbody>
+    </table>
+
+    <h3>B.2 计算环境与复现协议</h3>
+    <p>统计计算使用固定 Python 环境和随机种子；基础回测图、逐人分布图、附录院校表和来源目录分别由版本化脚本从处理后数据生成。图形程序不接受手工输入的图中数值，所有数值均回写 JSON 指标摘要。复现顺序为：核验冻结基线；重建来源台账和名单质量闸门；运行精确标签、层级分布与复试选择实验；生成图表；最后渲染正文和伴随来源目录。任何一步失败都不得沿用旧图冒充新结果。</p>
+
+    <h3>B.3 文档与来源目录</h3>
+    <p>正文采用 HTML、MathJax 与矢量图统一排版，公式在浏览器完成后再输出 A4 PDF；附录 A 的 81 所院校由冻结预测表注入。伴随《逐字段公共数据来源目录》采用横向页面列出 940 个公开 URL、支持字段、访问状态和访问日期，作为正文第 [20]-[21] 项的逐项展开。该来源目录引用的是底层公开材料，不把研究者工作簿包装成可公开检索的数据集。</p>
+
+    <h3>B.4 复现边界</h3>
+    <p>2027 前瞻预测的信息截点为 2026-10-07 23:59（Asia/Hong_Kong），并于 2026-10-08 冻结；独立核验程序检查 10 个数值产物是否与冻结清单一致。2026-10-09 来源研究与 2026-10-11 统计候选均不回写前瞻数值；新增的来源台账、链接检查、历史逐名标签与复试队列实验只用于回溯研究，不回写前瞻基线。逐人原表、名单图片和候选哈希留在本地私有层；公开仓库只包含聚合统计、证据等级、URL、内容哈希与质量审计。若结果揭示前因资料勘误必须修订，应另建版本并保留当前基线；结果揭示后不得把修订版冒充本次前瞻预测。</p>
+<h3>B.5 统计模型与公开聚合复现</h3><p>新统计分析由 <code>model/experiment_statistical_inference.py</code> 计算，聚合结果保存于 <code>output/experiments/v6_statistical_inference_20261011/</code>；图形和网页共用同一摘要。公开复现可使用 <code>--aggregate-only</code>，由既有精确校年的均值、标准差、人数及分位数重估 REML、状态和机器学习候选；该模式读取已经发布的顺序统计诊断，不能从聚合量重新审核 OCR 或任意新分位数。完整名单定义与原图审核仍需获授权的私有成绩层。固定随机种子为 20261011；Python 依赖见 <code>requirements.txt</code>，前端依赖见锁文件，源代码与 PDF 保存于独立 v0.4.0 Release。原 v0.2.0 与 v0.3.0 不覆盖。</p><p>新增图均由 <code>paper/scripts/build_v6_statistical_figures.py</code> 读取统计结果生成；模板由 <code>paper/scripts/build_v6_thesis.py</code> 注入拟合指标。代码测试覆盖分位区间概率、逐人/充分统计似然等价、时间特征隔离与 WIS 规范化。描述性全样本 PCA/因子/聚类不进入未来测试拟合，个人考分随机性仍明确排除。</p>
+  </section>
+</main>
+</body>
+</html>

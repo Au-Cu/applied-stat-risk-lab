@@ -1,0 +1,590 @@
+{
+  "version": "V6 statistical inference",
+  "created_on": "2026-10-11",
+  "scope": {
+    "candidates": 2312,
+    "school_years": 77,
+    "schools": 44
+  },
+  "quantile_diagnostics": {
+    "support_bound_count": 51,
+    "definition_range_median": 1.0,
+    "definition_range_max": 17.100000000000023,
+    "rank_spearman_q05_q10": 0.9937230931234395,
+    "rank_spearman_q10_q20": 0.9882867207617756
+  },
+  "nested_reml_calendar_adjusted": {
+    "year_fixed": true,
+    "converged": true,
+    "variances": {
+      "between_school": 151.2237757108328,
+      "school_year": 111.61764082569063,
+      "within_school_year": 299.2526362888845
+    },
+    "variance_shares": {
+      "between_school": 0.26903642717921517,
+      "school_year": 0.19857466960313166,
+      "within_school_year": 0.5323889032176531
+    },
+    "same_school_different_year_icc": 0.26903642717921517,
+    "same_school_year_icc": 0.4676110967823468,
+    "fixed_effects": [
+      406.78387875914194,
+      393.55724497520515,
+      394.4931144335206,
+      377.7161241879173,
+      390.95551371321466
+    ],
+    "fixed_effects_se": [
+      6.107497855581893,
+      3.559020863715365,
+      4.598766020228404,
+      3.0138814509537446,
+      3.656555795278978
+    ],
+    "n_candidates": 2312,
+    "n_groups": 77,
+    "n_schools": 44,
+    "within_df": 2235,
+    "negative_restricted_loglik_up_to_constants": 7727.923450453933,
+    "interpretation": "Gaussian working REML; candidate likelihood weighting, conditional on observed audited schools",
+    "profile95_intervals": {
+      "between_school": {
+        "lower": 52.468970018215494,
+        "upper": 299.0521917795901,
+        "approximate": true,
+        "note": "profile likelihood with chi-square cutoff; Gaussian working model and boundary limitations apply"
+      },
+      "school_year": {
+        "lower": 63.581549962027076,
+        "upper": 207.9401301221222,
+        "approximate": true,
+        "note": "profile likelihood with chi-square cutoff; Gaussian working model and boundary limitations apply"
+      },
+      "within_school_year": {
+        "lower": 282.37309254016515,
+        "upper": 317.5028414107641,
+        "approximate": true,
+        "note": "profile likelihood with chi-square cutoff; Gaussian working model and boundary limitations apply"
+      }
+    }
+  },
+  "multivariate_shape_pca": {
+    "explained_variance_ratio": [
+      0.8974869412427129,
+      0.050325964902638645,
+      0.023277928695904306,
+      0.011390051904005239,
+      0.009966345816015165,
+      0.007552767438723892
+    ],
+    "pc1_iqr_spearman": 0.879104879142711,
+    "pc2_bowley_spearman": -0.24481398787865,
+    "rolling_shape_mae": {
+      "lag_cluster3": 6.558503449459868,
+      "lag_factor1": 6.625610460019787,
+      "lag_full": 6.6208878937374775,
+      "lag_pca1": 6.598949435926188,
+      "lag_pca2": 6.5833060680293976,
+      "pooled": 7.069598765432097
+    },
+    "rolling_shape_mae_by_year": {
+      "lag_cluster3": {
+        "2024": 3.9912243467600717,
+        "2025": 6.49522777887471,
+        "2026": 8.169164280800882
+      },
+      "lag_factor1": {
+        "2024": 4.110770085165521,
+        "2025": 6.568334370475678,
+        "2026": 8.19589623450411
+      },
+      "lag_full": {
+        "2024": 4.158498768395499,
+        "2025": 6.534225958602235,
+        "2026": 8.206991629153439
+      },
+      "lag_pca1": {
+        "2024": 4.104533676178609,
+        "2025": 6.5437805478384075,
+        "2026": 8.153873999211237
+      },
+      "lag_pca2": {
+        "2024": 4.139038920437636,
+        "2025": 6.485349633496874,
+        "2026": 8.176688139105616
+      },
+      "pooled": {
+        "2024": 4.25583333333333,
+        "2025": 6.650617283950616,
+        "2026": 9.39019607843137
+      }
+    },
+    "selection_status": "descriptive and temporal candidate comparison; no full-sample PCA basis enters a forecast",
+    "n_test_groups": 54,
+    "target": "relative admitted quantile shape, separately from future Q10 threshold",
+    "descriptive_cluster_profiles": [
+      {
+        "cluster": 1,
+        "groups": 19,
+        "distinct_schools": 16,
+        "relative_quantile_centroid": [
+          -1.907894736842108,
+          4.239473684210525,
+          11.147368421052633,
+          19.02894736842105,
+          25.27368421052632,
+          30.026315789473685
+        ],
+        "span_q95_q05": 31.934210526315795
+      },
+      {
+        "cluster": 2,
+        "groups": 38,
+        "distinct_schools": 25,
+        "relative_quantile_centroid": [
+          -3.0947368421052635,
+          6.368421052631578,
+          16.026315789473685,
+          27.506578947368418,
+          38.07368421052632,
+          43.538157894736834
+        ],
+        "span_q95_q05": 46.6328947368421
+      },
+      {
+        "cluster": 3,
+        "groups": 20,
+        "distinct_schools": 15,
+        "relative_quantile_centroid": [
+          -3.0175000000000067,
+          10.087499999999999,
+          26.099999999999994,
+          47.125,
+          56.78500000000001,
+          63.0625
+        ],
+        "span_q95_q05": 66.08000000000001
+      }
+    ],
+    "descriptive_factor1": {
+      "loadings": [
+        -0.16669605276526422,
+        2.5001748750290886,
+        5.748173460914722,
+        10.905766530527512,
+        12.36251752546355,
+        12.670178831562733
+      ],
+      "unique_variances": [
+        5.480394351637795,
+        9.936291827925086,
+        16.275583602801227,
+        15.83148800609004,
+        3.9764704241114543,
+        15.156559665122785
+      ],
+      "note": "Gaussian factor working model; sign arbitrary; exploratory full-sample description, not a new causal school classification"
+    }
+  },
+  "regression_challengers": {
+    "metrics": {
+      "neural_4": {
+        "n": 54,
+        "mae": 23.6773550268047,
+        "year_equal_mae": 20.594313453390196,
+        "mae_by_year": {
+          "2024": 10.939999989834508,
+          "2025": 30.484718525339524,
+          "2026": 20.358221844996557
+        }
+      },
+      "ridge": {
+        "n": 54,
+        "mae": 22.262679174850337,
+        "year_equal_mae": 19.71681758986057,
+        "mae_by_year": {
+          "2024": 11.257672750103854,
+          "2025": 27.543068760975622,
+          "2026": 20.34971125850225
+        }
+      }
+    },
+    "fits": [
+      {
+        "origin": 2024,
+        "training_groups": 63,
+        "ridge_alpha": 10.0,
+        "ridge_validation_year": null,
+        "neural_hidden_units": 4,
+        "neural_alpha": 10.0,
+        "neural_iterations": 14,
+        "neural_convergence_warning": false,
+        "latest_training_year": 2023
+      },
+      {
+        "origin": 2025,
+        "training_groups": 134,
+        "ridge_alpha": 100.0,
+        "ridge_validation_year": 2024,
+        "neural_hidden_units": 4,
+        "neural_alpha": 10.0,
+        "neural_iterations": 45,
+        "neural_convergence_warning": false,
+        "latest_training_year": 2024
+      },
+      {
+        "origin": 2026,
+        "training_groups": 212,
+        "ridge_alpha": 100.0,
+        "ridge_validation_year": 2025,
+        "neural_hidden_units": 4,
+        "neural_alpha": 10.0,
+        "neural_iterations": 78,
+        "neural_convergence_warning": false,
+        "latest_training_year": 2025
+      }
+    ],
+    "status": "center-only retrospective challengers; not promoted to a calibrated predictive distribution"
+  },
+  "rolling_metrics": {
+    "local_level": {
+      "n": 54,
+      "mae": 16.644313732454,
+      "rmse": 20.985307583927472,
+      "bias_actual_minus_prediction": -6.036040955279883,
+      "wis": 9.282220782033162,
+      "q80_coverage": 0.8518518518518519,
+      "q80_mean_width": 16.137255470747967,
+      "q90_coverage": 0.9444444444444444,
+      "q90_mean_width": 24.572484850857244,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 31.538442866297625,
+      "year_equal_mae": 15.665565281443811
+    },
+    "local_level_equal_precision": {
+      "n": 54,
+      "mae": 16.580507571630857,
+      "rmse": 20.94843516859764,
+      "bias_actual_minus_prediction": -5.967980929251389,
+      "wis": 9.252513325583111,
+      "q80_coverage": 0.8703703703703703,
+      "q80_mean_width": 16.223169458932407,
+      "q90_coverage": 0.9259259259259259,
+      "q90_mean_width": 24.703307603026342,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 31.706352050897344,
+      "year_equal_mae": 15.605339898845903
+    },
+    "prequential_selected": {
+      "n": 54,
+      "mae": 15.050286874316576,
+      "rmse": 19.89743108047051,
+      "bias_actual_minus_prediction": -5.239108170258777,
+      "wis": 8.799242296560491,
+      "q80_coverage": 0.8888888888888888,
+      "q80_mean_width": 15.24985784424425,
+      "q90_coverage": 0.9259259259259259,
+      "q90_mean_width": 23.221228760658,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 29.804124450510752,
+      "year_equal_mae": 14.17631923106184
+    },
+    "random_intercept": {
+      "n": 54,
+      "mae": 15.050286874316576,
+      "rmse": 19.89743108047051,
+      "bias_actual_minus_prediction": -5.239108170258777,
+      "wis": 8.799242296560491,
+      "q80_coverage": 0.8888888888888888,
+      "q80_mean_width": 15.24985784424425,
+      "q90_coverage": 0.9259259259259259,
+      "q90_mean_width": 23.221228760658,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 29.804124450510752,
+      "year_equal_mae": 14.17631923106184
+    },
+    "frozen_baseline": {
+      "n": 54,
+      "mae": 15.832222222222226,
+      "rmse": 19.511827467234102,
+      "bias_actual_minus_prediction": 1.176296296296294,
+      "wis": 10.772650793650795,
+      "q80_coverage": 0.7037037037037037,
+      "q80_mean_width": 16.895185185185184,
+      "q90_coverage": 0.8333333333333334,
+      "q90_mean_width": 29.540370370370365,
+      "q95_coverage": 0.8703703703703703,
+      "q95_mean_width": 39.55555555555555,
+      "year_equal_mae": 15.568586056644882
+    },
+    "v5_exact_enhanced": {
+      "n": 54,
+      "mae": 14.897407407407412,
+      "rmse": 18.927182001516194,
+      "bias_actual_minus_prediction": -0.6248148148148118,
+      "wis": 10.813002645502648,
+      "q80_coverage": 0.7592592592592593,
+      "q80_mean_width": 17.665740740740745,
+      "q90_coverage": 0.8518518518518519,
+      "q90_mean_width": 31.214444444444446,
+      "q95_coverage": 0.8888888888888888,
+      "q95_mean_width": 42.058148148148156,
+      "year_equal_mae": 14.059801016702984
+    }
+  },
+  "paired_small_year_inference": {
+    "n_calendar_years": 3,
+    "year_mean_differences": {
+      "2024": -2.932999999999987,
+      "2025": 0.593703703703696,
+      "2026": -2.1870588235294064
+    },
+    "year_equal_difference": -1.5087850399418992,
+    "t90_interval_df2": [
+      -4.642140122277921,
+      1.6245700423941227
+    ],
+    "exact_year_signflip_two_sided_p": 0.5,
+    "note": "t interval requires iid Gaussian year effects; sign flips require independent symmetric year effects; neither repairs selection or justifies universal superiority"
+  },
+  "promotion": {
+    "promoted": false,
+    "mae_requirement": 14.397407407407412,
+    "note": "retrospective statistical branch; frozen 2027 forecasts remain unchanged even if this diagnostic passes"
+  },
+  "limitations": [
+    "only three outer calendar years",
+    "Gaussian working likelihood; selected rosters and bounded discrete scores",
+    "measurement variance is plug-in and proxy error may be correlated with bootstrap sampling",
+    "variance parameters and proxy biases estimated by plug-in REML are not integrated out",
+    "national and school-margin shocks may be dependent",
+    "retrospective source reconstruction is not an archived historical data vintage"
+  ],
+  "yearly_metrics": [
+    {
+      "kind": "local_level",
+      "year": 2024,
+      "n": 10,
+      "mae": 12.919619124206427,
+      "rmse": 17.347889685298817,
+      "bias_actual_minus_prediction": -3.189284014805048,
+      "wis": 7.513056406099791,
+      "q80_coverage": 0.8,
+      "q80_mean_width": 12.487763539495807,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 19.01533881963914,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 24.405923152926835,
+      "year_equal_mae": 12.919619124206427
+    },
+    {
+      "kind": "local_level",
+      "year": 2025,
+      "n": 27,
+      "mae": 19.028644606832657,
+      "rmse": 23.146552675908204,
+      "bias_actual_minus_prediction": -15.67538337326083,
+      "wis": 10.439244271263924,
+      "q80_coverage": 0.9629629629629628,
+      "q80_mean_width": 16.639482194445375,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 25.33723438228288,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 32.51998826352894,
+      "year_equal_mae": 19.028644606832657
+    },
+    {
+      "kind": "local_level",
+      "year": 2026,
+      "n": 17,
+      "mae": 15.04843211329235,
+      "rmse": 19.25921959633173,
+      "bias_actual_minus_prediction": 7.598939978881132,
+      "wis": 8.485280167333341,
+      "q80_coverage": 0.7058823529411765,
+      "q80_mean_width": 17.48636122208277,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 26.626792084015417,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 34.17511765503068,
+      "year_equal_mae": 15.04843211329235
+    },
+    {
+      "kind": "local_level_equal_precision",
+      "year": 2024,
+      "n": 10,
+      "mae": 12.917726573641612,
+      "rmse": 17.3202280168225,
+      "bias_actual_minus_prediction": -3.205568991861702,
+      "wis": 7.519154476156734,
+      "q80_coverage": 0.9,
+      "q80_mean_width": 12.463847011113057,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 18.97892069807969,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 24.359180999942584,
+      "year_equal_mae": 12.917726573641612
+    },
+    {
+      "kind": "local_level_equal_precision",
+      "year": 2025,
+      "n": 27,
+      "mae": 18.989916004241664,
+      "rmse": 23.225615146021003,
+      "bias_actual_minus_prediction": -15.617999343223492,
+      "wis": 10.466693531706603,
+      "q80_coverage": 0.9629629629629628,
+      "q80_mean_width": 16.77959728819141,
+      "q90_coverage": 0.9629629629629628,
+      "q90_mean_width": 25.550590118311977,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 32.79382738610003,
+      "year_equal_mae": 18.989916004241664
+    },
+    {
+      "kind": "local_level_equal_precision",
+      "year": 2026,
+      "n": 17,
+      "mae": 14.908377118654434,
+      "rmse": 18.993347424438586,
+      "bias_actual_minus_prediction": 7.733570706239785,
+      "wis": 8.343732321402495,
+      "q80_coverage": 0.7058823529411765,
+      "q80_mean_width": 17.55079728765008,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 26.72491002283542,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 34.30105066613705,
+      "year_equal_mae": 14.908377118654434
+    },
+    {
+      "kind": "prequential_selected",
+      "year": 2024,
+      "n": 10,
+      "mae": 11.486556550314532,
+      "rmse": 15.382082664263228,
+      "bias_actual_minus_prediction": -1.110678766294376,
+      "wis": 6.875775307206998,
+      "q80_coverage": 0.9,
+      "q80_mean_width": 13.056786193275666,
+      "q90_coverage": 0.9,
+      "q90_mean_width": 19.881799697397827,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 25.518013649876337,
+      "year_equal_mae": 11.486556550314532
+    },
+    {
+      "kind": "prequential_selected",
+      "year": 2025,
+      "n": 27,
+      "mae": 17.012910628114287,
+      "rmse": 21.97630833478293,
+      "bias_actual_minus_prediction": -13.888715002308391,
+      "wis": 9.831916235574615,
+      "q80_coverage": 0.9629629629629628,
+      "q80_mean_width": 15.157095780674698,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 23.07997832275492,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 29.622831476166287,
+      "year_equal_mae": 17.012910628114287
+    },
+    {
+      "kind": "prequential_selected",
+      "year": 2026,
+      "n": 17,
+      "mae": 14.0294905147567,
+      "rmse": 18.744513090380494,
+      "bias_actual_minus_prediction": 6.070014795958611,
+      "wis": 8.2905642695107,
+      "q80_coverage": 0.7647058823529411,
+      "q80_mean_width": 16.687227975189188,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 25.40993772865713,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 32.613301998372194,
+      "year_equal_mae": 14.0294905147567
+    },
+    {
+      "kind": "random_intercept",
+      "year": 2024,
+      "n": 10,
+      "mae": 11.486556550314532,
+      "rmse": 15.382082664263228,
+      "bias_actual_minus_prediction": -1.110678766294376,
+      "wis": 6.875775307206998,
+      "q80_coverage": 0.9,
+      "q80_mean_width": 13.056786193275666,
+      "q90_coverage": 0.9,
+      "q90_mean_width": 19.881799697397827,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 25.518013649876337,
+      "year_equal_mae": 11.486556550314532
+    },
+    {
+      "kind": "random_intercept",
+      "year": 2025,
+      "n": 27,
+      "mae": 17.012910628114287,
+      "rmse": 21.97630833478293,
+      "bias_actual_minus_prediction": -13.888715002308391,
+      "wis": 9.831916235574615,
+      "q80_coverage": 0.9629629629629628,
+      "q80_mean_width": 15.157095780674698,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 23.07997832275492,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 29.622831476166287,
+      "year_equal_mae": 17.012910628114287
+    },
+    {
+      "kind": "random_intercept",
+      "year": 2026,
+      "n": 17,
+      "mae": 14.0294905147567,
+      "rmse": 18.744513090380494,
+      "bias_actual_minus_prediction": 6.070014795958611,
+      "wis": 8.2905642695107,
+      "q80_coverage": 0.7647058823529411,
+      "q80_mean_width": 16.687227975189188,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 25.40993772865713,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 32.613301998372194,
+      "year_equal_mae": 14.0294905147567
+    }
+  ],
+  "pca_loadings": [
+    {
+      "quantile": 5,
+      "pc1": -0.0081565279881202,
+      "pc2": -0.0584502976347764
+    },
+    {
+      "quantile": 25,
+      "pc1": 0.1191948884521881,
+      "pc2": 0.4251948546927084
+    },
+    {
+      "quantile": 50,
+      "pc1": 0.2707746894434105,
+      "pc2": 0.5908899069195834
+    },
+    {
+      "quantile": 75,
+      "pc1": 0.5071157282702743,
+      "pc2": 0.3920932035083549
+    },
+    {
+      "quantile": 90,
+      "pc1": 0.5605479026195249,
+      "pc2": -0.1794614288763813
+    },
+    {
+      "quantile": 95,
+      "pc1": 0.5839750030477618,
+      "pc2": -0.5298099012457406
+    }
+  ]
+}

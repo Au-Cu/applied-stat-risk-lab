@@ -35,6 +35,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SchoolCoordinateMap } from "@/components/school-coordinate-map";
 import forecastData from "./data/forecast.json";
 import modelV5Audit from "./data/model-v5-audit.json";
+import { StatisticalResearchPanel } from "../components/statistical-research-panel";
 
 type EventScenario = {
   type: string;
@@ -508,12 +509,12 @@ function EstimandAndVarianceDiagram() {
       <div className="estimand-flow" role="list" aria-label="已实现分布、低位分位数与未来门槛分布的区别">
         <article role="listitem"><span>校年内部样本</span><strong>F<sup>adm</sup><sub>s,t</sub></strong><p>某校某年已经录取者的逐人初试分分布。逐人数据直接改善这一层。</p></article>
         <ChevronRight aria-hidden="true" />
-        <article role="listitem"><span>研究目标</span><strong>T<sub>s,t</sub> = Q<sub>0.10</sub>(F<sup>adm</sup><sub>s,t</sub>)</strong><p>从该分布提取低位分数。77 个精确校年仍有有限样本误差。</p></article>
+        <article role="listitem"><span>研究目标</span><strong>T<sub>s,t</sub> = Q<sub>0.10</sub>(F<sup>adm</sup><sub>s,t</sub>)</strong><p>完整、正确的名单可直接计算本届 Q10。总体推断与未来预测的不确定性另行建模。</p></article>
         <ChevronRight aria-hidden="true" />
         <article role="listitem"><span>报名前未知量</span><strong>G<sub>s,t</sub> = P(T<sub>s,t</sub> ≤ x | I<sub>t−</sub>)</strong><p>未来门槛的预测分布。它的独立信息单位仍是校年，而不是考生人数。</p></article>
       </div>
       <div className="variance-panel">
-        <div className="variance-copy"><span className="eyebrow">三层方差分解</span><h4>全国混合分布的差异从哪里来？</h4><p>逐人数据同时揭示“同一校年内学生不同”“同校跨年变化”和“学校之间不同”。三者不能混成一个全国标准差。</p></div>
+        <div className="variance-copy"><span className="eyebrow">院校等权 · 描述性分解</span><h4>观察到的三层差异从哪里来？</h4><p>逐人数据同时揭示“同一校年内学生不同”“同校跨年变化”和“学校之间不同”。这些是当前审计样本的描述，不是全国报名者方差估计。</p></div>
         <div className="variance-visual" aria-label="校年内46.1%，同校跨年10.9%，学校间43.0%">
           <div className="variance-bar"><i className="within" style={{ width: `${shares.withinSchoolYear * 100}%` }} /><i className="across" style={{ width: `${shares.sameSchoolAcrossYears * 100}%` }} /><i className="between" style={{ width: `${shares.betweenSchools * 100}%` }} /></div>
           <div className="variance-legend"><span><i className="within" />校年内个体差异 <b>46.1%</b></span><span><i className="across" />同校跨年 <b>10.9%</b></span><span><i className="between" />院校间 <b>43.0%</b></span></div>
@@ -529,7 +530,7 @@ function V5ResearchGatePanel() {
   const selection = v5.selectionGradient;
   return (
     <div className="research-gates">
-      <article className="research-gate pass"><div><CheckCircle2 size={17} /><span>通过 · 标签替换</span></div><strong>{exact.frozenBaselineMae.toFixed(2)} → {exact.exactEnhancedMae.toFixed(2)}</strong><p>54 个精确校年 P50 MAE；年份等权差 {exact.yearBlockDifference.toFixed(2)} 分，90% 年份分块区间 [{exact.bootstrapP05.toFixed(2)}, {exact.bootstrapP95.toFixed(2)}]。</p></article>
+      <article className="research-gate pass"><div><CheckCircle2 size={17} /><span>候选支持 · 标签替换</span></div><strong>{exact.frozenBaselineMae.toFixed(2)} → {exact.exactEnhancedMae.toFixed(2)}</strong><p>54 个精确校年 P50 MAE；年份等权差 {exact.yearBlockDifference.toFixed(2)} 分。原年份块区间受仅 3 年限制；V6 的年份 t 区间跨 0，不宣称稳定显著优越。</p></article>
       <article className="research-gate pass"><div><CheckCircle2 size={17} /><span>通过 · 分布形状</span></div><strong>{shape.pooledExactMae.toFixed(2)} → {shape.lagExactMae.toFixed(2)}</strong><p>同校上一期形状优于全国池化形状，因此晋级为 V5 实验分布的形状来源。</p></article>
       <article className="research-gate hold"><div><Scale size={17} /><span>保留 · 软证据</span></div><strong>额外改善 {shape.softIncrementalGain.toFixed(3)} 分</strong><p>{shape.reason}</p></article>
       <article className="research-gate reject"><div><AlertTriangle size={17} /><span>拒绝 · 复试选择特征</span></div><strong>{selection.anchorMae.toFixed(2)} → {selection.candidateMae.toFixed(2)}</strong><p>{selection.reason}</p></article>
@@ -586,6 +587,7 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
         <div className="section-title-row"><div><span className="eyebrow">02 · 逐人数据的统计角色</span><h3>先分清三个分布，再决定每条成绩能做什么</h3></div><span className="section-note">逐人样本增加校年内部信息，不增加独立年份</span></div>
         <EvidenceUtilisationChart />
         <EstimandAndVarianceDiagram />
+        <StatisticalResearchPanel />
       </section>
 
       <section className="theory-section math-section">
@@ -914,6 +916,7 @@ export default function Home() {
 
             <div className="section-title-row backtest-v5-title"><div><span className="eyebrow">V5 · EXACT LABEL RETROSPECTIVE</span><h3>逐人精确标签提高了回溯精度，但没有改写冻结预测</h3></div><span className="section-note">54 个精确校年 · 仅 3 个外层日历年</span></div>
             <V5ResearchGatePanel />
+            <StatisticalResearchPanel />
           </section>
         </TabsContent>
 
@@ -926,7 +929,7 @@ export default function Home() {
             <div className="audit-layout">
               <div>
                 <h3>关键审核结论</h3>
-                <ul className="audit-list"><li><strong>73</strong><span>个精确—代理配对；插值代理 MAE 3.14 分，仅最低分代理 MAE 6.05 分，两类误差不能共用一个折扣。</span></li><li><strong>3.09</strong><span>分为精确 Q10 的 bootstrap 抽样标准差中位数；“精确”不等于无抽样误差。</span></li><li><strong>200</strong><span>个复试队列同时有录取与未录取样本；分数区分结果的 AUC 中位数为 0.876，但两组仍有重叠。</span></li><li><strong>+5.25</strong><span>分是选择梯度特征相对锚点的滞后回测 MAE 恶化量，因此该特征未晋级。</span></li></ul>
+                <ul className="audit-list"><li><strong>73</strong><span>个精确—代理配对；插值代理 MAE 3.14 分，仅最低分代理 MAE 6.05 分，两类误差不能共用一个折扣。</span></li><li><strong>3.09</strong><span>分为假想重复队列 Q10 的 bootstrap 标准差中位数；完整名单的已实现 Q10 不另加随机抽样误差。</span></li><li><strong>200</strong><span>个复试队列同时有录取与未录取样本；分数区分结果的 AUC 中位数为 0.876，但两组仍有重叠。</span></li><li><strong>+5.25</strong><span>分是选择梯度特征相对锚点的滞后回测 MAE 恶化量，因此该特征未晋级。</span></li></ul>
               </div>
               <div className="warning-stack"><p><ShieldCheck size={14} />工作簿是资料整理中间产物，不作为第一手公开文献；论文引用字段台账中的校方公告、研招目录与公开名单。</p><p><AlertTriangle size={14} />2027 冻结预测仍以原有 295 条历史目标为生产基线；V5 精确标签结果是冻结后回溯实验。</p><p><AlertTriangle size={14} />状态未知的 2,800 条成绩只用于复试池分布敏感性，不转换成录取标签。</p><p><AlertTriangle size={14} />严格报名时统考名额覆盖仍只有 {meta.quotaCoverage?.backtestRowsWithQuota ?? 0}/226，当前不改变生产预测。</p><p><Database size={14} />{v5.privacy}</p></div>
             </div>
@@ -946,7 +949,7 @@ export default function Home() {
         </TabsContent>
       </Tabs>
 
-      <footer><span>公开研究原型 v0.2 · V5 逐人分布研究层 · 仅用于风险比较</span><span>2027 数值已冻结；77 个精确 Q10 校年用于回溯验证，不构成录取保证</span></footer>
+      <footer><span>公开研究原型 v0.4.0 · V6 现代统计研究层 · 仅用于风险比较</span><span>2027 数值已冻结；77 个精确 Q10 校年用于回溯研究，不构成录取保证</span></footer>
     </main>
   );
 }

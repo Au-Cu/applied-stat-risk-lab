@@ -48,7 +48,7 @@ function parseCsv(text) {
 
 async function main() {
   const root = path.resolve(__dirname, '..', '..');
-  const source = path.join(root, 'paper', 'modeling_paper_v2.html');
+  const source = path.join(root, 'paper', process.env.PAPER_SOURCE_NAME || 'modeling_paper_v2.html');
   const appendixCsv = path.join(root, 'paper', 'assets', 'v3', 'forecast_appendix.csv');
   const outputName = process.env.PAPER_OUTPUT_NAME || '报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V3.pdf';
   const output = path.join(root, 'output', 'pdf', outputName);
@@ -114,7 +114,7 @@ async function main() {
       const parent = node.parentElement;
       if (!parent || ['SCRIPT', 'STYLE', 'CODE', 'PRE'].includes(parent.tagName)) continue;
       const value = node.nodeValue.trim();
-      if (value && texPattern.test(value)) unresolved.push(value.slice(0, 160));
+      if (value && texPattern.test(value)) unresolved.push({ text: value.slice(0, 160), context: parent.outerHTML.slice(0, 700) });
     }
     const malformedTags = [...document.body.querySelectorAll('*')]
       .map((element) => element.tagName)

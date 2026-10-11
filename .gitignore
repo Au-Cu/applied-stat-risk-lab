@@ -63,6 +63,7 @@ next-env.d.ts
 /output/pdf/*.pdf
 !/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V5_逐人分布与来源审计增强.pdf
 !/output/pdf/应用统计硕士择校研究_逐字段公共数据来源目录_V5.pdf
+!/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V6_统计推断与现代统计建模.pdf
 # Reproducible raster previews and superseded experiment bundles stay local;
 # public papers use the tracked SVG figures and selected V5 aggregate outputs.
 /paper/assets/**/*.png
@@ -77,3 +78,4 @@ next-env.d.ts
 /output/experiments/v5_exact_labels_20261009/forecast_payload.json
 __pycache__/
 *.py[cod]
+*.tsbuildinfo
