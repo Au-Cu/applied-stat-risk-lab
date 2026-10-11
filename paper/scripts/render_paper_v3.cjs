@@ -70,7 +70,7 @@ async function main() {
     waitUntil: 'networkidle',
     timeout: 120000,
   });
-  await page.evaluate((rows) => {
+  await page.evaluate(({ rows, refined }) => {
     const tbody = document.getElementById('forecast-appendix-body');
     tbody.replaceChildren(
       ...rows.map((row, index) => {
@@ -85,7 +85,9 @@ async function main() {
           row['原始P90区间'],
           row['稳健上界区间'],
           row['证据完备度'],
-          row['上界可比性'],
+          refined
+            ? row['上界可比性'].replace('证据不足', '需复核')
+            : row['上界可比性'],
         ];
         cells.forEach((value, cellIndex) => {
           const td = document.createElement('td');
@@ -96,7 +98,7 @@ async function main() {
         return tr;
       })
     );
-  }, forecasts);
+  }, { rows: forecasts, refined: process.env.PAPER_SOURCE_NAME === 'modeling_paper_v6_1.html' });
 
   await page.evaluate(async () => {
     if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {

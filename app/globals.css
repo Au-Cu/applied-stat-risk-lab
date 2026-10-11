@@ -177,6 +177,7 @@ td:first-child span { display: block; color: #62758b; font-size: 12px; margin-to
 .risk-orb { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; align-content: center; flex: 0 0 auto; }
 .risk-orb strong { font-size: 21px; line-height: 1; }
 .risk-orb small { font-family: var(--font-mono); font-size: 12px; margin-top: 4px; }
+.risk-orb[data-information-limited="true"] strong { font-size: 16px; white-space: nowrap; }
 .confidence-banner { margin-top: 18px; padding: 10px 12px; display: grid; grid-template-columns: 96px 1fr 90px; align-items: center; border: 1px solid rgba(103,232,249,.13); border-radius: 9px; background: rgba(21, 42, 61, .45); font-size: 12px; color: #70849a; }
 .confidence-banner strong { color: #b9c9d8; font-size: 13px; }
 .confidence-banner [data-slot="progress"] { height: 4px; background: #203247; }
@@ -193,6 +194,8 @@ td:first-child span { display: block; color: #62758b; font-size: 12px; margin-to
 .score-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); color: var(--amber); white-space: nowrap; }
 .score-marker::after { content: ""; display: block; width: 1px; height: 50px; margin: 5px auto 0; background: linear-gradient(var(--amber), transparent); }
 .score-marker span { font-size: 12px; font-family: var(--font-mono); background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.2); border-radius: 5px; padding: 3px 5px; }
+.score-marker[data-edge="right"] span { display: inline-block; transform: translateX(-50%); }
+.score-marker[data-edge="left"] span { display: inline-block; transform: translateX(50%); }
 .rail-scale { display: flex; justify-content: space-between; margin-top: 6px; color: #51677e; font-size: 12px; font-family: var(--font-mono); }
 .quantile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
 .upper-width-warning { margin-top: 10px; padding: 11px 12px; display: flex; align-items: flex-start; gap: 9px; border: 1px solid rgba(251,191,36,.22); border-radius: 9px; background: rgba(251,191,36,.055); color: #9f916d; }
@@ -649,6 +652,16 @@ footer { max-width: 1500px; margin: 0 auto; padding: 0 24px 26px; display: flex;
   footer { flex-direction: column; gap: 6px; }
 }
 .statistical-research { margin-top: 26px; border-top: 1px solid var(--border); padding-top: 24px; }
+.forecast-layer-comparison { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 16px 0; padding: 14px; border: 1px solid var(--border); border-radius: 9px; background: #101d2a; }
+.forecast-layer-comparison span { display: block; font-size: 11px; color: #9ab0c6; }
+.forecast-layer-comparison strong { display: block; font-size: 17px; color: #cbe6e5; margin-top: 5px; }
+.forecast-layer-comparison p { grid-column: 1 / -1; font-size: 12px; color: #9ab0c6; line-height: 1.75; margin: 0; }
+.research-role-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 15px 0; }
+.research-role-strip div { border-left: 2px solid #3e9eac; padding: 9px 12px; background: #12212e; }
+.research-role-strip strong { display: block; font-size: 13px; color: #c1e5e7; }
+.research-role-strip span { display: block; font-size: 12px; line-height: 1.75; color: #a1b7ca; margin-top: 5px; }
+.stat-year-coverage { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+.stat-year-coverage span { font-size: 12px; color: #a9c5d7; border: 1px solid #34495b; border-radius: 6px; padding: 7px 9px; }
 .statistics-intro { max-width: 1000px; line-height: 1.8; color: var(--muted-foreground); margin: 12px 0 18px; font-size: 14px; }
 .stat-object-switch { display: flex; gap: 8px; flex-wrap: wrap; }
 .stat-object-switch button, .stat-basis-switch button { border: 1px solid #425164; border-radius: 8px; padding: 9px 13px; font-size: 13px; cursor: pointer; background: #101b29; color: #c8d6e6; }
@@ -689,4 +702,4 @@ footer { max-width: 1500px; margin: 0 auto; padding: 0 24px 26px; display: flex;
 .stat-year-differences .better { color: #67d1c3; }.stat-year-differences .worse { color: #e69b79; }
 .stat-year-differences small { font-size: 10px; line-height: 1.5; color: #8aa4bb; }
 .stat-card a { display: inline-block; color: #66cabe; font-size: 13px; margin-top: 14px; }
-@media (max-width: 760px) { .stat-two-column { grid-template-columns: 1fr; }.stat-inference-flow { flex-direction: column; }.stat-inference-flow > i { transform: rotate(90deg); }.stat-object-switch button { flex: 1; min-width: 150px; }.stat-year-differences { gap: 6px; }.stat-year-differences div { padding: 8px; } }
+@media (max-width: 760px) { .stat-two-column, .research-role-strip { grid-template-columns: 1fr; }.stat-inference-flow { flex-direction: column; }.stat-inference-flow > i { transform: rotate(90deg); }.stat-object-switch button { flex: 1; min-width: 150px; }.stat-year-differences { gap: 6px; }.stat-year-differences div { padding: 8px; } }

@@ -11,7 +11,7 @@ const choices = [
 ] as const;
 
 const modelNames = {
-  frozen_baseline: "冻结基线", v5_exact_enhanced: "精确标签增强", random_intercept: "观测误差随机截距",
+  frozen_baseline: "冻结基线", v5_exact_enhanced: "经验标签增强", random_intercept: "观测误差随机截距",
   local_level: "局部水平随机过程", local_level_equal_precision: "等精度局部水平",
 } as const;
 const palette = ["#708090", "#387db3", "#20a693"];
@@ -31,8 +31,9 @@ export function StatisticalResearchPanel() {
 
   return (
     <section className="statistical-research" aria-labelledby={`${instance}-title`}>
-      <div className="section-title-row"><div><span className="eyebrow">V6 · MODERN STATISTICAL RESEARCH</span><h3 id={`${instance}-title`}>统计学不是算法名单：目标、层次与证据要对应</h3></div><span className="section-note">2,312 名考生 · 77 校年 · 只有 3 个时间外年份</span></div>
-      <p className="statistics-intro">回归、随机过程、贝叶斯、非参数、多元分析和机器学习均可使用。这里将它们放到各自能回答的问题上，并展示实际比较结果；新研究没有覆盖已冻结的 2027 预测。</p>
+      <div className="section-title-row"><div><span className="eyebrow">V6.1 · STATISTICAL RESEARCH</span><h3 id={`${instance}-title`}>主线是低尾预测，不是算法名单</h3></div><span className="section-note">2,312 名考生 · 77 校年 · 只有 3 个时间外年份</span></div>
+      <p className="statistics-intro">在异质来源和短时间面板下，先测量 Q10，再建立未来分布并接受时间外验证。77 个“审计通过经验 Q10”简称 exact：在名单范围内精确计算，不表示第三方来源绝对无误或已取得全部官方原件。新研究没有覆盖冻结的 2027 预测。</p>
+      <div className="research-role-strip" aria-label="三层研究定位"><div><strong>核心预测</strong><span>Q10 测量 → 中心 → 未来分布 → 时间外验证</span></div><div><strong>统计解释</strong><span>REML、主成分与组内/组间分布解释异质性</span></div><div><strong>补充比较</strong><span>局部水平、岭、网络、因子、聚类检验替代假设，不强行晋级</span></div></div>
 
       <div className="stat-object-switch" role="tablist" aria-label="选择统计对象">
         {choices.map((choice, index) => <button type="button" role="tab" aria-selected={index === objectIndex} aria-controls={`${instance}-content`} id={`${instance}-object-${index}`} className={index === objectIndex ? "active" : ""} key={choice.id} onClick={() => setObjectIndex(index)}>{index + 1}. {choice.name}</button>)}
@@ -74,10 +75,12 @@ export function StatisticalResearchPanel() {
             })}
           </svg>
           <p>随机截距 MAE {metrics.random_intercept.mae.toFixed(2)} 分，略高于精确增强 {metrics.v5_exact_enhanced.mae.toFixed(2)}；WIS 则从 {metrics.v5_exact_enhanced.wis.toFixed(2)} 降至 {metrics.random_intercept.wis.toFixed(2)}。总体 P90 覆盖约 93%，但 2026 年只有约 82%，不能宣布可靠“90% 保证”。</p>
+          <div className="stat-year-coverage" aria-label="随机截距逐年覆盖计数">{research.yearly_metrics.filter(row => row.kind === "random_intercept").map(row => <span key={row.year}>{row.year}：{Math.round(row.q90_coverage * row.n)}/{row.n} 覆盖 · {Math.round(row.q90_coverage * 100)}%</span>)}</div>
+          <p className="stat-technical">总体为 50/54，并不新增独立年份。2025 年中心偏高约 14 分，2026 年偏低约 6 分；覆盖随位置偏差漂移，不是只把区间加宽就能解决。</p>
         </article>
       </div>
 
-      <div className="stat-model-table-wrap"><table className="stat-model-table"><caption>同一批 54 个精确校年的方法比较；分数单位为分</caption><thead><tr><th>方法</th><th>MAE ↓</th><th>标准 WIS ↓</th><th>P90 覆盖</th><th>P90−P50</th></tr></thead><tbody>
+      <div className="stat-model-table-wrap"><table className="stat-model-table"><caption>同一批 54 个审计通过经验 Q10 校年；分数单位为分</caption><thead><tr><th>方法</th><th>MAE ↓</th><th>标准 WIS ↓</th><th>P90 覆盖</th><th>P90−P50</th></tr></thead><tbody>
         {(Object.keys(modelNames) as (keyof typeof modelNames)[]).map(key => <tr key={key}><th scope="row">{modelNames[key]}</th><td>{metrics[key].mae.toFixed(2)}</td><td>{metrics[key].wis.toFixed(2)}</td><td>{Math.round(metrics[key].q90_coverage * 100)}%</td><td>{metrics[key].q90_mean_width.toFixed(1)}</td></tr>)}
         {(["ridge", "neural_4"] as const).map(key => <tr key={key}><th scope="row">{key === "ridge" ? "岭回归" : "4 隐节点神经网络"}</th><td>{research.regression_challengers.metrics[key].mae.toFixed(2)}</td><td colSpan={3}>只验证中心，不制造概率上界</td></tr>)}
       </tbody></table></div>
@@ -105,10 +108,10 @@ export function StatisticalResearchPanel() {
           <div className="stat-year-differences">{Object.entries(inference.year_mean_differences).map(([year, v]) => <div key={year}><span>{year}</span><strong className={v > 0 ? "worse" : "better"}>{v > 0 ? "+" : ""}{v.toFixed(2)}</strong><small>精确增强 − 冻结基线 MAE</small></div>)}</div>
           <p>年份等权差约 −1.51 分，但三个年份中一年恶化。自由度 2 的 90% t 区间 [{inference.t90_interval_df2.map(v => v.toFixed(2)).join(", ")}] 跨过 0；年份符号翻转双侧 p={inference.exact_year_signflip_two_sided_p.toFixed(2)}。</p>
           <p>这些推断仍依赖年份独立、正态或对称假设，不能由 3 年可靠检验。恰当结论是“当前测试集合有改善”，不是“新年份显著且稳定优越”。</p>
-          <a href="https://github.com/Au-Cu/applied-stat-risk-lab/releases/tag/v0.4.0" target="_blank" rel="noreferrer">查看 V6 论文、公开聚合结果和完整假设 ↗</a>
+          <a href="https://github.com/Au-Cu/applied-stat-risk-lab/releases/tag/v0.4.1" target="_blank" rel="noreferrer">查看 V6.1 论文、公开聚合结果和完整假设 ↗</a>
         </article>
       </div>
-      <div className="research-freeze-note"><strong>研究与前瞻分开：</strong><span>新增候选未通过全部升级护栏。统计描述不被丢弃，预测失败也如实保留；2027 排名和分数仍读取原冻结快照。没有纳入个人考生估分随机性。</span></div>
+      <div className="research-freeze-note"><strong>研究与前瞻分开：</strong><span>已冻结的 2027 基线可在结果揭示后前瞻评分；V6 候选目前只有回溯输出，没有独立冻结的 2027 候选预测，不能追认为盲测。此次只微调解释，不重训、不改 2027 数值，也不纳入个人考生估分随机性。</span></div>
     </section>
   );
 }

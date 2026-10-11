@@ -17,9 +17,13 @@ PDF=ROOT/'output/pdf/报名前信息集下应用统计硕士拟录取初试低�
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--render',action='store_true')
+    parser.add_argument('--pdf',type=Path,default=PDF)
+    parser.add_argument('--source',type=Path,default=ROOT/'paper/modeling_paper_v6.html')
+    parser.add_argument('--index',type=Path,default=ROOT/'paper/assets/v6/layout_index.json')
+    parser.add_argument('--output-dir',type=Path)
     args=parser.parse_args()
-    reader=PdfReader(PDF);pages=[p.extract_text() or '' for p in reader.pages]
-    html=(ROOT/'paper/modeling_paper_v6.html').read_text(encoding='utf-8')
+    reader=PdfReader(args.pdf);pages=[p.extract_text() or '' for p in reader.pages]
+    html=args.source.read_text(encoding='utf-8')
     headings=[h for h in re.findall(r'<h2>([^<]+)</h2>',html) if h not in ('摘　要','目　录')]
     def compact(text):return re.sub(r'\s+','',text)
     mapping={}
@@ -29,13 +33,14 @@ def main():
         mapping[h]=found[0]
     diagnostics={'pages':len(pages),'page_text_lengths':[len(p) for p in pages],
         'chapters':mapping,'unresolved_placeholders':sum('@@' in p for p in pages),
-        'replacement_glyph_count':sum(p.count('\ufffd') for p in pages),'pdf_bytes':PDF.stat().st_size}
-    target=ROOT/'paper/assets/v6/layout_index.json'
+        'replacement_glyph_count':sum(p.count('\ufffd') for p in pages),'pdf_bytes':args.pdf.stat().st_size}
+    target=args.index
+    target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(diagnostics,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(diagnostics,ensure_ascii=False))
     if args.render:
-        output=ROOT/f'work/v6-pdf-qa-{len(pages)}pages';output.mkdir(parents=True,exist_ok=True)
-        render=subprocess.run(['pdftoppm','-q','-png','-scale-to','1100',str(PDF),str(output/'page')],capture_output=True)
+        output=args.output_dir or ROOT/f'work/v6-pdf-qa-{len(pages)}pages';output.mkdir(parents=True,exist_ok=True)
+        render=subprocess.run(['pdftoppm','-q','-png','-scale-to','1100',str(args.pdf),str(output/'page')],capture_output=True)
         if render.returncode:raise RuntimeError(render.stderr.decode(errors='replace')[:1000])
         paths=sorted(output.glob('page-*.png'))
         if len(paths)!=len(pages):raise ValueError('Missing page renders')

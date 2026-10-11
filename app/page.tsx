@@ -36,6 +36,7 @@ import { SchoolCoordinateMap } from "@/components/school-coordinate-map";
 import forecastData from "./data/forecast.json";
 import modelV5Audit from "./data/model-v5-audit.json";
 import { StatisticalResearchPanel } from "../components/statistical-research-panel";
+import { riskScaleLabel as probabilityLabel, riskLabel } from "@/lib/forecast-display";
 
 type EventScenario = {
   type: string;
@@ -170,7 +171,7 @@ const pipelineSteps = [
     title: "统一口径",
     short: "排除混入样本",
     plain: "把专项计划、非全日制、调剂生等不属于目标人群的记录排除；其余成绩按“精确、软证据、诊断”分工，而不是一删了之。",
-    technical: "定义正常统考全日制025200样本；执行名单人数、最低分、中位数、最高分与图例一致性规则。对账通过者形成精确 Q10，内部一致但未闭环者只降权进入形状敏感性，状态不明者仅描述复试队列。",
+    technical: "定义正常统考全日制025200样本；执行名单人数、最低分、中位数、最高分与图例一致性规则。对账通过者形成审计通过经验 Q10；exact 仅指名单范围内可直接计算，不表示来源绝对无误。未闭环者只进入敏感性，状态不明者仅描述复试队列。",
     input: "原始记录与招生口径",
     output: "精确标签、软证据、诊断数据和人工复核队列",
     guardrail: "宁可降权或留空，也不把不确定值伪装成真值",
@@ -224,10 +225,10 @@ const pipelineSteps = [
     code: "07",
     title: "个人决策",
     short: "把分布翻译成冲稳保",
-    plain: "最后才把你的估分放进学校的预测分布，计算达到目标所需分数的把握度，并按统一阈值给出冲、观察、稳、保。",
-    technical: "对分位锚点分段插值形成个人覆盖概率；稳≥90%、保≥95%，同时展示证据完备度与主要不确定性来源。",
+    plain: "最后把你的估分与学校的中心和安全上界比较，得到保守风险刻度，再按统一规则给出冲、观察、稳、保。上界极宽时暂不给普通标签。",
+    technical: "低位原始分位与上尾安全锚点分段插值得到 R(x)；稳≥90%、保≥95% 是政策阈值，不是联合校准过的 CDF。证据完备度也不是预测成功概率。",
     input: "你的悲观估分与学校概率分布",
-    output: "P50/P80/P90/P95、把握度和风险标签",
+    output: "原始 P90、安全 P90*、风险刻度和标签",
     guardrail: "这是学校间风险比较，不是个人录取保证",
   },
 ] as const;
@@ -276,21 +277,6 @@ function probabilityAtScore(item: Prediction, score: number) {
     }
   }
   return 0.5;
-}
-
-function probabilityLabel(item: Prediction, score: number, probability: number) {
-  if (item.upperWidthStatus === "information_limited") return "不宜精算";
-  if (score <= item.q05) return "≤5%";
-  if (score >= item.q95) return "≥95%";
-  return `约${Math.round(probability * 100)}%`;
-}
-
-function riskLabel(probability: number, informationLimited = false) {
-  if (informationLimited) return { label: "证据不足", tone: "watch" };
-  if (probability >= 0.95) return { label: "保", tone: "safe" };
-  if (probability >= 0.9) return { label: "稳", tone: "steady" };
-  if (probability >= 0.6) return { label: "观察", tone: "watch" };
-  return { label: "冲", tone: "reach" };
 }
 
 function signed(value: number | null) {
@@ -551,7 +537,7 @@ type TheoryPanelProps = {
 
 function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, pipelineStepId, onPipelineStepChange, liveExample }: TheoryPanelProps) {
   const activePipelineStep = pipelineSteps.find((step) => step.id === pipelineStepId) ?? pipelineSteps[0];
-  const decisionThreshold = selectedProbability >= 0.95 ? "保" : selectedProbability >= 0.9 ? "稳" : selectedProbability >= 0.6 ? "观察" : "冲";
+  const decisionThreshold = selectedRisk.label;
   const decompositionTotal = Object.values(selected.decomposition).reduce((sum, value) => sum + value, 0);
   const uncertaintyWidth = selected.q90 - selected.q50;
 
@@ -563,9 +549,9 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
       </div>
 
       <div className="theory-contract-grid">
-        <article className="theory-contract target"><span className="contract-number">01</span><div><strong>预测对象</strong><h3>普通统考拟录取初试成绩 Q10</h3><p>不是复试线，也不是个人录取概率。77 个校年由逐名成绩直接计算，其余年份仍使用方法可追溯的代理标签。</p></div></article>
+        <article className="theory-contract target"><span className="contract-number">01</span><div><strong>预测对象</strong><h3>普通统考拟录取初试成绩 Q10</h3><p>不是复试线，也不是个人录取概率。回溯研究已有 77 个审计通过经验 Q10；“exact”只指已审计名单内可直接计算，不保证来源完整无误。2027 仍读取原冻结代理基线。</p></div></article>
         <article className="theory-contract information"><span className="contract-number">02</span><div><strong>可用信息</strong><h3>报名开始前的时间截点</h3><p>所有动态变量至少滞后一年；当年最终录取人数、当年热度等报名后信息不能倒灌进输入。</p></div></article>
-        <article className="theory-contract decision"><span className="contract-number">03</span><div><strong>决策输出</strong><h3>P50 / P80 / P90 / P95</h3><p>把估分放进门槛分布，得到“覆盖门槛”的概率；“稳”是概率标签，不是录取保证。</p></div></article>
+        <article className="theory-contract decision"><span className="contract-number">03</span><div><strong>决策输出</strong><h3>原始分布与安全上界分开</h3><p>原始 P90 描述候选分布，P90* 另含稳健安全调整；混合锚点形成保守风险刻度 R(x)，不等于已经验证的覆盖概率或录取保证。</p></div></article>
       </div>
 
       <section className="theory-section">
@@ -579,7 +565,7 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
           <ArrowDown className="flow-arrow" aria-hidden="true" />
           <div className="model-flow-node inference" role="listitem"><span className="flow-index">D</span><strong>中心 + 不确定性</strong><small>稳健锚点 · 贝叶斯候选 · 分位数尾部</small></div>
           <ArrowDown className="flow-arrow" aria-hidden="true" />
-          <div className="model-flow-node decision" role="listitem"><span className="flow-index">E</span><strong>个人决策</strong><small>覆盖概率 → 冲 / 观察 / 稳 / 保</small></div>
+          <div className="model-flow-node decision" role="listitem"><span className="flow-index">E</span><strong>个人决策</strong><small>保守刻度 → 冲 / 观察 / 稳 / 保</small></div>
         </div>
       </section>
 
@@ -613,9 +599,9 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
             <div className="math-foot">网页对应：选中院校的加法分解桥图</div>
           </article>
           <article className="math-card">
-            <div className="math-card-head"><span>决策概率</span><CircleHelp size={15} /></div>
+            <div className="math-card-head"><span>目标概率与展示刻度</span><CircleHelp size={15} /></div>
             <div className="math-display">C<sub>s,t</sub>(S) = P(T<sub>s,t</sub> ≤ S)</div>
-            <p>把个人估分 S 放进预测门槛分布，得到覆盖该门槛的概率。它不包含复试表现、单科线、主观题误差和最终排名。</p>
+            <p>C 是希望估计的门槛覆盖概率；当前界面实际显示安全锚点插值的 R(S)，并未证明 R=C。两者都不包含复试、单科线与最终排名，个人估分仍是固定输入。</p>
             <div className="math-foot">网页对应：顶部估分滑杆与“稳”标签</div>
           </article>
           <article className="math-card wide model-equation-card">
@@ -629,7 +615,7 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
             <div className="math-foot">网页对应：回测卡片、事件情景卡片与 P50—P95 区间</div>
           </article>
         </div>
-        <div className="notation-strip"><span><b>s</b> 学校</span><span><b>t</b> 招生年份</span><span><b>z</b> A / B 区</span><span><b>T</b> 未来门槛随机变量</span><span><b>q<sub>90</sub></b> 门槛分布的 90% 上界</span></div>
+        <div className="notation-strip"><span><b>s</b> 学校</span><span><b>t</b> 招生年份</span><span><b>z</b> A / B 区</span><span><b>T</b> 未来门槛随机变量</span><span><b>q<sub>90</sub></b> 原始预测上分位</span><span><b>q<sub>90</sub>*</b> 另含安全调整</span></div>
       </section>
 
       <section className="theory-section chart-section">
@@ -640,8 +626,8 @@ function ModelTheoryPanel({ selected, score, selectedProbability, selectedRisk, 
       <section className="theory-section decision-section">
         <div className="section-title-row"><div><span className="eyebrow">05 · 从分布到报名选择</span><h3>同一个学校，为什么要同时看 P50 和 P90？</h3></div><span className="section-note">低估门槛的代价被设为高估的 3 倍</span></div>
         <div className="decision-explain-grid">
-          <div className="decision-prob-card"><div className="decision-score"><Calculator size={17} /><span>当前估分</span><strong>{score} 分</strong></div><div className={`decision-result ${selectedRisk.tone}`}><span>{selected.school}</span><strong>{probabilityLabel(selected, score, selectedProbability)}</strong><small>覆盖门槛的区间估计 · {decisionThreshold}</small></div><div className="decision-rule"><span>稳健 P90* = {Math.round(selected.q90)} 分</span><span>稳健 P95* = {Math.round(selected.q95)} 分</span><b>{score >= selected.q90 ? "已达到稳健 P90* 安全线" : `还差 ${Math.round(selected.q90 - score)} 分到稳健 P90*`}</b></div></div>
-          <div className="uncertainty-reading"><div className="uncertainty-head"><Scale size={17} /><strong>区间宽度不是“模型不好”，而是信息不足被显式保留</strong></div><div className="uncertainty-track"><i style={{ left: `${Math.max(0, Math.min(100, ((selected.q50 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100))}%`, width: `${Math.max(4, Math.min(100, ((selected.q90 - selected.q50) / Math.max(1, selected.q95 - selected.q05)) * 100))}%` }} /><span className="uncertainty-marker p50" style={{ left: `${((selected.q50 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100}%` }}>P50 {Math.round(selected.q50)}</span><span className="uncertainty-marker p90" style={{ left: `${((selected.q90 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100}%` }}>P90 {Math.round(selected.q90)}</span></div><ul><li>当前 P50—P90 跨度约 <b>{Math.round(uncertaintyWidth)} 分</b>。</li><li>它包含国家线波动、历史样本不足、事件情景和未知事件厚尾。</li><li>当前考生分数被当作固定输入，个人估分不确定性尚未传播。</li></ul></div>
+          <div className="decision-prob-card"><div className="decision-score"><Calculator size={17} /><span>当前估分</span><strong>{score} 分</strong></div><div className={`decision-result ${selectedRisk.tone}`}><span>{selected.school}</span><strong>{probabilityLabel(selected, score, selectedProbability)}</strong><small>保守风险刻度 · {decisionThreshold}</small></div><div className="decision-rule"><span>原始 P90 = {Math.round(selected.rawQ90)} 分</span><span>安全 P90* = {Math.round(selected.q90)} 分</span><b>{selected.upperWidthStatus === "information_limited" ? "上界极宽，暂不据此给稳保结论" : score >= selected.q90 ? "已达到暂定 P90* 安全线" : `还差 ${Math.round(selected.q90 - score)} 分到暂定 P90*`}</b></div></div>
+          <div className="uncertainty-reading"><div className="uncertainty-head"><Scale size={17} /><strong>宽区间可能来自真实波动、信息不足或校准保守</strong></div><div className="uncertainty-track"><i style={{ left: `${Math.max(0, Math.min(100, ((selected.q50 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100))}%`, width: `${Math.max(4, Math.min(100, ((selected.q90 - selected.q50) / Math.max(1, selected.q95 - selected.q05)) * 100))}%` }} /><span className="uncertainty-marker p50" style={{ left: `${((selected.q50 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100}%` }}>P50 {Math.round(selected.q50)}</span><span className="uncertainty-marker p90" style={{ left: `${((selected.q90 - selected.q05) / Math.max(1, selected.q95 - selected.q05)) * 100}%` }}>P90* {Math.round(selected.q90)}</span></div><ul><li>原始上尾跨度 <b>{Math.round(selected.rawUpperWidth)} 分</b>，安全跨度 <b>{Math.round(uncertaintyWidth)} 分</b>。</li><li>不能仅凭宽度判因；必须同时比较覆盖、WIS、锐度和逐年偏差。</li><li>证据完备度是材料质量评分，不是预测成功概率。</li></ul></div>
         </div>
         <div className="decision-warning"><AlertTriangle size={15} /><span>“稳”按<b>稳健 P90* 安全上界</b>判定。当前严格嵌套验证只有两个外层年份，因此它不是已证明具有 90% 频率保证的录取概率，也不替代招生简章、单科线和复试规则。</span></div>
       </section>
@@ -688,19 +674,17 @@ function Metric({ label, value, note }: { label: string; value: string; note: st
 }
 
 function ScoreRail({ item, score }: { item: Prediction; score: number }) {
-  const min = Math.max(280, Math.floor((item.q05 - 20) / 10) * 10);
-  const max = Math.min(500, Math.ceil((item.q95 + 20) / 10) * 10);
+  const min = Math.max(280, Math.floor((Math.min(item.q05, score) - 20) / 10) * 10);
+  const max = Math.min(500, Math.ceil((Math.max(item.q95, score) + 20) / 10) * 10);
   const position = (value: number) => `${Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100))}%`;
   const points = [
     { key: "P50", value: item.q50, tone: "median" },
-    { key: "P80*", value: item.q80, tone: "watch" },
     { key: "P90*", value: item.q90, tone: "steady" },
-    { key: "P95*", value: item.q95, tone: "safe" },
   ];
 
   return (
     <div className="score-rail-wrap">
-      <div className="score-rail" aria-label="预测分数分布">
+      <div className="score-rail" aria-label="预测范围：标注中心P50与安全P90*，其余上界见下方卡片">
         <div className="rail-band median" style={{ left: position(item.q20), width: `calc(${position(item.q80)} - ${position(item.q20)})` }} />
         <div className="rail-band safe" style={{ left: position(item.q80), width: `calc(${position(item.q95)} - ${position(item.q80)})` }} />
         {points.map((point) => (
@@ -709,7 +693,7 @@ function ScoreRail({ item, score }: { item: Prediction; score: number }) {
             <small>{point.key}</small>
           </div>
         ))}
-        <div className="score-marker" style={{ left: position(score) }}>
+        <div className="score-marker" data-edge={(score - min) / (max - min) > .86 ? "right" : (score - min) / (max - min) < .14 ? "left" : "center"} style={{ left: position(score) }}>
           <span>你的分数 {score}</span>
         </div>
       </div>
@@ -753,7 +737,7 @@ export default function Home() {
     if (pipelineStepId === "models") return `冻结点预测采用“${selected.selectedModel}”；V5 回溯层另外用同校上一期逐人分布估计形状。`;
     if (pipelineStepId === "backtest") return `冻结主流程滚动 MAE ${backtest.mae} 分；精确标签回溯实验在 54 个校年上由 ${v5.exactLabelBacktest.frozenBaselineMae} 降至 ${v5.exactLabelBacktest.exactEnhancedMae} 分。`;
     if (pipelineStepId === "scenarios") return `${selected.events.length ? `${selected.events.length}条官方事件进入三情景` : "未检索到官方事件，已加入未知事件厚尾"}；P90* 采用跨历史年份最不利标准化残差校准。`;
-    return `你的估分 ${score} 分，对 ${selected.school} 的当前把握约 ${Math.round(selectedProbability * 100)}%，标签为“${selectedRisk.label}”。`;
+    return `你的估分 ${score} 分，对 ${selected.school} 的保守风险刻度为“${probabilityLabel(selected, score, selectedProbability)}”，标签为“${selectedRisk.label}”；不是个人录取概率。`;
   })();
 
   return (
@@ -779,7 +763,7 @@ export default function Home() {
         </div>
         <div className="scope-note">
           <ShieldCheck size={18} />
-          <div><strong>“稳”按 ≥90% 定义</strong><span>低估学校所需分数的损失按高估的 3 倍计算</span></div>
+          <div><strong>“稳”：安全刻度 ≥90%</strong><span>不是录取概率；低估门槛按高估的 3 倍惩罚</span></div>
         </div>
       </section>
 
@@ -803,12 +787,12 @@ export default function Home() {
                 <div className="search-box"><Search size={15} /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索学校或城市" /></div>
                 <select value={tier} onChange={(event) => setTier(event.target.value)} aria-label="院校层次"><option value="all">全部层次</option><option value="985">985</option><option value="211">非985的211</option></select>
                 <select value={faction} onChange={(event) => setFaction(event.target.value)} aria-label="院校派系"><option value="all">全部派系</option>{factionOptions.map((item) => <option value={item} key={item}>{item}</option>)}</select>
-                <select value={sortBy} onChange={(event) => setSortBy(event.target.value)} aria-label="排序方式"><option value="q90">按稳妥线</option><option value="probability">按把握度</option><option value="confidence">按证据完备度</option></select>
+                <select value={sortBy} onChange={(event) => setSortBy(event.target.value)} aria-label="排序方式"><option value="q90">按稳妥线</option><option value="probability">按风险刻度</option><option value="confidence">按证据完备度</option></select>
               </div>
 
               <div className="table-wrap">
                 <table>
-                  <thead><tr><th>院校</th><th>中位预测</th><th>P90*稳妥线</th><th>当前把握</th><th>标签</th></tr></thead>
+                  <thead><tr><th>院校</th><th>中位预测</th><th>P90*稳妥线</th><th>风险刻度</th><th>标签</th></tr></thead>
                   <tbody>
                     {rows.map((item) => {
                       const risk = riskLabel(item.probability, item.upperWidthStatus === "information_limited");
@@ -817,7 +801,7 @@ export default function Home() {
                           <td><strong>{item.school}</strong><span className={`faction-badge ${factionTone(item.faction)}`}>{item.faction}</span>{item.upperWidthStatus === "information_limited" && <span className="width-warning-tag">上界极宽</span>}<span>{item.is985 ? "985" : "211"} · {item.zone}区 · 证据{item.confidence}</span></td>
                           <td className="mono">{Math.round(item.q50)}</td>
                           <td className="mono emphasis">{Math.round(item.q90)}</td>
-                          <td><div className="prob-cell"><span>{probabilityLabel(item, score, item.probability)}</span><Progress value={item.probability * 100} /></div></td>
+                          <td><div className="prob-cell"><span>{probabilityLabel(item, score, item.probability)}</span>{item.upperWidthStatus !== "information_limited" && <Progress value={item.probability * 100} />}</div></td>
                           <td><span className={`risk-pill ${risk.tone}`}>{risk.label}</span></td>
                         </tr>
                       );
@@ -831,7 +815,7 @@ export default function Home() {
             <aside className="detail-panel panel">
               <div className="detail-title">
                 <div><span className="eyebrow">SELECTED SCHOOL</span><h2>{selected.school}</h2><p>{selected.unit ?? "培养单位待核验"} · {selected.math ?? "数学科目待核验"}</p><span className={`faction-badge detail-faction ${factionTone(selected.faction)}`}>{selected.faction}</span></div>
-                <span className={`risk-orb ${selectedRisk.tone}`}><strong>{selectedRisk.label}</strong><small>{Math.round(selectedProbability * 100)}%</small></span>
+                <span className={`risk-orb ${selectedRisk.tone}`} data-information-limited={selected.upperWidthStatus === "information_limited"}><strong>{selectedRisk.label}</strong><small>{probabilityLabel(selected, score, selectedProbability)}</small></span>
               </div>
 
               <div className="confidence-banner">
@@ -848,12 +832,19 @@ export default function Home() {
                 <Metric label="P95* 安全上界" value={`${Math.round(selected.q95)}`} note="保守参考" />
               </div>
 
+              <div className="forecast-layer-comparison" aria-label="原始分布与安全上界对照">
+                <div><span>中心 P50</span><strong>{Math.round(selected.q50)} 分</strong></div>
+                <div><span>原始 P90</span><strong>{Math.round(selected.rawQ90)} 分</strong></div>
+                <div><span>安全 P90*</span><strong>{Math.round(selected.q90)} 分</strong></div>
+                <p>原始分布和安全调整是两层；更宽的安全上界不表示模型已学会全部学校特异尾部。</p>
+              </div>
+
               {selected.upperWidthStatus === "information_limited" && (
                 <div className="upper-width-warning">
                   <AlertTriangle size={17} />
                   <div>
-                    <strong>证据不足：稳健安全上界极宽</strong>
-                    <p>P90*-P50 为 {Math.round(selected.robustUpperWidth)} 分，超过本版预先声明的 Tukey 上围栏 {meta.upperWidthGuardrail.threshold.toFixed(1)} 分；原始 P90-P50 仅 {Math.round(selected.rawUpperWidth)} 分。宽度本身表示当前无法给出有信息量的保守比较，不等同于该校真实难度高于热门院校，也不会人为裁剪上界。</p>
+                    <strong>高不确定性：稳健安全上界极宽</strong>
+                    <p>P90*-P50 为 {Math.round(selected.robustUpperWidth)} 分，超过发布时冻结的横截面 Tukey 上围栏 {meta.upperWidthGuardrail.threshold.toFixed(1)} 分；原始跨度仅 {Math.round(selected.rawUpperWidth)} 分。此规则只提示异常宽度，不具覆盖保证，也不能独自判定原因。暂不精算风险或给稳保标签，不裁剪上界制造确定性。</p>
                   </div>
                 </div>
               )}
@@ -894,7 +885,7 @@ export default function Home() {
               <select value={faction} onChange={(event) => setFaction(event.target.value)} aria-label="地图院校派系"><option value="all">全部派系</option>{factionOptions.map((item) => <option value={item} key={item}>{item}</option>)}</select>
               <span className="row-count map-row-count">{rows.length} / {predictions.length} 所</span>
             </div>
-            <SchoolCoordinateMap items={rows} selectedSchool={selected.school} onSelect={setSelectedSchool} />
+            <SchoolCoordinateMap items={rows} selectedSchool={selected.school} onSelect={setSelectedSchool} score={score} />
           </section>
         </TabsContent>
 
@@ -949,7 +940,7 @@ export default function Home() {
         </TabsContent>
       </Tabs>
 
-      <footer><span>公开研究原型 v0.4.0 · V6 现代统计研究层 · 仅用于风险比较</span><span>2027 数值已冻结；77 个精确 Q10 校年用于回溯研究，不构成录取保证</span></footer>
+      <footer><span>公开研究原型 v0.4.1 · V6.1 研究解释微调 · 仅用于风险比较</span><span>2027 数值未改；77 个审计通过经验 Q10 校年用于回溯研究，不构成录取保证</span></footer>
     </main>
   );
 }

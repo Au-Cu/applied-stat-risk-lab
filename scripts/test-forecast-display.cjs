@@ -1,0 +1,28 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const ts = require('typescript');
+
+const root = path.resolve(__dirname, '..');
+const code = fs.readFileSync(path.join(root, 'lib/forecast-display.ts'), 'utf8');
+const compiled = ts.transpileModule(code, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+const context = { exports: {} };
+vm.runInNewContext(compiled, context);
+const { riskScaleLabel, riskLabel } = context.exports;
+const standard = { q05: 330, q95: 420, upperWidthStatus: 'decision_informative' };
+const limited = { ...standard, upperWidthStatus: 'information_limited' };
+assert.equal(riskScaleLabel(standard, 300, .05), '≤5%');
+assert.equal(riskScaleLabel(standard, 330, .05), '≤5%');
+assert.equal(riskScaleLabel(standard, 420, .95), '≥95%');
+assert.equal(riskScaleLabel(standard, 460, .95), '≥95%');
+assert.equal(riskScaleLabel(standard, 380, .824), '约82%');
+for (const score of [300, 375, 420, 460]) assert.equal(riskScaleLabel(limited, score, .95), '不宜精算');
+for (const p of [.05, .59, .6, .89, .9, .95]) assert.equal(riskLabel(p, true).label, '需复核');
+for (const [p, label] of [[.59, '冲'], [.6, '观察'], [.9, '稳'], [.95, '保']]) assert.equal(riskLabel(p).label, label);
+const forecast = JSON.parse(fs.readFileSync(path.join(root, 'app/data/forecast.json'), 'utf8'));
+const flagged = forecast.predictions.filter(x => x.upperWidthStatus === 'information_limited');
+assert.equal(flagged.length, 1);
+assert.equal(flagged[0].school, '合肥工业大学');
+assert.equal(riskScaleLabel(flagged[0], 460, .95), '不宜精算');
+console.log(JSON.stringify({ checks: 22, frozenFlaggedSchool: flagged[0].school, passed: true }));

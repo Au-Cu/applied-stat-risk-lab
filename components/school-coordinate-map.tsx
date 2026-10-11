@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { MapPin, RotateCcw, ZoomIn, ZoomOut } from "lucide-react";
+import { riskScaleLabel } from "@/lib/forecast-display";
 
 export type SchoolMapItem = {
   school: string;
@@ -29,7 +30,10 @@ export type SchoolMapItem = {
   liveRouteUrl: string | null;
   routeSource: string | null;
   q50: number;
+  q05: number;
   q90: number;
+  q95: number;
+  upperWidthStatus: "information_limited" | "decision_informative";
   confidence: string;
   probability: number;
 };
@@ -88,10 +92,12 @@ export function SchoolCoordinateMap({
   items,
   selectedSchool,
   onSelect,
+  score,
 }: {
   items: SchoolMapItem[];
   selectedSchool: string;
   onSelect: (school: string) => void;
+  score: number;
 }) {
   const [hoveredSchool, setHoveredSchool] = useState<string | null>(null);
   const [view, setView] = useState({ zoom: 1, x: 0, y: 0 });
@@ -228,7 +234,7 @@ export function SchoolCoordinateMap({
                     className="school-map-marker"
                     role="button"
                     tabIndex={0}
-                    aria-label={`${item.school}，${item.faction}，90%稳妥线${Math.round(item.q90)}分`}
+                    aria-label={`${item.school}，${item.faction}，P90*暂定安全线${Math.round(item.q90)}分`}
                     onPointerDown={(event) => event.stopPropagation()}
                     onMouseEnter={() => setHoveredSchool(item.school)}
                     onMouseLeave={() => setHoveredSchool(null)}
@@ -271,10 +277,11 @@ export function SchoolCoordinateMap({
               <div><dt>经纬度</dt><dd>{active.latitude?.toFixed(5)}, {active.longitude?.toFixed(5)}</dd></div>
               <div><dt>定位精度</dt><dd>{precisionLabel(active.locationPrecision)}</dd></div>
               <div><dt>预测中位数</dt><dd>{Math.round(active.q50)} 分</dd></div>
-              <div><dt>90% 稳妥线</dt><dd>{Math.round(active.q90)} 分</dd></div>
-              <div><dt>当前把握</dt><dd>{Math.round(active.probability * 100)}%</dd></div>
-              <div><dt>数据可信度</dt><dd>{active.confidence}</dd></div>
+              <div><dt>P90* 安全线</dt><dd>{Math.round(active.q90)} 分</dd></div>
+              <div><dt>风险刻度</dt><dd>{riskScaleLabel(active, score, active.probability)}</dd></div>
+              <div><dt>证据完备度</dt><dd>{active.confidence}</dd></div>
             </dl>
+            <p className="map-school-location">安全锚点刻度不是已校准的录取概率；材料完备度不等于预测可靠率。</p>
             <div className="map-source-note">
               <strong>坐标状态</strong>
               <p>{active.locationReviewStatus ?? "待人工复核"}</p>

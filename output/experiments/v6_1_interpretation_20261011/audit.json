@@ -1,0 +1,76 @@
+{
+  "version": "V6.1",
+  "scope": "Interpretation audit only; no refitting, no new candidate forecast",
+  "forecast_sha256": "6288633390668df840689d0dd1624edd82d3278daaf8de8364cd04dbd6c2196e",
+  "random_intercept_annual": [
+    {
+      "year": 2024,
+      "n": 10,
+      "covered": 9,
+      "coverage": 0.9,
+      "bias_actual_minus_prediction": -1.110678766294376,
+      "mae": 11.486556550314532,
+      "mean_upper_width": 19.88179969739782,
+      "wis": 6.875775307206998
+    },
+    {
+      "year": 2025,
+      "n": 27,
+      "covered": 27,
+      "coverage": 1.0,
+      "bias_actual_minus_prediction": -13.888715002308388,
+      "mae": 17.01291062811429,
+      "mean_upper_width": 23.07997832275493,
+      "wis": 9.831916235574615
+    },
+    {
+      "year": 2026,
+      "n": 17,
+      "covered": 14,
+      "coverage": 0.8235294117647058,
+      "bias_actual_minus_prediction": 6.070014795958611,
+      "mae": 14.029490514756707,
+      "mean_upper_width": 25.409937728657138,
+      "wis": 8.2905642695107
+    }
+  ],
+  "pooled_coverage": 0.9259259259259259,
+  "independent_calendar_origins": 3,
+  "raw_width_cv_ddof0": 0.04044820522137595,
+  "safety_width_cv_ddof0": 0.18096017632966016,
+  "upper_width_guardrail": {
+    "method": "tukey_upper_fence",
+    "q1": 31.5,
+    "q3": 36.6,
+    "iqr": 5.1,
+    "threshold": 44.25,
+    "flaggedSchools": [
+      "合肥工业大学"
+    ],
+    "interpretation": "超过阈值表示上界信息量不足，不等同于学校真实风险或难度更高；上界不作裁剪。",
+    "outcomeFree": true
+  },
+  "flagged_schools": [
+    "合肥工业大学"
+  ],
+  "example": {
+    "school": "华东师范大学",
+    "raw_q90": 386.0,
+    "safety_q90": 399.2,
+    "risk_scale": {
+      "375": 0.594214876033058,
+      "380": 0.656198347107438,
+      "385": 0.718181818181818,
+      "390": 0.7801652892561981,
+      "395": 0.8447368421052631,
+      "400": 0.9048780487804879,
+      "405": 0.9353658536585366
+    }
+  },
+  "limitations": [
+    "exact denotes empirical calculation within audited roster, not official-source infallibility",
+    "annual coverage proportions are not independent-binomial coverage guarantees",
+    "safety interpolation R(x) is not a verified CDF G(x)",
+    "frozen 2027 baseline exists; V6 candidates have retrospective outputs only"
+  ]
+}
