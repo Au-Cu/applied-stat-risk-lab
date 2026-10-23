@@ -1,0 +1,169 @@
+[
+  {
+    "id": "swufe_notice_list_30",
+    "school": "西南财经大学",
+    "year": 2023,
+    "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/30.htm"
+  },
+  {
+    "id": "swufe_notice_list_28",
+    "school": "西南财经大学",
+    "year": 2022,
+    "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/28.htm"
+  },
+  {
+    "id": "swufe_2023_actual",
+    "school": "西南财经大学",
+    "year": 2023,
+    "url": "https://yz.swufe.edu.cn/info/1101/11711.htm"
+  },
+  {
+    "id": "swufe_2025_catalog",
+    "school": "西南财经大学",
+    "year": 2025,
+    "url": "https://yzcx.swufe.edu.cn/chaxun/yzb/ss/2025/01_jz&ml25/2025ssml.html",
+    "parent_id": "notice_83e107d755"
+  },
+  {
+    "id": "swufe_2026_catalog",
+    "school": "西南财经大学",
+    "year": 2026,
+    "url": "https://yzcx.swufe.edu.cn/chaxun/yzb/ss/2026/01zszc&zyml/2026ssml.html",
+    "parent_id": "notice_eebe4b571f"
+  },
+  {
+    "id": "swufe_2024_catalog",
+    "school": "西南财经大学",
+    "year": 2024,
+    "url": "https://yz.swufe.edu.cn/chaxun/yzb/ss/2024/01jzml/2024ssml.html",
+    "parent_id": "notice_2158fdae92"
+  },
+  {
+    "id": "dhu_2025_actual",
+    "school": "东华大学",
+    "year": 2025,
+    "url": "https://yjszs.dhu.edu.cn/2024/1018/c7127a352204/page.htm"
+  },
+  {
+    "id": "dhu_2027_catalog_system",
+    "school": "东华大学",
+    "year": 2027,
+    "url": "https://yzbm.dhu.edu.cn/zsml/sszsml/index/2027",
+    "parent_id": "notice_953d653ca6"
+  },
+  {
+    "id": "sjtu_2026_publication",
+    "school": "上海交通大学",
+    "year": 2026,
+    "url": "https://gk.sjtu.edu.cn/Data/View/4745"
+  },
+  {
+    "id": "sjtu_2025_pdf",
+    "school": "上海交通大学",
+    "year": 2025,
+    "url": "https://yzb.sjtu.edu.cn/storage/gs/web/yzbcn/article/2024/10/cd6251314a81eb2a29f7645907d10b1b.pdf"
+  },
+  {
+    "id": "sjtu_2024_pdf",
+    "school": "上海交通大学",
+    "year": 2024,
+    "url": "https://yzb.sjtu.edu.cn/storage/gs/web/yzbcn/article/2024/04/b2c684bf518e211c838810fd6f3085c3.pdf"
+  },
+  {
+    "id": "ecust_2025_actual_pdf",
+    "school": "华东理工大学",
+    "year": 2025,
+    "url": "https://gschool.ecust.edu.cn/_upload/article/files/e8/a5/5bb8216941b887e2da4a23a0511f/4e027ebc-6e8a-4dbf-9bfe-113f974f8ba0.pdf",
+    "parent_id": "ecust_2025_actual"
+  },
+  {
+    "id": "ecust_2027_actual_pdf",
+    "school": "华东理工大学",
+    "year": 2027,
+    "url": "https://gschool.ecust.edu.cn/_upload/article/files/d2/9b/7a1729c148bdb255fb5dad98d15b/9fb8fbb4-8bb6-44e8-af3d-c28e3015ce10.pdf",
+    "parent_id": "ecust_2027_actual"
+  },
+  {
+    "id": "nju_notice_home",
+    "school": "南京大学",
+    "year": 2027,
+    "url": "https://yzb.nju.edu.cn/"
+  },
+  {
+    "id": "nju_2025_total_pdf",
+    "school": "南京大学",
+    "year": 2025,
+    "url": "https://yzb.nju.edu.cn/_upload/article/files/cc/c3/c279b0c7443f92ff53892fcc034b/939bbd67-ef50-4b59-a96a-e952c188cdf7.pdf"
+  },
+  {
+    "id": "sdu_2026_directory_notice",
+    "school": "山东大学",
+    "year": 2026,
+    "url": "https://www.yz.sdu.edu.cn/xqy.jsp?urltype=news.NewsContentUrl&wbnewsid=1245&wbtreeid=1004"
+  },
+  {
+    "id": "sdu_2026_directory_pdf",
+    "school": "山东大学",
+    "year": 2026,
+    "url": "https://www.yz.sdu.edu.cn/shandongdaxue2026nianshuoshiyanjiushengzhaoshengzhuanyemulu.pdf",
+    "parent_id": "sdu_2026_directory_notice"
+  },
+  {
+    "id": "lzu_2026_post_deadline",
+    "school": "兰州大学",
+    "year": 2026,
+    "url": "https://math.lzu.edu.cn/info/1062/5720.htm"
+  },
+  {
+    "id": "sysu_2026_post_deadline",
+    "school": "中山大学",
+    "year": 2026,
+    "url": "https://math.sysu.edu.cn/node/3863"
+  },
+  {
+    "id": "sysu_2026_zhuhai_post_deadline",
+    "school": "中山大学",
+    "year": 2026,
+    "url": "https://mathzh.sysu.edu.cn/zh-hans/node/2412"
+  },
+  {
+    "id": "notice_1ce84d274c",
+    "url": "https://yz.swufe.edu.cn/info/1101/11371.htm",
+    "school": "西南财经大学",
+    "year": 2022,
+    "parent_id": "swufe_notice_list_28",
+    "title": "关于公布我校2022级推免生(含直博生)接收情况的通知"
+  },
+  {
+    "id": "notice_936daf1190",
+    "url": "https://yz.swufe.edu.cn/info/1101/11311.htm",
+    "school": "西南财经大学",
+    "year": 2022,
+    "parent_id": "swufe_notice_list_28",
+    "title": "2022年硕士研究生招生章程和招生目录发布"
+  },
+  {
+    "id": "notice_b5746e1cb1",
+    "url": "https://www.yz.sdu.edu.cn/shandongdaxue2026nianshuoshiyanjiushengzhaoshengzhuanyemuludiaozhengtongkaozhaoshengjihua.pdf",
+    "school": "山东大学",
+    "year": 2026,
+    "parent_id": "sdu_2026_directory_notice",
+    "title": "山东大学2026年硕士研究生招生专业目录"
+  },
+  {
+    "id": "notice_66eae858dc",
+    "url": "https://www.yz.sdu.edu.cn/1487.htm",
+    "school": "山东大学",
+    "year": 2027,
+    "parent_id": "sdu_2026_directory_notice",
+    "title": "山东大学2027年硕士研究生招生专业目录"
+  },
+  {
+    "id": "notice_b631a46fd0",
+    "url": "https://www.yz.sdu.edu.cn/1019.htm",
+    "school": "山东大学",
+    "year": 2025,
+    "parent_id": "sdu_2026_directory_notice",
+    "title": "山东大学2025年硕士研究生招生专业目录"
+  }
+]

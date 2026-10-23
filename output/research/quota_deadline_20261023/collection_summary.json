@@ -1,0 +1,41 @@
+{
+  "as_of_date": "2026-10-23",
+  "information_boundary": "报名截止日22:00（北京时间），不是报名开始日",
+  "records": 42,
+  "schools_with_reviewed_records": 19,
+  "target_schools": 81,
+  "target_school_years": 486,
+  "covered_school_years": 36,
+  "deadline_timing": {
+    "截止前": 23,
+    "截止后": 11,
+    "时间待核": 8
+  },
+  "record_kinds": {
+    "推免后统考公告": 11,
+    "公告日期已核，数值正文待取": 1,
+    "总计划及实际接收推免": 4,
+    "仅实际接收推免": 6,
+    "复试阶段计划（截止后）": 8,
+    "拟接收推免计划，非实际": 1,
+    "招生目录预估计划": 3,
+    "仅总计划，实际推免待补": 1,
+    "净计划数可读，值版本日期待核": 4,
+    "复试前公开计划（截止后）": 3
+  },
+  "before_deadline_post_recommendation_records": 11,
+  "before_deadline_explicit_ordinary_records": 7,
+  "source_status": {
+    "ok": 127,
+    "fetch_failed": 6
+  },
+  "review_status": "首批研究台账，尚非81校逐年全覆盖；待用户人工终审",
+  "frozen_model_changed": false,
+  "limitations": [
+    "现存网页标注日期不等于取得了当时的网页存档。",
+    "已扣推免不必然等于已扣所有专项；专项口径单列。",
+    "只有日期而无时刻的截止当日公告不直接判为可用。",
+    "目录拟招推免数、实际接收数和直博人数分别处理。",
+    "总计划减已接推免可能含专项，或只是公告规定的统考下界，不冒充核定普通计划。"
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "calendar_2024_primary",
+    "school": "教育部",
+    "year": 2024,
+    "url": "https://www.moe.gov.cn/srcsite/A15/moe_778/s3113/202309/t20230915_1080603.html"
+  },
+  {
+    "id": "ecust_2026_actual_notice",
+    "school": "华东理工大学",
+    "year": 2026,
+    "url": "https://gschool.ecust.edu.cn/2025/1021/c12754a183664/page.htm"
+  },
+  {
+    "id": "sjtu_2024_publication_list",
+    "school": "上海交通大学",
+    "year": 2024,
+    "url": "https://gk.sjtu.edu.cn/Phone/List/yjszsjzzszylq?page=3"
+  },
+  {
+    "id": "sjtu_2025_publication_list",
+    "school": "上海交通大学",
+    "year": 2025,
+    "url": "https://gk.sjtu.edu.cn/phone/list/yjszsjzzszylq?page=2"
+  },
+  {
+    "id": "swufe_2023_publication_list",
+    "school": "西南财经大学",
+    "year": 2023,
+    "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/30.htm"
+  },
+  {
+    "id": "swufe_2024_publication_list",
+    "school": "西南财经大学",
+    "year": 2024,
+    "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/31.htm"
+  },
+  {
+    "id": "ecust_2026_actual_notice_attach1",
+    "url": "https://gschool.ecust.edu.cn/_upload/article/files/d5/b6/859b6a4f48e7aeb1492289d49291/8185672c-093e-4393-99b5-c7d52493e9f2.pdf",
+    "school": "华东理工大学",
+    "year": 2026,
+    "parent_id": "ecust_2026_actual_notice",
+    "title": "{'title':'华东理工大学2026年推免生招生人数.pdf'}"
+  },
+  {
+    "id": "notice_5e2a79c003",
+    "url": "https://yz.swufe.edu.cn/info/1101/11711.htm",
+    "school": "西南财经大学",
+    "year": 2023,
+    "parent_id": "swufe_2023_publication_list",
+    "title": "关于公布我校2023级推免生(含直博生)接收情况的通知"
+  },
+  {
+    "id": "notice_1ac3111983",
+    "url": "https://yz.swufe.edu.cn/info/1101/1851.htm",
+    "school": "西南财经大学",
+    "year": 2024,
+    "parent_id": "swufe_2024_publication_list",
+    "title": "关于公布我校2024级推免生(含直博生)接收情况的通知"
+  },
+  {
+    "id": "notice_2158fdae92",
+    "url": "https://yz.swufe.edu.cn/info/1101/1821.htm",
+    "school": "西南财经大学",
+    "year": 2024,
+    "parent_id": "swufe_2024_publication_list",
+    "title": "2024年硕士研究生招生章程和招生目录发布"
+  }
+]

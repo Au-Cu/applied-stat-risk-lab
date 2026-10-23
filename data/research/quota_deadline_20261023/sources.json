@@ -1,0 +1,158 @@
+[
+  {
+    "id": "calendar_2022",
+    "url": "https://hudong.moe.gov.cn/srcsite/A15/moe_778/s3261/202109/t20210903_558663.html",
+    "school": "教育部",
+    "year": 2022
+  },
+  {
+    "id": "calendar_2023",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202209/t20220906_658916.html",
+    "school": "教育部",
+    "year": 2023
+  },
+  {
+    "id": "calendar_2024",
+    "url": "https://fx.xwapp.moe.gov.cn/article/202310/652128503ad1d8118c6f19a6.html",
+    "school": "教育部转载研招网",
+    "year": 2024
+  },
+  {
+    "id": "calendar_2025",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202409/t20240920_1152140.html",
+    "school": "教育部",
+    "year": 2025
+  },
+  {
+    "id": "calendar_2026",
+    "url": "https://yz.chsi.com.cn/kyzx/other/202509/20250930/2293435905.html",
+    "school": "中国研究生招生信息网",
+    "year": 2026
+  },
+  {
+    "id": "calendar_2027",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202609/t20260924_1451846.html",
+    "school": "教育部",
+    "year": 2027
+  },
+  {
+    "id": "cufe_2022_list",
+    "url": "https://gs.cufe.edu.cn/zsgz/bktj/5.htm",
+    "school": "中央财经大学",
+    "year": 2022
+  },
+  {
+    "id": "cufe_2022",
+    "url": "https://gs.cufe.edu.cn/info/1032/3035.htm",
+    "school": "中央财经大学",
+    "year": 2022
+  },
+  {
+    "id": "cufe_2024",
+    "url": "https://gs.cufe.edu.cn/info/1032/3044.htm",
+    "school": "中央财经大学",
+    "year": 2024
+  },
+  {
+    "id": "cufe_2023",
+    "url": "https://gs.cufe.edu.cn/info/1032/3039.htm",
+    "school": "中央财经大学",
+    "year": 2023
+  },
+  {
+    "id": "cufe_2025",
+    "url": "https://gs.cufe.edu.cn/info/1032/3043.htm",
+    "school": "中央财经大学",
+    "year": 2025
+  },
+  {
+    "id": "cufe_2026",
+    "url": "https://gs.cufe.edu.cn/info/1032/6541.htm",
+    "school": "中央财经大学",
+    "year": 2026
+  },
+  {
+    "id": "cufe_2027",
+    "url": "https://gs.cufe.edu.cn/info/1132/7189.htm",
+    "school": "中央财经大学",
+    "year": 2027
+  },
+  {
+    "id": "sjtu_2026",
+    "url": "https://yzb.sjtu.edu.cn/post/3334",
+    "school": "上海交通大学",
+    "year": 2026
+  },
+  {
+    "id": "sjtu_2027",
+    "url": "https://yzb.sjtu.edu.cn/post/3808",
+    "school": "上海交通大学",
+    "year": 2027
+  },
+  {
+    "id": "ustc_2025_plan",
+    "url": "https://mba.ustc.edu.cn/2024/0927/c23779a655267/page.htm",
+    "school": "中国科学技术大学",
+    "year": 2025
+  },
+  {
+    "id": "swu_2025_post_deadline",
+    "url": "https://math.swu.edu.cn/info/1056/3871.htm",
+    "school": "西南大学",
+    "year": 2025
+  },
+  {
+    "id": "hust_2026_recommended_plan_only",
+    "url": "https://maths.hust.edu.cn/info/1316/12059.htm",
+    "school": "华中科技大学",
+    "year": 2026
+  },
+  {
+    "id": "cufe_2022_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=D70E640F053C0580F77205AEFB74FC8F",
+    "school": "中央财经大学",
+    "year": 2022,
+    "parent_id": "cufe_2022",
+    "title": "统考剩余计划数.pdf"
+  },
+  {
+    "id": "cufe_2024_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=2E80888DF391567C1F23CEB88B094F97",
+    "school": "中央财经大学",
+    "year": 2024,
+    "parent_id": "cufe_2024",
+    "title": "2024年全国硕士研究生招生考试剩余统考计划(不含专项计划).pdf"
+  },
+  {
+    "id": "cufe_2023_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=D623B455DF07D8ACA485F55A6DF258FC",
+    "school": "中央财经大学",
+    "year": 2023,
+    "parent_id": "cufe_2023",
+    "title": "2023年统考剩余计划.pdf"
+  },
+  {
+    "id": "cufe_2025_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=CF5B6CB7DE17A9CCCDB0A26E5719AB53",
+    "school": "中央财经大学",
+    "year": 2025,
+    "parent_id": "cufe_2025",
+    "title": "2025年全国硕士研究生招生考试剩余统考计划(不含专项计划).pdf"
+  },
+  {
+    "id": "cufe_2026_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=59BEBF7727EED109098055A45D2185EF",
+    "school": "中央财经大学",
+    "year": 2026,
+    "parent_id": "cufe_2026",
+    "title": "2026年全国硕士研究生招生考试剩余统考计划 (不含专项计划）.pdf"
+  },
+  {
+    "id": "cufe_2027_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=1E332EA0E147FF76F02ED3ED0B6EDE60",
+    "school": "中央财经大学",
+    "year": 2027,
+    "parent_id": "cufe_2027",
+    "title": "2027年全国硕士研究生招生考试剩余统考计划 (不含专项计划）.pdf"
+  }
+]

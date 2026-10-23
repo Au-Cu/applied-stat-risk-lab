@@ -1,0 +1,4 @@
+[
+ {"id":"dhu_catalog_js","school":"东华大学","year":2027,"url":"https://yzbm.dhu.edu.cn/resource/js/zsml.js?1.1.4"},
+ {"id":"dhu_2027_tree","school":"东华大学","year":2027,"url":"https://yzbm.dhu.edu.cn/zsml/getTreeData","method":"POST","body":{"nd":"2027","zslb":"1"},"parent_id":"dhu_2027_catalog_system"}
+]

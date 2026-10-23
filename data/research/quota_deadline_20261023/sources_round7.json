@@ -1,0 +1,8 @@
+[
+ {"id":"dhu_2027_unit_catalog","school":"东华大学","year":2027,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2027/011","parent_id":"notice_953d653ca6","discovery_basis":"Public site's getZsmlZyUrl function and department 011 in its public tree"},
+ {"id":"dhu_2026_unit_catalog","school":"东华大学","year":2026,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2026/011","parent_id":"notice_978f5caf82","discovery_basis":"Public site's documented year/department selector"},
+ {"id":"dhu_2025_unit_catalog","school":"东华大学","year":2025,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2025/011","discovery_basis":"Public site's documented year/department selector"},
+ {"id":"dhu_2024_unit_catalog","school":"东华大学","year":2024,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2024/011","discovery_basis":"Public site's documented year/department selector"},
+ {"id":"dhu_2023_unit_catalog","school":"东华大学","year":2023,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2023/011","discovery_basis":"Public site's documented year/department selector"},
+ {"id":"dhu_2022_unit_catalog","school":"东华大学","year":2022,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlZy/2022/011","discovery_basis":"Public site's documented year/department selector"}
+]

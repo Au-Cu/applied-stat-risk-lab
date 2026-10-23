@@ -1,0 +1,4 @@
+[
+ {"id":"dhu_2027_major_catalog","school":"东华大学","year":2027,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlYjfx/2027/011/025200?ksfs=21","parent_id":"dhu_2027_unit_catalog","discovery_basis":"Public getZsmlYjfxUrl and exact major/department/exam-mode values from the public tree"},
+ {"id":"dhu_2026_major_catalog","school":"东华大学","year":2026,"url":"https://yzbm.dhu.edu.cn/zsml/sszsml/zsmlYjfx/2026/011/025200?ksfs=21","parent_id":"dhu_2026_unit_catalog","discovery_basis":"Public getZsmlYjfxUrl and university year selector"}
+]

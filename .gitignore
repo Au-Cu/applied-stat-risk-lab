@@ -80,3 +80,7 @@ next-env.d.ts
 __pycache__/
 *.py[cod]
 *.tsbuildinfo
+
+# Quota research keeps original official HTML/PDF captures local. Publish only
+# aggregate observations, source URLs, capture dates, and integrity hashes.
+/output/research/quota_deadline_20261023/snapshots/
