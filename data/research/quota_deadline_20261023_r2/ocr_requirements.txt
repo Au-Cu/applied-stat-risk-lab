@@ -1,0 +1,4 @@
+# Optional, isolated reader environment only; not production model dependencies.
+rapidocr==3.10.0
+onnxruntime==1.31.0
+xlrd==2.0.2

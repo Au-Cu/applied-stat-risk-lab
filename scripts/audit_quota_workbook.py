@@ -37,7 +37,14 @@ def col_name(number):
 
 
 def main():
-    source = ROOT / "outputs/01a0fff7-637c-7f00-84ac-e158b4fb55ac/应用统计_历年推免后统考名额与报名截止时间_20261023.xlsx"
+    expanded='--expanded' in sys.argv
+    filename='应用统计_报名截止可见名额_扩充审计版_20261023_r2.xlsx' if expanded else '应用统计_历年推免后统考名额与报名截止时间_20261023.xlsx'
+    source = ROOT / 'outputs/01a0fff7-637c-7f00-84ac-e158b4fb55ac' / filename
+    batch='quota_deadline_20261023_r2' if expanded else 'quota_deadline_20261023'
+    expected = json.loads((ROOT / 'output/research' / batch / 'quota_deadline_dataset.json').read_text(encoding='utf-8'))
+    if expanded:
+        expected['records']=[r for r in expected['records'] if not r.get('review_status','').startswith('规则')]
+    last_row=7+len(expected['records'])
     archive = ZipFile(source)
     styles = ET.fromstring(archive.read("xl/styles.xml"))
     fonts = styles.find("s:fonts", NS)
@@ -46,7 +53,7 @@ def main():
     num_fmts = {int(node.attrib["numFmtId"]): node.attrib["formatCode"] for node in styles.findall("s:numFmts/s:numFmt", NS)}
     strings = ET.fromstring(archive.read("xl/sharedStrings.xml"))
     string_values = ["".join(node.itertext()) for node in strings]
-    sheets = {index: ET.fromstring(archive.read(f"xl/worksheets/sheet{index}.xml")) for index in range(1, 4)}
+    sheets = {index: ET.fromstring(archive.read(f"xl/worksheets/sheet{index}.xml")) for index in range(1, 6 if expanded else 4)}
     formula_errors = []
     for index, sheet in sheets.items():
         for cell in sheet.findall(".//s:c", NS):
@@ -58,11 +65,10 @@ def main():
     assert pane.attrib.get("xSplit") == "2" and pane.attrib.get("ySplit") == "7"
     assert sheets[1].find("s:tableParts", NS) is not None
     table = ET.fromstring(archive.read("xl/tables/table1.xml"))
-    assert table.attrib["ref"] == "A7:X49"
+    assert table.attrib["ref"] == f"A7:{'AG' if expanded else 'X'}{last_row}"
     assert table.find("s:autoFilter", NS) is not None
-    row_count = len([row for row in sheets[1].findall("s:sheetData/s:row", NS) if 8 <= int(row.attrib["r"]) <= 49])
-    assert row_count == 42
-    expected = json.loads((ROOT / "output/research/quota_deadline_20261023/quota_deadline_dataset.json").read_text(encoding="utf-8"))
+    row_count = len([row for row in sheets[1].findall("s:sheetData/s:row", NS) if 8 <= int(row.attrib["r"]) <= last_row])
+    assert row_count == len(expected['records'])
     cells = {cell.attrib["r"]: cell for cell in sheets[1].findall(".//s:c", NS)}
 
     def value(cell):
@@ -84,6 +90,10 @@ def main():
     views = [(1, "A1:J15", "quota-main"), (1, "K7:R17", "quota-dates"),
              (1, "J16:R22", "quota-scope"),
              (2, "A1:E7", "quota-calendar"), (3, "A1:F15", "quota-gaps")]
+    if expanded:
+        views=[(1,'A1:J15','quota-main'),(1,'A50:J57','quota-new'),(1,'K60:R69','quota-dates'),
+               (1,'Y50:AG57','quota-audit'),(2,'A1:E7','quota-calendar'),(3,'A1:I12','quota-gaps'),
+               (4,'A1:H10','quota-candidates'),(5,'A1:J7','quota-roster')]
     for sheet_index, address, filename in views:
         sheet = sheets[sheet_index]
         start_col, start_row, end_col, end_row = re.fullmatch(r"([A-Z]+)(\d+):([A-Z]+)(\d+)", address).groups()
@@ -135,13 +145,13 @@ def main():
                 if "待核" in text and column == 17:
                     css.append("background:#FFF2D5;color:#845B15")
                 content_class = "wrap" if wrap else "nowrap"
-                if sheet_index == 1 and row_number in (2,3,5) and column == 1:
+                if sheet_index == 1 and row_number in (2,3,5,6) and column == 1:
                     content_class = "overflow"
                 page.append(f'<td style="{";".join(css)}"><div class="{content_class}">{html.escape(text)}</div></td>')
             page.append('</tr>')
         page.append('</table>')
         (QA / f'{filename}.html').write_text(''.join(page), encoding='utf-8')
-    report = {"saved_workbook_records": row_count, "saved_cached_timing_values": "42/42 matched",
+    report = {"saved_workbook_records": row_count, "saved_cached_timing_values": f"{row_count}/{row_count} matched",
               "date_cells": "native ISO date cells", "filter_range": table.attrib["ref"],
               "frozen_pane": pane.attrib, "formula_errors": formula_errors,
               "preview_backend": "saved XLSX XML/styles to Chromium; native renderer access violation on this host",

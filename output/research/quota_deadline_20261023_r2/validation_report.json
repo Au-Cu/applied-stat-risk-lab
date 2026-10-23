@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "registered_records": 436,
+  "referenced_source_ids_hash_checked": 305,
+  "distinct_original_files_hash_checked": 305,
+  "complete_school_year_grid": 486,
+  "automatic_model_promotions": 0,
+  "reader_gates": {
+    "已读取到相关提及；不等于已识别名额列或完成复核": 1540,
+    "当前文本未检出目标；扫描、附件或专业状态仍可待查": 2458,
+    "访问失败或需登录，不视为无数据": 428,
+    "未取得可用文本；不以检索未命中判无专业": 11
+  },
+  "legacy_records_flagged_for_reaudit": 4,
+  "raw_candidate_or_roster_files_published": false,
+  "limitation": "格式/哈希/防泄漏检查通过不等于全部数值正确、全部名额齐备或人工终审已完成。"
+}

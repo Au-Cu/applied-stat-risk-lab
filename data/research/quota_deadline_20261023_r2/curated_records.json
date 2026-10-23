@@ -1,0 +1,729 @@
+[
+  {"school":"南京大学","year":2022,"unit":"数学系","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":20,"accepted_recommended":14,"effective_publish_date":"2021-10-22","publication_precision":"date","source_ids":["r2_year_0010","r2_year_0012"],"source_locator":"021数学系—025200应用统计行：全日制总计划20，拟录取推免14；对应页面标注2021-10-22，正文落款2021-10-21，采用较晚公开日期","special_scope":"推免专项未逐专业拆分","notes":"推免接收工作已结束的实际拟录取统计，不是拟招推免计划。算术差额6仍须复核专项，不冒充最终实际录取数。","review_status":"已核对原文，待用户终审"},
+  {"school":"南京大学","year":2023,"unit":"数学系","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":20,"accepted_recommended":16,"effective_publish_date":"2022-10-21","publication_precision":"date","source_ids":["r2_seed_0980","r2_year_0015"],"source_locator":"官方统计PDF：021数学系—025200应用统计—20、0、16列；首页署名2022年10月21日","special_scope":"推免专项未逐专业拆分","notes":"全日制总计划20；中间0为非全日制列，不能读成推免人数。实际拟录取推免16，算术差额4。","review_status":"已核对原文，待用户终审"},
+  {"school":"南京大学","year":2024,"unit":"数学系","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":25,"accepted_recommended":18,"effective_publish_date":"2023-10-23","publication_precision":"date","source_ids":["r2_seed_0971","r2_seed_0002","notice_1503965f6f"],"source_locator":"官方统计PDF：021数学系—025200应用统计—25、0、18列；首页署名2023年10月23日","special_scope":"推免专项未逐专业拆分","notes":"全日制总计划25，拟录取推免18，算术差额7。不把非全日制列或专业总数混入。","review_status":"已核对原文，待用户终审"},
+  {"school":"南京大学","year":2025,"unit":"数学学院","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":25,"accepted_recommended":11,"effective_publish_date":"2024-10-23","publication_precision":"date","source_ids":["r2_seed_0974_attach1","r2_seed_0974","r2_seed_0001"],"source_locator":"官方统计PDF：021数学学院—025200应用统计—25、11列；招生目录核对全日制；页面和PDF首页日期均为2024-10-23","special_scope":"推免专项未逐专业拆分","notes":"推免接收工作已结束后公布的拟录取人数11，不是目录中的预留推免名额。算术差额14。","review_status":"已核对原文，待用户终审"},
+  {"school":"南京大学","year":2026,"unit":"数学学院","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":25,"accepted_recommended":17,"effective_publish_date":"2025-10-22","publication_precision":"date","source_ids":["r2_seed_0970_attach1","r2_seed_0970"],"source_locator":"扫描PDF第3页：021数学学院—025200应用统计—全日制25、拟录取推免17；已本地OCR并对照原图核实","special_scope":"表头推免含强基转段，未逐专业拆专项","notes":"该行已从原扫描表恢复，不能因文本层为空而丢弃。算术差额8；不能把它直接称作已核定普通统考计划。","review_status":"已OCR及原图核对，待用户终审"},
+  {"school":"南京大学","year":2027,"unit":"数学学院","unit_code":"021","record_kind":"总计划及实际接收推免","total_plan_same_scope":25,"accepted_recommended":14,"effective_publish_date":"2026-10-20","publication_precision":"date","source_ids":["notice_d16961a3b6_attach1","notice_d16961a3b6"],"source_locator":"扫描PDF第4页：021数学学院—025200应用统计—全日制25、拟录取推免14；已本地OCR并对照原图核实；公告及首页2026-10-20","special_scope":"表头推免含强基转段，未逐专业拆专项","notes":"采用10月20日更正定稿版本，原文称截至目前已拟录取人数。当前快照早于10月24日报名截止，不声称最后一天不会再调整。算术差额11，专项仍待核。","review_status":"已OCR及原图核对，待用户终审"}
+,
+{
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数字与推免拟录取列已核对；本表未单独注明学习形式，须与该年度目录核定后用于全日制目标。",
+    "school": "东南大学",
+    "year": 2022,
+    "unit": "数学学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 9,
+    "effective_publish_date": "2021-10-21",
+    "source_ids": [
+      "r2_year_0076"
+    ],
+    "source_locator": "官方拟录取硕士推免院系专业统计：007数学学院—025200应用统计—9人"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数字与推免拟录取列已核对；本表未单独注明学习形式，须与该年度目录核定后用于全日制目标。",
+    "school": "东南大学",
+    "year": 2023,
+    "unit": "数学学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 3,
+    "effective_publish_date": "2022-10-21",
+    "source_ids": [
+      "r2_year_0079"
+    ],
+    "source_locator": "官方拟录取硕士推免院系专业统计：007数学学院—025200应用统计—3人"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数字与推免拟录取列已核对；本表未单独注明学习形式，须与该年度目录核定后用于全日制目标。",
+    "school": "东南大学",
+    "year": 2024,
+    "unit": "数学学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 3,
+    "effective_publish_date": "2023-10-23",
+    "source_ids": [
+      "r2_year_0077"
+    ],
+    "source_locator": "官方拟录取硕士推免院系专业统计：007数学学院—025200应用统计—3人"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数字与推免拟录取列已核对；本表未单独注明学习形式，须与该年度目录核定后用于全日制目标。",
+    "school": "东南大学",
+    "year": 2025,
+    "unit": "数学学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 1,
+    "effective_publish_date": "2024-10-21",
+    "source_ids": [
+      "r2_focus_0009"
+    ],
+    "source_locator": "官方拟录取硕士推免院系专业统计：007数学学院—025200应用统计—1人"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2022,
+    "unit": "经济学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 45,
+    "accepted_recommended": 8,
+    "reported_exam_quota": 37,
+    "effective_publish_date": "2021-10-18",
+    "source_ids": [
+      "r2_seed_0414"
+    ],
+    "source_locator": "官方推免情况及统考指标表：经济学院—025200应用统计—总计划45、推免录取8、统考计划37、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2022,
+    "unit": "信息科学技术学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 17,
+    "accepted_recommended": 3,
+    "reported_exam_quota": 14,
+    "effective_publish_date": "2021-10-18",
+    "source_ids": [
+      "r2_seed_0414"
+    ],
+    "source_locator": "官方推免情况及统考指标表：信息科学技术学院—025200应用统计—总计划17、推免录取3、统考计划14、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2023,
+    "unit": "经济学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 45,
+    "accepted_recommended": 6,
+    "reported_exam_quota": 39,
+    "effective_publish_date": "2022-10-20",
+    "source_ids": [
+      "r2_seed_0413"
+    ],
+    "source_locator": "官方推免情况及统考指标表：经济学院—025200应用统计—总计划45、推免录取6、统考计划39、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2023,
+    "unit": "信息科学技术学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 17,
+    "accepted_recommended": 8,
+    "reported_exam_quota": 9,
+    "effective_publish_date": "2022-10-20",
+    "source_ids": [
+      "r2_seed_0413"
+    ],
+    "source_locator": "官方推免情况及统考指标表：信息科学技术学院—025200应用统计—总计划17、推免录取8、统考计划9、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "当前挂载附件为2024-02-26版本，不能沿用2023-10-20公告日期回填报名前信息。",
+    "school": "暨南大学",
+    "year": 2024,
+    "unit": "经济学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 45,
+    "accepted_recommended": 7,
+    "reported_exam_quota": 38,
+    "effective_publish_date": "2024-02-26",
+    "source_ids": [
+      "r2_focus_0013_attach1",
+      "r2_focus_0013"
+    ],
+    "source_locator": "官方推免情况及统考指标表：经济学院—025200应用统计—总计划45、推免录取7、统考计划38、全日制",
+    "nominal_notice_publish_date": "2023-10-20",
+    "publication_date_basis": "附件名称明确20240226上网，采用较晚版本日期"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "当前挂载附件为2024-02-26版本，不能沿用2023-10-20公告日期回填报名前信息。",
+    "school": "暨南大学",
+    "year": 2024,
+    "unit": "信息科学技术学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 17,
+    "accepted_recommended": 4,
+    "reported_exam_quota": 13,
+    "effective_publish_date": "2024-02-26",
+    "source_ids": [
+      "r2_focus_0013_attach1",
+      "r2_focus_0013"
+    ],
+    "source_locator": "官方推免情况及统考指标表：信息科学技术学院—025200应用统计—总计划17、推免录取4、统考计划13、全日制",
+    "nominal_notice_publish_date": "2023-10-20",
+    "publication_date_basis": "附件名称明确20240226上网，采用较晚版本日期"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "公告日期与附件1021版不是同一时点；数值已核定，但附件完整发布日期仍留空，不能仅凭父公告日期认定报名前可见。",
+    "school": "暨南大学",
+    "year": 2025,
+    "unit": "经济学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 45,
+    "accepted_recommended": 9,
+    "reported_exam_quota": 36,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0012_attach1",
+      "r2_focus_0012"
+    ],
+    "source_locator": "官方推免情况及统考指标表：经济学院—025200应用统计—总计划45、推免录取9、统考计划36、全日制",
+    "nominal_notice_publish_date": "2024-10-12",
+    "publication_date_basis": "公告2024-10-12，附件注明1021版，完整版本日期未确认"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "公告日期与附件1021版不是同一时点；数值已核定，但附件完整发布日期仍留空，不能仅凭父公告日期认定报名前可见。",
+    "school": "暨南大学",
+    "year": 2025,
+    "unit": "信息科学技术学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 18,
+    "accepted_recommended": 10,
+    "reported_exam_quota": 8,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0012_attach1",
+      "r2_focus_0012"
+    ],
+    "source_locator": "官方推免情况及统考指标表：信息科学技术学院—025200应用统计—总计划18、推免录取10、统考计划8、全日制",
+    "nominal_notice_publish_date": "2024-10-12",
+    "publication_date_basis": "公告2024-10-12，附件注明1021版，完整版本日期未确认"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2026,
+    "unit": "经济学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 46,
+    "accepted_recommended": 18,
+    "reported_exam_quota": 28,
+    "effective_publish_date": "2025-10-16",
+    "source_ids": [
+      "r2_focus_0014_attach1",
+      "r2_focus_0014"
+    ],
+    "source_locator": "官方推免情况及统考指标表：经济学院—025200应用统计—总计划46、推免录取18、统考计划28、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "保留各培养单位，不跨学院合并；不是事后实际统考录取人数。",
+    "school": "暨南大学",
+    "year": 2026,
+    "unit": "信息科学技术学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "total_plan_same_scope": 19,
+    "accepted_recommended": 12,
+    "reported_exam_quota": 7,
+    "effective_publish_date": "2025-10-16",
+    "source_ids": [
+      "r2_focus_0014_attach1",
+      "r2_focus_0014"
+    ],
+    "source_locator": "官方推免情况及统考指标表：信息科学技术学院—025200应用统计—总计划19、推免录取12、统考计划7、全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2022,
+    "unit": "数学科学学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 11,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0092"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：数学科学学院—025200应用统计—11；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2022,
+    "unit": "上海数学中心",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 10,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0092"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：上海数学中心—025200应用统计—10；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2022,
+    "unit": "大数据学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 44,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0092"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：大数据学院—025200应用统计—44；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2023,
+    "unit": "数学科学学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 14,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0099"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：数学科学学院—025200应用统计—14；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2023,
+    "unit": "上海数学中心",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 11,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0099"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：上海数学中心—025200应用统计—11；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2023,
+    "unit": "大数据学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 53,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_seed_0099"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：大数据学院—025200应用统计—53；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2024,
+    "unit": "数学科学学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 33,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0016"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：数学科学学院—025200应用统计—33；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2024,
+    "unit": "上海数学中心",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 15,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0016"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：上海数学中心—025200应用统计—15；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "数值与全日制推免后定义已核对；公开日期尚未核定，不得据此回填报名截止信息集。",
+    "school": "复旦大学",
+    "year": 2024,
+    "unit": "大数据学院",
+    "study_mode": "全日制",
+    "record_kind": "推免后统考公告",
+    "reported_exam_quota": 65,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0016"
+    ],
+    "source_locator": "官方分专业考试招生计划PDF：大数据学院—025200应用统计—65；首页明确扣除拟录取推免且不含非全日制"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "已核对按培养单位分列的实际接收推免统计；原表未标注学习形式且公告发布日期待核，暂不认作全日制可用净名额。",
+    "school": "西安交通大学",
+    "year": 2022,
+    "unit": "数学与统计学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 36,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_year_0161_attach1",
+      "r2_year_0161"
+    ],
+    "source_locator": "官方接收推免硕士研究生人数统计PDF：数学与统计学院—025200应用统计—录取人数36"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "已核对按培养单位分列的实际接收推免统计；原表未标注学习形式且公告发布日期待核，暂不认作全日制可用净名额。",
+    "school": "西安交通大学",
+    "year": 2022,
+    "unit": "经济与金融学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 20,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_year_0161_attach1",
+      "r2_year_0161"
+    ],
+    "source_locator": "官方接收推免硕士研究生人数统计PDF：经济与金融学院—025200应用统计—录取人数20"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "已核对按培养单位分列的实际接收推免统计；原表未标注学习形式且公告发布日期待核，暂不认作全日制可用净名额。",
+    "school": "西安交通大学",
+    "year": 2023,
+    "unit": "数学与统计学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 35,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0011_attach1",
+      "r2_focus_0011"
+    ],
+    "source_locator": "官方接收推免硕士研究生人数统计PDF：数学与统计学院—025200应用统计—录取人数35"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "已核对按培养单位分列的实际接收推免统计；原表未标注学习形式且公告发布日期待核，暂不认作全日制可用净名额。",
+    "school": "西安交通大学",
+    "year": 2023,
+    "unit": "经济与金融学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计",
+    "accepted_recommended": 24,
+    "effective_publish_date": null,
+    "source_ids": [
+      "r2_focus_0011_attach1",
+      "r2_focus_0011"
+    ],
+    "source_locator": "官方接收推免硕士研究生人数统计PDF：经济与金融学院—025200应用统计—录取人数24"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "使用可公开访问的转载原文；采用转载页面日期，不冒充官方原发时间。学习形式与专项仍须由对应年目录交叉核对。",
+    "school": "东华大学",
+    "year": 2022,
+    "unit": "理学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计（转载待官网交叉核对）",
+    "accepted_recommended": 21,
+    "effective_publish_date": "2021-10-20",
+    "source_ids": [
+      "r2_focus_0005"
+    ],
+    "source_grade": "B-reprint",
+    "source_locator": "中国考研网转引：011理学院—025200应用统计—已接收硕士推免21人"
+  },
+  {
+    "publication_precision": "date",
+    "special_scope": "未逐专业排除专项；不得自动视为普通净名额",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "notes": "使用可公开访问的转载原文；采用转载页面日期，不冒充官方原发时间。学习形式与专项仍须由对应年目录交叉核对。",
+    "school": "东华大学",
+    "year": 2024,
+    "unit": "理学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计（转载待官网交叉核对）",
+    "accepted_recommended": 8,
+    "effective_publish_date": "2023-11-08",
+    "source_ids": [
+      "r2_focus_0004"
+    ],
+    "source_grade": "B-reprint",
+    "source_locator": "中国考研网转引：011理学院—025200应用统计—已接收硕士推免8人"
+  }
+,
+{
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "中国科学技术大学",
+    "year": 2022,
+    "unit": "管理学院",
+    "study_mode": "全日制",
+    "record_kind": "目录公招计划（实际推免结算待核）",
+    "reported_exam_quota": 5,
+    "planned_recommended": 15,
+    "special_scope": "原目录另列退役专项报考标记，统考列专项计入方式待核",
+    "source_ids": [
+      "r2_year_0005"
+    ],
+    "source_locator": "204管理学院—025200应用统计—全日制—拟接收统考5、拟接收推免15",
+    "notes": "两列均为拟接收计划，不把拟接收推免视为实际拟录取推免；尚未取得可核定公开日期，不直接入模。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "中国科学技术大学",
+    "year": 2023,
+    "unit": "管理学院",
+    "study_mode": "全日制",
+    "record_kind": "目录公招计划（实际推免结算待核）",
+    "reported_exam_quota": 8,
+    "planned_recommended": 12,
+    "special_scope": "原目录另列退役专项报考标记，统考列专项计入方式待核",
+    "source_ids": [
+      "r2_code_0016"
+    ],
+    "source_locator": "204管理学院—025200应用统计—全日制—拟接收统考8、拟接收推免12",
+    "notes": "两列均为拟接收计划，不把拟接收推免视为实际拟录取推免；尚未取得可核定公开日期，不直接入模。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "中国科学技术大学",
+    "year": 2024,
+    "unit": "管理学院",
+    "study_mode": "全日制",
+    "record_kind": "目录公招计划（实际推免结算待核）",
+    "reported_exam_quota": 8,
+    "planned_recommended": 12,
+    "special_scope": "原目录另列退役专项报考标记，统考列专项计入方式待核",
+    "source_ids": [
+      "r2_aux_0006"
+    ],
+    "source_locator": "204管理学院—025200应用统计—全日制—拟接收统考8、拟接收推免12",
+    "notes": "两列均为拟接收计划，不把拟接收推免视为实际拟录取推免；尚未取得可核定公开日期，不直接入模。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "中国科学技术大学",
+    "year": 2025,
+    "unit": "管理学院",
+    "study_mode": "全日制",
+    "record_kind": "目录公招计划（实际推免结算待核）",
+    "reported_exam_quota": 10,
+    "planned_recommended": 20,
+    "special_scope": "原目录另列退役专项报考标记，统考列专项计入方式待核",
+    "source_ids": [
+      "r2_code_0012"
+    ],
+    "source_locator": "204管理学院—025200应用统计—全日制—拟接收统考10、拟接收推免20",
+    "notes": "两列均为拟接收计划，不把拟接收推免视为实际拟录取推免；尚未取得可核定公开日期，不直接入模。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "中国科学技术大学",
+    "year": 2026,
+    "unit": "管理学院",
+    "study_mode": "全日制",
+    "record_kind": "目录公招计划（实际推免结算待核）",
+    "reported_exam_quota": 10,
+    "planned_recommended": 20,
+    "special_scope": "原目录另列退役专项报考标记，统考列专项计入方式待核",
+    "source_ids": [
+      "r2_seed_0038"
+    ],
+    "source_locator": "204管理学院—025200应用统计—全日制—拟接收统考10、拟接收推免20",
+    "notes": "两列均为拟接收计划，不把拟接收推免视为实际拟录取推免；尚未取得可核定公开日期，不直接入模。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "重庆大学",
+    "year": 2026,
+    "unit": "数学与统计学院",
+    "study_mode": "全日制",
+    "record_kind": "目录普通公招计划（实际推免结算待核）",
+    "total_plan_same_scope": 76,
+    "reported_exam_quota": 38,
+    "planned_recommended": 38,
+    "ordinary_scope_verified": true,
+    "special_scope": "原文明确普通计划；推免列为目录计划，不是实际接收数",
+    "source_ids": [
+      "r2_seed_0186"
+    ],
+    "source_locator": "全日制025200：普通计划76；其中公招38、推免38",
+    "notes": "保存普通公招的原文计划值，不以其反推推免实际接收人数。2027当次快照早于截止，可见性与推免结算状态分别记录。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "重庆大学",
+    "year": 2027,
+    "unit": "数学与统计学院",
+    "study_mode": "全日制",
+    "record_kind": "目录普通公招计划（实际推免结算待核）",
+    "total_plan_same_scope": 57,
+    "reported_exam_quota": 27,
+    "planned_recommended": 30,
+    "ordinary_scope_verified": true,
+    "special_scope": "原文明确普通计划；推免列为目录计划，不是实际接收数",
+    "source_ids": [
+      "r2_seed_0185"
+    ],
+    "source_locator": "全日制025200：普通计划57；其中公招27、推免30",
+    "notes": "保存普通公招的原文计划值，不以其反推推免实际接收人数。2027当次快照早于截止，可见性与推免结算状态分别记录。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "西南财经大学",
+    "year": 2024,
+    "unit": "统计学院",
+    "study_mode": "全日制",
+    "record_kind": "非推免普通招生计划（公开日期待核）",
+    "reported_exam_quota": 56,
+    "ordinary_scope_verified": true,
+    "special_scope": "普通计划56；少民骨干4、退役学兵4另列，不计入56",
+    "source_ids": [
+      "r2_year_0315"
+    ],
+    "source_locator": "官方单页表已对照原图：025200应用统计—全日制—普通计划56；专项列4和4",
+    "notes": "数字、全日制及普通/专项列已原图核对；不能从HTTP Last-Modified推断公开时间，也不能当作报名前已知。"
+  },
+  {
+    "publication_precision": "minute",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": "2023-06-27T14:25",
+    "school": "东华大学",
+    "year": 2023,
+    "unit": "理学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免统计（转载待官网交叉核对）",
+    "accepted_recommended": 11,
+    "source_grade": "B-reprint",
+    "special_scope": "转载表列硕士拟录取，学习形式与专项仍待原官网核定",
+    "source_ids": [
+      "r2_focus_0006"
+    ],
+    "source_locator": "233网校转引东华大学2023年各专业已接收推免生人数汇总：011理学院—025200应用统计—硕士11人",
+    "notes": "正文称推免工作已结束；2023-06-27为当前转载时间，晚于2023入学年报名截止，不冒充原官网初发时间。"
+  },
+  {
+    "publication_precision": "date",
+    "review_status": "已核对原文数字及列头，待用户终审",
+    "effective_publish_date": null,
+    "school": "四川大学",
+    "year": 2027,
+    "unit": "经济学院",
+    "study_mode": "待核",
+    "record_kind": "实际接收推免动态统计",
+    "accepted_recommended": 7,
+    "ordinary_scope_verified": true,
+    "source_ids": [
+      "r2_aux_0005",
+      "r2_aux_0004"
+    ],
+    "source_locator": "官方动态原图已OCR并核对：025200应用统计—已接收硕士7；页面注明统计截至2026-10-23 23:00",
+    "observation_as_of": "2026-10-23T23:00:00+08:00",
+    "special_scope": "原图注明普通类型，不含士兵、少民及其他不占计划专项；含强基的注释保留",
+    "notes": "统计截至时间不是发布日期。以本次截止前原图抓取证明可见，不填造原发时间。原表未逐专业写明学习形式，仍待当年目录配对。"
+  }
+]

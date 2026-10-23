@@ -170,12 +170,16 @@ powershell -ExecutionPolicy Bypass -File scripts\repair_audit_workbook_excel.ps1
 - [数据来源、审计链与逐名成绩最小化协议](docs/provenance_protocol.md)
 - [精度优化路线图](docs/accuracy_roadmap.md)
 - [报名时可见名额数据契约](docs/quota_data_contract.md)
+- [报名截止可见名额：2026-10-23扩充采集与分层审计R2](docs/quota_deadline_collection_20261023_r2.md)
+- [名额证据R2字段字典](docs/quota_deadline_dictionary_r2.md)
 - [V5 论文 PDF](output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V5_逐人分布与来源审计增强.pdf)
 - [逐字段公共数据来源目录 PDF](output/pdf/应用统计硕士择校研究_逐字段公共数据来源目录_V5.pdf)
 
 ## 发布规则
 
 采用“先封存、再修改”：开始任何新一轮变更前，当前 `main` 必须已有对应 GitHub Release；完成并验证后发布新版本，作为下一轮修改的基线。V5 已封存为 `v0.3.0`；本次 V6 新增为 `v0.4.0`，原 `v0.2.0`、`v0.3.0` 的标签、Release 与附件均不覆盖。
+
+名额采集R2单独发布为研究数据版本，不替换正式预测v0.4.1。81校×2022—2027年的486个校年全部列出缺口；87条主台账（含明确待纠错项）和349条机读候选分层存放。严格普通净额仍只有7个校年满足本轮证据规则，不能称数据已经收齐；研究记录统一禁止自动入模。
 
 ## 边界
 

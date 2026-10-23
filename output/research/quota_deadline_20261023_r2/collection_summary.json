@@ -1,0 +1,25 @@
+{
+  "as_of_date": "2026-10-23",
+  "version": "r2-research",
+  "target_schools": 81,
+  "target_school_years": 486,
+  "records": 436,
+  "schools_with_any_registered_value": 53,
+  "school_years_with_any_registered_value": 159,
+  "checked_records": 87,
+  "checked_schools": 26,
+  "checked_school_years": 66,
+  "school_years_with_strict_before_deadline_ordinary_net": 7,
+  "school_years_missing_strict_ordinary_net": 479,
+  "rule_extracted_pending_review": 349,
+  "source_status": {
+    "ok": 4136,
+    "fetch_failed": 431,
+    "access_restricted": 3
+  },
+  "unique_successful_source_urls": 4034,
+  "unique_successful_source_sha256": 3930,
+  "user_final_review_completed_records": 0,
+  "frozen_model_changed": false,
+  "note": "检索、原文提及、规则读取及核定净名额是不同层级；不宣称486校年齐全。"
+}

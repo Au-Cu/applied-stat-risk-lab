@@ -1,0 +1,355 @@
+[
+  {
+    "school": "西南财经大学",
+    "queries": [
+      "site:swufe.edu.cn \"2022级\" \"推免生\" \"接收情况\"",
+      "site:swufe.edu.cn \"2025级\" \"推免生\" \"接收情况\"",
+      "site:swufe.edu.cn \"2026级\" \"推免生\" \"接收情况\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "关于公布我校2025级推免生(含直博生)接收情况的通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/info/1101/12211.htm"
+      },
+      {
+        "title": "关于公布我校2026级推免生(含直博生)接收情况的通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/info/1101/12741.htm"
+      },
+      {
+        "title": "研究生招生网",
+        "url": "https://yz.swufe.edu.cn/"
+      },
+      {
+        "title": "新闻通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/xwtz.htm"
+      },
+      {
+        "title": "硕士研究生招生通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/28.htm"
+      },
+      {
+        "title": "硕士研究生招生通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz.htm"
+      },
+      {
+        "title": "西南财经大学2026级推免生（含直博生）接收工作通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/info/1101/12661.htm"
+      },
+      {
+        "title": "硕士研究生招生通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/34.htm"
+      },
+      {
+        "title": "硕士研究生招生通知-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/xwtz/ssyjszstz/33.htm"
+      },
+      {
+        "title": "西南财经大学2026级推免生预录取名单公示-研究生招生网",
+        "url": "https://yz.swufe.edu.cn/info/1101/12721.htm"
+      },
+      {
+        "title": "西南财经大学金融学院2026级接收推荐免试攻读研究生工作细则-西南财经大学金融学院",
+        "url": "https://jinrong.swufe.edu.cn/info/1097/29687.htm"
+      },
+      {
+        "title": "西南财经大学计算机与人工智能学院2026级推免生接收工作细则-西南财经大学计算机与人工智能学院",
+        "url": "https://it.swufe.edu.cn/info/1166/19598.htm"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "西南交通大学",
+    "queries": [
+      "site:swjtu.edu.cn \"2023级\" \"推免生\" \"接收情况\"",
+      "site:swjtu.edu.cn \"2024级\" \"推免生\" \"接收情况\"",
+      "site:swjtu.edu.cn \"2025级\" \"推免生\" \"接收情况\"",
+      "site:swjtu.edu.cn \"2026级\" \"推免生\" \"接收情况\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "本科生教育-电气工程学院",
+        "url": "https://dqxy.swjtu.edu.cn/tzgg/bksjy.htm"
+      },
+      {
+        "title": "教学动态-西南交通大学人文学院",
+        "url": "https://rwxy.swjtu.edu.cn/jxdt/46.htm"
+      },
+      {
+        "title": "通知公告-土木工程学院",
+        "url": "https://civil.swjtu.edu.cn/tzgg.htm"
+      },
+      {
+        "title": "西南交通大学2024年硕士研究生招生章程-西南交通大学研究生院（党委研究生工作部）",
+        "url": "https://gsnews.swjtu.edu.cn/info/2127/28444.htm"
+      },
+      {
+        "title": "〖2027届免研通知7〗电气工程学院关于公布2027届推荐免试研究生指标分配情况的通知-电气工程学院",
+        "url": "https://dqxy.swjtu.edu.cn/info/2956/234879.htm"
+      },
+      {
+        "title": "通知公告-土木工程学院",
+        "url": "https://civil.swjtu.edu.cn/tzgg/185.htm"
+      },
+      {
+        "title": "通知公告-土木工程学院",
+        "url": "https://civil.swjtu.edu.cn/tzgg/319.htm"
+      },
+      {
+        "title": "教学动态-西南交通大学人文学院",
+        "url": "https://rwxy.swjtu.edu.cn/jxdt.htm"
+      },
+      {
+        "title": "研究生教学-西南交通大学人文学院",
+        "url": "https://rwxy.swjtu.edu.cn/jxdt/yjsjx.htm"
+      },
+      {
+        "title": "通知公告-土木工程学院",
+        "url": "https://civil.swjtu.edu.cn/tzgg/244.htm"
+      },
+      {
+        "title": "西南交通大学2023年硕士研究生招生章程-西南交通大学研究生院（党委研究生工作部）",
+        "url": "https://gsnews.swjtu.edu.cn/info/2127/28654.htm"
+      },
+      {
+        "title": "电气工程学院",
+        "url": "https://dqxy.swjtu.edu.cn/"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "东华大学",
+    "queries": [
+      "\"东华大学2022年\" \"已接收推免生人数\"",
+      "\"东华大学2023年\" \"已接收推免生人数\"",
+      "\"东华大学2024年\" \"已接收推免生人数\"",
+      "\"东华大学2025年\" \"已接收推免生人数\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "东华大学2025年各专业已接收推免生人数汇总",
+        "url": "https://yjszs.dhu.edu.cn/2024/1018/c7127a352204/page.htm"
+      },
+      {
+        "title": "东华大学研究生招生网",
+        "url": "https://yjszs.dhu.edu.cn/"
+      },
+      {
+        "title": "东华大学2024年各专业已接收推免生人数汇总 - 中国考研网",
+        "url": "https://www.chinakaoyan.com/info/article/id/522317.shtml"
+      },
+      {
+        "title": "东华大学2022年各专业已接收推免生人数汇总 - 中国考研网",
+        "url": "https://www.chinakaoyan.com/info/article/id/416333.shtml"
+      },
+      {
+        "title": "东华大学2023年各专业已接收推免生拟录取人数：689人-考研-233网校",
+        "url": "https://www.233.com/kaoyan/kytm/202306/27092804122474.html"
+      },
+      {
+        "title": "东华大学研究生招生网",
+        "url": "https://yjszs.dhu.edu.cn/zsjz/ss/index.psp"
+      },
+      {
+        "title": "2023年东华大学各专业接收推免生人数一览表-新东方网",
+        "url": "https://kaoyan.xdf.cn/202210/12375376.html"
+      },
+      {
+        "title": "东华大学研究生招生网",
+        "url": "https://yjszs.dhu.edu.cn/zsjz/ss/sszyml/index.psp"
+      },
+      {
+        "title": "c7c7.cppwa38.cc⌋689_报考-学员关注-233网校搜索",
+        "url": "https://s.233.com/c7c7.cppwa38.cc%E2%8C%8B689_news_1/"
+      },
+      {
+        "title": "东华大学研究生招生网",
+        "url": "https://yjszs.dhu.edu.cn/?scene=126"
+      },
+      {
+        "title": "东华大学研究生招生网",
+        "url": "https://yjszs.dhu.edu.cn/?clicktime=1583784860&scene=126"
+      },
+      {
+        "title": "东华大学2024年硕士研究生招生专业目录（全日制）",
+        "url": "https://xxgk.dhu.edu.cn/2023/1008/c1737a330646/page.htm"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "华东理工大学",
+    "queries": [
+      "site:ecust.edu.cn \"2025年推免生招生人数\" \"应用统计\"",
+      "site:ecust.edu.cn \"2026年推免生招生人数\" \"应用统计\"",
+      "site:ecust.edu.cn \"2027年推免生招生人数\" \"应用统计\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "华东理工大学2026年推免生招生人数 根据教育部的日程安排，我校接收推荐免试研究生工作已经结束。为了",
+        "url": "https://gschool.ecust.edu.cn/_upload/article/files/d5/b6/859b6a4f48e7aeb1492289d49291/8185672c-093e-4393-99b5-c7d52493e9f2.pdf"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "东南大学",
+    "queries": [
+      "site:seu.edu.cn \"2025年\" \"推免\" \"院系专业统计\"",
+      "site:seu.edu.cn \"2026年\" \"推免\" \"院系专业统计\"",
+      "site:seu.edu.cn \"2027年\" \"推免\" \"院系专业统计\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "东南大学2025年拟录取硕士推免研究生院系专业统计",
+        "url": "https://yzb.seu.edu.cn/2024/1021/c6676a507390/page.htm"
+      },
+      {
+        "title": "东南大学2025年拟录取硕士推免研究生院系专业统计",
+        "url": "https://xxgk.seu.edu.cn/2024/1021/c10807a507390/page.htm"
+      },
+      {
+        "title": "最新公开信息",
+        "url": "https://xxgk.seu.edu.cn/10807/list24.psp"
+      },
+      {
+        "title": "硕士招生",
+        "url": "https://yzb.seu.edu.cn/6676/list6.htm"
+      },
+      {
+        "title": "硕士招生",
+        "url": "https://yzb.seu.edu.cn/6676/list5.htm"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "西安交通大学",
+    "queries": [
+      "site:xjtu.edu.cn \"2023年\" \"接收推免\" \"人数统计\"",
+      "site:xjtu.edu.cn \"2024年\" \"接收推免\" \"人数统计\"",
+      "site:xjtu.edu.cn \"2025年\" \"接收推免\" \"人数统计\"",
+      "site:xjtu.edu.cn \"2026年\" \"接收推免\" \"人数统计\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "我校2023年接收推免硕士研究生人数统计-西安交通大学研究生招生信息网",
+        "url": "https://yz.xjtu.edu.cn/info/1090/3841.htm"
+      },
+      {
+        "title": "招生统计-西安交通大学研究生招生信息网",
+        "url": "https://yz.xjtu.edu.cn/index/zstj.htm"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "暨南大学",
+    "queries": [
+      "site:jnu.edu.cn \"2024年\" \"接收推免生情况\" \"统考\"",
+      "site:jnu.edu.cn \"2025年\" \"接收推免生情况\" \"统考\"",
+      "site:jnu.edu.cn \"2026年\" \"接收推免生情况\" \"统考\"",
+      "site:jnu.edu.cn \"2027年\" \"接收推免生情况\" \"统考\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "暨南大学关于核对2027年硕士研究生招生考试网报信息的提醒",
+        "url": "https://yz.jnu.edu.cn/2026/1022/c33059a865311/page.htm"
+      },
+      {
+        "title": "2027年暨南大学硕士研究生招生章程",
+        "url": "https://yz.jnu.edu.cn/2026/1008/c33121a864133/page.htm"
+      },
+      {
+        "title": "通知公告",
+        "url": "https://yz.jnu.edu.cn/tzgg/"
+      },
+      {
+        "title": "研招网",
+        "url": "https://yz.jnu.edu.cn/"
+      },
+      {
+        "title": "通知公告",
+        "url": "https://yz.jnu.edu.cn/tzgg/main.htm"
+      },
+      {
+        "title": "2025年暨南大学接收推免生情况及统考指标一览表",
+        "url": "https://yz.jnu.edu.cn/2024/1011/c33059a822708/page.htm"
+      },
+      {
+        "title": "2024年暨南大学接收推免生情况及统考指标一览表",
+        "url": "https://yz.jnu.edu.cn/2023/1020/c33059a769363/page.htm"
+      },
+      {
+        "title": "2026年暨南大学接收推免生情况及统考指标一览表",
+        "url": "https://yz.jnu.edu.cn/2025/1016/c33059a844371/page.htm"
+      },
+      {
+        "title": "暨南大学关于做好2024年推免生复试录取工作的通知",
+        "url": "https://yz.jnu.edu.cn/2023/0905/c33059a762641/page.htm"
+      },
+      {
+        "title": "暨南大学关于做好2026年推免生复试录取工作的通知",
+        "url": "https://yz.jnu.edu.cn/2025/0911/c33059a842371/page.htm"
+      },
+      {
+        "title": "暨南大学马克思主义学院接收2024年推免生报名的通知",
+        "url": "https://mkszyxy.jnu.edu.cn/2023/0919/c16104a766533/page.htm"
+      },
+      {
+        "title": "通知公告",
+        "url": "https://yz.jnu.edu.cn/tzgg/list2.htm"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  },
+  {
+    "school": "复旦大学",
+    "queries": [
+      "site:fudan.edu.cn \"2022年\" \"扣除\" \"推免\" \"招生计划\"",
+      "site:fudan.edu.cn \"2023年\" \"扣除\" \"推免\" \"招生计划\"",
+      "site:fudan.edu.cn \"2024年\" \"扣除\" \"推免\" \"招生计划\"",
+      "site:fudan.edu.cn \"2025年\" \"扣除\" \"推免\" \"招生计划\""
+    ],
+    "phase": "focused_actual_stats",
+    "entries": [
+      {
+        "title": "1. 我校推免招生工作已基本结束，现公布各院系、专业扣除拟录取推免生后的考试招生",
+        "url": "https://gsao.fudan.edu.cn/_upload/article/files/50/6e/cddd3f8c43449e8f5f5d6bb1e3b3/8cde01b6-a5fe-4dc0-9c03-5922766c204f.pdf"
+      },
+      {
+        "title": "复旦大学2024年全日制硕士生考试招生分专业计划",
+        "url": "https://gsao.fudan.edu.cn/_upload/article/files/41/8d/1445cb4143e1a08d44f44e17593f/7e7902a7-f00c-4101-a0bf-e458ad22834c.pdf"
+      },
+      {
+        "title": "复旦大学2022年全日制硕士生考试招生分专业计划",
+        "url": "https://gsao.fudan.edu.cn/_upload/article/files/0a/35/6df4c2674d42b3db41d752ddff67/5b1b889c-7c54-40ec-9d8b-a5434bc49536.pdf"
+      },
+      {
+        "title": "复旦大学上海医学院2024年全日制硕士生考试招生分专业计划",
+        "url": "https://gs-shmc.fudan.edu.cn/_upload/article/files/05/95/96feac2741c5ad475fe59f79b229/6a79f683-f9d5-4559-8127-027790a2d062.pdf"
+      },
+      {
+        "title": "复旦大学上海医学院2023年全日制硕士生考试招生分专业计划",
+        "url": "https://gs-shmc.fudan.edu.cn/_upload/article/files/9e/4f/754f457f457488ba40155af2a610/d3addad1-bb11-47ae-a9da-c13b4a67f833.pdf"
+      },
+      {
+        "title": "现代物理研究所",
+        "url": "https://imp.fudan.edu.cn/"
+      },
+      {
+        "title": "现代物理研究所",
+        "url": "https://imp.fudan.edu.cn/?t=1655364536415&t=1662198710615"
+      }
+    ],
+    "unverified_external_results_excluded": 0
+  }
+]

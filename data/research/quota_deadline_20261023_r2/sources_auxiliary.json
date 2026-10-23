@@ -1,0 +1,55 @@
+[
+  {
+    "id": "r2_aux_0001",
+    "school": "四川大学",
+    "year": 2027,
+    "url": "https://yz.scu.edu.cn/tms/tmsyxsjk?yxs=201",
+    "title": "2027年数学学院推免接收人数动态汇总（当次页面年度仍需核对）"
+  },
+  {
+    "id": "r2_aux_0002",
+    "school": "东华大学",
+    "year": 2023,
+    "url": "http://file.xdf.cn/uploads/220916/1817_220916153500c72PLZgXEjfm6d0V.png",
+    "title": "2023年东华大学推免人数转引图片，内容口径尚待OCR核查",
+    "source_grade": "B-reprint",
+    "parent_id": "r2_focus_0007"
+  },
+  {
+    "id": "r2_aux_0003",
+    "school": "四川大学",
+    "year": 2027,
+    "url": "https://yz.scu.edu.cn/Content/userfiles/tmgsjk/img_tmjk_201_2027_2026-10-23-222026-10-23-22-45-47.jpg",
+    "title": "2027年数学学院实际接收推免动态统计原图，页面注明截至2026-10-23 23:00",
+    "parent_id": "r2_aux_0001"
+  },
+  {
+    "id": "r2_aux_0004",
+    "school": "四川大学",
+    "year": 2027,
+    "url": "https://yz.scu.edu.cn/tms/tmsyxsjk?yxs=101",
+    "title": "2027年经济学院实际接收推免动态统计（当次页面年度仍需核对）"
+  },
+  {
+    "id": "r2_aux_0005",
+    "school": "四川大学",
+    "year": 2027,
+    "url": "https://yz.scu.edu.cn/Content/userfiles/tmgsjk/img_tmjk_101_2027_2026-10-23-232026-10-23-23-08-13.jpg",
+    "title": "2027年经济学院实际接收推免动态统计原图，页面注明截至2026-10-23 23:00",
+    "parent_id": "r2_aux_0004"
+  },
+  {
+    "id": "r2_aux_0006",
+    "school": "中国科学技术大学",
+    "year": 2024,
+    "url": "https://yz1.ustc.edu.cn/sszs_2024/cksm4.html",
+    "title": "2024年管理学院硕士招生目录，须核对实际返回年度"
+  },
+  {
+    "id": "r2_aux_0007",
+    "school": "中国科学技术大学",
+    "year": 2027,
+    "url": "https://yz1.ustc.edu.cn/sszs_2027/cksm4.html",
+    "title": "2027年管理学院硕士招生目录，须核对实际返回年度"
+  }
+]
