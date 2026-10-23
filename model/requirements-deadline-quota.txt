@@ -1,0 +1,7 @@
+# Research-only environment used for the 2026-10-24 run; Python 3.13.5.
+# Does not replace the broader production/extraction requirements.txt.
+numpy==2.5.3
+pandas==2.2.3
+scipy==1.18.1
+scikit-learn==1.6.1
+matplotlib==3.10.0

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checks": 138,
+  "prediction_rows": 2938,
+  "candidate_fits": 36,
+  "errors": [],
+  "git_checkout_newline_only_differences": []
+}

@@ -1,0 +1,2594 @@
+[
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0026752347527818714,
+    "wis_difference": 0.005104484223736817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.00627891437277563,
+      0.016814188025502746
+    ],
+    "wis_ci90": [
+      -0.002815107400907667,
+      0.018981011880076535
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.1932289423381235,
+    "wis_difference": 0.19222529525638077,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0026752347527818714,
+    "wis_difference": 0.005104484223736817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.010803921527105652,
+      0.011942154695204543
+    ],
+    "wis_ci90": [
+      -0.0016446985758149007,
+      0.009744547398428623
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.1932289423381235,
+    "wis_difference": 0.19222529525638077,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.09734810534422422,
+      0.4838059900204712
+    ],
+    "wis_ci90": [
+      0.002881093148650038,
+      0.3815694973641115
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0026752347527818714,
+    "wis_difference": 0.005104484223736817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.00627891437277563,
+      0.016814188025502746
+    ],
+    "wis_ci90": [
+      -0.002815107400907667,
+      0.018981011880076535
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.1932289423381235,
+    "wis_difference": 0.19222529525638077,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0026752347527818714,
+    "wis_difference": 0.005104484223736817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.010803921527105652,
+      0.011942154695204543
+    ],
+    "wis_ci90": [
+      -0.0016446985758149007,
+      0.009744547398428623
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.1932289423381235,
+    "wis_difference": 0.19222529525638077,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.09734810534422422,
+      0.4838059900204712
+    ],
+    "wis_ci90": [
+      0.002881093148650038,
+      0.3815694973641115
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.0038378647904756045,
+    "wis_difference": -0.002495774908468658,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005391523365055233,
+      -0.00241285319929776
+    ],
+    "wis_ci90": [
+      -0.003521139137704199,
+      -0.001509691244904669
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09407855734747272,
+    "wis_difference": 0.028600258567226255,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.0038378647904756045,
+    "wis_difference": -0.002495774908468658,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005632656511173003,
+      -0.002221560644212201
+    ],
+    "wis_ci90": [
+      -0.004388118890142534,
+      -0.0007916198310496425
+    ]
+  },
+  {
+    "kind": "strict_ordinary__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09407855734747272,
+    "wis_difference": 0.028600258567226255,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.000987103884927752,
+    "wis_difference": 0.0040664682167806075,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0064082656211875665,
+      0.012017018321211406
+    ],
+    "wis_ci90": [
+      -0.002850697665540069,
+      0.016032994967322106
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.15030261491409647,
+    "wis_difference": 0.16523970778439745,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.000987103884927752,
+    "wis_difference": 0.0040664682167806075,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.013534338581684645,
+      0.010970595580723774
+    ],
+    "wis_ci90": [
+      -0.002012503892860219,
+      0.008245761542158676
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.15030261491409647,
+    "wis_difference": 0.16523970778439745,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.1517113933018095,
+      0.4523166231300024
+    ],
+    "wis_ci90": [
+      -0.00318706533293156,
+      0.33366648090172646
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.000987103884927752,
+    "wis_difference": 0.0040664682167806075,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0064082656211875665,
+      0.012017018321211406
+    ],
+    "wis_ci90": [
+      -0.002850697665540069,
+      0.016032994967322106
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.15030261491409647,
+    "wis_difference": 0.16523970778439745,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.000987103884927752,
+    "wis_difference": 0.0040664682167806075,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.013534338581684645,
+      0.010970595580723774
+    ],
+    "wis_ci90": [
+      -0.002012503892860219,
+      0.008245761542158676
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.15030261491409647,
+    "wis_difference": 0.16523970778439745,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.1517113933018095,
+      0.4523166231300024
+    ],
+    "wis_ci90": [
+      -0.00318706533293156,
+      0.33366648090172646
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.003869485211867236,
+    "wis_difference": -0.002466827029728839,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005440297834310248,
+      -0.0024281851399201027
+    ],
+    "wis_ci90": [
+      -0.003511705423809617,
+      -0.0014563686798642211
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09407855734747272,
+    "wis_difference": 0.030769847786515925,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.003869485211867236,
+    "wis_difference": -0.002466827029728839,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005627523972631175,
+      -0.0022862790350466726
+    ],
+    "wis_ci90": [
+      -0.0043356524733957225,
+      -0.0007838516301835244
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09407855734747272,
+    "wis_difference": 0.030769847786515925,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0023498216665721566,
+    "wis_difference": 0.0046107552643077565,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.006208526186860626,
+      0.015667707745866434
+    ],
+    "wis_ci90": [
+      -0.0027999972459936376,
+      0.01752238250755528
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.1822284401045522,
+    "wis_difference": 0.1784193281287907,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0023498216665721566,
+    "wis_difference": 0.0046107552643077565,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.014857676833159417,
+      0.014179976885137613
+    ],
+    "wis_ci90": [
+      -0.0020152870730538426,
+      0.009166159371243855
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.1822284401045522,
+    "wis_difference": 0.1784193281287907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.1864945883734208,
+      0.5509514685825252
+    ],
+    "wis_ci90": [
+      -0.005638274434884849,
+      0.3624769306924662
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0023498216665721566,
+    "wis_difference": 0.0046107552643077565,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.006208526186860626,
+      0.015667707745866434
+    ],
+    "wis_ci90": [
+      -0.0027999972459936376,
+      0.01752238250755528
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.1822284401045522,
+    "wis_difference": 0.1784193281287907,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0023498216665721566,
+    "wis_difference": 0.0046107552643077565,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.014857676833159417,
+      0.014179976885137613
+    ],
+    "wis_ci90": [
+      -0.0020152870730538426,
+      0.009166159371243855
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.1822284401045522,
+    "wis_difference": 0.1784193281287907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.1864945883734208,
+      0.5509514685825252
+    ],
+    "wis_ci90": [
+      -0.005638274434884849,
+      0.3624769306924662
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.0037721361102476983,
+    "wis_difference": -0.0024623949928208265,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005319045570734706,
+      -0.002351893132310992
+    ],
+    "wis_ci90": [
+      -0.003515615683904616,
+      -0.001439783098065269
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09009675026356945,
+    "wis_difference": 0.030980874330150954,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.0037721361102476983,
+    "wis_difference": -0.0024623949928208265,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005513835980414142,
+      -0.0022036439619762594
+    ],
+    "wis_ci90": [
+      -0.0043087179381404335,
+      -0.000799684274107589
+    ]
+  },
+  {
+    "kind": "strict_ordinary__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09009675026356945,
+    "wis_difference": 0.030980874330150954,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0006764506072600954,
+    "wis_difference": 0.0035727962817905206,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.006345688814371213,
+      0.010972287559710142
+    ],
+    "wis_ci90": [
+      -0.0028480411198631957,
+      0.014586210313771874
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.13963451179375852,
+    "wis_difference": 0.15141643615983158,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0006764506072600954,
+    "wis_difference": 0.0035727962817905206,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.01754868394341713,
+      0.013206230610850689
+    ],
+    "wis_ci90": [
+      -0.0023775915213145996,
+      0.0076636878964252905
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.13963451179375852,
+    "wis_difference": 0.15141643615983158,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.24012209441849564,
+      0.5193911180060127
+    ],
+    "wis_ci90": [
+      -0.011629687036537995,
+      0.31446255935620115
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0006764506072600954,
+    "wis_difference": 0.0035727962817905206,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.006345688814371213,
+      0.010972287559710142
+    ],
+    "wis_ci90": [
+      -0.0028480411198631957,
+      0.014586210313771874
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.13963451179375852,
+    "wis_difference": 0.15141643615983158,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0006764506072600954,
+    "wis_difference": 0.0035727962817905206,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.01754868394341713,
+      0.013206230610850689
+    ],
+    "wis_ci90": [
+      -0.0023775915213145996,
+      0.0076636878964252905
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.13963451179375852,
+    "wis_difference": 0.15141643615983158,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.24012209441849564,
+      0.5193911180060127
+    ],
+    "wis_ci90": [
+      -0.011629687036537995,
+      0.31446255935620115
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.0038030933866406128,
+    "wis_difference": -0.002433499669102665,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005369372263431111,
+      -0.0023612919267271136
+    ],
+    "wis_ci90": [
+      -0.0035035470404265736,
+      -0.0013878002432910882
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09009675026356945,
+    "wis_difference": 0.03314932701408946,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.0038030933866406128,
+    "wis_difference": -0.002433499669102665,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005508841790749013,
+      -0.0022669774205098434
+    ],
+    "wis_ci90": [
+      -0.004256482783095555,
+      -0.0007918076935179081
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09009675026356945,
+    "wis_difference": 0.03314932701408946,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0021659000696737855,
+    "wis_difference": 0.00471888336912598,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0062987251173195515,
+      0.01530973542489646
+    ],
+    "wis_ci90": [
+      -0.002821906441545765,
+      0.01786573229201413
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.17961280014898762,
+    "wis_difference": 0.18196672955320725,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0021659000696737855,
+    "wis_difference": 0.00471888336912598,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.012518426718249936,
+      0.012261374736371344
+    ],
+    "wis_ci90": [
+      -0.0018316718756154935,
+      0.009222390099885742
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.17961280014898762,
+    "wis_difference": 0.18196672955320725,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.13356943207270433,
+      0.49279503237067956
+    ],
+    "wis_ci90": [
+      -0.0007987536130311668,
+      0.36473221271944567
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.0021659000696737855,
+    "wis_difference": 0.00471888336912598,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0062987251173195515,
+      0.01530973542489646
+    ],
+    "wis_ci90": [
+      -0.002821906441545765,
+      0.01786573229201413
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": 0.17961280014898762,
+    "wis_difference": 0.18196672955320725,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.0021659000696737855,
+    "wis_difference": 0.00471888336912598,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.012518426718249936,
+      0.012261374736371344
+    ],
+    "wis_ci90": [
+      -0.0018316718756154935,
+      0.009222390099885742
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": 0.17961280014898762,
+    "wis_difference": 0.18196672955320725,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.13356943207270433,
+      0.49279503237067956
+    ],
+    "wis_ci90": [
+      -0.0007987536130311668,
+      0.36473221271944567
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.003829571457660365,
+    "wis_difference": -0.002480315196386801,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005383450861177955,
+      -0.0024043261417799546
+    ],
+    "wis_ci90": [
+      -0.0035172086552873404,
+      -0.0014774448165168236
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09307741878876641,
+    "wis_difference": 0.029741397184460894,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.003829571457660365,
+    "wis_difference": -0.002480315196386801,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005601495309085512,
+      -0.002233861027923907
+    ],
+    "wis_ci90": [
+      -0.004355233423945278,
+      -0.0007918529251601065
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.09307741878876641,
+    "wis_difference": 0.029741397184460894,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": -0.004811977707632835,
+    "wis_difference": -0.0008851795123999901,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.007416697829173993,
+      -0.00221007895226827
+    ],
+    "wis_ci90": [
+      -0.00295471059326903,
+      0.0017226221934070315
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": -0.008440341134871687,
+    "wis_difference": 0.032348192794795505,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": -0.004811977707632835,
+    "wis_difference": -0.0008851795123999901,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.03625428953330744,
+      0.016804611672518455
+    ],
+    "wis_ci90": [
+      -0.0044016044529880645,
+      0.0015323626342543112
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": -0.008440341134871687,
+    "wis_difference": 0.032348192794795505,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.6372717396600933,
+      0.6203910573903499
+    ],
+    "wis_ci90": [
+      -0.0520854358616889,
+      0.11678182145127991
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": -0.004811977707632835,
+    "wis_difference": -0.0008851795123999901,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.007416697829173993,
+      -0.00221007895226827
+    ],
+    "wis_ci90": [
+      -0.00295471059326903,
+      0.0017226221934070315
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 2,
+    "mae_difference": -0.008440341134871687,
+    "wis_difference": 0.032348192794795505,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": -0.004811977707632835,
+    "wis_difference": -0.0008851795123999901,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.03625428953330744,
+      0.016804611672518455
+    ],
+    "wis_ci90": [
+      -0.0044016044529880645,
+      0.0015323626342543112
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 2,
+    "mae_difference": -0.008440341134871687,
+    "wis_difference": 0.032348192794795505,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.6372717396600933,
+      0.6203910573903499
+    ],
+    "wis_ci90": [
+      -0.0520854358616889,
+      0.11678182145127991
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": -0.0036924559805010344,
+    "wis_difference": -0.0022515369158693566,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005320663429902649,
+      -0.0021927371619255083
+    ],
+    "wis_ci90": [
+      -0.003460534120619847,
+      -0.0010493370365730038
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.07850370202390877,
+    "wis_difference": 0.04656072511355003,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": -0.0036924559805010344,
+    "wis_difference": -0.0022515369158693566,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005149410553447362,
+      -0.002380391917571469
+    ],
+    "wis_ci90": [
+      -0.003874231741417987,
+      -0.000790215056397386
+    ]
+  },
+  {
+    "kind": "strict_ordinary__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 1,
+    "n": 1,
+    "mae_difference": -0.07850370202390877,
+    "wis_difference": 0.04656072511355003,
+    "limitation": "Fewer than two clusters; no informative cluster-bootstrap interval.",
+    "mae_ci90": null,
+    "wis_ci90": null
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.026807209551849256,
+    "wis_difference": 0.00018034740615408614,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.01940500559669695,
+      0.1039455755086921
+    ],
+    "wis_ci90": [
+      -0.05057731938855964,
+      0.04472702324000722
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 0.31958472123536313,
+    "wis_difference": 0.030175829557856693,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.05855758808145121,
+      0.6977270305521776
+    ],
+    "wis_ci90": [
+      -0.29333739286566546,
+      0.35368905198137884
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.026807209551849256,
+    "wis_difference": 0.00018034740615408614,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.10668673953951471,
+      0.11858429955216199
+    ],
+    "wis_ci90": [
+      -0.062478804545388254,
+      0.043258514372839445
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 0.31958472123536313,
+    "wis_difference": 0.030175829557856693,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.938436032245329,
+      1.2181709737215718
+    ],
+    "wis_ci90": [
+      -0.5845719533349563,
+      0.4692813887670088
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.026807209551849256,
+    "wis_difference": 0.00018034740615408614,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.01940500559669695,
+      0.1039455755086921
+    ],
+    "wis_ci90": [
+      -0.05057731938855964,
+      0.04472702324000722
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 0.31958472123536313,
+    "wis_difference": 0.030175829557856693,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.05855758808145121,
+      0.6977270305521776
+    ],
+    "wis_ci90": [
+      -0.29333739286566546,
+      0.35368905198137884
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.026807209551849256,
+    "wis_difference": 0.00018034740615408614,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.10668673953951471,
+      0.11858429955216199
+    ],
+    "wis_ci90": [
+      -0.062478804545388254,
+      0.043258514372839445
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 0.31958472123536313,
+    "wis_difference": 0.030175829557856693,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.938436032245329,
+      1.2181709737215718
+    ],
+    "wis_ci90": [
+      -0.5845719533349563,
+      0.4692813887670088
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.013674766963579906,
+    "wis_difference": 0.008747353475461444,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.005477733996656969,
+      0.03770493371927473
+    ],
+    "wis_ci90": [
+      -0.004963874200401007,
+      0.028134269905161567
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 0.9045300033176318,
+    "wis_difference": 0.6926712430775464,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.16094406046687482,
+      1.6481159461683887
+    ],
+    "wis_ci90": [
+      0.07091460028353384,
+      1.3144278858715588
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.013674766963579906,
+    "wis_difference": 0.008747353475461444,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.007221240539404124,
+      0.02020377322897412
+    ],
+    "wis_ci90": [
+      0.0032978653567099624,
+      0.014869617905169899
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__availability__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 0.9045300033176318,
+    "wis_difference": 0.6926712430775464,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.17134772641009022,
+      2.370894557132715
+    ],
+    "wis_ci90": [
+      0.07750655606840073,
+      1.9230006170958376
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.22939887602045891,
+    "wis_difference": 0.10930597393674578,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.012962241216072,
+      0.47771236164781916
+    ],
+    "wis_ci90": [
+      0.016720603211399832,
+      0.21940026217265293
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1223915234675417,
+    "wis_difference": 1.0218733998354168,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.3663314948995264,
+      2.878451552035557
+    ],
+    "wis_ci90": [
+      0.7920229763338468,
+      1.2517238233369865
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.22939887602045891,
+    "wis_difference": 0.10930597393674578,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.15470614261568785,
+      0.4471974852912419
+    ],
+    "wis_ci90": [
+      0.03683753803446977,
+      0.15912802361956052
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1223915234675417,
+    "wis_difference": 1.0218733998354168,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -1.4438884865936643,
+      4.152883741921179
+    ],
+    "wis_ci90": [
+      0.3099515084307745,
+      1.530389036553018
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.22939887602045891,
+    "wis_difference": 0.10930597393674578,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.012962241216072,
+      0.47771236164781916
+    ],
+    "wis_ci90": [
+      0.016720603211399832,
+      0.21940026217265293
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1223915234675417,
+    "wis_difference": 1.0218733998354168,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.3663314948995264,
+      2.878451552035557
+    ],
+    "wis_ci90": [
+      0.7920229763338468,
+      1.2517238233369865
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.22939887602045891,
+    "wis_difference": 0.10930597393674578,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.15470614261568785,
+      0.4471974852912419
+    ],
+    "wis_ci90": [
+      0.03683753803446977,
+      0.15912802361956052
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1223915234675417,
+    "wis_difference": 1.0218733998354168,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -1.4438884865936643,
+      4.152883741921179
+    ],
+    "wis_ci90": [
+      0.3099515084307745,
+      1.530389036553018
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.048294073278612897,
+    "wis_difference": 0.04260695121992702,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.011765360734355973,
+      0.1297321313953036
+    ],
+    "wis_ci90": [
+      -0.0033783179381481057,
+      0.11541350076997665
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 2.6612503664399014,
+    "wis_difference": 2.3239967207739083,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.26784262466931824,
+      5.590343357549121
+    ],
+    "wis_ci90": [
+      0.052336290894302806,
+      4.595657150653514
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.048294073278612897,
+    "wis_difference": 0.04260695121992702,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.004133990985012913,
+      0.09790601758376843
+    ],
+    "wis_ci90": [
+      0.0031481601502831905,
+      0.08693719797718119
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 2.6612503664399014,
+    "wis_difference": 2.3239967207739083,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.17023837606089387,
+      8.324227851441492
+    ],
+    "wis_ci90": [
+      0.06195267698663054,
+      6.848084808348464
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.3097867627425488,
+    "wis_difference": 0.14392498299725232,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.015482740222693228,
+      0.7177290706462317
+    ],
+    "wis_ci90": [
+      0.009733118915241222,
+      0.3198699941079333
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.8683919594050735,
+    "wis_difference": 1.3289652818632078,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.1337676938838872,
+      4.60301622492626
+    ],
+    "wis_ci90": [
+      0.597002539807188,
+      2.060928023919228
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.3097867627425488,
+    "wis_difference": 0.14392498299725232,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.147317808624166,
+      0.3944536824943821
+    ],
+    "wis_ci90": [
+      0.08520504445108557,
+      0.1891682143361021
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.8683919594050735,
+    "wis_difference": 1.3289652818632078,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.371778856688735,
+      3.616698510763243
+    ],
+    "wis_ci90": [
+      0.8465876276552624,
+      1.6735207491545976
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.3097867627425488,
+    "wis_difference": 0.14392498299725232,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.015482740222693228,
+      0.7177290706462317
+    ],
+    "wis_ci90": [
+      0.009733118915241222,
+      0.3198699941079333
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.8683919594050735,
+    "wis_difference": 1.3289652818632078,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.1337676938838872,
+      4.60301622492626
+    ],
+    "wis_ci90": [
+      0.597002539807188,
+      2.060928023919228
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.3097867627425488,
+    "wis_difference": 0.14392498299725232,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.147317808624166,
+      0.3944536824943821
+    ],
+    "wis_ci90": [
+      0.08520504445108557,
+      0.1891682143361021
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.8683919594050735,
+    "wis_difference": 1.3289652818632078,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.371778856688735,
+      3.616698510763243
+    ],
+    "wis_ci90": [
+      0.8465876276552624,
+      1.6735207491545976
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.010383448335356902,
+    "wis_difference": 0.015964329059345694,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.011109615360963568,
+      0.036879936870685755
+    ],
+    "wis_ci90": [
+      -0.0005100766579408734,
+      0.03729443610192666
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 0.6437314972078715,
+    "wis_difference": 0.9083194449066557,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.35856888902367245,
+      1.6460318834394154
+    ],
+    "wis_ci90": [
+      0.2600268065938239,
+      1.5566120832194876
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.010383448335356902,
+    "wis_difference": 0.015964329059345694,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.002303340010089112,
+      0.023218620170223338
+    ],
+    "wis_ci90": [
+      0.009717422190627366,
+      0.022901078404364204
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 0.6437314972078715,
+    "wis_difference": 0.9083194449066557,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.2470930694329354,
+      2.425380630489485
+    ],
+    "wis_ci90": [
+      0.36331576874791294,
+      1.9983267972241414
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.46895279763208464,
+    "wis_difference": 0.23831082855434907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.03957658178720947,
+      1.0031887262203543
+    ],
+    "wis_ci90": [
+      0.045382134145788386,
+      0.48034064212455174
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 4.271090111746844,
+    "wis_difference": 2.179714786999118,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      2.1115375125434355,
+      6.430642710950252
+    ],
+    "wis_ci90": [
+      1.4687535099639117,
+      2.890676064034324
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.46895279763208464,
+    "wis_difference": 0.23831082855434907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.01721726617073408,
+      0.7043642717739153
+    ],
+    "wis_ci90": [
+      0.17904609973134938,
+      0.2702877363743623
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 4.271090111746844,
+    "wis_difference": 2.179714786999118,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.1458124686049871,
+      6.333728933317772
+    ],
+    "wis_ci90": [
+      1.6271968640777805,
+      2.4559737484597868
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.46895279763208464,
+    "wis_difference": 0.23831082855434907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.03957658178720947,
+      1.0031887262203543
+    ],
+    "wis_ci90": [
+      0.045382134145788386,
+      0.48034064212455174
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 4.271090111746844,
+    "wis_difference": 2.179714786999118,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      2.1115375125434355,
+      6.430642710950252
+    ],
+    "wis_ci90": [
+      1.4687535099639117,
+      2.890676064034324
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.46895279763208464,
+    "wis_difference": 0.23831082855434907,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.01721726617073408,
+      0.7043642717739153
+    ],
+    "wis_ci90": [
+      0.17904609973134938,
+      0.2702877363743623
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 4.271090111746844,
+    "wis_difference": 2.179714786999118,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.1458124686049871,
+      6.333728933317772
+    ],
+    "wis_ci90": [
+      1.6271968640777805,
+      2.4559737484597868
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.04444734504035848,
+    "wis_difference": 0.04675570476404898,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.014995549354595851,
+      0.1253784881218005
+    ],
+    "wis_ci90": [
+      0.0008319806990160782,
+      0.11750947411412933
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 2.3894221359901735,
+    "wis_difference": 2.455161356568681,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.47269293463538514,
+      5.251537206615732
+    ],
+    "wis_ci90": [
+      0.25388396616356995,
+      4.656438746973793
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.04444734504035848,
+    "wis_difference": 0.04675570476404898,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0017843164864709356,
+      0.09638661910136437
+    ],
+    "wis_ci90": [
+      0.009799571458753565,
+      0.08827432366259075
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd10",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 2.3894221359901735,
+    "wis_difference": 2.455161356568681,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.4663164973609639,
+      8.100899402692448
+    ],
+    "wis_ci90": [
+      0.3651411295756519,
+      6.63520181055474
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.22602923807634337,
+    "wis_difference": 0.10234265444422415,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.00939872359768184,
+      0.47454576402519116
+    ],
+    "wis_ci90": [
+      0.024988126020631007,
+      0.20149018704333402
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1018770142288665,
+    "wis_difference": 0.9545973745055015,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.1831757493969235,
+      3.020578279060809
+    ],
+    "wis_ci90": [
+      0.8757757727471639,
+      1.0334189762638395
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.22602923807634337,
+    "wis_difference": 0.10234265444422415,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.02274105792509477,
+      0.3642279826994983
+    ],
+    "wis_ci90": [
+      0.0647253457406089,
+      0.12464263393899598
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1018770142288665,
+    "wis_difference": 0.9545973745055015,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.21625619264536056,
+      3.421255828643455
+    ],
+    "wis_ci90": [
+      0.575207331392336,
+      1.2116014906674561
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.22602923807634337,
+    "wis_difference": 0.10234265444422415,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.00939872359768184,
+      0.47454576402519116
+    ],
+    "wis_ci90": [
+      0.024988126020631007,
+      0.20149018704333402
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1018770142288665,
+    "wis_difference": 0.9545973745055015,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      1.1831757493969235,
+      3.020578279060809
+    ],
+    "wis_ci90": [
+      0.8757757727471639,
+      1.0334189762638395
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.22602923807634337,
+    "wis_difference": 0.10234265444422415,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.02274105792509477,
+      0.3642279826994983
+    ],
+    "wis_ci90": [
+      0.0647253457406089,
+      0.12464263393899598
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 2.1018770142288665,
+    "wis_difference": 0.9545973745055015,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.21625619264536056,
+      3.421255828643455
+    ],
+    "wis_ci90": [
+      0.575207331392336,
+      1.2116014906674561
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.03144100408825795,
+    "wis_difference": 0.028833964143095817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.00905060381006033,
+      0.08480564696028013
+    ],
+    "wis_ci90": [
+      -0.0016048463445562087,
+      0.0746018113533988
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 1.7614141310404914,
+    "wis_difference": 1.5842639394171585,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.08715565459287215,
+      3.6099839166738548
+    ],
+    "wis_ci90": [
+      0.11840616218210502,
+      3.050121716652212
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.03144100408825795,
+    "wis_difference": 0.028833964143095817,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.00637748123951239,
+      0.05959878901709555
+    ],
+    "wis_ci90": [
+      0.005479169300793564,
+      0.055072066990620554
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd5",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 1.7614141310404914,
+    "wis_difference": 1.5842639394171585,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.06871527882336181,
+      5.4216729507681976
+    ],
+    "wis_ci90": [
+      0.15442718621941776,
+      4.44393744581264
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.7345486870098878,
+    "wis_difference": 0.3931102081812352,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.07544735018021516,
+      1.6314358899824315
+    ],
+    "wis_ci90": [
+      0.06299659409786443,
+      0.8356900889244817
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 6.637959386031696,
+    "wis_difference": 3.567473894872903,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      3.0008346019966816,
+      10.27508417006671
+    ],
+    "wis_ci90": [
+      2.0020867085139518,
+      5.132861081231854
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.7345486870098878,
+    "wis_difference": 0.3931102081812352,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.08539710781019955,
+      1.0728389465928239
+    ],
+    "wis_ci90": [
+      0.29659532837346825,
+      0.4592771196722079
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_paired",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 6.637959386031696,
+    "wis_difference": 3.567473894872903,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.7421407184828865,
+      9.5858687198061
+    ],
+    "wis_ci90": [
+      2.6974727290661673,
+      4.0320199671779875
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 39,
+    "n": 54,
+    "mae_difference": 0.7345486870098878,
+    "wis_difference": 0.3931102081812352,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.07544735018021516,
+      1.6314358899824315
+    ],
+    "wis_ci90": [
+      0.06299659409786443,
+      0.8356900889244817
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 6.637959386031696,
+    "wis_difference": 3.567473894872903,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      3.0008346019966816,
+      10.27508417006671
+    ],
+    "wis_ci90": [
+      2.0020867085139518,
+      5.132861081231854
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 54,
+    "mae_difference": 0.7345486870098878,
+    "wis_difference": 0.3931102081812352,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.08539710781019955,
+      1.0728389465928239
+    ],
+    "wis_ci90": [
+      0.29659532837346825,
+      0.4592771196722079
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "exact_all_available",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 6,
+    "mae_difference": 6.637959386031696,
+    "wis_difference": 3.567473894872903,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      0.7421407184828865,
+      9.5858687198061
+    ],
+    "wis_ci90": [
+      2.6974727290661673,
+      4.0320199671779875
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "school",
+    "clusters": 75,
+    "n": 172,
+    "mae_difference": 0.0456353336503932,
+    "wis_difference": 0.05982325877042093,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.0249589978878973,
+      0.14299329422757504
+    ],
+    "wis_ci90": [
+      0.0026724883502824014,
+      0.14362574651391916
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "school",
+    "clusters": 3,
+    "n": 3,
+    "mae_difference": 2.397880835871547,
+    "wis_difference": 3.188220693797659,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -1.2403796292931968,
+      6.036141301036291
+    ],
+    "wis_ci90": [
+      0.632818110858922,
+      5.743623276736396
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "all",
+    "cluster": "year",
+    "clusters": 3,
+    "n": 172,
+    "mae_difference": 0.0456353336503932,
+    "wis_difference": 0.05982325877042093,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -0.016789166259167196,
+      0.11576656194384993
+    ],
+    "wis_ci90": [
+      0.019705863279884068,
+      0.10437079609426861
+    ]
+  },
+  {
+    "kind": "special_scope_sensitivity__level_change__sd20",
+    "view": "proxy_only_diagnostic",
+    "subset": "quota_observed",
+    "cluster": "year",
+    "clusters": 2,
+    "n": 3,
+    "mae_difference": 2.397880835871547,
+    "wis_difference": 3.188220693797659,
+    "limitation": "Observed-cluster resampling only; not iid school-year inference or evidence of future-year significance.",
+    "mae_ci90": [
+      -1.1350583462358088,
+      9.463759200086258
+    ],
+    "wis_ci90": [
+      0.9406546531282216,
+      7.683352775136534
+    ]
+  }
+]
