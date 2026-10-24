@@ -17,6 +17,25 @@
 
 筛选结果的机器可读索引见[focus_432.json](focus_432.json)，引用下方完整资料中的记录ID。后续数据科学择校比较采用此范围；完整核查资料继续保留，便于追溯专业和科目差异。
 
+### 历史复试线与拟录取初试分数
+
+2027年的复试线尚未产生。北理工数据科学在[2025年官方复试安排][bit-2025-retest]中为325分，在[2026年官方复试安排][bit-2026-retest]中为342分，两年单科要求均为40、40、60、60（政治、外语、业务课一、业务课二）。
+
+本轮将官方复试名单与主拟录取、增计划公告在本地逐人匹配，排除标注专项，得到下列**拟录取者初试成绩**汇总。学院拟录取公告中的“总成绩”为初复试综合分，未被用作初试分。
+
+| 年份 | 复试线 | 普通拟录取样本数 | 初试最低分 | 初试Q10，展示取整 | 初试中位数 | 初试最高分 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2025 | 325 | 29 | 325 | 约329 | 363 | 406 |
+| 2026 | 342 | 39 | 342 | 约354 | 382 | 425 |
+
+2025年来源为[主拟录取公告][bit-2025-admit]与[增计划公告][bit-2025-extra]，排除退役士兵专项1人；2026年来源为[主拟录取公告][bit-2026-admit]与[增计划公告][bit-2026-extra]，排除深北莫专项2人。增计划记录已纳入且无重复，初试四科成绩逐行核对加总，均成功匹配。
+
+华东师大数据科学硕士学位点在[2026年3月增列公示][ecnu-newdegree]后进入2027年招生目录；本轮未取得该独立专业往年复试线。人大统计学院简章明确2027年首次招生，统计与大数据研究院简章也写明2027年新招收0752S1，均没有该项目的历史复试线。其他专业、培养方向和本科数据科学的历史分数不替代这些项目的历史。
+
+这些Q10是本轮已找到的拟录取样本的经验分位数，没有被解释为2027的P90或安全上界。样本尚可能受到后续录取状态变化影响。2027年计划统考名额属于报名前的计划，不能与往年最终拟录取人数混为同一时点指标。
+
+匿名汇总及计算口径见[historical_scores_432.json](historical_scores_432.json)，新来源抓取时间、发布日期和SHA256见[historical_score_evidence.json](historical_score_evidence.json)。姓名、考生编号及原始逐人名单仅在本地用于匹配。
+
 ## 完整核查范围
 
 本轮全国检索并核实到 **6所高校、7个招生单位** 在2027年以独立“数据科学”专业招收全日制硕士，均在官方当年目录中开放全国统考。其中5所为985高校，太原理工大学为非985的211高校。人大两个招生单位只计一所学校。
@@ -127,3 +146,10 @@ assert catalogue["code"] == "0"
 [sdu-fees]: https://www.yz.sdu.edu.cn/info/1022/1492.htm
 [zju]: https://cds.zju.edu.cn/a/zsxx/3832.html
 [fudan]: https://gsas.fudan.edu.cn/sszsml2027/index.html
+[bit-2025-retest]: https://math.bit.edu.cn/tzgg/8d61fd635187456984542fef273e7b5f.htm
+[bit-2026-retest]: https://math.bit.edu.cn/tzgg/745cfd6c2d8f4bb8b81acba872d254cc.htm
+[bit-2025-admit]: https://math.bit.edu.cn/docs/2025-04/6341ffcca48b4411b91e77166b7632b2.pdf
+[bit-2025-extra]: https://math.bit.edu.cn/docs/2025-04/24bf767acc794a08bcac5ace7fb70e0b.pdf
+[bit-2026-admit]: https://math.bit.edu.cn/tzgg/665c4cef622844bcb366045e7cd21ce6.htm
+[bit-2026-extra]: https://math.bit.edu.cn/tzgg/c5825796e0ca44abba5185b3dcff174e.htm
+[ecnu-newdegree]: https://xxgk.ecnu.edu.cn/d6/a2/c11880a775842/page.htm

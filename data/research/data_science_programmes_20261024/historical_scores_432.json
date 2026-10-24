@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "research_date": "2026-10-24",
+  "forecast_year": 2027,
+  "scope": "当前432数据科学独立专业范围中的历史复试线与普通统考拟录取初试成绩描述",
+  "official_2027_cutoff": null,
+  "interpretation": "复试线是参加复试的分数要求；拟录取样本初试分位数是历史描述统计。两者均不等于2027年安全上界或录取概率。",
+  "cutoffs": [
+    {
+      "school": "北京理工大学",
+      "unit": "数学与统计学院",
+      "programme_name": "数据科学",
+      "programme_code": "0752S2",
+      "admission_year": 2025,
+      "score_type": "ordinary_unified_exam_retest_cutoff",
+      "total": 325,
+      "single_subject_minima": [40, 40, 60, 60],
+      "single_subject_order": ["政治", "外语", "业务课一", "业务课二"],
+      "source_id": "bit2025"
+    },
+    {
+      "school": "北京理工大学",
+      "unit": "数学与统计学院",
+      "programme_name": "数据科学",
+      "programme_code": "0752S2",
+      "admission_year": 2026,
+      "score_type": "ordinary_unified_exam_retest_cutoff",
+      "total": 342,
+      "single_subject_minima": [40, 40, 60, 60],
+      "single_subject_order": ["政治", "外语", "业务课一", "业务课二"],
+      "source_id": "bit2026"
+    }
+  ],
+  "historical_data_availability": [
+    {
+      "programme_id": "ecnu_159_0752S1_2027_ft",
+      "school": "华东师范大学",
+      "status": "新设数据科学硕士专业；本轮未取得该独立专业2025或2026复试线",
+      "evidence": "2026年3月26日官方公示拟增列数据科学硕士专业学位授予点；2027年招生目录已列0752S1。",
+      "source_ids": ["ecnu2026newdegree", "ecnu_2027_ds"],
+      "inference_note": "新设项目的判断由增列公示及当年目录合并形成；不将本科数据科学2025首次招生、应用统计分数线或数据科学与工程专业分数线当成本专业历史。"
+    },
+    {
+      "programme_id": "ruc_115_0752S1_2027_ft",
+      "school": "中国人民大学",
+      "unit": "统计学院",
+      "status": "2027年首次招生，暂无本专业历史复试线",
+      "source_ids": ["ruc_2027_stat_ds_brochure"],
+      "source_collection": "sources.json及evidence_index.json"
+    },
+    {
+      "programme_id": "ruc_116_0752S1_2027_ft",
+      "school": "中国人民大学",
+      "unit": "统计与大数据研究院",
+      "status": "2027年新招收0752S1数据科学，暂无本专业历史复试线",
+      "source_ids": ["ruc_2027_bigdata_brochure"],
+      "source_collection": "sources.json及evidence_index.json"
+    }
+  ],
+  "ordinary_admitted_initial_score_summaries": [
+    {
+      "school": "北京理工大学",
+      "programme_name": "数据科学",
+      "programme_code": "0752S2",
+      "admission_year": 2025,
+      "n": 29,
+      "excluded_marked_special_plan": 1,
+      "excluded_plan_names": ["退役士兵"],
+      "initial_score_min": 325,
+      "initial_score_q10": 328.8,
+      "initial_score_median": 363,
+      "initial_score_mean": 361.2068965517241,
+      "initial_score_max": 406,
+      "admission_source_row_counts": {"main_all_data_science": 29, "additional_all_data_science": 1},
+      "source_ids": ["bit2025", "bit2025admitmain", "bit2025admitextra"]
+    },
+    {
+      "school": "北京理工大学",
+      "programme_name": "数据科学",
+      "programme_code": "0752S2",
+      "admission_year": 2026,
+      "n": 39,
+      "excluded_marked_special_plan": 2,
+      "excluded_plan_names": ["深北莫专项"],
+      "initial_score_min": 342,
+      "initial_score_q10": 353.6,
+      "initial_score_median": 382,
+      "initial_score_mean": 382.46153846153845,
+      "initial_score_max": 425,
+      "admission_source_row_counts": {"main_all_data_science": 39, "additional_all_data_science": 2},
+      "source_ids": ["bit2026", "bit2026admitmain", "bit2026admit"]
+    }
+  ],
+  "calculation_method": {
+    "matching": "以官方复试名单与学院主拟录取、增计划公告中的考生编号在本地进行一对一匹配。仅筛数据科学，排除标注的专项；所有保留记录均成功匹配初试成绩，年度内无重复。",
+    "initial_score_validation": "逐行验证政治、外语、业务课一、业务课二之和等于初试总分。",
+    "not_retest_final_score": "拟录取公告中的总成绩是初复试综合分；本统计使用匹配后的初试总分，未将综合分冒充初试分。",
+    "empirical_quantile": "线性插值：将n个初试分数升序排列，在位置(n-1)乘q处插值得到经验分位数。",
+    "coverage_limit": "样本范围为本轮找到的学院主拟录取和增计划公告，未宣称已经穷尽所有后续录取状态变更。小样本经验Q10的抽样不确定性未在此描述统计中估计。",
+    "privacy": "公开文件只保留匿名汇总、官方URL及来源哈希，不公开姓名、考生编号和逐人匹配表。",
+    "model_use": "未合并至应用统计正式训练数据；未生成数据科学2027概率预测。"
+  }
+}

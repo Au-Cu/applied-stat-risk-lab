@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "research_date": "2026-10-24",
+  "sources": [
+    {
+      "id": "bit2025",
+      "url": "https://math.bit.edu.cn/tzgg/8d61fd635187456984542fef273e7b5f.htm",
+      "format": "html",
+      "sha256": "8f51c829367d32a458e4668ebeeeb43935a269c8d6c444e84360f3288a647457",
+      "bytes": 144400,
+      "snapshot_saved_at": "2026-10-24T21:24:24+08:00",
+      "reviewed_publication_date": "2025-03-24",
+      "publication_date_basis": "official_page_body",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "bit2026",
+      "url": "https://math.bit.edu.cn/tzgg/745cfd6c2d8f4bb8b81acba872d254cc.htm",
+      "format": "html",
+      "sha256": "f9691b2839134408e8577714c9ed9f1f30662cb2cbd1559740cabc4cb637403b",
+      "bytes": 308342,
+      "snapshot_saved_at": "2026-10-24T21:24:24+08:00",
+      "reviewed_publication_date": "2026-03-24",
+      "publication_date_basis": "official_page_body",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "bit2025admitmain",
+      "url": "https://math.bit.edu.cn/docs/2025-04/6341ffcca48b4411b91e77166b7632b2.pdf",
+      "format": "pdf",
+      "sha256": "b5d9e0fd91ec25e34f6bfedae734d153105e9bc16fcca2ffeeb63c0a16aae420",
+      "bytes": 110036,
+      "snapshot_saved_at": "2026-10-24T21:27:06+08:00",
+      "reviewed_publication_date": null,
+      "publication_date_basis": "not_established_no_inference_from_filename_or_capture_time",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "bit2025admitextra",
+      "url": "https://math.bit.edu.cn/docs/2025-04/24bf767acc794a08bcac5ace7fb70e0b.pdf",
+      "format": "pdf",
+      "sha256": "1d4ab206cdea4f1af1bee29f2b8a992e3fe6038005a6e6a70ffbe732ddceefe3",
+      "bytes": 68464,
+      "snapshot_saved_at": "2026-10-24T21:27:06+08:00",
+      "reviewed_publication_date": null,
+      "publication_date_basis": "not_established_no_inference_from_filename_or_capture_time",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "bit2026admitmain",
+      "url": "https://math.bit.edu.cn/tzgg/665c4cef622844bcb366045e7cd21ce6.htm",
+      "format": "html",
+      "sha256": "6446f672e2f4d1500e101371f9c9b20030da12913d2fca44bca2884de4ca5052",
+      "bytes": 50938,
+      "snapshot_saved_at": "2026-10-24T21:25:36+08:00",
+      "reviewed_publication_date": "2026-03-31",
+      "publication_date_basis": "official_page_body",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "bit2026admit",
+      "url": "https://math.bit.edu.cn/tzgg/c5825796e0ca44abba5185b3dcff174e.htm",
+      "format": "html",
+      "sha256": "4c466671d2ae6953107ca840ef1cc6c80bb8607963149192bc47a53a1a52f47e",
+      "bytes": 26590,
+      "snapshot_saved_at": "2026-10-24T21:24:24+08:00",
+      "reviewed_publication_date": "2026-04-07",
+      "publication_date_basis": "official_page_body",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    },
+    {
+      "id": "ecnu2026newdegree",
+      "url": "https://xxgk.ecnu.edu.cn/d6/a2/c11880a775842/page.htm",
+      "format": "html",
+      "sha256": "9c572eeae650f61ab168c1ca0297afda627c5cfad738e73e9983f2203e325e81",
+      "bytes": 38960,
+      "snapshot_saved_at": "2026-10-24T21:30:28+08:00",
+      "reviewed_publication_date": "2026-03-26",
+      "publication_date_basis": "official_page_body",
+      "status": "ok",
+      "public_release_scope": "URL, hash and anonymous aggregates only; source roster retained locally"
+    }
+  ],
+  "additional_existing_source_ids": [
+    "ecnu_2027_ds",
+    "ruc_2027_stat_ds_brochure",
+    "ruc_2027_bigdata_brochure"
+  ],
+  "existing_source_index": "evidence_index.json"
+}
