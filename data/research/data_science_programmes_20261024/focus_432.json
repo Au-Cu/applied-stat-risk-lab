@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "effective_date": "2026-10-24",
+  "admission_year": 2027,
+  "scope": "当前数据科学择校范围：只考虑初试考432统计学的项目",
+  "parent_dataset": "programmes.json",
+  "eligibility": {
+    "school_tier": "985或211",
+    "level": "master",
+    "programme_name": "数据科学",
+    "independent_admission_programme": true,
+    "study_mode": "全日制",
+    "required_entrance_route": "全国统考",
+    "required_subject_code": "432"
+  },
+  "school_count": 3,
+  "unit_count": 4,
+  "programme_ids": [
+    "ecnu_159_0752S1_2027_ft",
+    "ruc_115_0752S1_2027_ft",
+    "ruc_116_0752S1_2027_ft",
+    "bit_217_0752S2_2027_ft"
+  ],
+  "notes": [
+    "三个学校均为985、211高校；人大两个招生单位分别保留。",
+    "筛选基于已核实的2027官方招生资料，完整核查资料保留供追溯。",
+    "432代码相同不表示各校考纲、试题或难度相同。"
+  ]
+}
