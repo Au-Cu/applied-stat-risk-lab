@@ -1,0 +1,111 @@
+# 2027年985、211高校全日制数据科学硕士招生核查
+
+核查日期：2026年10月24日。沿用本项目的考研语境，研究对象为硕士研究生，不是本科的“数据科学”“数据科学与大数据技术”专业。
+
+本轮全国检索并核实到 **6所高校、7个招生单位** 在2027年以独立“数据科学”专业招收全日制硕士，均在官方当年目录中开放全国统考。其中5所为985高校，太原理工大学为非985的211高校。人大两个招生单位只计一所学校。
+
+这是核实后的正面清单，尚不构成全部985、211高校逐校排除后的穷尽性名录。未列出不等于未开设。专业名称相近、按数学或统计学大类招生的培养方向，以及历史授权点，不混入独立同名专业的数量。
+
+## 独立“数据科学”专业
+
+以下科目均另含101思想政治理论。
+
+| 学校 | 层次 | 2027招生单位 | 专业代码 | 学位类型、学制 | 初试外语、业务课 | 官方依据 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 华东师范大学 | 985/211 | 159统计学院 | 0752S1 | 专硕，3年 | 英语二、数学三、432统计学 | [当年目录][ecnu] |
+| 中国人民大学 | 985/211 | 115统计学院；116统计与大数据研究院 | 0752S1 | 专硕，均2年 | 英语一、数学三、432统计学 | [当年全国统考目录][ruc] |
+| 北京理工大学 | 985/211 | 217数学与统计学院 | 0752S2 | 专硕，3年 | 英语二、数学三、432统计学 | [当年目录及XLS附件][bit]；[学院2027通知][bit-prepm] |
+| 南开大学 | 985/211 | 013统计与数据科学学院 | 0259S1 | 专硕，2年 | 英语二、数学三、802数据科学综合 | [当年目录][nankai]；[当年学制][nankai-length] |
+| 武汉大学 | 985/211 | 656前沿交叉学科研究院，湖北应用数学中心培养 | 1453S1 | 专硕，2年 | 英语二、数学三、899数据科学 | [当年学院目录][whu]；[当年校级章程][whu-brochure] |
+| 太原理工大学 | 211，非985 | 024人工智能学院 | 0812J5 | 学硕，3年 | 英语一、数学一、408计算机学科专业基础 | [当年公开目录][tyut]；[当年章程][tyut-brochure] |
+
+### 与应用统计备考的关系
+
+从初试科目组合判断，华东师大、人大、北理工均为数学三和432统计学，人大考英语一，另外两校考英语二。432的科目代码相同并不代表三校的命题范围、试题或难度相同，应分别阅读当年大纲。
+
+南开考802数据科学综合，武大考899数据科学，太原理工考数学一和408，不能直接假定可以原样沿用应用统计的专业课备考。
+
+### 报名阶段名额及已核定费用
+
+| 招生单位 | 2027计划统考名额 | 人数口径 | 本轮核定学费 |
+| --- | ---: | --- | --- |
+| 华东师大统计学院 | 20 | 总计划25减计划推免5；官网明确统考计划保持不变 | 全程19.8万元 |
+| 人大统计学院 | 未核定 | 当年专业目录未列本专业人数 | 每年预估不超过9.8万元，待最终批复 |
+| 人大统计与大数据研究院 | 未核定 | 不把学院或其他专业人数借作本项目人数 | 每年不高于9.8万元，待最终批复 |
+| 北理工数学与统计学院 | 20 | XLS直接列“统考招生人数”，无需再扣推免 | 本轮未核定 |
+| 南开统计与数据科学学院 | 未核定 | 不把全院计划当作本专业计划 | 2027年公示每年6.8万元，2年合计13.6万元，不含其他费用 |
+| 武大前沿交叉学科研究院 | 29 | 目录直接列全日制统考29、非全0、拟推免114；29不再减114 | 本轮未核定 |
+| 太原理工人工智能学院 | 未核定 | 公开专业目录未列该专业人数 | 常规全日制标准每年8000元，专项另按专项标准 |
+
+上述人数是报名时可见的 **计划统考名额**，不是2027年最终实际录取人数；“未核定”不是0。旧版南开介绍中2026年的每年1万元不得沿用到2027年；新学费以[2027级官方收费公示][nankai-fees]为据。人大费用的审批条件以[统计学院简章][ruc-stat-pdf]和[研究院简章][ruc-bigdata-pdf]为据。
+
+## 有数据科学培养内容，但2027报考名称不同的例子
+
+下表用于处理本轮核查中发现的相近项目，不是全国全部相关方向的汇总。
+
+| 学校 | 2027实际报考专业或项目 | 形式 | 初试外语、业务课 | 与主表的区别 |
+| --- | --- | --- | --- | --- |
+| 山东大学 | 051数据科学研究院，070100数学，03数据科学 | 全日制学硕，3年 | 英语一、651数学分析、825线性代数与常微分方程 | 最新校级招生系统按数学专业招生；9月预推免通知中仍出现的701J1代码不能覆盖最新报考口径 |
+| 浙江大学 | 085411大数据技术与工程，数据科学与工程硕士iMDS项目 | 全日制专硕，3年 | 英语一、数学一、408计算机学科专业基础 | 项目名是数据科学与工程，正式报考专业代码为085411 |
+
+山大依据：[2027目录发布说明][sdu-index]及其链接的[官方专业查询系统][sdu-query]（选择2027年、全日制，搜索数据科学），学费和学制见[当年标准][sdu-fees]。浙大依据：[2027 iMDS招生简章][zju]，项目拟统考8人，全程学费15万元，海宁国际校区培养。
+
+### 其他容易混淆的记录
+
+- **华东师大**：统计学院的0752S1数据科学与025200应用统计是两个招生专业，不能合并人数；“数据科学与工程学院”又是另一招生单位。
+- **人大**：0752S1数据科学与025200应用统计内部的“数据科学与人工智能”方向分开；统计学院与统计与大数据研究院也应分开报名。
+- **武大**：前沿交叉学科研究院的1453S1为全日制；[人工智能学院同名同码专业][whu-ai]在2027目录中为非全日制，考659人工智能基础，不能合并。
+- **复旦**：[完整2027硕士目录][fudan]的前端公开数据已实际读取。管理学院“数据科学与商务分析”在025200应用统计下，且只招推免；“大数据与数据科学”在085400电子信息下。历史0812Z1授权记录不直接证明当年有独立同名统考招生。
+- **中科大、中央财经大学**：学院名称中有数据科学，或学院有大数据项目，不等于当年招生专业名称就是数据科学；本轮保留实际专业名称和代码，不按学院名称补造专业。
+
+## 数据及来源记录
+
+- [programmes.json](programmes.json)：7个独立专业招生单位、2个相近项目，以及范围核查说明。缺失值使用`null`，不编造名额、培养校区或未核定学费。
+- [sources.json](sources.json)：官方来源请求清单，含年度和需要时的公开查询请求参数。
+- [evidence_index.json](evidence_index.json)：本地实际抓取的来源状态、时间、SHA256和经核对的发布日期；采集时间和HTTP修改时间不冒充发布时间。
+
+重要表格同时检查表头、跨页延续和原始行。北理工附件为二进制XLS，按文件内容用`xlrd`读取，未因保存后缀为`.html`而漏读。南开2027目录第1页、武大目录第1页表头及第4页数据科学行、南开收费公示第1至2页已经进行版面核对。
+
+原始官方附件和页面快照保存在本地`data/private/data_science_programmes_20261024/`，公开仓库保留URL、请求参数、采集时间和内容哈希。快照不包含自行抓取的逐人录取名单。源站变更后重新下载可能得到不同哈希；哈希用于识别本次所读版本，不是对来源内容永久不变的保证。
+
+通用HTML、PDF和XLS来源可用现有采集器按清单读取；山大`sdu_2027_ds_api`是网页本身使用的公开JSON POST查询，须按清单的`request_content_type`发送JSON。现有名额采集器的默认POST采用表单编码，不能直接套用到这一项。可按以下方式单独复核该项：
+
+```python
+import json
+import urllib.request
+from pathlib import Path
+
+sources = json.loads(Path("sources.json").read_text(encoding="utf-8"))
+source = next(x for x in sources if x["id"] == "sdu_2027_ds_api")
+request = urllib.request.Request(
+    source["url"],
+    data=json.dumps(source["body"], ensure_ascii=False).encode("utf-8"),
+    headers={"Content-Type": source["request_content_type"], "User-Agent": "Mozilla/5.0"},
+    method="POST",
+)
+with urllib.request.urlopen(request, timeout=25) as response:
+    catalogue = json.load(response)
+assert catalogue["code"] == "0"
+```
+
+本次新增的是专业招生研究清单，没有合并到应用统计的分数标签、训练样本或正式预测中。专业代码不同、试卷不同的项目需要另建可比较的数据面板后才能建模。
+
+[ecnu]: https://yjszs-ks.ecnu.edu.cn/zsml/sszsml/zsmlYjfx/2027/159/0752S1?ksfs=21
+[ruc]: https://pgs.ruc.edu.cn/info/1062/3640.htm
+[ruc-stat-pdf]: https://pgs.ruc.edu.cn/2027/ssjz/zhongguorenmindaxuetongjixueyuan2027nianshujukexueshuoshizhuanyexueweizhaoshengjianzhang.pdf
+[ruc-bigdata-pdf]: https://pgs.ruc.edu.cn/2027/ssjz/zhongguorenmindaxuetongjiyudashujuyanjiuyuan2027nianshuoshiyanjiushengzhaoshengjianzhang.pdf
+[bit]: https://grd.bit.edu.cn/zsgz/ssyjs/bslc_ss/3f58f00b45a24926bc5ba25f9682e0b3.htm
+[bit-prepm]: https://math.bit.edu.cn/tzgg/dcdce34bca34415e866fdb062d5aa0f2.htm
+[nankai]: https://yzb.nankai.edu.cn/2026/1008/c5508a603818/page.htm
+[nankai-length]: https://yzb.nankai.edu.cn/2026/1008/c5509a603884/page.htm
+[nankai-fees]: https://yzb.nankai.edu.cn/2026/1009/c5509a604003/page.htm
+[whu]: https://gs.whu.edu.cn/info/2581/108731.htm
+[whu-brochure]: https://gs.whu.edu.cn/info/2571/108711.htm
+[whu-ai]: https://gs.whu.edu.cn/info/2581/108861.htm
+[tyut]: http://www.gs.tyut.edu.cn/2027sszyml.html
+[tyut-brochure]: http://www.gs.tyut.edu.cn/info/1271/16689.htm
+[sdu-index]: https://www.yz.sdu.edu.cn/info/1022/1491.htm
+[sdu-query]: https://sduyjs.sdu.edu.cn/yjszs/plugins/zs/sszs/zsxxfb/index
+[sdu-fees]: https://www.yz.sdu.edu.cn/info/1022/1492.htm
+[zju]: https://cds.zju.edu.cn/a/zsxx/3832.html
+[fudan]: https://gsas.fudan.edu.cn/sszsml2027/index.html
