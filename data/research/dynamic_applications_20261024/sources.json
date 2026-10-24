@@ -1,0 +1,260 @@
+[
+  {
+    "id": "sdu_2026_adjusted",
+    "school": "山东大学",
+    "year": 2026,
+    "url": "https://www.yz.sdu.edu.cn/shandongdaxue2026nianshuoshiyanjiushengzhaoshengzhuanyemuludiaozhengtongkaozhaoshengjihua.pdf"
+  },
+  {
+    "id": "zuel_2026_plan",
+    "school": "中南财经政法大学",
+    "year": 2026,
+    "url": "https://yzb.zuel.edu.cn/_upload/article/files/5d/fe/b1504aed49c5b361f318ac7b5d84/1a23404a-1019-4fff-af70-bf2a8d21a5cc.pdf"
+  },
+  {
+    "id": "nwu_2027_math_catalogue",
+    "school": "西北大学",
+    "year": 2027,
+    "url": "https://yjs.nwu.edu.cn/014shuxuexueyuan2027nianshuoshiyanjiushengzhaoshengkaoshizhuanyemulu.xlsx"
+  },
+  {
+    "id": "nwu_2027_index",
+    "school": "西北大学",
+    "year": 2027,
+    "url": "https://yjs.nwu.edu.cn/info/1102/5675.htm"
+  },
+  {
+    "id": "tongji_2027_catalog",
+    "school": "同济大学",
+    "year": 2027,
+    "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/index/2027"
+  },
+  {
+    "id": "ecnu_2027_catalog",
+    "school": "华东师范大学",
+    "year": 2027,
+    "url": "https://yjszs-ks.ecnu.edu.cn/zsml/sszsml/index/2027"
+  },
+  {
+    "id": "uibe_2027_index",
+    "school": "对外经济贸易大学",
+    "year": 2027,
+    "url": "https://yjsy.uibe.edu.cn/cms/infoArticleList.do?columnId=2395&pagingNumberPer=10&pagingPage=1"
+  },
+  {
+    "id": "muc_2027_net",
+    "school": "中央民族大学",
+    "year": 2027,
+    "url": "https://grs.muc.edu.cn/yjsyzsw/info/1062/6149.htm"
+  },
+  {
+    "id": "bjut_2027_catalog",
+    "school": "北京工业大学",
+    "year": 2027,
+    "url": "https://yanzhao.bjut.edu.cn/info/1708/18193.htm"
+  },
+  {
+    "id": "bnu_2026_plan",
+    "school": "北京师范大学",
+    "year": 2026,
+    "url": "https://stat.bnu.edu.cn/tzgg4/1655a91dc37b472eabb498fe54e06040.htm"
+  },
+  {
+    "id": "shu_2026_net",
+    "school": "上海大学",
+    "year": 2026,
+    "url": "https://gmis.shu.edu.cn/ZSJZ/SS/2026/ZhaoShengJiHua.php-Year%3D2026%26Type%3DQRZZS.htm"
+  },
+  {
+    "id": "fzu_2027_plan",
+    "school": "福州大学",
+    "year": 2027,
+    "url": "https://math.fzu.edu.cn/info/1166/10412.htm"
+  },
+  {
+    "id": "nefu_2026_net",
+    "school": "东北林业大学",
+    "year": 2026,
+    "url": "https://yz.nefu.edu.cn/info/1030/3796.htm"
+  },
+  {
+    "id": "cqu_2027_catalog",
+    "school": "重庆大学",
+    "year": 2027,
+    "url": "https://yz.cqu.edu.cn/sszyml/2027/6.html"
+  },
+  {
+    "id": "dhu_2027_accepted",
+    "school": "东华大学",
+    "year": 2027,
+    "url": "https://yjszs.dhu.edu.cn/2026/1012/c7127a381981/page.htm"
+  },
+  {
+    "id": "swufe_2027_accepted",
+    "school": "西南财经大学",
+    "year": 2027,
+    "url": "https://yz.swufe.edu.cn/info/1101/13341.htm"
+  },
+  {
+    "id": "cufe_2027_net",
+    "school": "中央财经大学",
+    "year": 2027,
+    "url": "https://gs.cufe.edu.cn/info/1132/7189.htm"
+  },
+  {
+    "id": "sjtu_2027_net",
+    "school": "上海交通大学",
+    "year": 2027,
+    "url": "https://yzb.sjtu.edu.cn/post/3808"
+  },
+  {
+    "id": "xmu_2027_net",
+    "school": "厦门大学",
+    "year": 2027,
+    "url": "https://zs.xmu.edu.cn/info/1174/37082.htm"
+  },
+  {
+    "id": "cufe_2027_net_attach1",
+    "url": "https://gs.cufe.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=2130149070&wbfileid=1E332EA0E147FF76F02ED3ED0B6EDE60",
+    "school": "中央财经大学",
+    "year": 2027,
+    "parent_id": "cufe_2027_net",
+    "title": "2027年全国硕士研究生招生考试剩余统考计划 (不含专项计划）.pdf"
+  },
+  {
+    "id": "xmu_2027_net_attach1",
+    "url": "https://zs.xmu.edu.cn/virtual_attach_file.vsb?afc=KLm-OZMmVVoz7PLxlLPU4TkUmnknmlJDMmffMz74o7-aLN70gihFp2hmCIa0L1yDU1h7okhRUmNDoz-ZoRAfLRnRnRffnmrfLlQfL8n2UNQFnlrRozCYozQFL4vaLzlJv2nto4OeosX46YhXptQ0g47PM4U0L4vaoR-Jqd0nx&oid=1929267571&tid=1174&nid=37082&e=.pdf",
+    "school": "厦门大学",
+    "year": 2027,
+    "parent_id": "xmu_2027_net",
+    "title": "嵌入统考招生计划.pdf"
+  },
+  {
+    "id": "csu_2026_plan",
+    "school": "中南大学",
+    "year": 2026,
+    "url": "https://math.csu.edu.cn/info/1730/13766.htm"
+  },
+  {
+    "id": "swu_2026_plan",
+    "school": "西南大学",
+    "year": 2026,
+    "url": "https://math.swu.edu.cn/info/1070/4486.htm"
+  },
+  {
+    "id": "hzau_2026_plan",
+    "school": "华中农业大学",
+    "year": 2026,
+    "url": "https://coi.hzau.edu.cn/info/1611/61251.htm"
+  },
+  {
+    "id": "nuaa_2026_plan",
+    "school": "南京航空航天大学",
+    "year": 2026,
+    "url": "https://www.graduate.nuaa.edu.cn/2026/0616/c13499a401776/page.htm"
+  },
+  {
+    "id": "cpu_2026_plan_index",
+    "school": "中国药科大学",
+    "year": 2026,
+    "url": "https://yjszs.cpu.edu.cn/90/66/c11271a233574/page.htm"
+  },
+  {
+    "id": "ynu_2027_index",
+    "school": "云南大学",
+    "year": 2027,
+    "url": "https://grs.ynu.edu.cn/"
+  },
+  {
+    "id": "sufe_2027_index",
+    "school": "上海财经大学",
+    "year": 2027,
+    "url": "https://gs.sufe.edu.cn/Home/Detail/6783"
+  },
+  {
+    "id": "tongji_2026_index",
+    "school": "同济大学",
+    "year": 2026,
+    "url": "https://math.tongji.edu.cn/yjspy/zsgz/yjszs.htm"
+  },
+  {
+    "id": "cqu_2027_accepted_pdf",
+    "school": "重庆大学",
+    "year": 2027,
+    "url": "https://yz.cqu.edu.cn/upload/202610/a2e46a22.pdf"
+  },
+  {
+    "id": "bjtu_2026_math_plan",
+    "school": "北京交通大学",
+    "year": 2026,
+    "url": "https://soms.bjtu.edu.cn/docs/2026-03/abd40f25009b4043a2dd92e6d8948a79.pdf"
+  },
+  {
+    "id": "neu_2026_exam_plan",
+    "school": "东北大学",
+    "year": 2026,
+    "url": "https://yz.neu.edu.cn/_upload/article/files/41/6c/ef07f6dc4ec4b560a0b9269d1a51/d0bfb029-03c8-4a74-bd9c-63d675fe292c.pdf"
+  },
+  {
+    "id": "tongji_2027_mas",
+    "school": "同济大学",
+    "year": 2027,
+    "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/102/025200?ksfs=21"
+  },
+  {
+    "id": "ecnu_2027_mas",
+    "school": "华东师范大学",
+    "year": 2027,
+    "url": "https://yjszs-ks.ecnu.edu.cn/zsml/sszsml/zsmlYjfx/2027/159/025200?ksfs=21"
+  },
+  {
+    "id": "tongji_2027_tree",
+    "school": "同济大学",
+    "year": 2027,
+    "url": "https://yzbm.tongji.edu.cn/zsml/getTreeData",
+    "method": "POST",
+    "body": {
+      "nd": "2027",
+      "zslb": "1"
+    }
+  },
+  {
+    "id": "ecnu_2027_tree",
+    "school": "华东师范大学",
+    "year": 2027,
+    "url": "https://yjszs-ks.ecnu.edu.cn/zsml/getTreeData",
+    "method": "POST",
+    "body": {
+      "nd": "2027",
+      "zslb": "1"
+    }
+  },
+  {
+    "id": "uibe_2027_net",
+    "school": "对外经济贸易大学",
+    "year": 2027,
+    "url": "https://yjsy.uibe.edu.cn/cms/infoSingleArticle.do?articleId=7933&columnId=2395"
+  },
+  {
+    "id": "cqu_2027_accepted",
+    "school": "重庆大学",
+    "year": 2027,
+    "url": "https://yz.cqu.edu.cn/news/2026-10/2606.html"
+  },
+  {
+    "id": "cpu_2026_plan_index_attach1",
+    "url": "https://yjszs.cpu.edu.cn/_upload/article/files/bd/1e/4c6bdf8a4c0a922bf7fc6f491d19/8307f335-3f56-445d-afe1-1149ac16cc73.pdf",
+    "school": "中国药科大学",
+    "year": 2026,
+    "parent_id": "cpu_2026_plan_index",
+    "title": "附件1 2026年硕士研究生统考招生规模数.pdf"
+  },
+  {
+    "id": "cpu_2026_plan_index_attach2",
+    "url": "https://yjszs.cpu.edu.cn/_upload/article/files/bd/1e/4c6bdf8a4c0a922bf7fc6f491d19/a846e796-723d-4f3d-9946-9531b4d4cd98.pdf",
+    "school": "中国药科大学",
+    "year": 2026,
+    "parent_id": "cpu_2026_plan_index",
+    "title": "附件4 2026年硕士统考复试同等学力考生加试科目.pdf"
+  }
+]

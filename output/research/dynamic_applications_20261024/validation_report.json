@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "referenced_source_ids": 44,
+  "original_files_hash_checked": 44,
+  "screenshot_files_hash_checked": 25,
+  "public_target_records": 108,
+  "computed_ratios": 37,
+  "private_raw_files_published": false,
+  "personal_candidate_fields_published": false,
+  "limitation": "哈希、口径计算和字段检查不等于所有计划已最终确定、分子完全可比或人工终审通过。"
+}

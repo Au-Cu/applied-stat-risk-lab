@@ -1,0 +1,18 @@
+[
+  {"school":"河北工业大学","year":2027,"unit":"理学院","record_kind":"招生目录预估计划","ranks":[74],"quota_basis_override":"explicit_exam_catalogue"},
+  {"school":"中国科学技术大学","year":2026,"unit":"管理学院","record_kind":"目录公招计划（实际推免结算待核）","ranks":[96],"quota_basis_override":"explicit_exam_catalogue"},
+  {"school":"中央财经大学","year":2027,"unit":"统计与数学学院","ranks":[3],"record_kind":"推免后统考公告"},
+  {"school":"上海交通大学","year":2027,"unit":"数学科学学院","ranks":[30],"record_kind":"推免后统考公告"},
+  {"school":"厦门大学","year":2027,"unit":"统计学与数据科学系","ranks":[20],"record_kind":"推免后统考公告"},
+  {"school":"东华大学","year":2027,"unit":"数学与统计学院","ranks":[48],"record_kind":"总计划及实际接收推免"},
+  {"school":"西南财经大学","year":2027,"unit":"统计与数据科学学院","ranks":[2],"record_kind":"总计划及实际接收推免"},
+  {"school":"南京大学","year":2027,"unit":"数学学院","ranks":[99],"record_kind":"总计划及实际接收推免"},
+  {"school":"兰州大学","year":2026,"unit":"数学与统计学院","ranks":[47],"record_kind":"复试阶段计划（截止后）"},
+  {"school":"福州大学","year":2026,"unit":"数学与统计学院","ranks":[69],"record_kind":"复试阶段计划（截止后）"},
+  {"school":"辽宁大学","year":2026,"unit":"数学与统计学院","ranks":[62],"record_kind":"复试阶段计划（截止后）"},
+  {"school":"中山大学","year":2026,"unit":"数学学院","ranks":[97],"record_kind":"复试阶段计划（截止后）"},
+  {"school":"中山大学","year":2026,"unit":"数学学院（珠海）","ranks":[142],"record_kind":"复试阶段计划（截止后）"},
+  {"school":"暨南大学","year":2026,"unit":"经济学院","ranks":[43],"record_kind":"推免后统考公告"},
+  {"school":"暨南大学","year":2026,"unit":"信息科学技术学院","ranks":[129],"record_kind":"推免后统考公告"},
+  {"school":"上海财经大学","year":2026,"unit":"数学学院","ranks":[66],"record_kind":"复试前公开计划（截止后）"}
+]

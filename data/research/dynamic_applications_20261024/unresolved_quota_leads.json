@@ -1,0 +1,10 @@
+[
+  {"ranks":[1],"reason":"2026官方分专业计划的搜索缓存出现统考102、推免75，但原PDF本次访问返回404。缓存数字仅作待核线索，未代替可留存原件的核定分母。","source_urls":["https://yzb.zuel.edu.cn/_upload/article/files/5d/fe/b1504aed49c5b361f318ac7b5d84/1a23404a-1019-4fff-af70-bf2a8d21a5cc.pdf"],"unverified_exam_quota_hint":102,"hint_year":2026},
+  {"ranks":[4],"reason":"云南大学研招网本轮访问未成功，尚未核到2027或2026同口径推免后统考计划。访问失败不能解释为零名额。","source_urls":["https://grs.ynu.edu.cn/"]},
+  {"ranks":[8],"reason":"已查到2026分专业调整计划公告线索，但部分搜索附件实际写2024；不得用旧年附件冒充2026。尚缺原件及正确年度数值。","source_urls":["https://graschool.ahu.edu.cn/9539/"]},
+  {"ranks":[10,172],"reason":"已有2026普通项目统考46、上财—波士顿项目20的官方分列数。平台A/B标签与相应年度项目映射尚未独立核定，暂不强行配对。","source_urls":["https://gs.sufe.edu.cn/Home/Detail/6783"]},
+  {"ranks":[16],"reason":"2027目录明确不含推免，但60人是应用统计与网络与信息安全两个专硕合计，未给出专业间拆分；不能全部作为应用统计分母。","source_urls":["https://yjs.nwu.edu.cn/info/1102/5675.htm","https://yjs.nwu.edu.cn/014shuxuexueyuan2027nianshuoshiyanjiushengzhaoshengkaoshizhuanyemulu.xlsx"]},
+  {"ranks":[17],"reason":"已取得2027实际接收推免22、2026实际接收推免8的材料。尚缺同院系全日制应用统计总计划，不能把推免人数当统考人数。","source_urls":["https://math.ecust.edu.cn/13407/list1.htm"]},
+  {"ranks":[25,73,76,85,112],"reason":"平台分为五个学院/研究院及方向，不能把学校应用统计总计划重复用于五个分子。仍需逐学院、方向匹配统考名额。","source_urls":[]},
+  {"ranks":[49],"reason":"同济2027目录中的学院97人为上一年含推免及专项的总人数，不能当应用统计当年净统考计划；逐人最终录取人数也不替代计划。2027及2026同口径分母仍待核。","source_urls":["https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/102/025200?ksfs=21"]}
+]
