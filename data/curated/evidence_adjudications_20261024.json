@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-24",
+  "reviewer": "assistant_visual_source_review",
+  "independent_second_human_review": false,
+  "records": [
+    {
+      "school": "同济大学",
+      "year": 2025,
+      "source_sha256": "2ff8351857bfeee66f091456242cec4fa1361a227ef50d20b5e2cbacb1699d5a",
+      "verified_footer": "注：绿色标记为未被拟录取考生。",
+      "evidence_basis": "Direct visual reading of the original roster footer; the two green rows are excluded by the existing colour rule.",
+      "restriction": "This is a secondary roster snapshot, not a recovered official final-admission file. Promotion still requires independent count/available-summary and structural reconciliation."
+    },
+    {
+      "school": "郑州大学",
+      "year": 2022,
+      "source_sha256": "524cee41377394c30be83044ea0f00d30f09c9fd24597060576a850807159417",
+      "verified_score_header_index": 3,
+      "evidence_basis": "Visible header has two initial-score columns; zero-based column 3 is the original 500-point initial total, while the adjacent initial score is explicitly converted to a 100-point scale.",
+      "restriction": "Do not interpret the converted initial score, retest score or composite score as the raw initial total."
+    }
+  ]
+}

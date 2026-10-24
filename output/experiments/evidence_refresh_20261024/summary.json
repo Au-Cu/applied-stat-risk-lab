@@ -1,0 +1,338 @@
+{
+  "experiment": "fixed V6 model with refreshed evidence",
+  "created_on": "2026-10-24",
+  "python_version": "3.13.5",
+  "input_roles": {
+    "effective_training_panel": "data/processed/evidence_refresh_20261024/program_year.csv",
+    "proxy_calibration_panel": "data/processed/evidence_refresh_20261024/program_year_proxy_with_cutoff_corrections.csv",
+    "exact_label_priority": "85 audited empirical labels replace proxies; original proxy columns remain solely for observation-error calibration"
+  },
+  "model": "random_intercept",
+  "hyperparameters_retuned": false,
+  "same_key_test": {
+    "previous": {
+      "n": 54,
+      "mae": 15.050286874316576,
+      "rmse": 19.89743108047051,
+      "bias_actual_minus_prediction": -5.239108170258777,
+      "wis": 8.799242296560491,
+      "q80_coverage": 0.8888888888888888,
+      "q80_mean_width": 15.24985784424425,
+      "q90_coverage": 0.9259259259259259,
+      "q90_mean_width": 23.221228760658,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 29.804124450510752,
+      "year_equal_mae": 14.17631923106184
+    },
+    "refreshed": {
+      "n": 54,
+      "mae": 15.063269664392498,
+      "rmse": 19.928228603567472,
+      "bias_actual_minus_prediction": -5.263384703705957,
+      "wis": 8.817883783430668,
+      "q80_coverage": 0.8888888888888888,
+      "q80_mean_width": 15.252213924770055,
+      "q90_coverage": 0.9259259259259259,
+      "q90_mean_width": 23.22481640622342,
+      "q95_coverage": 0.9629629629629629,
+      "q95_mean_width": 29.808729143742887,
+      "year_equal_mae": 14.17996538990523
+    },
+    "outcome_label_changes": []
+  },
+  "expanded_audited_test": {
+    "n": 62,
+    "mae": 14.69515395606705,
+    "rmse": 19.449983728735514,
+    "bias_actual_minus_prediction": -3.9016594641831728,
+    "wis": 8.566241429861503,
+    "q80_coverage": 0.8709677419354839,
+    "q80_mean_width": 15.285927651614157,
+    "q90_coverage": 0.9032258064516129,
+    "q90_mean_width": 23.276152895482344,
+    "q95_coverage": 0.967741935483871,
+    "q95_mean_width": 29.87461881437555,
+    "year_equal_mae": 13.863396019802233
+  },
+  "yearly": [
+    {
+      "vintage": "previous_common",
+      "year": 2024,
+      "n": 10,
+      "mae": 11.486556550314532,
+      "rmse": 15.382082664263228,
+      "bias_actual_minus_prediction": -1.110678766294376,
+      "wis": 6.875775307206998,
+      "q80_coverage": 0.9,
+      "q80_mean_width": 13.056786193275666,
+      "q90_coverage": 0.9,
+      "q90_mean_width": 19.881799697397827,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 25.518013649876337,
+      "year_equal_mae": 11.486556550314532
+    },
+    {
+      "vintage": "previous_common",
+      "year": 2025,
+      "n": 27,
+      "mae": 17.012910628114287,
+      "rmse": 21.97630833478293,
+      "bias_actual_minus_prediction": -13.888715002308391,
+      "wis": 9.831916235574617,
+      "q80_coverage": 0.9629629629629629,
+      "q80_mean_width": 15.157095780674698,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 23.07997832275492,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 29.622831476166287,
+      "year_equal_mae": 17.012910628114287
+    },
+    {
+      "vintage": "previous_common",
+      "year": 2026,
+      "n": 17,
+      "mae": 14.0294905147567,
+      "rmse": 18.744513090380494,
+      "bias_actual_minus_prediction": 6.070014795958611,
+      "wis": 8.2905642695107,
+      "q80_coverage": 0.7647058823529411,
+      "q80_mean_width": 16.687227975189188,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 25.409937728657134,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 32.613301998372194,
+      "year_equal_mae": 14.0294905147567
+    },
+    {
+      "vintage": "refreshed_common",
+      "year": 2024,
+      "n": 10,
+      "mae": 11.486556550314532,
+      "rmse": 15.382082664263228,
+      "bias_actual_minus_prediction": -1.110678766294376,
+      "wis": 6.875775307206998,
+      "q80_coverage": 0.9,
+      "q80_mean_width": 13.056786193275666,
+      "q90_coverage": 0.9,
+      "q90_mean_width": 19.881799697397827,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 25.518013649876337,
+      "year_equal_mae": 11.486556550314532
+    },
+    {
+      "vintage": "refreshed_common",
+      "year": 2025,
+      "n": 27,
+      "mae": 17.06442228442299,
+      "rmse": 22.02790555343313,
+      "bias_actual_minus_prediction": -13.991175021070474,
+      "wis": 9.8614306740571,
+      "q80_coverage": 0.9629629629629629,
+      "q80_mean_width": 15.13626589046991,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 23.04826027984297,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 29.582121808817615,
+      "year_equal_mae": 17.06442228442299
+    },
+    {
+      "vintage": "refreshed_common",
+      "year": 2026,
+      "n": 17,
+      "mae": 13.988917334978169,
+      "rmse": 18.75224606325701,
+      "bias_actual_minus_prediction": 6.155631719513227,
+      "wis": 8.302902531390846,
+      "q80_coverage": 0.7647058823529411,
+      "q80_mean_width": 16.727794762478744,
+      "q90_coverage": 0.8235294117647058,
+      "q90_mean_width": 25.471709494489772,
+      "q95_coverage": 0.8823529411764706,
+      "q95_mean_width": 32.6925852014869,
+      "year_equal_mae": 13.988917334978169
+    },
+    {
+      "vintage": "refreshed_expanded",
+      "year": 2024,
+      "n": 12,
+      "mae": 10.459707009041125,
+      "rmse": 14.21032461692615,
+      "bias_actual_minus_prediction": -1.8131421890243284,
+      "wis": 6.425309362002239,
+      "q80_coverage": 0.9166666666666666,
+      "q80_mean_width": 13.092309725983972,
+      "q90_coverage": 0.9166666666666666,
+      "q90_mean_width": 19.935892010115193,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 25.58744038162516,
+      "year_equal_mae": 10.459707009041125
+    },
+    {
+      "vintage": "refreshed_expanded",
+      "year": 2025,
+      "n": 29,
+      "mae": 16.480369888748296,
+      "rmse": 21.401723548847205,
+      "bias_actual_minus_prediction": -12.741765029369901,
+      "wis": 9.551312028689996,
+      "q80_coverage": 0.9655172413793104,
+      "q80_mean_width": 15.201882835363826,
+      "q90_coverage": 1.0,
+      "q90_mean_width": 23.148176364538298,
+      "q95_coverage": 1.0,
+      "q95_mean_width": 29.710362715169325,
+      "year_equal_mae": 16.480369888748296
+    },
+    {
+      "vintage": "refreshed_expanded",
+      "year": 2026,
+      "n": 21,
+      "mae": 14.650111161617279,
+      "rmse": 19.208798199166775,
+      "bias_actual_minus_prediction": 7.112666920983922,
+      "wis": 8.429295594065541,
+      "q80_coverage": 0.7142857142857143,
+      "q80_mean_width": 16.655485498224717,
+      "q90_coverage": 0.7619047619047619,
+      "q90_mean_width": 25.361602896519653,
+      "q95_coverage": 0.9047619047619048,
+      "q95_mean_width": 32.55126491294628,
+      "year_equal_mae": 14.650111161617279
+    }
+  ],
+  "origin_fits": {
+    "previous": [
+      {
+        "origin": 2024,
+        "latest_training_year": 2023,
+        "exact_training_groups": 23,
+        "converged": true,
+        "school_variance": 168.74738994253795,
+        "innovation_variance": 81.17776898798814
+      },
+      {
+        "origin": 2025,
+        "latest_training_year": 2024,
+        "exact_training_groups": 33,
+        "converged": true,
+        "school_variance": 172.54268123564765,
+        "innovation_variance": 141.877417395207
+      },
+      {
+        "origin": 2026,
+        "latest_training_year": 2025,
+        "exact_training_groups": 60,
+        "converged": true,
+        "school_variance": 158.10646029444035,
+        "innovation_variance": 163.9917481474699
+      }
+    ],
+    "refreshed": [
+      {
+        "origin": 2024,
+        "latest_training_year": 2023,
+        "exact_training_groups": 23,
+        "converged": true,
+        "school_variance": 168.74738994253795,
+        "innovation_variance": 81.17776898798814
+      },
+      {
+        "origin": 2025,
+        "latest_training_year": 2024,
+        "exact_training_groups": 35,
+        "converged": true,
+        "school_variance": 172.59697288389742,
+        "innovation_variance": 140.8594654771941
+      },
+      {
+        "origin": 2026,
+        "latest_training_year": 2025,
+        "exact_training_groups": 64,
+        "converged": true,
+        "school_variance": 158.41641798483747,
+        "innovation_variance": 163.32338461160865
+      }
+    ],
+    "expanded": [
+      {
+        "origin": 2024,
+        "latest_training_year": 2023,
+        "exact_training_groups": 23,
+        "converged": true,
+        "school_variance": 168.74738994253795,
+        "innovation_variance": 81.17776898798814
+      },
+      {
+        "origin": 2025,
+        "latest_training_year": 2024,
+        "exact_training_groups": 35,
+        "converged": true,
+        "school_variance": 172.59697288389742,
+        "innovation_variance": 140.8594654771941
+      },
+      {
+        "origin": 2026,
+        "latest_training_year": 2025,
+        "exact_training_groups": 64,
+        "converged": true,
+        "school_variance": 158.41641798483747,
+        "innovation_variance": 163.32338461160865
+      }
+    ]
+  },
+  "production_promoted": false,
+  "current_audited_distribution": {
+    "school_years": 85,
+    "schools": 48,
+    "candidates": 2560,
+    "median_within_school_year_sd": 15.209646062066446,
+    "q10_range": [
+      314.0,
+      416.0
+    ],
+    "nested_reml_calendar_adjusted": {
+      "year_fixed": true,
+      "converged": true,
+      "variances": {
+        "between_school": 182.88487471702274,
+        "school_year": 100.60289317492082,
+        "within_school_year": 292.5008027351227
+      },
+      "variance_shares": {
+        "between_school": 0.3175147633883081,
+        "school_year": 0.17466126639526305,
+        "within_school_year": 0.5078239702164288
+      },
+      "same_school_different_year_icc": 0.3175147633883081,
+      "same_school_year_icc": 0.49217602978357117,
+      "fixed_effects": [
+        406.6116677746451,
+        394.19192901959644,
+        393.2338490070635,
+        378.35542032607026,
+        393.11439586102125
+      ],
+      "fixed_effects_se": [
+        5.945294087066711,
+        3.561677142345596,
+        4.1859765554428465,
+        2.949226757574831,
+        3.3439519417716905
+      ],
+      "n_candidates": 2560,
+      "n_groups": 85,
+      "n_schools": 48,
+      "within_df": 2475,
+      "negative_restricted_loglik_up_to_constants": 8530.491811783824,
+      "interpretation": "Gaussian working REML; candidate likelihood weighting, conditional on observed audited schools"
+    }
+  },
+  "limitations": [
+    "retrospective source reconstruction, not a blind forecast",
+    "only three independent outer calendar years",
+    "school-year rosters are not a nationwide random sample",
+    "newly audited outcomes change the expanded evaluation population",
+    "2027 syllabus event has verified existence but no empirically estimated shock probability",
+    "no personal-score uncertainty was included"
+  ]
+}

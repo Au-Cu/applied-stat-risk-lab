@@ -1,0 +1,81 @@
+{
+  "source_content_sha256": "aa7a6ef051e3aad7eb20087f02ba2e8e0e73745e2b9cfdfb6253fc8473c5c8df",
+  "pdf_pages": 52,
+  "headings": [
+    {
+      "index": 0,
+      "heading": "一、引言",
+      "page": 3
+    },
+    {
+      "index": 1,
+      "heading": "二、理论机制与研究框架",
+      "page": 4
+    },
+    {
+      "index": 2,
+      "heading": "三、数据与研究设计",
+      "page": 5
+    },
+    {
+      "index": 3,
+      "heading": "四、门槛预测方法",
+      "page": 14
+    },
+    {
+      "index": 4,
+      "heading": "五、事件冲击与预测不确定性",
+      "page": 20
+    },
+    {
+      "index": 5,
+      "heading": "六、从门槛分布到择校决策",
+      "page": 23
+    },
+    {
+      "index": 6,
+      "heading": "七、实证结果",
+      "page": 24
+    },
+    {
+      "index": 7,
+      "heading": "八、稳健性分析",
+      "page": 34
+    },
+    {
+      "index": 8,
+      "heading": "九、讨论：方法价值、局限与推广",
+      "page": 42
+    },
+    {
+      "index": 9,
+      "heading": "十、结论",
+      "page": 44
+    },
+    {
+      "index": 10,
+      "heading": "参考文献",
+      "page": 45
+    },
+    {
+      "index": 11,
+      "heading": "附录 A　原冻结快照的2027年81校预测表",
+      "page": 46
+    },
+    {
+      "index": 12,
+      "heading": "附录 B　数据字典、复现协议与隐私边界",
+      "page": 48
+    },
+    {
+      "index": 13,
+      "heading": "附录 C　补充候选及探索性分布比较",
+      "page": 50
+    },
+    {
+      "index": 14,
+      "heading": "附录 D　修订证据的官方来源与定位",
+      "page": 51
+    }
+  ]
+}

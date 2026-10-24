@@ -1,0 +1,3294 @@
+{
+  "summary": {
+    "version": "evidence-refresh-20261024",
+    "generated_at": "2026-10-24T09:28:51.300088+00:00",
+    "scope_schools": 81,
+    "scope_school_years": 405,
+    "local_source_hashes_verified": 452,
+    "unique_source_payloads": 450,
+    "api_targets_refreshed": 108,
+    "api_targets_successful": 108,
+    "api_roster_schools": 79,
+    "api_roster_school_years": 353,
+    "roster_urls_added": 0,
+    "images_parsed_before": 412,
+    "images_parsed_after": 448,
+    "readable_score_rows_before": 14317,
+    "readable_score_rows_after": 16386,
+    "unique_readable_score_rows_after": 16206,
+    "duplicate_readable_references": 180,
+    "exact_school_years_before": 77,
+    "exact_school_years_after": 85,
+    "exact_candidate_rows_before": 2312,
+    "exact_candidate_rows_after": 2560,
+    "exact_schools_after": 48,
+    "added_exact_school_years": [
+      {
+        "school": "上海大学",
+        "year": 2026
+      },
+      {
+        "school": "南京师范大学",
+        "year": 2026
+      },
+      {
+        "school": "同济大学",
+        "year": 2025
+      },
+      {
+        "school": "同济大学",
+        "year": 2026
+      },
+      {
+        "school": "重庆大学",
+        "year": 2024
+      },
+      {
+        "school": "重庆大学",
+        "year": 2025
+      },
+      {
+        "school": "重庆大学",
+        "year": 2026
+      },
+      {
+        "school": "陕西师范大学",
+        "year": 2024
+      }
+    ],
+    "removed_exact_school_years": [],
+    "admission_rows_after": 10870,
+    "audited_admission_rows_after": 8347,
+    "unique_score_role_counts": {
+      "diagnostic_admission_not_verified": 2342,
+      "exact_label_and_distribution": 2560,
+      "excluded_special_population": 57,
+      "retest_not_admitted": 2502,
+      "retest_unknown_outcome": 2958,
+      "soft_distribution_only": 5787
+    },
+    "privacy": "Only school-year aggregates are public. Raw images, roster image URLs, per-person rows and candidate hashes remain private.",
+    "production_numeric_forecast_changed": false,
+    "computer_use": "Required node_repl/Sky tool unavailable; used authorized public mini-program metadata API and original local images instead. No desktop operation was performed.",
+    "header_audited_images": 452,
+    "header_geometry_disagreements": 93,
+    "no_identifiable_initial_score_column": 4,
+    "supplemental_official_sources": 15,
+    "secondary_metadata_changes": 3
+  },
+  "schools": [
+    {
+      "school": "南京大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 54,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 25,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://math.nju.edu.cn/DFS/file/2023/03/17/20230317123707200fsqjvf.pdf",
+        "https://math.nju.edu.cn/DFS/file/2026/03/18/202603181823272823iq65i.pdf",
+        "https://math.nju.edu.cn/zs/sszs/20260402/i371514.html"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 14,
+          "q10": 367.6,
+          "minimum": 359.0,
+          "median": 383.5,
+          "maximum": 421.0
+        },
+        {
+          "year": 2026,
+          "n": 11,
+          "q10": 415.0,
+          "minimum": 409.0,
+          "median": 424.0,
+          "maximum": 449.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "华东师范大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 316,
+      "exactYears": [
+        2023
+      ],
+      "exactCandidates": 40,
+      "strictQuota2027": false,
+      "units": [
+        "统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://stat.ecnu.edu.cn/_upload/article/files/75/13/fccefefd4b98a332d1077b17f9c6/6edeeed4-7a55-4fd6-b207-aff078745e0e.pdf",
+        "https://yjszs.ecnu.edu.cn/_upload/article/files/0a/0b/623bd1cf46ef96998a7b42a8b6c0/399e6790-cafb-4e1a-9b32-e3f13aee36b8.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 40,
+          "q10": 399.9,
+          "minimum": 395.0,
+          "median": 408.0,
+          "maximum": 435.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "上海交通大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 312,
+      "exactYears": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "exactCandidates": 203,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yzb.sjtu.edu.cn/post/3503"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2022,
+          "n": 44,
+          "q10": 404.3,
+          "minimum": 401.0,
+          "median": 414.5,
+          "maximum": 437.0
+        },
+        {
+          "year": 2023,
+          "n": 48,
+          "q10": 374.0,
+          "minimum": 365.0,
+          "median": 393.0,
+          "maximum": 423.0
+        },
+        {
+          "year": 2024,
+          "n": 51,
+          "q10": 389.0,
+          "minimum": 384.0,
+          "median": 407.0,
+          "maximum": 434.0
+        },
+        {
+          "year": 2025,
+          "n": 60,
+          "q10": 381.8,
+          "minimum": 375.0,
+          "median": 398.5,
+          "maximum": 436.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国科学技术大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 51,
+      "exactYears": [
+        2023
+      ],
+      "exactCandidates": 10,
+      "strictQuota2027": false,
+      "units": [
+        "管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://som.ustc.edu.cn/2026/0319/c36754a723567/page.htm",
+        "https://som.ustc.edu.cn/2026/0402/c36754a725336/page.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 10,
+          "q10": 384.7,
+          "minimum": 382.0,
+          "median": 394.5,
+          "maximum": 434.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "四川大学",
+      "rosterImages": 7,
+      "parsedImages": 7,
+      "readableRows": 143,
+      "exactYears": [
+        2023
+      ],
+      "exactCandidates": 13,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院",
+        "经济学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 13,
+          "q10": 360.2,
+          "minimum": 358.0,
+          "median": 379.0,
+          "maximum": 429.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "复旦大学",
+      "rosterImages": 17,
+      "parsedImages": 17,
+      "readableRows": 636,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "上海数学与交叉学科研究院",
+        "上海数学中心",
+        "大数据学院",
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://gsao.fudan.edu.cn/_upload/article/files/18/fc/7a23e1c8471c8cf6eab8c0459cb0/d2f601bf-0bfd-4275-ab86-535e691b9f49.pdf",
+        "https://gsao.fudan.edu.cn/e6/ec/c15906a780012/page.htm",
+        "https://math.fudan.edu.cn/ca/cc/c30374a772812/page.htm",
+        "https://scms.fudan.edu.cn/info/1047/12031.htm",
+        "https://sds.fudan.edu.cn/ca/bd/c17701a772797/page.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "东南大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 79,
+      "exactYears": [
+        2023,
+        2024,
+        2026
+      ],
+      "exactCandidates": 42,
+      "strictQuota2027": false,
+      "units": [
+        "统计与数据科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 11,
+          "q10": 386.0,
+          "minimum": 386.0,
+          "median": 400.0,
+          "maximum": 437.0
+        },
+        {
+          "year": 2024,
+          "n": 12,
+          "q10": 392.9,
+          "minimum": 387.0,
+          "median": 412.0,
+          "maximum": 434.0
+        },
+        {
+          "year": 2026,
+          "n": 19,
+          "q10": 401.8,
+          "minimum": 397.0,
+          "median": 413.0,
+          "maximum": 442.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "清华大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 64,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学系"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://math.tsinghua.edu.cn/css/qinghuadaxue2026nianshuxuekexuexiquanguoshuoshiyanjiushengzhaoshengkaoshiyingyongtongjizhuanyeruweifushimingdangongshi.pdf",
+        "https://www.math.tsinghua.edu.cn/2022nianyingyongtongjizhuanyeshuoshixiangmugongkaizhaokaoniluqumingdangongshi.pdf",
+        "https://www.math.tsinghua.edu.cn/2023nianyingyongtongjizhuanyeshuoshiluqumingdangongshi.pdf",
+        "https://www.math.tsinghua.edu.cn/qinghuadaxue2024nianshuxuekexuexishuoshiyanjiushengyingyongtongjizhuanyeluqugongshimingdan.pdf",
+        "https://www.math.tsinghua.edu.cn/qinghuadaxue2025nianshuxuekexuexishuoshiyanjiushengyingyongtongjizhuanyeniluqumingdangongshi.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "华中科技大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 142,
+      "exactYears": [
+        2024,
+        2025
+      ],
+      "exactCandidates": 55,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 25,
+          "q10": 376.6,
+          "minimum": 370.0,
+          "median": 389.0,
+          "maximum": 414.0
+        },
+        {
+          "year": 2025,
+          "n": 30,
+          "q10": 367.9,
+          "minimum": 366.0,
+          "median": 383.0,
+          "maximum": 419.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "北京师范大学",
+      "rosterImages": 12,
+      "parsedImages": 12,
+      "readableRows": 1044,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "统计学院（01方向）",
+        "统计学院（02方向）",
+        "统计学院（03方向）"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yz.bnu.edu.cn/content/ss_fsfsx/2026/fsfsx_yxsm__034___zy__1.html",
+        "https://yz.bnu.edu.cn/detail/77810013-b3d0-46fa-bbd6-9615a8561a52"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "吉林大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 47,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "兰州大学",
+      "rosterImages": 5,
+      "parsedImages": 4,
+      "readableRows": 288,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 76,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 76,
+          "q10": 364.5,
+          "minimum": 356.0,
+          "median": 394.5,
+          "maximum": 439.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "西安交通大学",
+      "rosterImages": 6,
+      "parsedImages": 6,
+      "readableRows": 247,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院",
+        "经济与金融学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "中南大学",
+      "rosterImages": 5,
+      "parsedImages": 4,
+      "readableRows": 127,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 26,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 26,
+          "q10": 374.5,
+          "minimum": 370.0,
+          "median": 383.5,
+          "maximum": 421.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "重庆大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 373,
+      "exactYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "exactCandidates": 149,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yz.cqu.edu.cn/upload/202505/9adafabf.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 46,
+          "q10": 376.5,
+          "minimum": 363.0,
+          "median": 394.5,
+          "maximum": 427.0
+        },
+        {
+          "year": 2025,
+          "n": 52,
+          "q10": 374.0,
+          "minimum": 362.0,
+          "median": 391.0,
+          "maximum": 422.0
+        },
+        {
+          "year": 2026,
+          "n": 51,
+          "q10": 397.0,
+          "minimum": 390.0,
+          "median": 415.0,
+          "maximum": 440.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "西北工业大学",
+      "rosterImages": 4,
+      "parsedImages": 4,
+      "readableRows": 16,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "大连理工大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 197,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 67,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 52,
+          "q10": 391.0,
+          "minimum": 382.0,
+          "median": 405.0,
+          "maximum": 433.0
+        },
+        {
+          "year": 2025,
+          "n": 15,
+          "q10": 388.2,
+          "minimum": 386.0,
+          "median": 404.0,
+          "maximum": 430.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "东北大学",
+      "rosterImages": 13,
+      "parsedImages": 13,
+      "readableRows": 339,
+      "exactYears": [
+        2023
+      ],
+      "exactCandidates": 27,
+      "strictQuota2027": false,
+      "units": [
+        "理学院",
+        "理学院(秦皇岛)",
+        "理学院（佛山）"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 27,
+          "q10": 386.8,
+          "minimum": 377.0,
+          "median": 400.0,
+          "maximum": 440.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国人民大学",
+      "rosterImages": 10,
+      "parsedImages": 10,
+      "readableRows": 248,
+      "exactYears": [
+        2024
+      ],
+      "exactCandidates": 29,
+      "strictQuota2027": false,
+      "units": [
+        "统计与大数据研究院",
+        "统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://stat.ruc.edu.cn/tzgg/44b0a2b212b9477494645db69c1efd8f.htm",
+        "https://stat.ruc.edu.cn/tzgg/8fb8c0c652e04a7c9e6c30b4adb218f6.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 29,
+          "q10": 407.6,
+          "minimum": 405.0,
+          "median": 419.0,
+          "maximum": 450.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "哈尔滨工业大学",
+      "rosterImages": 6,
+      "parsedImages": 6,
+      "readableRows": 138,
+      "exactYears": [
+        2022,
+        2023,
+        2025
+      ],
+      "exactCandidates": 64,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院",
+        "数学学院（苏州基地）"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yzb.hit.edu.cn/_t1161/2023/0314/c22276a292420/page.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2022,
+          "n": 27,
+          "q10": 388.6,
+          "minimum": 385.0,
+          "median": 405.0,
+          "maximum": 447.0
+        },
+        {
+          "year": 2023,
+          "n": 16,
+          "q10": 389.0,
+          "minimum": 386.0,
+          "median": 414.5,
+          "maximum": 429.0
+        },
+        {
+          "year": 2025,
+          "n": 21,
+          "q10": 357.0,
+          "minimum": 352.0,
+          "median": 376.0,
+          "maximum": 430.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "合肥工业大学",
+      "rosterImages": 0,
+      "parsedImages": 0,
+      "readableRows": 0,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yjszs.hfut.edu.cn/2022/0319/c13533a280872/page.htm",
+        "https://yjszs.hfut.edu.cn/2023/0318/c13524a289822/page.htm",
+        "https://yjszs.hfut.edu.cn/2024/0322/c13533a301654/page.htm",
+        "https://yjszs.hfut.edu.cn/2025/0319/c13524a310804/page.htm",
+        "https://yjszs.hfut.edu.cn/2026/0320/c13533a317912/pagem.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "中山大学",
+      "rosterImages": 9,
+      "parsedImages": 9,
+      "readableRows": 342,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院",
+        "数学学院（珠海）"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://graduate.sysu.edu.cn/zsw/sites/admission.prod.dpcms4.sysu.edu.cn/files/2023-03/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62023%E5%B9%B4%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E8%80%83%E8%AF%95%E5%A4%8D%E8%AF%95%E5%9F%BA%E6%9C%AC%E5%88%86%E6%95%B0%E7%BA%BF_2.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "厦门大学",
+      "rosterImages": 9,
+      "parsedImages": 9,
+      "readableRows": 250,
+      "exactYears": [
+        2023
+      ],
+      "exactCandidates": 36,
+      "strictQuota2027": true,
+      "units": [
+        "王亚南经济研究院",
+        "统计学与数据科学系"
+      ],
+      "quotaEvidence2027": [
+        {
+          "unit": "统计学与数据科学系",
+          "netSeats": 49,
+          "publishDate": "2026-10-10",
+          "deadline": "2026-10-24T22:00:00+08:00",
+          "url": "https://zs.xmu.edu.cn/info/1174/37082.htm",
+          "method": "official_post_actual_recommendation_net",
+          "reviewStatus": "已核对原文，待用户人工终审",
+          "unitLinked": false,
+          "usedInProduction": false
+        }
+      ],
+      "missing": [
+        "已取得学院净名额，但尚需核对其与校级预测标签的培养单位对应关系",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 36,
+          "q10": 366.5,
+          "minimum": 362.0,
+          "median": 390.0,
+          "maximum": 424.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "山东大学",
+      "rosterImages": 13,
+      "parsedImages": 13,
+      "readableRows": 161,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院",
+        "数据科学研究院",
+        "经济研究院",
+        "金融研究院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "武汉大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 77,
+      "exactYears": [
+        2022,
+        2024
+      ],
+      "exactCandidates": 27,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2023年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2022,
+          "n": 16,
+          "q10": 416.0,
+          "minimum": 415.0,
+          "median": 428.0,
+          "maximum": 452.0
+        },
+        {
+          "year": 2024,
+          "n": 11,
+          "q10": 387.0,
+          "minimum": 386.0,
+          "median": 399.0,
+          "maximum": 430.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "太原理工大学",
+      "rosterImages": 3,
+      "parsedImages": 3,
+      "readableRows": 16,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://www.gs.tyut.edu.cn/info/1261/15529.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "上海财经大学",
+      "rosterImages": 14,
+      "parsedImages": 14,
+      "readableRows": 632,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院",
+        "统计与数据科学学院- A组",
+        "统计与数据科学学院- B组"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "西南财经大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 431,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "统计与数据科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yzcx.swufe.edu.cn/chaxun/yzb/ss/2023/06_fs/01_fsx/2023fsx.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "中央财经大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 343,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 120,
+      "strictQuota2027": true,
+      "units": [
+        "统计与数学学院"
+      ],
+      "quotaEvidence2027": [
+        {
+          "unit": "统计与数学学院",
+          "netSeats": 24,
+          "publishDate": "2026-10-16",
+          "deadline": "2026-10-24T22:00:00+08:00",
+          "url": "https://gs.cufe.edu.cn/info/1132/7189.htm",
+          "method": "official_post_actual_recommendation_net",
+          "reviewStatus": "已核对原文，待用户人工终审",
+          "unitLinked": true,
+          "usedInProduction": false
+        }
+      ],
+      "missing": [
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 58,
+          "q10": 345.7,
+          "minimum": 343.0,
+          "median": 364.0,
+          "maximum": 418.0
+        },
+        {
+          "year": 2026,
+          "n": 62,
+          "q10": 375.0,
+          "minimum": 369.0,
+          "median": 393.0,
+          "maximum": 432.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "湖南大学",
+      "rosterImages": 3,
+      "parsedImages": 3,
+      "readableRows": 72,
+      "exactYears": [
+        2024,
+        2025
+      ],
+      "exactCandidates": 36,
+      "strictQuota2027": false,
+      "units": [
+        "金融与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://jt.hnu.edu.cn/info/1089/8977.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 21,
+          "q10": 378.0,
+          "minimum": 371.0,
+          "median": 390.0,
+          "maximum": 426.0
+        },
+        {
+          "year": 2025,
+          "n": 15,
+          "q10": 388.0,
+          "minimum": 380.0,
+          "median": 398.0,
+          "maximum": 421.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "对外经济贸易大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 377,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "同济大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 91,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 62,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [
+        {
+          "title": "同济大学数学科学学院2025年硕士研究生进入复试的初试成绩基本要求",
+          "url": "https://math.tongji.edu.cn/info/1037/11954.htm",
+          "publishDate": "2025-03-14"
+        },
+        {
+          "title": "同济大学数学科学学院2025年进入复试初试成绩基本要求附件",
+          "url": "https://math.tongji.edu.cn/__local/3/1A/33/AF6A002A4BB347DE45D3402442F_84DEA1DF_14A81.pdf",
+          "publishDate": "2025-03-14"
+        },
+        {
+          "title": "同济大学数学科学学院2026年硕士研究生进入复试的初试成绩基本要求",
+          "url": "https://math.tongji.edu.cn/info/1037/13264.htm",
+          "publishDate": "2026-03-18"
+        },
+        {
+          "title": "同济大学数学科学学院2026年进入复试初试成绩基本要求附件",
+          "url": "https://math.tongji.edu.cn/__local/1/E0/BA/E8D86468F3671102B822631B627_6ACD045A_19C00.pdf",
+          "publishDate": "2026-03-18"
+        },
+        {
+          "title": "同济大学2026年硕士研究生（统考）拟录取名单公示（第一批）",
+          "url": "https://yz.tongji.edu.cn/info/1012/4169.htm",
+          "publishDate": "2026-04-27"
+        },
+        {
+          "title": "关于调整我校统计学（科目代码432）2027年硕士研究生招生考试科目大纲的通知",
+          "url": "https://yz.tongji.edu.cn/info/1018/4206.htm",
+          "publishDate": "2026-06-26"
+        },
+        {
+          "title": "同济大学432统计学2027年考试科目大纲",
+          "url": "https://yz.tongji.edu.cn/yingyongtongji432dagangnew.pdf",
+          "publishDate": "2026-06-26"
+        },
+        {
+          "title": "同济大学2027年应用统计专业目录（数学科学学院）",
+          "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/102/025200?ksfs=21",
+          "publishDate": "2026-09-30"
+        },
+        {
+          "title": "同济大学2027年数学科学学院专业目录及招生计划说明",
+          "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlZy/2027/102",
+          "publishDate": "2026-09-30"
+        }
+      ],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": true,
+      "evidenceStatus": "已补审计名单，前瞻预测需复核",
+      "cutoffCorrections": [
+        {
+          "year": 2025,
+          "previous": 323,
+          "verified": 385
+        },
+        {
+          "year": 2026,
+          "previous": 324,
+          "verified": 396
+        }
+      ],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 33,
+          "q10": 388.0,
+          "minimum": 386.0,
+          "median": 400.0,
+          "maximum": 436.0
+        },
+        {
+          "year": 2026,
+          "n": 29,
+          "q10": 412.2,
+          "minimum": 404.0,
+          "median": 426.0,
+          "maximum": 456.0
+        }
+      ],
+      "knownEvent": {
+        "year": 2027,
+        "name": "432统计学2027年考试大纲调整",
+        "publishDate": "2026-06-26",
+        "url": "https://yz.tongji.edu.cn/info/1018/4206.htm",
+        "impactEstimated": false,
+        "description": "官方已发布调整；新大纲参考茆第4版、贾第9版。存在性已核实，分数冲击方向和情景权重尚未由历史事件估计。"
+      }
+    },
+    {
+      "school": "中南财经政法大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 841,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "统计与数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://tsxy.zuel.edu.cn/_upload/article/files/15/fa/e5c1c0e24e4190959c6705735842/2b97dccb-1810-4a22-befa-d8a3bced99b9.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "国防科技大学",
+      "rosterImages": 0,
+      "parsedImages": 0,
+      "readableRows": 0,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "西安电子科技大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 82,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 24,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 10,
+          "q10": 375.9,
+          "minimum": 375.0,
+          "median": 380.0,
+          "maximum": 397.0
+        },
+        {
+          "year": 2026,
+          "n": 14,
+          "q10": 357.8,
+          "minimum": 355.0,
+          "median": 395.5,
+          "maximum": 412.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "南京航空航天大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 63,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 40,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 18,
+          "q10": 362.5,
+          "minimum": 358.0,
+          "median": 378.0,
+          "maximum": 410.0
+        },
+        {
+          "year": 2026,
+          "n": 22,
+          "q10": 407.2,
+          "minimum": 395.0,
+          "median": 419.0,
+          "maximum": 450.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "南京理工大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 28,
+      "exactYears": [
+        2026
+      ],
+      "exactCandidates": 15,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2026,
+          "n": 15,
+          "q10": 377.8,
+          "minimum": 375.0,
+          "median": 394.0,
+          "maximum": 423.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国海洋大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 89,
+      "exactYears": [
+        2026
+      ],
+      "exactCandidates": 11,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2026,
+          "n": 11,
+          "q10": 399.0,
+          "minimum": 398.0,
+          "median": 409.0,
+          "maximum": 427.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "暨南大学",
+      "rosterImages": 10,
+      "parsedImages": 10,
+      "readableRows": 375,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 95,
+      "strictQuota2027": false,
+      "units": [
+        "信息科学技术学院",
+        "经济学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 50,
+          "q10": 394.8,
+          "minimum": 389.0,
+          "median": 410.5,
+          "maximum": 451.0
+        },
+        {
+          "year": 2025,
+          "n": 45,
+          "q10": 338.0,
+          "minimum": 323.0,
+          "median": 355.0,
+          "maximum": 397.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "北京交通大学",
+      "rosterImages": 6,
+      "parsedImages": 6,
+      "readableRows": 95,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 21,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院",
+        "经济管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://soms.bjtu.edu.cn/docs/2026-03/abd40f25009b4043a2dd92e6d8948a79.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 21,
+          "q10": 369.0,
+          "minimum": 363.0,
+          "median": 382.0,
+          "maximum": 401.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "华东理工大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 53,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "上海大学",
+      "rosterImages": 8,
+      "parsedImages": 8,
+      "readableRows": 66,
+      "exactYears": [
+        2026
+      ],
+      "exactCandidates": 13,
+      "strictQuota2027": false,
+      "units": [
+        "理学院",
+        "经济学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2026,
+          "n": 13,
+          "q10": 344.6,
+          "minimum": 341.0,
+          "median": 359.0,
+          "maximum": 399.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "苏州大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 111,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 15,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 15,
+          "q10": 382.0,
+          "minimum": 380.0,
+          "median": 396.0,
+          "maximum": 433.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "河海大学",
+      "rosterImages": 6,
+      "parsedImages": 6,
+      "readableRows": 138,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 52,
+      "strictQuota2027": false,
+      "units": [
+        "前沿交叉科学研究院",
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 21,
+          "q10": 359.0,
+          "minimum": 352.0,
+          "median": 375.0,
+          "maximum": 415.0
+        },
+        {
+          "year": 2025,
+          "n": 31,
+          "q10": 341.0,
+          "minimum": 337.0,
+          "median": 357.0,
+          "maximum": 395.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "武汉理工大学",
+      "rosterImages": 8,
+      "parsedImages": 8,
+      "readableRows": 303,
+      "exactYears": [
+        2023,
+        2026
+      ],
+      "exactCandidates": 96,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院",
+        "数学与统计学院（襄阳示范区）"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 42,
+          "q10": 380.0,
+          "minimum": 379.0,
+          "median": 395.0,
+          "maximum": 428.0
+        },
+        {
+          "year": 2026,
+          "n": 54,
+          "q10": 364.3,
+          "minimum": 359.0,
+          "median": 380.0,
+          "maximum": 416.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "东北师范大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 199,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "东华大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 117,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "北京工业大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 112,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 42,
+      "strictQuota2027": false,
+      "units": [
+        "数学统计学与力学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yanzhao.bjut.edu.cn/info/1019/17506.htm"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 23,
+          "q10": 357.6,
+          "minimum": 352.0,
+          "median": 393.0,
+          "maximum": 422.0
+        },
+        {
+          "year": 2025,
+          "n": 19,
+          "q10": 376.8,
+          "minimum": 376.0,
+          "median": 390.0,
+          "maximum": 410.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "郑州大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 359,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "华南师范大学",
+      "rosterImages": 8,
+      "parsedImages": 8,
+      "readableRows": 156,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "心理学院",
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "华中师范大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 200,
+      "exactYears": [
+        2022,
+        2024,
+        2025
+      ],
+      "exactCandidates": 98,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2023年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2022,
+          "n": 26,
+          "q10": 373.0,
+          "minimum": 367.0,
+          "median": 394.5,
+          "maximum": 431.0
+        },
+        {
+          "year": 2024,
+          "n": 32,
+          "q10": 375.1,
+          "minimum": 372.0,
+          "median": 388.0,
+          "maximum": 428.0
+        },
+        {
+          "year": 2025,
+          "n": 40,
+          "q10": 375.0,
+          "minimum": 361.0,
+          "median": 387.5,
+          "maximum": 426.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "西南交通大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 31,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 20,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 10,
+          "q10": 348.1,
+          "minimum": 331.0,
+          "median": 374.5,
+          "maximum": 402.0
+        },
+        {
+          "year": 2026,
+          "n": 10,
+          "q10": 361.8,
+          "minimum": 360.0,
+          "median": 387.0,
+          "maximum": 420.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "西北大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 294,
+      "exactYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "exactCandidates": 118,
+      "strictQuota2027": false,
+      "units": [
+        "数学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 46,
+          "q10": 351.0,
+          "minimum": 344.0,
+          "median": 377.5,
+          "maximum": 427.0
+        },
+        {
+          "year": 2025,
+          "n": 31,
+          "q10": 328.0,
+          "minimum": 325.0,
+          "median": 356.0,
+          "maximum": 406.0
+        },
+        {
+          "year": 2026,
+          "n": 41,
+          "q10": 348.0,
+          "minimum": 341.0,
+          "median": 372.0,
+          "maximum": 421.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国石油大学（北京）",
+      "rosterImages": 8,
+      "parsedImages": 8,
+      "readableRows": 70,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "克拉玛依校区",
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "华北电力大学",
+      "rosterImages": 10,
+      "parsedImages": 10,
+      "readableRows": 469,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数理学院",
+        "数理系"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "南京师范大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 75,
+      "exactYears": [
+        2026
+      ],
+      "exactCandidates": 14,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2026,
+          "n": 14,
+          "q10": 366.2,
+          "minimum": 355.0,
+          "median": 407.0,
+          "maximum": 420.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国石油大学（华东）",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 151,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "中国地质大学（武汉）",
+      "rosterImages": 10,
+      "parsedImages": 10,
+      "readableRows": 283,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 40,
+      "strictQuota2027": false,
+      "units": [
+        "数学与物理学院",
+        "经济管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 40,
+          "q10": 364.9,
+          "minimum": 349.0,
+          "median": 379.0,
+          "maximum": 415.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国地质大学（北京）",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 167,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 15,
+      "strictQuota2027": false,
+      "units": [
+        "数理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://bm.cugb.edu.cn/yjsyzsb/upload/resources/file/2026/04/10/302702.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 15,
+          "q10": 364.0,
+          "minimum": 361.0,
+          "median": 380.0,
+          "maximum": 409.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "福州大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 138,
+      "exactYears": [
+        2024
+      ],
+      "exactCandidates": 21,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 21,
+          "q10": 392.0,
+          "minimum": 390.0,
+          "median": 404.0,
+          "maximum": 435.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "西南大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 173,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "陕西师范大学",
+      "rosterImages": 4,
+      "parsedImages": 4,
+      "readableRows": 91,
+      "exactYears": [
+        2024,
+        2026
+      ],
+      "exactCandidates": 40,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [
+        "https://yz.snnu.edu.cn/2025ss-014.pdf"
+      ],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 10,
+          "q10": 359.9,
+          "minimum": 359.0,
+          "median": 384.5,
+          "maximum": 411.0
+        },
+        {
+          "year": 2026,
+          "n": 30,
+          "q10": 348.5,
+          "minimum": 340.0,
+          "median": 364.5,
+          "maximum": 414.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中央民族大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 404,
+      "exactYears": [
+        2024,
+        2026
+      ],
+      "exactCandidates": 129,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2024,
+          "n": 58,
+          "q10": 378.4,
+          "minimum": 372.0,
+          "median": 392.5,
+          "maximum": 434.0
+        },
+        {
+          "year": 2026,
+          "n": 71,
+          "q10": 386.0,
+          "minimum": 382.0,
+          "median": 400.0,
+          "maximum": 438.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "辽宁大学",
+      "rosterImages": 9,
+      "parsedImages": 9,
+      "readableRows": 388,
+      "exactYears": [
+        2023,
+        2026
+      ],
+      "exactCandidates": 133,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院",
+        "经济学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 69,
+          "q10": 363.6,
+          "minimum": 348.0,
+          "median": 378.0,
+          "maximum": 420.0
+        },
+        {
+          "year": 2026,
+          "n": 64,
+          "q10": 348.3,
+          "minimum": 340.0,
+          "median": 368.0,
+          "maximum": 408.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "湖南师范大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 160,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 50,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 23,
+          "q10": 356.8,
+          "minimum": 348.0,
+          "median": 380.0,
+          "maximum": 402.0
+        },
+        {
+          "year": 2025,
+          "n": 27,
+          "q10": 334.6,
+          "minimum": 332.0,
+          "median": 355.0,
+          "maximum": 423.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "北京林业大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 218,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "经济管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "河北工业大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 128,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 48,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 24,
+          "q10": 360.0,
+          "minimum": 353.0,
+          "median": 382.0,
+          "maximum": 414.0
+        },
+        {
+          "year": 2025,
+          "n": 24,
+          "q10": 323.3,
+          "minimum": 323.0,
+          "median": 347.5,
+          "maximum": 417.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "中国药科大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 67,
+      "exactYears": [
+        2022,
+        2025,
+        2026
+      ],
+      "exactCandidates": 36,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2022,
+          "n": 14,
+          "q10": 391.6,
+          "minimum": 388.0,
+          "median": 400.0,
+          "maximum": 436.0
+        },
+        {
+          "year": 2025,
+          "n": 12,
+          "q10": 341.0,
+          "minimum": 334.0,
+          "median": 362.0,
+          "maximum": 388.0
+        },
+        {
+          "year": 2026,
+          "n": 10,
+          "q10": 346.4,
+          "minimum": 341.0,
+          "median": 367.5,
+          "maximum": 422.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "南昌大学",
+      "rosterImages": 4,
+      "parsedImages": 4,
+      "readableRows": 121,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "经济管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "华中农业大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 133,
+      "exactYears": [
+        2023,
+        2025
+      ],
+      "exactCandidates": 39,
+      "strictQuota2027": false,
+      "units": [
+        "信息学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 27,
+          "q10": 354.2,
+          "minimum": 346.0,
+          "median": 367.0,
+          "maximum": 439.0
+        },
+        {
+          "year": 2025,
+          "n": 12,
+          "q10": 368.1,
+          "minimum": 367.0,
+          "median": 372.0,
+          "maximum": 403.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "安徽大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 472,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "大数据与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "南京农业大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 6,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "东北农业大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 7,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "文理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "东北林业大学",
+      "rosterImages": 3,
+      "parsedImages": 3,
+      "readableRows": 42,
+      "exactYears": [
+        2026
+      ],
+      "exactCandidates": 21,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2026,
+          "n": 21,
+          "q10": 331.0,
+          "minimum": 326.0,
+          "median": 356.0,
+          "maximum": 402.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "延边大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 47,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "云南大学",
+      "rosterImages": 5,
+      "parsedImages": 4,
+      "readableRows": 628,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "贵州大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 271,
+      "exactYears": [
+        2025,
+        2026
+      ],
+      "exactCandidates": 94,
+      "strictQuota2027": false,
+      "units": [
+        "数学与统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 46,
+          "q10": 329.5,
+          "minimum": 314.0,
+          "median": 357.0,
+          "maximum": 411.0
+        },
+        {
+          "year": 2026,
+          "n": 48,
+          "q10": 330.7,
+          "minimum": 323.0,
+          "median": 359.5,
+          "maximum": 430.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "内蒙古大学",
+      "rosterImages": 5,
+      "parsedImages": 5,
+      "readableRows": 234,
+      "exactYears": [
+        2023,
+        2026
+      ],
+      "exactCandidates": 94,
+      "strictQuota2027": false,
+      "units": [
+        "数学科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2023,
+          "n": 50,
+          "q10": 344.9,
+          "minimum": 339.0,
+          "median": 368.5,
+          "maximum": 424.0
+        },
+        {
+          "year": 2026,
+          "n": 44,
+          "q10": 324.6,
+          "minimum": 315.0,
+          "median": 365.5,
+          "maximum": 415.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "新疆大学",
+      "rosterImages": 5,
+      "parsedImages": 4,
+      "readableRows": 48,
+      "exactYears": [
+        2025
+      ],
+      "exactCandidates": 19,
+      "strictQuota2027": false,
+      "units": [
+        "数学与系统科学学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [
+        {
+          "year": 2025,
+          "n": 19,
+          "q10": 314.0,
+          "minimum": 313.0,
+          "median": 333.0,
+          "maximum": 383.0
+        }
+      ],
+      "knownEvent": null
+    },
+    {
+      "school": "宁夏大学",
+      "rosterImages": 2,
+      "parsedImages": 2,
+      "readableRows": 28,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "数学统计学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    },
+    {
+      "school": "石河子大学",
+      "rosterImages": 1,
+      "parsedImages": 1,
+      "readableRows": 2,
+      "exactYears": [],
+      "exactCandidates": 0,
+      "strictQuota2027": false,
+      "units": [
+        "经济与管理学院"
+      ],
+      "quotaEvidence2027": [],
+      "missing": [
+        "2027年报名截止前可见的普通统考净名额及实际接收推免数",
+        "2022年拟录取名单口径或摘要核对",
+        "2023年拟录取名单口径或摘要核对",
+        "2024年拟录取名单口径或摘要核对",
+        "2025年拟录取名单口径或摘要核对",
+        "2026年拟录取名单口径或摘要核对"
+      ],
+      "officialLinks": [],
+      "existingOfficialSourceLinks": [],
+      "needsForecastReview": false,
+      "evidenceStatus": "本轮名单及分数列核查已记录",
+      "cutoffCorrections": [],
+      "currentDistribution": [],
+      "knownEvent": null
+    }
+  ]
+}

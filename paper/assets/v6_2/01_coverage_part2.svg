@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="600.16pt" height="384.18375pt" viewBox="0 0 600.16 384.18375" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-24</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 384.18375
+L 600.16 384.18375
+L 600.16 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 96.2 361.90375
+L 312.34 361.90375
+L 312.34 19.58375
+L 96.2 19.58375
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p2858a49c47)">
+    <image xlink:href="data:image/png;base64,
+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" id="image9538cda8a4" transform="scale(1 -1) translate(0 -342.72)" x="96.2" y="-19.18375" width="216.72" height="342.72"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="117.814" y="13.595" transform="rotate(-0 117.814 13.595)">2022</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="161.042" y="13.595" transform="rotate(-0 161.042 13.595)">2023</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="204.27" y="13.595" transform="rotate(-0 204.27 13.595)">2024</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="247.498" y="13.595" transform="rotate(-0 247.498 13.595)">2025</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="290.726" y="13.595" transform="rotate(-0 290.726 13.595)">2026</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <path d="M 96.2 361.90375
+L 96.2 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7"/>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_8">
+      <path d="M 139.428 361.90375
+L 139.428 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9"/>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_10">
+      <path d="M 182.656 361.90375
+L 182.656 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11"/>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_12">
+      <path d="M 225.884 361.90375
+L 225.884 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13"/>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_14">
+      <path d="M 269.112 361.90375
+L 269.112 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_16">
+      <path d="M 312.34 361.90375
+L 312.34 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_18"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="31.539094" transform="rotate(-0 92.2 31.539094)">苏州大学</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_19"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="48.655094" transform="rotate(-0 92.2 48.655094)">河海大学</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_20"/>
+     <g id="text_8">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="65.771094" transform="rotate(-0 92.2 65.771094)">武汉理工大学</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_21"/>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="82.887094" transform="rotate(-0 92.2 82.887094)">东北师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_22"/>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="100.003094" transform="rotate(-0 92.2 100.003094)">东华大学</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_23"/>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="117.119094" transform="rotate(-0 92.2 117.119094)">北京工业大学</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_24"/>
+     <g id="text_12">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="134.235094" transform="rotate(-0 92.2 134.235094)">郑州大学</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_25"/>
+     <g id="text_13">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="151.351094" transform="rotate(-0 92.2 151.351094)">华南师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_26"/>
+     <g id="text_14">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="168.467094" transform="rotate(-0 92.2 168.467094)">华中师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_27"/>
+     <g id="text_15">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="185.583094" transform="rotate(-0 92.2 185.583094)">西南交通大学</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_28"/>
+     <g id="text_16">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="202.699094" transform="rotate(-0 92.2 202.699094)">西北大学</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_29"/>
+     <g id="text_17">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="219.815094" transform="rotate(-0 92.2 219.815094)">中国石油大学（北京）</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_30"/>
+     <g id="text_18">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="236.931094" transform="rotate(-0 92.2 236.931094)">华北电力大学</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_31"/>
+     <g id="text_19">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="254.047094" transform="rotate(-0 92.2 254.047094)">南京师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_32"/>
+     <g id="text_20">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="271.163094" transform="rotate(-0 92.2 271.163094)">中国石油大学（华东）</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_33"/>
+     <g id="text_21">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="288.279094" transform="rotate(-0 92.2 288.279094)">中国地质大学（武汉）</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_34"/>
+     <g id="text_22">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="305.395094" transform="rotate(-0 92.2 305.395094)">中国地质大学（北京）</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_35"/>
+     <g id="text_23">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="322.511094" transform="rotate(-0 92.2 322.511094)">福州大学</text>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_36"/>
+     <g id="text_24">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="339.627094" transform="rotate(-0 92.2 339.627094)">西南大学</text>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_37"/>
+     <g id="text_25">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="92.2" y="356.743094" transform="rotate(-0 92.2 356.743094)">陕西师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_38">
+      <path d="M 96.2 19.58375
+L 312.34 19.58375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_39"/>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_40">
+      <path d="M 96.2 36.69975
+L 312.34 36.69975
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_41"/>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_42">
+      <path d="M 96.2 53.81575
+L 312.34 53.81575
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_43"/>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_44">
+      <path d="M 96.2 70.93175
+L 312.34 70.93175
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_45"/>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_46">
+      <path d="M 96.2 88.04775
+L 312.34 88.04775
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_47"/>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_48">
+      <path d="M 96.2 105.16375
+L 312.34 105.16375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_49"/>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_50">
+      <path d="M 96.2 122.27975
+L 312.34 122.27975
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_51"/>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_52">
+      <path d="M 96.2 139.39575
+L 312.34 139.39575
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_53"/>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_54">
+      <path d="M 96.2 156.51175
+L 312.34 156.51175
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_55"/>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_56">
+      <path d="M 96.2 173.62775
+L 312.34 173.62775
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_57"/>
+    </g>
+    <g id="ytick_31">
+     <g id="line2d_58">
+      <path d="M 96.2 190.74375
+L 312.34 190.74375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_59"/>
+    </g>
+    <g id="ytick_32">
+     <g id="line2d_60">
+      <path d="M 96.2 207.85975
+L 312.34 207.85975
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_61"/>
+    </g>
+    <g id="ytick_33">
+     <g id="line2d_62">
+      <path d="M 96.2 224.97575
+L 312.34 224.97575
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_63"/>
+    </g>
+    <g id="ytick_34">
+     <g id="line2d_64">
+      <path d="M 96.2 242.09175
+L 312.34 242.09175
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_65"/>
+    </g>
+    <g id="ytick_35">
+     <g id="line2d_66">
+      <path d="M 96.2 259.20775
+L 312.34 259.20775
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_67"/>
+    </g>
+    <g id="ytick_36">
+     <g id="line2d_68">
+      <path d="M 96.2 276.32375
+L 312.34 276.32375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_69"/>
+    </g>
+    <g id="ytick_37">
+     <g id="line2d_70">
+      <path d="M 96.2 293.43975
+L 312.34 293.43975
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_71"/>
+    </g>
+    <g id="ytick_38">
+     <g id="line2d_72">
+      <path d="M 96.2 310.55575
+L 312.34 310.55575
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_73"/>
+    </g>
+    <g id="ytick_39">
+     <g id="line2d_74">
+      <path d="M 96.2 327.67175
+L 312.34 327.67175
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_75"/>
+    </g>
+    <g id="ytick_40">
+     <g id="line2d_76">
+      <path d="M 96.2 344.78775
+L 312.34 344.78775
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_77"/>
+    </g>
+    <g id="ytick_41">
+     <g id="line2d_78">
+      <path d="M 96.2 361.90375
+L 312.34 361.90375
+" clip-path="url(#p2858a49c47)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_79"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 376.82 361.90375
+L 592.96 361.90375
+L 592.96 19.58375
+L 376.82 19.58375
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#pc723954737)">
+    <image xlink:href="data:image/png;base64,
+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" id="imagef1e2c07acf" transform="scale(1 -1) translate(0 -342.72)" x="376.82" y="-19.18375" width="216.72" height="342.72"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_12">
+     <g id="line2d_80"/>
+     <g id="text_26">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="398.434" y="13.595" transform="rotate(-0 398.434 13.595)">2022</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_81"/>
+     <g id="text_27">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="441.662" y="13.595" transform="rotate(-0 441.662 13.595)">2023</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_82"/>
+     <g id="text_28">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="484.89" y="13.595" transform="rotate(-0 484.89 13.595)">2024</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_83"/>
+     <g id="text_29">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="528.118" y="13.595" transform="rotate(-0 528.118 13.595)">2025</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_84"/>
+     <g id="text_30">
+      <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="571.346" y="13.595" transform="rotate(-0 571.346 13.595)">2026</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_85">
+      <path d="M 376.82 361.90375
+L 376.82 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_86"/>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_87">
+      <path d="M 420.048 361.90375
+L 420.048 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_88"/>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_89">
+      <path d="M 463.276 361.90375
+L 463.276 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_90"/>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_91">
+      <path d="M 506.504 361.90375
+L 506.504 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_92"/>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_93">
+      <path d="M 549.732 361.90375
+L 549.732 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_94"/>
+    </g>
+    <g id="xtick_22">
+     <g id="line2d_95">
+      <path d="M 592.96 361.90375
+L 592.96 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_96"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_42">
+     <g id="line2d_97"/>
+     <g id="text_31">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="31.989515" transform="rotate(-0 372.82 31.989515)">中央民族大学</text>
+     </g>
+    </g>
+    <g id="ytick_43">
+     <g id="line2d_98"/>
+     <g id="text_32">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="50.006357" transform="rotate(-0 372.82 50.006357)">辽宁大学</text>
+     </g>
+    </g>
+    <g id="ytick_44">
+     <g id="line2d_99"/>
+     <g id="text_33">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="68.023199" transform="rotate(-0 372.82 68.023199)">湖南师范大学</text>
+     </g>
+    </g>
+    <g id="ytick_45">
+     <g id="line2d_100"/>
+     <g id="text_34">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="86.040041" transform="rotate(-0 372.82 86.040041)">北京林业大学</text>
+     </g>
+    </g>
+    <g id="ytick_46">
+     <g id="line2d_101"/>
+     <g id="text_35">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="104.056883" transform="rotate(-0 372.82 104.056883)">河北工业大学</text>
+     </g>
+    </g>
+    <g id="ytick_47">
+     <g id="line2d_102"/>
+     <g id="text_36">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="122.073725" transform="rotate(-0 372.82 122.073725)">中国药科大学</text>
+     </g>
+    </g>
+    <g id="ytick_48">
+     <g id="line2d_103"/>
+     <g id="text_37">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="140.090567" transform="rotate(-0 372.82 140.090567)">南昌大学</text>
+     </g>
+    </g>
+    <g id="ytick_49">
+     <g id="line2d_104"/>
+     <g id="text_38">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="158.10741" transform="rotate(-0 372.82 158.10741)">华中农业大学</text>
+     </g>
+    </g>
+    <g id="ytick_50">
+     <g id="line2d_105"/>
+     <g id="text_39">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="176.124252" transform="rotate(-0 372.82 176.124252)">安徽大学</text>
+     </g>
+    </g>
+    <g id="ytick_51">
+     <g id="line2d_106"/>
+     <g id="text_40">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="194.141094" transform="rotate(-0 372.82 194.141094)">南京农业大学</text>
+     </g>
+    </g>
+    <g id="ytick_52">
+     <g id="line2d_107"/>
+     <g id="text_41">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="212.157936" transform="rotate(-0 372.82 212.157936)">东北农业大学</text>
+     </g>
+    </g>
+    <g id="ytick_53">
+     <g id="line2d_108"/>
+     <g id="text_42">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="230.174778" transform="rotate(-0 372.82 230.174778)">东北林业大学</text>
+     </g>
+    </g>
+    <g id="ytick_54">
+     <g id="line2d_109"/>
+     <g id="text_43">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="248.19162" transform="rotate(-0 372.82 248.19162)">延边大学</text>
+     </g>
+    </g>
+    <g id="ytick_55">
+     <g id="line2d_110"/>
+     <g id="text_44">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="266.208462" transform="rotate(-0 372.82 266.208462)">云南大学</text>
+     </g>
+    </g>
+    <g id="ytick_56">
+     <g id="line2d_111"/>
+     <g id="text_45">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="284.225304" transform="rotate(-0 372.82 284.225304)">贵州大学</text>
+     </g>
+    </g>
+    <g id="ytick_57">
+     <g id="line2d_112"/>
+     <g id="text_46">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="302.242146" transform="rotate(-0 372.82 302.242146)">内蒙古大学</text>
+     </g>
+    </g>
+    <g id="ytick_58">
+     <g id="line2d_113"/>
+     <g id="text_47">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="320.258988" transform="rotate(-0 372.82 320.258988)">新疆大学</text>
+     </g>
+    </g>
+    <g id="ytick_59">
+     <g id="line2d_114"/>
+     <g id="text_48">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="338.275831" transform="rotate(-0 372.82 338.275831)">宁夏大学</text>
+     </g>
+    </g>
+    <g id="ytick_60">
+     <g id="line2d_115"/>
+     <g id="text_49">
+      <text style="font-size: 8.5px; font-family: 'Microsoft YaHei'; text-anchor: end" x="372.82" y="356.292673" transform="rotate(-0 372.82 356.292673)">石河子大学</text>
+     </g>
+    </g>
+    <g id="ytick_61">
+     <g id="line2d_116">
+      <path d="M 376.82 19.58375
+L 592.96 19.58375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_117"/>
+    </g>
+    <g id="ytick_62">
+     <g id="line2d_118">
+      <path d="M 376.82 37.600592
+L 592.96 37.600592
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_119"/>
+    </g>
+    <g id="ytick_63">
+     <g id="line2d_120">
+      <path d="M 376.82 55.617434
+L 592.96 55.617434
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_121"/>
+    </g>
+    <g id="ytick_64">
+     <g id="line2d_122">
+      <path d="M 376.82 73.634276
+L 592.96 73.634276
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_123"/>
+    </g>
+    <g id="ytick_65">
+     <g id="line2d_124">
+      <path d="M 376.82 91.651118
+L 592.96 91.651118
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_125"/>
+    </g>
+    <g id="ytick_66">
+     <g id="line2d_126">
+      <path d="M 376.82 109.667961
+L 592.96 109.667961
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_127"/>
+    </g>
+    <g id="ytick_67">
+     <g id="line2d_128">
+      <path d="M 376.82 127.684803
+L 592.96 127.684803
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_129"/>
+    </g>
+    <g id="ytick_68">
+     <g id="line2d_130">
+      <path d="M 376.82 145.701645
+L 592.96 145.701645
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_131"/>
+    </g>
+    <g id="ytick_69">
+     <g id="line2d_132">
+      <path d="M 376.82 163.718487
+L 592.96 163.718487
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_133"/>
+    </g>
+    <g id="ytick_70">
+     <g id="line2d_134">
+      <path d="M 376.82 181.735329
+L 592.96 181.735329
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_135"/>
+    </g>
+    <g id="ytick_71">
+     <g id="line2d_136">
+      <path d="M 376.82 199.752171
+L 592.96 199.752171
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_137"/>
+    </g>
+    <g id="ytick_72">
+     <g id="line2d_138">
+      <path d="M 376.82 217.769013
+L 592.96 217.769013
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_139"/>
+    </g>
+    <g id="ytick_73">
+     <g id="line2d_140">
+      <path d="M 376.82 235.785855
+L 592.96 235.785855
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_141"/>
+    </g>
+    <g id="ytick_74">
+     <g id="line2d_142">
+      <path d="M 376.82 253.802697
+L 592.96 253.802697
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_143"/>
+    </g>
+    <g id="ytick_75">
+     <g id="line2d_144">
+      <path d="M 376.82 271.819539
+L 592.96 271.819539
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_145"/>
+    </g>
+    <g id="ytick_76">
+     <g id="line2d_146">
+      <path d="M 376.82 289.836382
+L 592.96 289.836382
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_147"/>
+    </g>
+    <g id="ytick_77">
+     <g id="line2d_148">
+      <path d="M 376.82 307.853224
+L 592.96 307.853224
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_149"/>
+    </g>
+    <g id="ytick_78">
+     <g id="line2d_150">
+      <path d="M 376.82 325.870066
+L 592.96 325.870066
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_151"/>
+    </g>
+    <g id="ytick_79">
+     <g id="line2d_152">
+      <path d="M 376.82 343.886908
+L 592.96 343.886908
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_153"/>
+    </g>
+    <g id="ytick_80">
+     <g id="line2d_154">
+      <path d="M 376.82 361.90375
+L 592.96 361.90375
+" clip-path="url(#pc723954737)" style="fill: none; stroke: #ffffff; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_155"/>
+    </g>
+   </g>
+  </g>
+  <g id="legend_1">
+   <g id="patch_4">
+    <path d="M 136.605625 371.795
+L 152.605625 371.795
+L 152.605625 366.195
+L 136.605625 366.195
+z
+" style="fill: #eeeeee; stroke: #eeeeee; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: start" x="159.005625" y="371.795" transform="rotate(-0 159.005625 371.795)">未取得可用初试分数</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 247.005625 371.795
+L 263.005625 371.795
+L 263.005625 366.195
+L 247.005625 366.195
+z
+" style="fill: #d4b574; stroke: #d4b574; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: start" x="269.405625" y="371.795" transform="rotate(-0 269.405625 371.795)">可读但录取口径待核</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 357.405625 371.795
+L 373.405625 371.795
+L 373.405625 366.195
+L 357.405625 366.195
+z
+" style="fill: #4b8d9a; stroke: #4b8d9a; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: start" x="379.805625" y="371.795" transform="rotate(-0 379.805625 371.795)">审计通过Q10（n≥10）</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2858a49c47">
+   <rect x="96.2" y="19.58375" width="216.14" height="342.32"/>
+  </clipPath>
+  <clipPath id="pc723954737">
+   <rect x="376.82" y="19.58375" width="216.14" height="342.32"/>
+  </clipPath>
+ </defs>
+</svg>

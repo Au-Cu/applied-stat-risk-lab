@@ -1,5 +1,15 @@
 # 方法论文
 
+当前新增V6.2证据修订稿，保留旧版本。`modeling_paper_v6_2.html`和对应PDF按普通研究论文补入原件重读、同键验证、扩展样本及新官方来源。基础77校年的模型比较仍明确标注基础快照，85校年修订证据另行复核，不混淆样本量。
+
+```text
+python model/experiment_evidence_refresh.py
+python scripts/report_evidence_refresh.py
+python paper/scripts/build_evidence_revision.py
+```
+
+随后以 `PAPER_SOURCE_NAME=modeling_paper_v6_2.html`、`PAPER_OUTPUT_NAME=报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V6.2_证据修订与固定模型复核.pdf` 运行现有 `render_paper_v3.cjs`。全部原有论文与图不覆盖。
+
 本目录保存模型方法论文的可复现源文件。第一、二版保留用于对照；当前 V5 按普通统计研究论文重写，并与精确逐名标签、分层分布实验、字段级来源审计、严格嵌套校准和网页口径同步。
 
 ## 文件

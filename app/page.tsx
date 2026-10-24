@@ -36,6 +36,7 @@ import { SchoolCoordinateMap } from "@/components/school-coordinate-map";
 import forecastData from "./data/forecast.json";
 import modelV5Audit from "./data/model-v5-audit.json";
 import { StatisticalResearchPanel } from "../components/statistical-research-panel";
+import { EvidenceRefreshPanel, EvidenceRefreshOverview, schoolEvidence, needsEvidenceReview } from "../components/evidence-refresh-panel";
 import { riskScaleLabel as probabilityLabel, riskLabel } from "@/lib/forecast-display";
 
 type EventScenario = {
@@ -728,16 +729,24 @@ export default function Home() {
 
   const selected = predictions.find((item) => item.school === selectedSchool) ?? rows[0] ?? predictions[0];
   const selectedProbability = probabilityAtScore(selected, score);
-  const selectedRisk = riskLabel(selectedProbability, selected.upperWidthStatus === "information_limited");
+  const selectedEvidence = schoolEvidence(selected.school);
+  const selectedNeedsReview = needsEvidenceReview(selected.school);
+  const selectedRisk = riskLabel(selectedProbability, selected.upperWidthStatus === "information_limited" || selectedNeedsReview);
   const backtest = meta.backtest;
   const liveExample = (() => {
-    if (pipelineStepId === "collect") return `${selected.school}：已形成 ${selected.historyCount} 个历史目标标签，最新复试线 ${selected.latestCutoff ?? "待核验"} 分。`;
+    if (pipelineStepId === "collect") return selectedNeedsReview
+      ? `${selected.school}：本轮已补名单核验，2026年全日制方向复试线更正为396分；旧冻结预测需复核。`
+      : `${selected.school}：冻结快照形成 ${selected.historyCount} 个历史目标标签，最新复试线 ${selected.latestCutoff ?? "待核验"} 分。本轮逐人证据另见详情。`;
     if (pipelineStepId === "audit") return `${selected.school} 当前前瞻证据完备度 ${selected.confidenceScore}/100；逐人记录另按精确、软证据和诊断层分配用途。`;
     if (pipelineStepId === "features") return `最近一年冷热惊讶度 ${signed(selected.lagSurpriseZ)}σ，同层竞校压力 ${signed(selected.peerPressure)}σ。`;
     if (pipelineStepId === "models") return `冻结点预测采用“${selected.selectedModel}”；V5 回溯层另外用同校上一期逐人分布估计形状。`;
     if (pipelineStepId === "backtest") return `冻结主流程滚动 MAE ${backtest.mae} 分；精确标签回溯实验在 54 个校年上由 ${v5.exactLabelBacktest.frozenBaselineMae} 降至 ${v5.exactLabelBacktest.exactEnhancedMae} 分。`;
-    if (pipelineStepId === "scenarios") return `${selected.events.length ? `${selected.events.length}条官方事件进入三情景` : "未检索到官方事件，已加入未知事件厚尾"}；P90* 采用跨历史年份最不利标准化残差校准。`;
-    return `你的估分 ${score} 分，对 ${selected.school} 的保守风险刻度为“${probabilityLabel(selected, score, selectedProbability)}”，标签为“${selectedRisk.label}”；不是个人录取概率。`;
+    if (pipelineStepId === "scenarios") return selectedEvidence?.knownEvent
+      ? "已核实2027年考纲调整公告；旧冻结情景遗漏此事件，冲击方向和权重仍待估计，暂不据此给稳保标签。"
+      : `${selected.events.length ? `${selected.events.length}条官方事件进入冻结三情景` : "冻结事件扫描未闭环，另含未知事件厚尾"}；P90* 采用跨历史年份最不利标准化残差校准。`;
+    return selectedNeedsReview
+      ? `${selected.school}有尚未重算进正式预测的重要证据修订，当前只展示旧冻结值作对照，标签为“需复核”。`
+      : `你的估分 ${score} 分，对 ${selected.school} 的保守风险刻度为“${probabilityLabel(selected, score, selectedProbability)}”，标签为“${selectedRisk.label}”；不是个人录取概率。`;
   })();
 
   return (
@@ -795,13 +804,13 @@ export default function Home() {
                   <thead><tr><th>院校</th><th>中位预测</th><th>P90*稳妥线</th><th>风险刻度</th><th>标签</th></tr></thead>
                   <tbody>
                     {rows.map((item) => {
-                      const risk = riskLabel(item.probability, item.upperWidthStatus === "information_limited");
+                      const risk = riskLabel(item.probability, item.upperWidthStatus === "information_limited" || needsEvidenceReview(item.school));
                       return (
                         <tr key={item.school} data-active={item.school === selected.school} onClick={() => setSelectedSchool(item.school)}>
                           <td><strong>{item.school}</strong><span className={`faction-badge ${factionTone(item.faction)}`}>{item.faction}</span>{item.upperWidthStatus === "information_limited" && <span className="width-warning-tag">上界极宽</span>}<span>{item.is985 ? "985" : "211"} · {item.zone}区 · 证据{item.confidence}</span></td>
                           <td className="mono">{Math.round(item.q50)}</td>
-                          <td className="mono emphasis">{Math.round(item.q90)}</td>
-                          <td><div className="prob-cell"><span>{probabilityLabel(item, score, item.probability)}</span>{item.upperWidthStatus !== "information_limited" && <Progress value={item.probability * 100} />}</div></td>
+                          <td className="mono emphasis">{Math.round(item.q90)}{needsEvidenceReview(item.school) && <small>旧快照</small>}</td>
+                          <td><div className="prob-cell"><span>{needsEvidenceReview(item.school) ? "需复核" : probabilityLabel(item, score, item.probability)}</span>{item.upperWidthStatus !== "information_limited" && !needsEvidenceReview(item.school) && <Progress value={item.probability * 100} />}</div></td>
                           <td><span className={`risk-pill ${risk.tone}`}>{risk.label}</span></td>
                         </tr>
                       );
@@ -815,13 +824,15 @@ export default function Home() {
             <aside className="detail-panel panel">
               <div className="detail-title">
                 <div><span className="eyebrow">SELECTED SCHOOL</span><h2>{selected.school}</h2><p>{selected.unit ?? "培养单位待核验"} · {selected.math ?? "数学科目待核验"}</p><span className={`faction-badge detail-faction ${factionTone(selected.faction)}`}>{selected.faction}</span></div>
-                <span className={`risk-orb ${selectedRisk.tone}`} data-information-limited={selected.upperWidthStatus === "information_limited"}><strong>{selectedRisk.label}</strong><small>{probabilityLabel(selected, score, selectedProbability)}</small></span>
+                <span className={`risk-orb ${selectedRisk.tone}`} data-information-limited={selected.upperWidthStatus === "information_limited" || selectedNeedsReview}><strong>{selectedRisk.label}</strong><small>{selectedNeedsReview ? "旧预测待复核" : probabilityLabel(selected, score, selectedProbability)}</small></span>
               </div>
 
               <div className="confidence-banner">
                 <span>证据完备度</span><strong>{selected.confidence} · {selected.confidenceScore}/100</strong>
                 <Progress value={selected.confidenceScore} />
               </div>
+
+              {selectedNeedsReview && <div className="upper-width-warning"><AlertTriangle size={17} /><div><strong>已有重要证据修订，旧预测需复核</strong><p>下面的数值为原冻结快照。已发现全日制方向口径错误和遗漏的2027年考纲公告，暂不据旧数值给出稳保判断。最新名单分布和官方来源见下方。</p></div></div>}
 
               <ScoreRail item={selected} score={score} />
 
@@ -862,7 +873,7 @@ export default function Home() {
 
               <div className="event-card">
                 <div className="card-title"><Sparkles size={16} /><strong>事件情景</strong><span>{selected.events.length ? `${selected.events.length} 条官方事件` : "事件扫描未闭环"}</span></div>
-                {selected.events.length ? selected.events.map((event) => (
+                {selectedEvidence?.knownEvent ? <p className="muted-copy">本轮已核实{selectedEvidence.knownEvent.name}，公布于{selectedEvidence.knownEvent.publishDate}。旧冻结预测未计入；事件细节与原文见最新证据核验。</p> : selected.events.length ? selected.events.map((event) => (
                   <div className="event-item" key={`${event.type}-${event.name}`}>
                     <p>{event.name}</p>
                     <div className="scenario-row"><span>退潮 {signed(event.scenarios.withdrawal)}</span><span>中性 {signed(event.scenarios.neutral)}</span><span>涌入 {signed(event.scenarios.crowd)}</span></div>
@@ -870,6 +881,7 @@ export default function Home() {
                   </div>
                 )) : <p className="muted-copy">尚未检索到官方变更公告，不代表已经确认无变化；报名截止前必须人工复核招生简章。</p>}
               </div>
+              <EvidenceRefreshPanel school={selected.school} />
               <p className="model-note"><Info size={14} /> {selected.selectedModel}</p>
             </aside>
           </div>
@@ -940,7 +952,8 @@ export default function Home() {
         </TabsContent>
       </Tabs>
 
-      <footer><span>公开研究原型 v0.4.1 · V6.1 研究解释微调 · 仅用于风险比较</span><span>2027 数值未改；77 个审计通过经验 Q10 校年用于回溯研究，不构成录取保证</span></footer>
+      <EvidenceRefreshOverview />
+      <footer><span>公开研究原型 v0.5.0 · 证据修订与固定模型复核</span><span>原2027预测保留；最新名单与来源单独版本化，不构成录取保证</span></footer>
     </main>
   );
 }

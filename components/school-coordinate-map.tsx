@@ -1,5 +1,7 @@
 "use client";
 
+import { needsEvidenceReview } from "./evidence-refresh-panel";
+
 import { useMemo, useRef, useState } from "react";
 import { MapPin, RotateCcw, ZoomIn, ZoomOut } from "lucide-react";
 import { riskScaleLabel } from "@/lib/forecast-display";
@@ -278,7 +280,7 @@ export function SchoolCoordinateMap({
               <div><dt>定位精度</dt><dd>{precisionLabel(active.locationPrecision)}</dd></div>
               <div><dt>预测中位数</dt><dd>{Math.round(active.q50)} 分</dd></div>
               <div><dt>P90* 安全线</dt><dd>{Math.round(active.q90)} 分</dd></div>
-              <div><dt>风险刻度</dt><dd>{riskScaleLabel(active, score, active.probability)}</dd></div>
+              <div><dt>风险刻度</dt><dd>{needsEvidenceReview(active.school) ? "证据已修订，旧预测需复核" : riskScaleLabel(active, score, active.probability)}</dd></div>
               <div><dt>证据完备度</dt><dd>{active.confidence}</dd></div>
             </dl>
             <p className="map-school-location">安全锚点刻度不是已校准的录取概率；材料完备度不等于预测可靠率。</p>

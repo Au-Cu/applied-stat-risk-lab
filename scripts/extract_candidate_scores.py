@@ -182,19 +182,28 @@ def extract_image(row: dict) -> dict:
             vertical = grouped_centers(np.where(dark.sum(axis=0) > height * 0.38)[0])
         if len(vertical) < 2:
             vertical = grouped_centers(np.where(dark.sum(axis=0) > height * 0.24)[0])
+        # A versioned recovery run may supply a header-verified geometry.
+        # Default extraction retains its original behaviour for replication.
+        if row.get("verified_vertical_lines"):
+            vertical = [int(value) for value in row["verified_vertical_lines"]]
         output["horizontal_lines"] = len(horizontal)
         output["vertical_lines"] = len(vertical)
         if len(horizontal) < 4:
             raise ValueError("fewer than four horizontal table lines")
         right_lines = [value for value in vertical if value > width * 0.60]
-        if len(right_lines) < 2:
+        if row.get("verified_score_bounds"):
+            x_left, x_right = map(int, row["verified_score_bounds"])
+        elif len(right_lines) < 2:
             raise ValueError("score column boundaries not found")
-        x_left, x_right = right_lines[-2], right_lines[-1]
+        else:
+            x_left, x_right = right_lines[-2], right_lines[-1]
         if x_right - x_left < 35:
             raise ValueError("score column is implausibly narrow")
 
         title_crops = []
         for y_top, y_bottom in list(zip(horizontal, horizontal[1:]))[:5]:
+            if row.get("privacy_safe_recovery") and y_top >= int(row["verified_header_y_top"]):
+                continue
             if 22 <= y_bottom - y_top <= 180:
                 title_crops.append(image[y_top + 5 : y_bottom - 5, 25 : width - 25])
         title_results = recognize_batch(title_crops)
@@ -208,6 +217,8 @@ def extract_image(row: dict) -> dict:
 
         footer_crops = []
         for pixels in (80, 120, 200, 280):
+            if row.get("privacy_safe_recovery"):
+                break
             crop = image[max(0, height - pixels) : height, 15 : width - 15]
             footer_crops.append(cv2.resize(crop, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC))
         footer_results = recognize_batch(footer_crops)
@@ -223,7 +234,8 @@ def extract_image(row: dict) -> dict:
             output["footer"] = footer
             output["footer_confidence"] = footer_confidence
         if (
-            int(row.get("year") or 0) <= 2023
+            not row.get("privacy_safe_recovery")
+            and int(row.get("year") or 0) <= 2023
             and not re.search(r"绿色|蓝色|拟录取|未录取", output["footer"])
         ):
             detected_footer, detected_confidence = recognize_document(
@@ -233,6 +245,11 @@ def extract_image(row: dict) -> dict:
                 output["footer"] = detected_footer
                 output["footer_confidence"] = detected_confidence
 
+        # A reviewed transcription is tied to the immutable source hash by
+        # the recovery caller, never supplied from an unverified year summary.
+        if "verified_footer" in row:
+            output["footer"] = str(row["verified_footer"])
+            output["footer_confidence"] = 1.0
         title = output["title"]
         footer = output["footer"]
         expected_title = str(row.get("expected_title") or "")
@@ -261,11 +278,18 @@ def extract_image(row: dict) -> dict:
         special_row_indices = {
             int(match.group(1)) for match in SPECIAL_ROW_PATTERN.finditer(footer)
         }
+        if row.get("metadata_only"):
+            output["layout_status"] = "parsed"
+            return output
 
         band_meta = []
         score_crops = []
         rank_crops = []
-        read_rank_column = int(row.get("year") or 0) <= 2023 or bool(special_row_indices)
+        read_rank_column = (
+            int(row.get("year") or 0) <= 2023
+            or bool(special_row_indices)
+            or bool(row.get("verified_score_bounds"))
+        )
         for band_index, (y_top, y_bottom) in enumerate(zip(horizontal, horizontal[1:])):
             if not 20 <= y_bottom - y_top <= 190:
                 continue
@@ -540,7 +564,11 @@ def main() -> None:
                 extracted.append(result)
                 print(f"OCR {index}/{len(records)} {result['school']} {result['year']}", flush=True)
     extracted.sort(key=lambda row: (row["school"], int(row["year"]), row["source_url"]))
+    write_extraction_outputs(args, extracted)
 
+
+def write_extraction_outputs(args: argparse.Namespace, extracted: list[dict]) -> None:
+    """Apply the same label gates to live OCR or versioned recovered rows."""
     periods = pd.read_csv(args.periods, encoding="utf-8-sig")
     schools = pd.read_csv(args.schools, encoding="utf-8-sig")
     full_time_map = {

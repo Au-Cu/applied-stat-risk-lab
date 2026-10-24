@@ -1,0 +1,56 @@
+{
+  "verified_python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.6.1"
+  },
+  "model_random_seed": 20261011,
+  "q10_bootstrap_draws": 2000,
+  "inputs": [
+    {
+      "path": "data/processed/program_year.csv",
+      "raw_sha256": "7f7915720031809f17826844fb3f90bafff1d0d5a0c8131deb409709f83448b5",
+      "lf_normalized_sha256": "477fead07b8a4f81729f83b1e311981ee4f1d2dbe19461cf4b60ee57c85e0912"
+    },
+    {
+      "path": "data/processed/national_lines.json",
+      "raw_sha256": "a2fbb0c615dbf2b0db8acadb94ed6cbaec19a16b0611df9497cc0ce215db19e4",
+      "lf_normalized_sha256": "b7b4a932d8cea4d3c41ace775f6d4d1d74b741d481740ad7f96b8632d2ecd6a1"
+    },
+    {
+      "path": "data/processed/evidence_refresh_20261024/exact_distribution_summary.csv",
+      "raw_sha256": "a236129cb078bc1d9c79eccba0d0e42eed6ad0ec2b878e69459f442e4d5102da",
+      "lf_normalized_sha256": "4d58cc1fae647e1d621c31bd285052c588f0534ca2bfcf5e2fbfe960a2a46ccd"
+    },
+    {
+      "path": "data/processed/evidence_refresh_20261024/candidate_label_audit.csv",
+      "raw_sha256": "2ed1f6faf10d63f6a1669a6f1e85fdc0d3c0bc7c0c0c36f94b65e4d60d1ecb3a",
+      "lf_normalized_sha256": "c0f1d6f7d5a689053c2f145ea5df46b183dde87a0b443625ee649949df8a2ff4"
+    },
+    {
+      "path": "data/curated/evidence_adjudications_20261024.json",
+      "raw_sha256": "66a8207c6a13e02d263bd85ff3a4790557b424d2dabf650a49c90b4f411750a4",
+      "lf_normalized_sha256": "66a8207c6a13e02d263bd85ff3a4790557b424d2dabf650a49c90b4f411750a4"
+    },
+    {
+      "path": "model/experiment_evidence_refresh.py",
+      "raw_sha256": "ccba8d86528d018b6b607e4ac368335d48494213032d4e723d01f1603455cc54",
+      "lf_normalized_sha256": "ccba8d86528d018b6b607e4ac368335d48494213032d4e723d01f1603455cc54"
+    },
+    {
+      "path": "model/experiment_statistical_inference.py",
+      "raw_sha256": "ae92fde94d29727ccea32d645ac806f7207826fc6d5e1568f243fa26257b2fde",
+      "lf_normalized_sha256": "ae92fde94d29727ccea32d645ac806f7207826fc6d5e1568f243fa26257b2fde"
+    },
+    {
+      "path": "model/candidate_score_layer.py",
+      "raw_sha256": "99f95d9b2510950d66a2054e314a80123c1cef15b15b393a7a5704ef82caf809",
+      "lf_normalized_sha256": "99f95d9b2510950d66a2054e314a80123c1cef15b15b393a7a5704ef82caf809"
+    }
+  ],
+  "snapshot_version": "evidence-refresh-20261024",
+  "text_hash_policy": "Use LF-normalized SHA256 across Git checkout newline conventions. Official original captures always use raw bytes.",
+  "privacy": "Public replication reads only school-year aggregates. It cannot redo OCR without the authorized private originals."
+}

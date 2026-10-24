@@ -70,7 +70,7 @@ async function main() {
     waitUntil: 'networkidle',
     timeout: 120000,
   });
-  await page.evaluate(({ rows, refined }) => {
+  await page.evaluate(({ rows, refined, evidenceRevised }) => {
     const tbody = document.getElementById('forecast-appendix-body');
     tbody.replaceChildren(
       ...rows.map((row, index) => {
@@ -89,6 +89,7 @@ async function main() {
             ? row['上界可比性'].replace('证据不足', '需复核')
             : row['上界可比性'],
         ];
+        if (evidenceRevised && row['院校'] === '同济大学') cells[9] = '证据已修订，冻结值需复核';
         cells.forEach((value, cellIndex) => {
           const td = document.createElement('td');
           td.textContent = value;
@@ -98,7 +99,7 @@ async function main() {
         return tr;
       })
     );
-  }, { rows: forecasts, refined: process.env.PAPER_SOURCE_NAME === 'modeling_paper_v6_1.html' });
+  }, { rows: forecasts, refined: ['modeling_paper_v6_1.html', 'modeling_paper_v6_2.html'].includes(process.env.PAPER_SOURCE_NAME), evidenceRevised: process.env.PAPER_SOURCE_NAME === 'modeling_paper_v6_2.html' });
 
   await page.evaluate(async () => {
     if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
@@ -116,7 +117,7 @@ async function main() {
       const parent = node.parentElement;
       if (!parent || ['SCRIPT', 'STYLE', 'CODE', 'PRE'].includes(parent.tagName)) continue;
       const value = node.nodeValue.trim();
-      if (value && texPattern.test(value)) unresolved.push({ text: value.slice(0, 160), context: parent.outerHTML.slice(0, 700) });
+      if (value && (texPattern.test(value) || /[A-Za-z]\^\{[^}]+\}/.test(value))) unresolved.push({ text: value.slice(0, 160), context: parent.outerHTML.slice(0, 700) });
     }
     const malformedTags = [...document.body.querySelectorAll('*')]
       .map((element) => element.tagName)

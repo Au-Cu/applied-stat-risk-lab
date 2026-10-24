@@ -65,6 +65,7 @@ next-env.d.ts
 !/output/pdf/应用统计硕士择校研究_逐字段公共数据来源目录_V5.pdf
 !/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V6_统计推断与现代统计建模.pdf
 !/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V6.1_测量口径与验证边界微调.pdf
+!/output/pdf/报名前信息集下应用统计硕士拟录取初试低位分数的概率预测_V6.2_证据修订与固定模型复核.pdf
 # Reproducible raster previews and superseded experiment bundles stay local;
 # public papers use the tracked SVG figures and selected V5 aggregate outputs.
 /paper/assets/**/*.png

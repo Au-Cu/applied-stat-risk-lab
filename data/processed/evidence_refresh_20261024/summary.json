@@ -1,0 +1,77 @@
+{
+  "version": "evidence-refresh-20261024",
+  "generated_at": "2026-10-24T09:28:51.300088+00:00",
+  "scope_schools": 81,
+  "scope_school_years": 405,
+  "local_source_hashes_verified": 452,
+  "unique_source_payloads": 450,
+  "api_targets_refreshed": 108,
+  "api_targets_successful": 108,
+  "api_roster_schools": 79,
+  "api_roster_school_years": 353,
+  "roster_urls_added": 0,
+  "images_parsed_before": 412,
+  "images_parsed_after": 448,
+  "readable_score_rows_before": 14317,
+  "readable_score_rows_after": 16386,
+  "unique_readable_score_rows_after": 16206,
+  "duplicate_readable_references": 180,
+  "exact_school_years_before": 77,
+  "exact_school_years_after": 85,
+  "exact_candidate_rows_before": 2312,
+  "exact_candidate_rows_after": 2560,
+  "exact_schools_after": 48,
+  "added_exact_school_years": [
+    {
+      "school": "上海大学",
+      "year": 2026
+    },
+    {
+      "school": "南京师范大学",
+      "year": 2026
+    },
+    {
+      "school": "同济大学",
+      "year": 2025
+    },
+    {
+      "school": "同济大学",
+      "year": 2026
+    },
+    {
+      "school": "重庆大学",
+      "year": 2024
+    },
+    {
+      "school": "重庆大学",
+      "year": 2025
+    },
+    {
+      "school": "重庆大学",
+      "year": 2026
+    },
+    {
+      "school": "陕西师范大学",
+      "year": 2024
+    }
+  ],
+  "removed_exact_school_years": [],
+  "admission_rows_after": 10870,
+  "audited_admission_rows_after": 8347,
+  "unique_score_role_counts": {
+    "diagnostic_admission_not_verified": 2342,
+    "exact_label_and_distribution": 2560,
+    "excluded_special_population": 57,
+    "retest_not_admitted": 2502,
+    "retest_unknown_outcome": 2958,
+    "soft_distribution_only": 5787
+  },
+  "privacy": "Only school-year aggregates are public. Raw images, roster image URLs, per-person rows and candidate hashes remain private.",
+  "production_numeric_forecast_changed": false,
+  "computer_use": "Required node_repl/Sky tool unavailable; used authorized public mini-program metadata API and original local images instead. No desktop operation was performed.",
+  "header_audited_images": 452,
+  "header_geometry_disagreements": 93,
+  "no_identifiable_initial_score_column": 4,
+  "supplemental_official_sources": 15,
+  "secondary_metadata_changes": 3
+}
