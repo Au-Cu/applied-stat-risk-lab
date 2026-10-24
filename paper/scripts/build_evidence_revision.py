@@ -144,7 +144,7 @@ def main():
     '''
     marker='  <section>\n    <h2>九、讨论：方法价值、局限与推广</h2>'
     if source.count(marker)!=1:raise ValueError("Ambiguous new analysis insertion")
-    new_section=re.sub(r'<figcaption>图\d+　', '<figcaption>', new_section)
+    new_section=re.sub(r'<figcaption>图\d+　', '<figcaption>', new_section).rstrip()
     source=source.replace(marker,'<section>\n'+new_section+'\n</section>\n'+marker,1)
     # New material uses existing chapter structure; preserve all old methods,
     # negative results and sources while making their data vintage explicit.
